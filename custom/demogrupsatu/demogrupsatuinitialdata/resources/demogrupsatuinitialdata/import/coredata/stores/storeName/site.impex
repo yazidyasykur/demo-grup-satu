@@ -4,6 +4,7 @@
 #
 # Import the CMS Site configuration for the store
 #
+#cobapush
 $productCatalog=demoProductCatalog
 $contentCatalog=demoContentCatalog
 $contentCV=catalogVersion(CatalogVersion.catalog(Catalog.id[default=$contentCatalog]),CatalogVersion.version[default=Staged])[default=$contentCatalog:Staged]
