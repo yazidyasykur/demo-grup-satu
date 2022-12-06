@@ -16,6 +16,7 @@ public class AboutPageController extends AbstractPageController {
     private static final String TEMPLATE_PAGE = "about";
     @RequestMapping(value=TEMPLATE_PAGE, method = RequestMethod.GET)
     public String getAbout(final Model model) throws CMSItemNotFoundException{
+        System.out.println("Hello");
         final ContentPageModel demoData = getContentPageForLabelOrId(TEMPLATE_PAGE);
         storeCmsPageInModel(model, demoData);
         setUpMetaDataForContentPage(model, demoData);
