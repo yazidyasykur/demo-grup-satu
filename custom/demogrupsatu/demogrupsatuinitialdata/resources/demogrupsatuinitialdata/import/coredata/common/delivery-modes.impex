@@ -1,0 +1,34 @@
+# -----------------------------------------------------------------------
+# Copyright (c) 2019 SAP SE or an SAP affiliate company. All rights reserved.
+# -----------------------------------------------------------------------
+#
+# Import Delivery Modes / Zones
+#
+
+# Currencies
+$idCurrency = IDR
+
+# Delivery Zones
+INSERT_UPDATE Zone; code[unique = true]; countries(isocode)
+                  ; id                 ; ID
+
+# Zone Delivery Modes
+INSERT_UPDATE ZoneDeliveryMode; code[unique = true]    ; net  ; active[default = true]
+                              ; premium-net            ; true
+                              ; standard-net           ; true
+                              ; premium-gross          ; false
+                              ; standard-gross         ; false
+                              ; free-standard-shipping ; true ; false ;
+
+
+# ID
+INSERT_UPDATE ZoneDeliveryModeValue; deliveryMode(code)[unique = true]; zone(code)[default = 'id'][unique = true]; currency(isocode)[unique = true]; value ; minimum[unique = true]
+                                   ; premium-gross                    ;                                          ; $idCurrency                     ; 10,99 ; 0,00
+                                   ; premium-net                      ;                                          ; $idCurrency                     ; 99,99 ; 0,00
+                                   ; standard-gross                   ;                                          ; $idCurrency                     ; 5,99  ; 0,00
+                                   ; standard-net                     ;                                          ; $idCurrency                     ; 59,99 ; 0,00
+
+# Pickup Delivery Mode
+INSERT_UPDATE PickUpDeliveryMode; code[unique = true]; active[default = true]; supportedMode(code)
+                                ; pickup             ;
+

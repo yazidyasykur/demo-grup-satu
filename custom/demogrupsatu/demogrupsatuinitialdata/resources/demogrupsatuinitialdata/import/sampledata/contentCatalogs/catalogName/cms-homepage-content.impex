@@ -1,0 +1,220 @@
+# -----------------------------------------------------------------------
+# Copyright (c) 2019 SAP SE or an SAP affiliate company. All rights reserved.
+# -----------------------------------------------------------------------
+#
+# Import the CMS content for the site
+#
+$contentCatalog = demoContentCatalog
+$contentCV=catalogVersion(CatalogVersion.catalog(Catalog.id[default=$contentCatalog]),CatalogVersion.version[default=Staged])[default=$contentCatalog:Staged]
+
+
+# Import config properties into impex macros
+UPDATE GenericItem[processor = de.hybris.platform.commerceservices.impex.impl.ConfigPropertyImportProcessor]; pk[unique = true]
+$jarResourceCms=$config-jarResourceCmsValue
+
+INSERT_UPDATE PageTemplate;$contentCV[unique=true];uid[unique=true]                 ;name                                       ;frontendTemplateName   ;restrictedPageTypes(code);active[default=true]
+                          ;                  ;LandingHomepageTemplate     ;Landing Homepage Template for demogrupsatu ;layout/demohomepage    ;CategoryPage,ContentPage
+
+UPDATE PageTemplate; $contentCV[unique = true]; uid[unique = true]                     ;  velocityTemplate[translator = de.hybris.platform.commerceservices.impex.impl.FileLoaderValueTranslator]
+                   ;                   ; LandingHomepageTemplate         ;  $jarResourceCms/structure-view/structure_StorefrontHomepageTemplate.vm
+
+##training-fe-3
+INSERT_UPDATE ContentSlotName; name[unique = true]    ; template(uid, $contentCV)[unique = true][default = 'LandingHomepageTemplate']; validComponentTypes(code)       ; compTypeGroup(code)
+                             ; SiteLogo               ;                                                                                      ;                                 ; logo
+                             ; HeaderLinks            ;                                                                                      ;                                 ; headerlinks
+                             ; SearchBox              ;                                                                                      ;                                 ; searchbox
+                             ; MiniCart               ;                                                                                      ;                                 ; minicart
+                             ; NavigationBar          ;                                                                                      ;                                 ; navigation
+                             ; Section1-bannerSection ;                                                                                      ; SimpleResponsiveBannerComponent ; wide
+                             ; Section2-itbCarousel   ;                                                                                      ; JspIncludeComponent             ; narrow
+                             ; Section3-unboxing      ;                                                                                      ; JspIncludeComponent             ; narrow
+                             ; Section4-testimoni     ;                                                                                      ; JspIncludeComponent             ; narrow
+                             ; Footer                 ;                                                                                      ;                                 ; footer
+                             ; TopHeaderSlot          ;                                                                                      ;                                 ; wide
+                             ; BottomHeaderSlot       ;                                                                                      ;                                 ; wide
+                             ; PlaceholderContentSlot ;                                                                                      ;                                 ; wide
+
+
+INSERT_UPDATE ContentSlotForTemplate; $contentCV[unique = true]; uid[unique = true]                             ; position[unique = true]; pageTemplate(uid, $contentCV)[unique = true][default = 'LandingHomepageTemplate']; contentSlot(uid, $contentCV)[unique = true]; allowOverwrite
+                                    ;                          ; SiteLogo-LandingHomepageTemplate               ; SiteLogo               ;                                                                                          ; SiteLogoSlot                               ; true
+                                    ;                          ; Footer-LandingHomepageTemplate                 ; Footer                 ;                                                                                          ; FooterSlot                                 ; true
+                                    ;                          ; NavigationBar-LandingHomepageTemplate          ; NavigationBar          ;                                                                                          ; NavigationBarSlot                          ; true
+                                    ;                          ; MiniCart-LandingHomepageTemplate               ; MiniCart               ;                                                                                          ; MiniCartSlot                               ; true
+                                    ;                          ; HeaderLinks-LandingHomepageTemplate            ; HeaderLinks            ;                                                                                          ; HeaderLinksSlot                            ; true
+                                    ;                          ; SearchBox-LandingHomepageTemplate              ; SearchBox              ;                                                                                          ; SearchBoxSlot                              ; true
+                                    ;                          ; TopHeaderSlot-LandingHomepageTemplate          ; TopHeaderSlot          ;                                                                                          ; TopHeaderSlot                              ; true
+                                    ;                          ; BottomHeaderSlot-LandingHomepageTemplate       ; BottomHeaderSlot       ;                                                                                          ; BottomHeaderSlot                           ; true
+                                    ;                          ; PlaceholderContentSlot-LandingHomepageTemplate ; PlaceholderContentSlot ;                                                                                          ; PlaceholderContentSlot                     ; true
+
+INSERT_UPDATE ContentPage;$contentCV[unique=true];uid[unique=true]      ;name     ;masterTemplate(uid,$contentCV)               ;label      ;defaultPage[default='true'];approvalStatus(code)[default='approved'];homepage[default='true']
+                         ;                  ;homepage2         ;Homepage demo grup satu ;LandingHomepageTemplate        ;homepage2
+
+$contentCatalog = demoContentCatalog
+$contentCatalogName = Demo Content Catalog
+$productCatalog = demoProductCatalog
+$productCatalogName = Demo Product Catalog
+
+$contentCV = catalogVersion(CatalogVersion.catalog(Catalog.id[default=$contentCatalog]), CatalogVersion.version[default=Staged])[default=$contentCatalog:Staged]
+$productCV = catalogVersion(catalog(id[default=$productCatalog]), version[default='Staged'])[unique=true, default=$productCatalog:Staged]
+
+$medias = medias(code, $contentCV);
+$mediaContainer = media(qualifier, $contentCV);
+$contentPage = contentPage(uid, $contentCV);
+$product = product(code, $productCV)
+$category = category(code, $productCV)
+$siteResource = jar:org.demogrupsatu.initialdata.setup.InitialDataSystemSetup&/demogrupsatuinitialdata/import/sampledata/contentCatalogs/$contentCatalog
+$productResource = jar:org.demogrupsatu.initialdata.setup.InitialDataSystemSetup&/demogrupsatuinitialdata/import/sampledata/productCatalogs/$productCatalog
+$jarResourceCms = jar:org.demogrupsatu.initialdata.setup.InitialDataSystemSetup&/demogrupsatuinitialdata/import/sampledata/cockpits/cmscockpit
+
+INSERT_UPDATE SearchBoxComponent; $contentCV[unique = true]; uid[unique = true]; name; &componentRef
+
+INSERT_UPDATE ContentSlot; $contentCV[unique = true]; uid[unique = true]; cmsComponents(&componentRef)
+
+INSERT_UPDATE FooterComponent; $contentCV[unique = true]; uid[unique = true]; wrapAfter; showLanguageCurrency
+
+
+### Component
+#INSERT_UPDATE BannerComponent;$contentCV[unique=true];uid[unique=true];name;&componentRef;urlLink
+#                            ;;CarouselAtomBanner;Carousel Atom Banner;CarouselAtomBanner;/catalog
+#                            ;;CarouselKredivoBanner;Carousel Kredivo Banner;CarouselKredivoBanner;/catalog
+#
+#INSERT_UPDATE RotatingImagesComponent;$contentCV[unique=true];uid[unique=true];name;banners(&componentRef);&componentRef
+#                                     ;;BannerHomepageCarouselComponent;Banner Demogrup1 Homepage Carousel;CarouselAtomBanner,CarouselKredivoBanner;BannerHomepageCarouselComponent
+
+#
+#INSERT_UPDATE ProductCarouselComponent;$contentCV[unique=true];uid[unique=true];name;products(code,$productCV);scroll(code);popup;&componentRef
+#                                      ;;intheboxProductCarouselComponent;INTHEBOX Homepage Product Carousel Banner;  ;allVisible;false;intheboxProductCarouselComponent
+
+INSERT_UPDATE SimpleResponsiveBannerComponent; $contentCV[unique = true]; uid[unique = true]             ; name                        ; urlLink          ; &componentRef
+                                             ;                   ; intheboxBannerComponent ; In the box Banner Component ; /catalog         ; intheboxBannerComponent
+
+INSERT_UPDATE JspIncludeComponent;$contentCV[unique=true]    ;uid[unique=true]               ;name                           ;page                                                    ;actions(uid,$contentCV);&componentRef
+                                ;                       ;JspITBCarouselComponent   ;In the box Carousel Products   ;/WEB-INF/views/responsive/pages/layout/itbCarousel.jsp  ;                       ;JspITBCarouselComponent
+                                ;                       ;JspUnboxingComponent      ;How to unboxing                ;/WEB-INF/views/responsive/pages/layout/unboxing.jsp     ;                       ;JspUnboxingComponent
+                                ;                       ;JspTestimoniComponent     ;Testimoni                      ;/WEB-INF/views/responsive/pages/layout/testimoni.jsp    ;                       ;JspTestimoniComponent
+
+# Create ContentSlots
+INSERT_UPDATE ContentSlot; $contentCV[unique = true]       ; uid[unique = true]                  ; name                             ; cmsComponents(&componentRef)                   ; active[default = true]
+                         ;                          ; Section1-LandingHomepageSlot ; Section1-LandingHomepageTemplate ; intheboxBannerComponent           ; true
+                         ;                          ; Section2-LandingHomepageSlot ; Section2-LandingHomepageTemplate ; JspITBCarouselComponent           ; true
+                         ;                          ; Section3-LandingHomepageSlot ; Section3-LandingHomepageTemplate ; JspUnboxingComponent              ; true
+                         ;                          ; Section4-LandingHomepageSlot ; Section4-LandingHomepageTemplate ; JspTestimoniComponent             ; true
+
+
+INSERT_UPDATE ContentSlotForPage; $contentCV[unique = true]; uid[unique = true] ; position[unique = true]; page(uid, $contentCV)[unique = true][default = 'homepage2']   ; contentSlot(uid, $contentCV)[unique = true]; ; ;
+                                ;                          ; Section1-banner    ; Section1               ;                                                                     ; Section1-LandingHomepageSlot        ; ; ;
+                                ;                          ; Section2-carousel  ; Section2               ;                                                                     ; Section2-LandingHomepageSlot        ; ; ;
+                                ;                          ; Section3-unboxing  ; Section3               ;                                                                     ; Section3-LandingHomepageSlot        ; ; ;
+                                ;                          ; Section4-testimoni ; Section4               ;                                                                     ; Section4-LandingHomepageSlot        ; ; ;
+
+##baru sampe sini
+#################################################
+# -----------------------------------------------------------------------
+# Copyright (c) 2019 SAP SE or an SAP affiliate company. All rights reserved.
+# -----------------------------------------------------------------------
+# ImpEx for Importing CMS Content
+# Macros / Replacement Parameter definitions
+$contentCatalog = demoContentCatalog
+$contentCatalogName = Demo Content Catalog
+$productCatalog = demoProductCatalog
+$productCatalogName = Demo Product Catalog
+
+$contentCV=catalogVersion(CatalogVersion.catalog(Catalog.id[default=$contentCatalog]), CatalogVersion.version[default=Staged])[default=$contentCatalog:Staged]
+$productCV=catalogVersion(catalog(id[default=$productCatalog]), version[default='Staged'])[unique=true, default=$productCatalog:Staged]
+
+$medias = medias(code, $contentCV);
+$mediaContainer = media(qualifier, $contentCV);
+$contentPage = contentPage(uid, $contentCV);
+$product = product(code, $productCV)
+$category = category(code, $productCV)
+$siteResource = jar:org.demogrupsatu.initialdata.setup.InitialDataSystemSetup&/demogrupsatuinitialdata/import/sampledata/contentCatalogs/$contentCatalog
+$productResource = jar:org.demogrupsatu.initialdata.setup.InitialDataSystemSetup&/demogrupsatuinitialdata/import/sampledata/productCatalogs/$productCatalog
+$jarResourceCms = jar:org.demogrupsatu.initialdata.setup.InitialDataSystemSetup&/demogrupsatuinitialdata/import/sampledata/cockpits/cmscockpit
+$lang = en
+
+INSERT_UPDATE SearchBoxComponent; $contentCV[unique = true]; uid[unique = true]; name; &componentRef
+
+INSERT_UPDATE ContentSlot; $contentCV[unique = true]; uid[unique = true]; cmsComponents(&componentRef)
+
+INSERT_UPDATE FooterComponent; $contentCV[unique = true]; uid[unique = true]; wrapAfter; showLanguageCurrency
+
+
+## isi komponen
+INSERT_UPDATE Media; mediaFormat(qualifier); $contentCV[unique = true]; code[unique = true]      ; @media[translator = de.hybris.platform.impex.jalo.media.MediaDataTranslator][forceWrite = true]      ; mime[default = 'image/jpeg']; realfilename             ; folder(qualifier)[default = 'images']; altText
+                ; widescreen   ;                   ; Banner-Atom.jpg ; $siteResource/images/banners/Banner-Atom.jpg ;                   ; Banner-Atom.jpg          ;                   ; "3 Bulan Cicilan 0% dari Atome"
+                ; widescreen   ;                   ; Banner-Promo-Kredivo.jpg ; $siteResource/images/banners/Banner-Promo-Kredivo.jpg ;                   ; Banner-Promo-Kredivo.jpg          ;                   ; "Cicilan 0% tanpa DP dari Kredivo"
+
+INSERT_UPDATE MediaContainer; qualifier[unique = true]  ; $medias; $contentCV[unique = true]
+                            ; itb-homepage-discount-atom ; Banner-Atom-1400.jpg,Banner-Atom-960.jpg,Banner-Atom-770.jpg,Banner-Atom-480.jpg
+                            ; itb-homepage-discount-kredivo ; Banner-Promo-Kredivo-1400.jpg,Banner-Promo-Kredivo-960.jpg,Banner-Promo-Kredivo-770.jpg,Banner-Promo-Kredivo-480.jpg
+
+UPDATE SimpleResponsiveBannerComponent; $contentCV[unique = true]; uid[unique = true]                 ; $mediaContainer
+                                    ;                   ; intheboxBannerComponent     ; itb-homepage-discount-atom,itb-homepage-discount-kredivo
+
+
+############# NAVIGATION NODE #####################################
+$contentCatalog = demoContentCatalog
+$contentCatalogName = Demo Content Catalog
+$productCatalog = demoProductCatalog
+$productCatalogName = Demo Product Catalog
+
+$contentCV=catalogVersion(CatalogVersion.catalog(Catalog.id[default=$contentCatalog]), CatalogVersion.version[default=Staged])[default=$contentCatalog:Staged]
+$productCV=catalogVersion(catalog(id[default=$productCatalog]), version[default='Staged'])[unique=true, default=$productCatalog:Staged]
+
+$medias=medias(code, $contentCV);
+$mediaContainer=media(qualifier, $contentCV);
+$contentPage=contentPage(uid, $contentCV);
+$product=product(code, $productCV)
+$category=category(code, $productCV)
+$siteResource = jar:org.demogrupsatu.initialdata.setup.InitialDataSystemSetup&/demogrupsatuinitialdata/import/sampledata/contentCatalogs/$contentCatalog
+$productResource = jar:org.demogrupsatu.initialdata.setup.InitialDataSystemSetup&/demogrupsatuinitialdata/import/sampledata/productCatalogs/$productCatalog
+$jarResourceCms = jar:org.demogrupsatu.initialdata.setup.InitialDataSystemSetup&/demogrupsatuinitialdata/import/sampledata/cockpits/cmscockpit
+
+
+
+# CMS Link Components
+INSERT_UPDATE CMSLinkComponent;$contentCV[unique=true];uid[unique=true];name;url;&linkRef;&componentRef;target(code)[default='sameWindow'];$category;$product;
+                              ;;TaskPageLink;Task Page Link;/storefrontTaskPage;TaskPageLink;TaskPageLink;;;;
+
+## entries of the above navigation nodes ##
+INSERT_UPDATE CMSNavigationEntry;uid[unique=true];$contentCV[unique=true];name;navigationNode(&nodeRef);item(CMSLinkComponent.uid,CMSLinkComponent.$contentCV);
+#task-entry
+                                ;TaskNavNodeEntry;;Task Node Entry;TaskNavNode;TaskPageLink;
+
+## level 3. children of Category Nav ##
+INSERT_UPDATE CMSNavigationNode;uid[unique=true];$contentCV[unique=true];name;&nodeRef;parent(uid,$contentCV);children(uid,$contentCV);links(&linkRef);
+#task-page
+                               ;TaskNavNode;; Task Nav Node;TaskNavNode;DemoNavNode;
+
+
+
+######################################
+$contentCatalog = trainingContentCatalog
+$contentCatalogName = Training Content Catalog
+$productCatalog = trainingProductCatalog
+$productCatalogName = Training Product Catalog
+
+$contentCV = catalogVersion(CatalogVersion.catalog(Catalog.id[default=$contentCatalog]), CatalogVersion.version[default=Staged])[default=$contentCatalog:Staged]
+$productCV = catalogVersion(catalog(id[default=$productCatalog]), version[default='Staged'])[unique=true, default=$productCatalog:Staged]
+
+$medias = medias(code, $contentCV);
+$mediaContainer = media(qualifier, $contentCV);
+$contentPage = contentPage(uid, $contentCV);
+$product = product(code, $productCV)
+$category = category(code, $productCV)
+$siteResource = jar:org.training.initialdata.setup.InitialDataSystemSetup&/traininginitialdata/import/sampledata/contentCatalogs/$contentCatalog
+$productResource = jar:org.training.initialdata.setup.InitialDataSystemSetup&/traininginitialdata/import/sampledata/productCatalogs/$productCatalog
+$jarResourceCms = jar:org.training.initialdata.setup.InitialDataSystemSetup&/traininginitialdata/import/sampledata/cockpits/cmscockpit
+$lang = en
+
+
+# CMS Link Components
+INSERT_UPDATE CMSLinkComponent;$contentCV[unique=true];uid[unique=true];linkName[lang=$lang]
+#task-page-link
+                              ;;TaskPageLink;"Task Page"
+
+## level 3. children of Category Nav ##
+INSERT_UPDATE CMSNavigationNode;uid[unique=true];title[lang=$lang]
+#task-page
+                               ;TaskNavNode;"Task Nav Node"
+

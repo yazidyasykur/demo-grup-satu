@@ -1,0 +1,29 @@
+# -----------------------------------------------------------------------
+# Copyright (c) 2019 SAP SE or an SAP affiliate company. All rights reserved.
+# -----------------------------------------------------------------------
+#
+# Import the Content Catalog
+#
+$contentCatalog=demoContentCatalog
+$languages=en,id
+
+# Content catalog for CMS contents
+INSERT_UPDATE ContentCatalog;id[unique=true]
+;$contentCatalog
+
+# Catalog versions for content catalogs
+INSERT_UPDATE CatalogVersion;catalog(id)[unique=true];version[unique=true];active;languages(isoCode)
+;$contentCatalog;Staged;false;$languages
+;$contentCatalog;Online;true;$languages
+
+
+$productCatalog=demoProductCatalog
+$contentCatalog=demoContentCatalog
+$sourceContentCV=sourceVersion(catalog(id[default=$contentCatalog]),version[default='Staged'])[unique=true,default='$contentCatalog:Staged']
+$targetContentCV=targetVersion(catalog(id[default=$contentCatalog]),version[default='Online'])[unique=true,default='$contentCatalog:Online']
+$sourceProductCV=sourceVersion(catalog(id[default=$productCatalog]),version[default='Staged'])[unique=true,default='$productCatalog:Staged']
+$targetProductCV=targetVersion(catalog(id[default=$productCatalog]),version[default='Online'])[unique=true,default='$productCatalog:Online']
+INSERT_UPDATE CatalogVersionSyncJob;code[unique=true];$sourceProductCV;$targetProductCV;
+                                   ;sync productCatalog:Staged->Online;;;;
+INSERT_UPDATE CatalogVersionSyncJob;code[unique=true];$sourceContentCV;$targetContentCV;
+                                   ;sync contentCatalog:Staged->Online;;;;

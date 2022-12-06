@@ -1,0 +1,11 @@
+#Ant properties
+#Fri Sep 30 17:02:39 CEST 2022
+version.api=2105
+vendor=hybris
+group.id=de.hybris.platform
+name=demogrupsatufacades
+description=demogrupsatufacades
+builddate=20220930 1701
+releasedate=20210809 2305
+version=2105.15
+module.name=platform-module

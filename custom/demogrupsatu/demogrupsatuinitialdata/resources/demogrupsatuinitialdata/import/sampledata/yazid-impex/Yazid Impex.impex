@@ -1,0 +1,48 @@
+$contentCatalog = demoContentCatalog
+$contentCV = catalogVersion(CatalogVersion.catalog(Catalog.id[default=$contentCatalog]), CatalogVersion.version[default=Staged])[default=$contentCatalog:Staged]
+
+# Import config properties into impex macros
+UPDATE GenericItem[processor = de.hybris.platform.commerceservices.impex.impl.ConfigPropertyImportProcessor]; pk[unique = true]
+$jarResourceCms = $config-jarResourceCmsValue
+
+
+INSERT_UPDATE PageTemplate; $contentCV[unique = true]; uid[unique = true]	; name                ; frontendTemplateName     ; restrictedPageTypes(code); active[default = true]
+                          ;                          ; AboutPageTemplate	; About Page Template ; layout/aboutpage	 ; ContentPage
+
+
+UPDATE PageTemplate; $contentCV[unique = true]; uid[unique = true]              ; velocityTemplate[translator = de.hybris.platform.commerceservices.impex.impl.FileLoaderValueTranslator]
+                   ;                          ; AboutPageTemplate		; ; $jarResourceCms/structure-view/structure_aboutPageTemplate.vm
+
+
+INSERT_UPDATE ContentSlotName; name[unique = true]    	; template(uid, $contentCV)[unique = true][default = 'AboutPageTemplate']; validComponentTypes(code)       ; compTypeGroup(code)
+                             ; SiteLogo               	;                                                                        ;                                 ; logo
+                             ; HeaderLinks            	;                                                                        ;                                 ; headerlinks
+                             ; SearchBox              	;                                                                        ;                                 ; searchbox
+                             ; MiniCart               	;                                                                        ;                                 ; minicart
+                             ; NavigationBar          	;                                                                        ;                                 ; navigation
+                             ; Section1					;                                                                        ; 								   ; wide
+                             ; Section2		  			;                                                                        ;            					   ; narrow
+                             ; Section3   				;                                                                        ;  							   ; narrow
+                             ; Section4  				;	                                                                 	 ;              				   ; wide
+			     ; Section5  				;	                                                                 	 ;            				  	   ; narrow
+                             ; Footer                 	;                                                                        ;  			           		   ; footer
+                             ; TopHeaderSlot          	;                                                                        ;                                 ; wide
+                             ; BottomHeaderSlot       	;                                                                        ;                                 ; wide
+                             ; PlaceholderContentSlot 	;                                                                        ;                                 ; wide
+
+INSERT_UPDATE ContentSlotForTemplate; $contentCV[unique = true]; uid[unique = true]                       ; position[unique = true]; pageTemplate(uid, $contentCV)[unique = true][default = 'AboutPageTemplate']	; contentSlot(uid, $contentCV)[unique = true]; allowOverwrite
+                                    ;                          ; SiteLogo-AboutPageTemplate               ; SiteLogo               ;                                                                            	; SiteLogoSlot                               ; true
+                                    ;                          ; Footer-AboutPageTemplate                 ; Footer                 ;                                                                              	; FooterSlot                                 ; true
+                                    ;                          ; NavigationBar-AboutPageTemplate          ; NavigationBar          ;                                                                           		; NavigationBarSlot                          ; true
+                                    ;                          ; MiniCart-AboutPageTemplate               ; MiniCart               ;                                                                           		; MiniCartSlot                               ; true
+                                    ;                          ; HeaderLinks-AboutPageTemplate            ; HeaderLinks            ;                                                                             	; HeaderLinksSlot                            ; true
+                                    ;                          ; SearchBox-AboutPageTemplate              ; SearchBox              ;                                                                            	; SearchBoxSlot                              ; true
+                                    ;                          ; TopHeaderSlot-AboutPageTemplate          ; TopHeaderSlot          ;                                                                             	; TopHeaderSlot                              ; true
+                                    ;                          ; BottomHeaderSlot-AboutPageTemplate       ; BottomHeaderSlot       ;                                                                            	; BottomHeaderSlot                           ; true
+                                    ;                          ; PlaceholderContentSlot-AboutPageTemplate ; PlaceholderContentSlot ;                                                                           		; PlaceholderContentSlot                     ; true
+
+INSERT_UPDATE ContentPage; $contentCV[unique = true]; uid[unique = true]     	; name                     ; masterTemplate(uid, $contentCV) 	; label; defaultPage[default = 'true']; approvalStatus(code)[default = 'approved']; homepage[default = 'false']
+                         ;                          ; aboutPage 				; About Page 	   		   ; AboutPageTemplate 				    ; aboutPage
+                         
+
+
