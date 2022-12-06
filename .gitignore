@@ -33,3 +33,5 @@ bin/
 /custom/demogroup3/demogroup3storefront/web/webroot/_ui/responsive/theme-demogroup3/.sass-cache
 /custom/.metadata
 *backoffice_bof.jar
+
+node_modules/

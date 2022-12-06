@@ -20,11 +20,10 @@ INSERT_UPDATE ContentSlotName; name[unique = true]    	; template(uid, $contentC
                              ; SearchBox              	;                                                                        ;                                 ; searchbox
                              ; MiniCart               	;                                                                        ;                                 ; minicart
                              ; NavigationBar          	;                                                                        ;                                 ; navigation
-                             ; Section1					;                                                                        ; 								   ; wide
-                             ; Section2		  			;                                                                        ;            					   ; narrow
-                             ; Section3   				;                                                                        ;  							   ; narrow
-                             ; Section4  				;	                                                                 	 ;              				   ; wide
-                             ; Section5  				;	                                                                 	 ;            				  	   ; narrow
+                             ; Section1					;                                                                        ;JspIncludeComponent			   ; wide
+                             ; Section2		  			;                                                                        ;JspIncludeComponent			   ; wide
+                             ; Section3   				;                                                                        ;JspIncludeComponent			   ; wide
+                             ; Section4  				;	                                                                 	 ;JspIncludeComponent			   ; wide
                              ; Footer                 	;                                                                        ;  			           		   ; footer
                              ; TopHeaderSlot          	;                                                                        ;                                 ; wide
                              ; BottomHeaderSlot       	;                                                                        ;                                 ; wide
@@ -45,4 +44,23 @@ INSERT_UPDATE ContentPage; $contentCV[unique = true]; uid[unique = true]     	; 
                          ;                   ; about			; About Page 	   		   ; AboutPageTemplate 	; about
                          
 
+###############################
+
+INSERT_UPDATE JspIncludeComponent;$contentCV[unique=true];uid[unique=true]		;name			;page		      						                ;actions(uid,$contentCV);&componentRef
+                                 ;			             ;Jumbo		            ;Jumbotron		;/WEB-INF/views/responsive/pages/about/jumbotron.jsp	;			            ;JumbotronComp
+                                 ;			             ;About	                ;About  		;/WEB-INF/views/responsive/pages/about/about.jsp	    ;			            ;AboutComp
+                                 ;			             ;Definition            ;Jumbotron		;/WEB-INF/views/responsive/pages/about/definition.jsp	;			            ;DefinitionComp
+                                 ;			             ;FAQ      	            ;FAQ        	;/WEB-INF/views/responsive/pages/about/faq.jsp	        ;			            ;FAQComp
+
+INSERT_UPDATE ContentSlot; $contentCV[unique = true]; uid[unique = true]                  ; name                             ; cmsComponents(&componentRef)      ; active[default = true]
+                         ;                          ; Section1-AboutPageSlot 		  ; Section1-AboutPageTemplate 	     ; JumbotronComp 		 ; true
+                         ;                          ; Section2-AboutPageSlot 		  ; Section2-AboutPageTemplate 	     ; AboutComp		 ; true
+                         ;                          ; Section3-AboutPageSlot 		  ; Section3-AboutPageTemplate 	     ; DefinitionComp 		 ; true
+                         ;                          ; Section4-AboutPageSlot 		  ; Section4-AboutPageTemplate 	     ; FAQComp			 ; true
+
+INSERT_UPDATE ContentSlotForPage; $contentCV[unique = true]; uid[unique = true]	; position[unique = true]; page(uid, $contentCV)[unique = true][default = 'tugasTrainingPage']; contentSlot(uid, $contentCV)[unique = true]; ; ;
+                                ;                          ; Section1-jumbotron  	; Section1               ;                                                                    ; Section1-AboutPageSlot     		   ; ; ;
+                                ;                          ; Section2-about; Section2               ;                                                                    ; Section2-AboutPageSlot        ; ; ;
+                                ;                          ; Section3-definition	; Section3               ;                                                                    ; Section3-AboutPageSlot        ; ; ;
+                                ;                          ; Section4-faq; Section4               ;                                                                    ; Section4-AboutPageSlot        ; ; ;
 
