@@ -14,7 +14,6 @@
 jalo/
 gensrc/
 bin/
-node_modules/
 **/gensrc/*
 **/classes/*
 **/items.xsd
@@ -34,3 +33,5 @@ node_modules/
 /custom/demogroup3/demogroup3storefront/web/webroot/_ui/responsive/theme-demogroup3/.sass-cache
 /custom/.metadata
 *backoffice_bof.jar
+
+node_modules/
