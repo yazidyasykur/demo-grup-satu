@@ -7,7 +7,7 @@ $jarResourceCms = $config-jarResourceCmsValue
 
 
 INSERT_UPDATE PageTemplate; $contentCV[unique = true]; uid[unique = true]	; name                ; frontendTemplateName     ; restrictedPageTypes(code); active[default = true]
-                          ;                          ; AboutPageTemplate	; About Page Template ; layout/aboutpage	 ; ContentPage
+                          ;                          ; AboutPageTemplate	; About Page Template ; about/aboutPage	 ; ContentPage
 
 
 UPDATE PageTemplate; $contentCV[unique = true]; uid[unique = true]              ; velocityTemplate[translator = de.hybris.platform.commerceservices.impex.impl.FileLoaderValueTranslator]
@@ -24,7 +24,7 @@ INSERT_UPDATE ContentSlotName; name[unique = true]    	; template(uid, $contentC
                              ; Section2		  			;                                                                        ;            					   ; narrow
                              ; Section3   				;                                                                        ;  							   ; narrow
                              ; Section4  				;	                                                                 	 ;              				   ; wide
-			     ; Section5  				;	                                                                 	 ;            				  	   ; narrow
+                             ; Section5  				;	                                                                 	 ;            				  	   ; narrow
                              ; Footer                 	;                                                                        ;  			           		   ; footer
                              ; TopHeaderSlot          	;                                                                        ;                                 ; wide
                              ; BottomHeaderSlot       	;                                                                        ;                                 ; wide
@@ -42,7 +42,7 @@ INSERT_UPDATE ContentSlotForTemplate; $contentCV[unique = true]; uid[unique = tr
                                     ;                          ; PlaceholderContentSlot-AboutPageTemplate ; PlaceholderContentSlot ;                                                                           		; PlaceholderContentSlot                     ; true
 
 INSERT_UPDATE ContentPage; $contentCV[unique = true]; uid[unique = true]     	; name                     ; masterTemplate(uid, $contentCV) 	; label; defaultPage[default = 'true']; approvalStatus(code)[default = 'approved']; homepage[default = 'false']
-                         ;                          ; aboutPage 				; About Page 	   		   ; AboutPageTemplate 				    ; aboutPage
+                         ;                   ; about			; About Page 	   		   ; AboutPageTemplate 	; about
                          
 
 
