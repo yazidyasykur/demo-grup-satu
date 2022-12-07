@@ -4,26 +4,361 @@
 # ImPex for Importing Product Media
 
 # Macros / Replacement Parameter definitions
-$productCatalog=__PRODUCT_CATALOG_NAME__
+$productCatalog = demoProductCatalog
 
-$catalogVersion=catalogversion(catalog(id[default=$productCatalog]),version[default='Staged'])[unique=true,default=$productCatalog]
-$media=@media[translator=de.hybris.platform.impex.jalo.media.MediaDataTranslator]
-$thumbnail=thumbnail(code, $catalogVersion)
-$picture=picture(code, $catalogVersion)
-$thumbnails=thumbnails(code, $catalogVersion)
-$detail=detail(code, $catalogVersion)
-$normal=normal(code, $catalogVersion)
-$others=others(code, $catalogVersion)
-$data_sheet=data_sheet(code, $catalogVersion)
-$medias=medias(code, $catalogVersion)
-$galleryImages=galleryImages(qualifier, $catalogVersion)
-$siteResource=jar:org.demogrupsatu.initialdata.setup.InitialDataSystemSetup&/demogrupsatuinitialdata/import/productCatalogs/$productCatalog
+$catalogVersion = catalogversion(catalog(id[default=$productCatalog]), version[default='Staged'])[unique=true, default=$productCatalog]
+$media = @media[translator=de.hybris.platform.impex.jalo.media.MediaDataTranslator]
+$thumbnail = thumbnail(code, $catalogVersion)
+$picture = picture(code, $catalogVersion)
+$thumbnails = thumbnails(code, $catalogVersion)
+$detail = detail(code, $catalogVersion)
+$normal = normal(code, $catalogVersion)
+$others = others(code, $catalogVersion)
+$data_sheet = data_sheet(code, $catalogVersion)
+$medias = medias(code, $catalogVersion)
+$galleryImages = galleryImages(qualifier, $catalogVersion)
+$siteResource = jar:org.demogrupsatu.initialdata.setup.InitialDataSystemSetup&/demogrupsatuinitialdata/import/sampledata/productCatalogs
 
 # Create Media
-INSERT_UPDATE Media;mediaFormat(qualifier);code[unique=true];$media;mime[default='image/jpeg'];$catalogVersion;folder(qualifier)
+INSERT_UPDATE Media; mediaFormat(qualifier); code[unique = true]                  ; $media                                      ; mime[default = 'image/jpeg']; $catalogVersion; folder(qualifier)
+
+                   ; 1200Wx1200H           ; INTHEBOX-FLIP-Z-90-PICTURE                ; $siteResource/images/INTHEBOX-FLIP-Z-90.jpg      ;                             ;                ; images
+                   ; 1200Wx1200H           ; INTHEBOX-FLIP-Z-100-PICTURE               ; $siteResource/images/INTHEBOX-FLIP-Z-100.jpg     ;                             ;                ; images
+                   ; 1200Wx1200H           ; INTHEBOX-FLIP-Z-120-PICTURE               ; $siteResource/images/INTHEBOX-FLIP-Z-120.jpg     ;                             ;                ; images
+                   ; 1200Wx1200H           ; INTHEBOX-FLIP-Z-140-PICTURE               ; $siteResource/images/INTHEBOX-FLIP-Z-140.jpg     ;                             ;                ; images
+                   ; 1200Wx1200H           ; INTHEBOX-FLIP-Z-160-PICTURE               ; $siteResource/images/INTHEBOX-FLIP-Z-160.jpg     ;                             ;                ; images
+                   ; 1200Wx1200H           ; INTHEBOX-FLIP-Z-180-PICTURE               ; $siteResource/images/INTHEBOX-FLIP-Z-180.jpg     ;                             ;                ; images
+                   ; 1200Wx1200H           ; INTHEBOX-FLIP-Z-200-PICTURE               ; $siteResource/images/INTHEBOX-FLIP-Z-200.jpg     ;                             ;                ; images
+
+                   ; 1200Wx1200H           ; INTHEBOX-X-90-PICTURE                ; $siteResource/images/INTHEBOX-X-90.jpg      ;                             ;                ; images
+                   ; 1200Wx1200H           ; INTHEBOX-X-100-PICTURE               ; $siteResource/images/INTHEBOX-X-100.jpg     ;                             ;                ; images
+                   ; 1200Wx1200H           ; INTHEBOX-X-120-PICTURE               ; $siteResource/images/INTHEBOX-X-120.jpg     ;                             ;                ; images
+                   ; 1200Wx1200H           ; INTHEBOX-X-140-PICTURE               ; $siteResource/images/INTHEBOX-X-140.jpg     ;                             ;                ; images
+                   ; 1200Wx1200H           ; INTHEBOX-X-160-PICTURE               ; $siteResource/images/INTHEBOX-X-160.jpg     ;                             ;                ; images
+                   ; 1200Wx1200H           ; INTHEBOX-X-180-PICTURE               ; $siteResource/images/INTHEBOX-X-180.jpg     ;                             ;                ; images
+                   ; 1200Wx1200H           ; INTHEBOX-X-200-PICTURE               ; $siteResource/images/INTHEBOX-X-200.jpg     ;                             ;                ; images
+                   
+                   ; 1200Wx1200H           ; INTHEBOX-ALPHA-90-PICTURE                ; $siteResource/images/INTHEBOX-ALPHA-90.jpg      ;                             ;                ; images
+                   ; 1200Wx1200H           ; INTHEBOX-ALPHA-100-PICTURE               ; $siteResource/images/INTHEBOX-ALPHA-100.jpg     ;                             ;                ; images
+                   ; 1200Wx1200H           ; INTHEBOX-ALPHA-120-PICTURE               ; $siteResource/images/INTHEBOX-ALPHA-120.jpg     ;                             ;                ; images
+                   ; 1200Wx1200H           ; INTHEBOX-ALPHA-140-PICTURE               ; $siteResource/images/INTHEBOX-ALPHA-140.jpg     ;                             ;                ; images
+                   ; 1200Wx1200H           ; INTHEBOX-ALPHA-160-PICTURE               ; $siteResource/images/INTHEBOX-ALPHA-160.jpg     ;                             ;                ; images
+                   ; 1200Wx1200H           ; INTHEBOX-ALPHA-180-PICTURE               ; $siteResource/images/INTHEBOX-ALPHA-180.jpg     ;                             ;                ; images
+                   ; 1200Wx1200H           ; INTHEBOX-ALPHA-200-PICTURE               ; $siteResource/images/INTHEBOX-ALPHA-200.jpg     ;                             ;                ; images
+                   
+                   ; 1200Wx1200H           ; INTHEBOX-PRO-90-PICTURE                ; $siteResource/images/INTHEBOX-PRO-90.jpg      ;                             ;                ; images
+                   ; 1200Wx1200H           ; INTHEBOX-PRO-100-PICTURE               ; $siteResource/images/INTHEBOX-PRO-100.jpg     ;                             ;                ; images
+                   ; 1200Wx1200H           ; INTHEBOX-PRO-120-PICTURE               ; $siteResource/images/INTHEBOX-PRO-120.jpg     ;                             ;                ; images
+                   ; 1200Wx1200H           ; INTHEBOX-PRO-140-PICTURE               ; $siteResource/images/INTHEBOX-PRO-140.jpg     ;                             ;                ; images
+                   ; 1200Wx1200H           ; INTHEBOX-PRO-160-PICTURE               ; $siteResource/images/INTHEBOX-PRO-160.jpg     ;                             ;                ; images
+                   ; 1200Wx1200H           ; INTHEBOX-PRO-180-PICTURE               ; $siteResource/images/INTHEBOX-PRO-180.jpg     ;                             ;                ; images
+                   ; 1200Wx1200H           ; INTHEBOX-PRO-200-PICTURE               ; $siteResource/images/INTHEBOX-PRO-200.jpg     ;                             ;                ; images
+                   
+                   ; 1200Wx1200H           ; SPACEJAM-90-PICTURE                ; $siteResource/images/SPACEJAM-90.jpg      ;                             ;                ; images
+                   ; 1200Wx1200H           ; SPACEJAM-100-PICTURE               ; $siteResource/images/SPACEJAM-100.jpg     ;                             ;                ; images
+                   ; 1200Wx1200H           ; SPACEJAM-120-PICTURE               ; $siteResource/images/SPACEJAM-120.jpg     ;                             ;                ; images
+                   ; 1200Wx1200H           ; SPACEJAM-140-PICTURE               ; $siteResource/images/SPACEJAM-140.jpg     ;                             ;                ; images
+                   ; 1200Wx1200H           ; SPACEJAM-160-PICTURE               ; $siteResource/images/SPACEJAM-160.jpg     ;                             ;                ; images
+                   ; 1200Wx1200H           ; SPACEJAM-180-PICTURE               ; $siteResource/images/SPACEJAM-180.jpg     ;                             ;                ; images
+                   ; 1200Wx1200H           ; SPACEJAM-200-PICTURE               ; $siteResource/images/SPACEJAM-200.jpg     ;                             ;                ; images
+
+                   ; 1200Wx1200H           ; INTHEBOX-DASH-90-PICTURE                ; $siteResource/images/INTHEBOX-DASH-90.jpg      ;                             ;                ; images
+                   ; 1200Wx1200H           ; INTHEBOX-DASH-100-PICTURE               ; $siteResource/images/INTHEBOX-DASH-100.jpg     ;                             ;                ; images
+                   ; 1200Wx1200H           ; INTHEBOX-DASH-120-PICTURE               ; $siteResource/images/INTHEBOX-DASH-120.jpg     ;                             ;                ; images
+                   ; 1200Wx1200H           ; INTHEBOX-DASH-140-PICTURE               ; $siteResource/images/INTHEBOX-DASH-140.jpg     ;                             ;                ; images
+                   ; 1200Wx1200H           ; INTHEBOX-DASH-160-PICTURE               ; $siteResource/images/INTHEBOX-DASH-160.jpg     ;                             ;                ; images
+                   ; 1200Wx1200H           ; INTHEBOX-DASH-180-PICTURE               ; $siteResource/images/INTHEBOX-DASH-180.jpg     ;                             ;                ; images
+                   ; 1200Wx1200H           ; INTHEBOX-DASH-200-PICTURE               ; $siteResource/images/INTHEBOX-DASH-200.jpg     ;                             ;                ; images
+                   
+                   ; 1200Wx1200H           ; INTHEBOX-101-90-PICTURE                ; $siteResource/images/INTHEBOX-101-90.jpg      ;                             ;                ; images
+                   ; 1200Wx1200H           ; INTHEBOX-101-100-PICTURE               ; $siteResource/images/INTHEBOX-101-100.jpg     ;                             ;                ; images
+                   ; 1200Wx1200H           ; INTHEBOX-101-120-PICTURE               ; $siteResource/images/INTHEBOX-101-120.jpg     ;                             ;                ; images
+                   ; 1200Wx1200H           ; INTHEBOX-101-140-PICTURE               ; $siteResource/images/INTHEBOX-101-140.jpg     ;                             ;                ; images
+                   ; 1200Wx1200H           ; INTHEBOX-101-160-PICTURE               ; $siteResource/images/INTHEBOX-101-160.jpg     ;                             ;                ; images
+                   ; 1200Wx1200H           ; INTHEBOX-101-180-PICTURE               ; $siteResource/images/INTHEBOX-101-180.jpg     ;                             ;                ; images
+                   ; 1200Wx1200H           ; INTHEBOX-101-200-PICTURE               ; $siteResource/images/INTHEBOX-101-200.jpg     ;                             ;                ; images
+                   
+                   ; 1200Wx1200H           ; INTHEBOX-HYBRID-90-PICTURE                ; $siteResource/images/INTHEBOX-HYBRID-90.jpg      ;                             ;                ; images
+                   ; 1200Wx1200H           ; INTHEBOX-HYBRID-100-PICTURE               ; $siteResource/images/INTHEBOX-HYBRID-100.jpg     ;                             ;                ; images
+                   ; 1200Wx1200H           ; INTHEBOX-HYBRID-120-PICTURE               ; $siteResource/images/INTHEBOX-HYBRID-120.jpg     ;                             ;                ; images
+                   ; 1200Wx1200H           ; INTHEBOX-HYBRID-140-PICTURE               ; $siteResource/images/INTHEBOX-HYBRID-140.jpg     ;                             ;                ; images
+                   ; 1200Wx1200H           ; INTHEBOX-HYBRID-160-PICTURE               ; $siteResource/images/INTHEBOX-HYBRID-160.jpg     ;                             ;                ; images
+                   ; 1200Wx1200H           ; INTHEBOX-HYBRID-180-PICTURE               ; $siteResource/images/INTHEBOX-HYBRID-180.jpg     ;                             ;                ; images
+                   ; 1200Wx1200H           ; INTHEBOX-HYBRID-200-PICTURE               ; $siteResource/images/INTHEBOX-HYBRID-200.jpg     ;                             ;                ; images
+                   
+                   ; 1200Wx1200H           ; INTHEBOX-HYBRID-15-90-PICTURE                ; $siteResource/images/INTHEBOX-HYBRID-15-90.jpg      ;                             ;                ; images
+                   ; 1200Wx1200H           ; INTHEBOX-HYBRID-15-100-PICTURE               ; $siteResource/images/INTHEBOX-HYBRID-15-100.jpg     ;                             ;                ; images
+                   ; 1200Wx1200H           ; INTHEBOX-HYBRID-15-120-PICTURE               ; $siteResource/images/INTHEBOX-HYBRID-15-120.jpg     ;                             ;                ; images
+                   ; 1200Wx1200H           ; INTHEBOX-HYBRID-15-140-PICTURE               ; $siteResource/images/INTHEBOX-HYBRID-15-140.jpg     ;                             ;                ; images
+                   ; 1200Wx1200H           ; INTHEBOX-HYBRID-15-160-PICTURE               ; $siteResource/images/INTHEBOX-HYBRID-15-160.jpg     ;                             ;                ; images
+                   ; 1200Wx1200H           ; INTHEBOX-HYBRID-15-180-PICTURE               ; $siteResource/images/INTHEBOX-HYBRID-15-180.jpg     ;                             ;                ; images
+                   ; 1200Wx1200H           ; INTHEBOX-HYBRID-15-200-PICTURE               ; $siteResource/images/INTHEBOX-HYBRID-15-200.jpg     ;                             ;                ; images
+                   
+                   ; 1200Wx1200H           ; KASUR-INTHEBOX-90-PICTURE                ; $siteResource/images/KASUR-INTHEBOX-90.jpg      ;                             ;                ; images
+                   ; 1200Wx1200H           ; KASUR-INTHEBOX-100-PICTURE               ; $siteResource/images/KASUR-INTHEBOX-100.jpg     ;                             ;                ; images
+                   ; 1200Wx1200H           ; KASUR-INTHEBOX-120-PICTURE               ; $siteResource/images/KASUR-INTHEBOX-120.jpg     ;                             ;                ; images
+                   ; 1200Wx1200H           ; KASUR-INTHEBOX-140-PICTURE               ; $siteResource/images/KASUR-INTHEBOX-140.jpg     ;                             ;                ; images
+                   ; 1200Wx1200H           ; KASUR-INTHEBOX-160-PICTURE               ; $siteResource/images/KASUR-INTHEBOX-160.jpg     ;                             ;                ; images
+                   ; 1200Wx1200H           ; KASUR-INTHEBOX-180-PICTURE               ; $siteResource/images/KASUR-INTHEBOX-180.jpg     ;                             ;                ; images
+                   ; 1200Wx1200H           ; KASUR-INTHEBOX-200-PICTURE               ; $siteResource/images/KASUR-INTHEBOX-200.jpg     ;                             ;                ; images
+                   
+                   ; 1200Wx1200H           ; INTHEBOX-PLUS-90-PICTURE                ; $siteResource/images/INTHEBOX-PLUS-90.jpg      ;                             ;                ; images
+                   ; 1200Wx1200H           ; INTHEBOX-PLUS-100-PICTURE               ; $siteResource/images/INTHEBOX-PLUS-100.jpg     ;                             ;                ; images
+                   ; 1200Wx1200H           ; INTHEBOX-PLUS-120-PICTURE               ; $siteResource/images/INTHEBOX-PLUS-120.jpg     ;                             ;                ; images
+                   ; 1200Wx1200H           ; INTHEBOX-PLUS-140-PICTURE               ; $siteResource/images/INTHEBOX-PLUS-140.jpg     ;                             ;                ; images
+                   ; 1200Wx1200H           ; INTHEBOX-PLUS-160-PICTURE               ; $siteResource/images/INTHEBOX-PLUS-160.jpg     ;                             ;                ; images
+                   ; 1200Wx1200H           ; INTHEBOX-PLUS-180-PICTURE               ; $siteResource/images/INTHEBOX-PLUS-180.jpg     ;                             ;                ; images
+                   ; 1200Wx1200H           ; INTHEBOX-PLUS-200-PICTURE               ; $siteResource/images/INTHEBOX-PLUS-200.jpg     ;                             ;                ; images
+                   
+                   ; 1200Wx1200H           ; ORGANIX-90-PICTURE                ; $siteResource/images/ORGANIX-90.jpg      ;                             ;                ; images
+                   ; 1200Wx1200H           ; ORGANIX-100-PICTURE               ; $siteResource/images/ORGANIX-100.jpg     ;                             ;                ; images
+                   ; 1200Wx1200H           ; ORGANIX-120-PICTURE               ; $siteResource/images/ORGANIX-120.jpg     ;                             ;                ; images
+                   ; 1200Wx1200H           ; ORGANIX-140-PICTURE               ; $siteResource/images/ORGANIX-140.jpg     ;                             ;                ; images
+                   ; 1200Wx1200H           ; ORGANIX-160-PICTURE               ; $siteResource/images/ORGANIX-160.jpg     ;                             ;                ; images
+                   ; 1200Wx1200H           ; ORGANIX-180-PICTURE               ; $siteResource/images/ORGANIX-180.jpg     ;                             ;                ; images
+                   ; 1200Wx1200H           ; ORGANIX-200-PICTURE               ; $siteResource/images/ORGANIX-200.jpg     ;                             ;                ; images
+                   
+                   ; 1200Wx1200H           ; KASUR-LIPAT-PICTURE               ; $siteResource/images/KASUR-LIPAT.jpg     ;                             ;                ; images
+                   ; 1200Wx1200H           ; SOFA-3-SEATER-PICTURE             ; $siteResource/images/INTHEBOX-SOFA-3-SEATER.jpg     ;                             ;                ; images
+                   ; 1200Wx1200H           ; SOFA-3-SEATER-BLACK-PICTURE       ; $siteResource/images/INTHEBOX-SOFA-3-SEATER-BLACK.jpg     ;                             ;                ; images
+                   ; 1200Wx1200H           ; SOFA-BED-PICTURE                  ; $siteResource/images/SOFABED-INTHEBOX.jpg     ;                             ;                ; images
+                   ; 1200Wx1200H           ; BANTAL-INTHEBOX-PICTURE           ; $siteResource/images/BANTAL-INTHEBOX.jpg     ;                             ;                ; images
+                   ; 1200Wx1200H           ; GULING-INTHEBOX-PICTURE           ; $siteResource/images/GULING-INTHEBOX.jpg     ;                             ;                ; images
+                   
 
 # Create Media Containers
-INSERT_UPDATE MediaContainer;qualifier[unique=true];$medias;$catalogVersion
-
+INSERT_UPDATE MediaContainer; qualifier[unique = true]                  ; $medias                                                         ; $catalogVersion
+                            
+                            ; INTHEBOX-FLIP-Z-90-MEDIA                  ; INTHEBOX-FLIP-Z-90-PICTURE                                           ;    ;
+                            ; INTHEBOX-FLIP-Z-100-MEDIA                 ; INTHEBOX-FLIP-Z-100-PICTURE                                          ;    ;
+                            ; INTHEBOX-FLIP-Z-120-MEDIA                  ; INTHEBOX-FLIP-Z-120-PICTURE                                          ;    ;
+                            ; INTHEBOX-FLIP-Z-140-MEDIA                  ; INTHEBOX-FLIP-Z-140-PICTURE                                          ;    ;
+                            ; INTHEBOX-FLIP-Z-160-MEDIA                  ; INTHEBOX-FLIP-Z-160-PICTURE                                          ;    ;
+                            ; INTHEBOX-FLIP-Z-180-MEDIA                  ; INTHEBOX-FLIP-Z-180-PICTURE                                          ;    ;
+                            ; INTHEBOX-FLIP-Z-200-MEDIA                  ; INTHEBOX-FLIP-Z-200-PICTURE                                          ;    ;
+                            
+                            ; INTHEBOX-X-90-MEDIA                  ; INTHEBOX-X-90-PICTURE                                           ;    ;
+                            ; INTHEBOX-X-100-MEDIA                 ; INTHEBOX-X-100-PICTURE                                          ;    ;
+                            ; INTHEBOX-X-120-MEDIA                  ; INTHEBOX-X-120-PICTURE                                          ;    ;
+                            ; INTHEBOX-X-140-MEDIA                  ; INTHEBOX-X-140-PICTURE                                          ;    ;
+                            ; INTHEBOX-X-160-MEDIA                  ; INTHEBOX-X-160-PICTURE                                          ;    ;
+                            ; INTHEBOX-X-180-MEDIA                  ; INTHEBOX-X-180-PICTURE                                          ;    ;
+                            ; INTHEBOX-X-200-MEDIA                  ; INTHEBOX-X-200-PICTURE                                          ;    ;
+                            
+                            ; INTHEBOX-ALPHA-90-MEDIA                  ; INTHEBOX-ALPHA-90-PICTURE                                           ;    ;
+                            ; INTHEBOX-ALPHA-100-MEDIA                 ; INTHEBOX-ALPHA-100-PICTURE                                          ;    ;
+                            ; INTHEBOX-ALPHA-120-MEDIA                  ; INTHEBOX-ALPHA-120-PICTURE                                          ;    ;
+                            ; INTHEBOX-ALPHA-140-MEDIA                  ; INTHEBOX-ALPHA-140-PICTURE                                          ;    ;
+                            ; INTHEBOX-ALPHA-160-MEDIA                  ; INTHEBOX-ALPHA-160-PICTURE                                          ;    ;
+                            ; INTHEBOX-ALPHA-180-MEDIA                  ; INTHEBOX-ALPHA-180-PICTURE                                          ;    ;
+                            ; INTHEBOX-ALPHA-200-MEDIA                  ; INTHEBOX-ALPHA-200-PICTURE                                          ;    ;
+                            
+                            ; INTHEBOX-PRO-90-MEDIA                  ; INTHEBOX-PRO-90-PICTURE                                           ;    ;
+                            ; INTHEBOX-PRO-100-MEDIA                 ; INTHEBOX-PRO-100-PICTURE                                          ;    ;
+                            ; INTHEBOX-PRO-120-MEDIA                  ; INTHEBOX-PRO-120-PICTURE                                          ;    ;
+                            ; INTHEBOX-PRO-140-MEDIA                  ; INTHEBOX-PRO-140-PICTURE                                          ;    ;
+                            ; INTHEBOX-PRO-160-MEDIA                  ; INTHEBOX-PRO-160-PICTURE                                          ;    ;
+                            ; INTHEBOX-PRO-180-MEDIA                  ; INTHEBOX-PRO-180-PICTURE                                          ;    ;
+                            ; INTHEBOX-PRO-200-MEDIA                  ; INTHEBOX-PRO-200-PICTURE                                          ;    ;
+                            
+                            ; SPACEJAM-90-MEDIA                  ; SPACEJAM-90-PICTURE                                           ;    ;
+                            ; SPACEJAM-100-MEDIA                 ; SPACEJAM-100-PICTURE                                          ;    ;
+                            ; SPACEJAM-120-MEDIA                  ; SPACEJAM-120-PICTURE                                          ;    ;
+                            ; SPACEJAM-140-MEDIA                  ; SPACEJAM-140-PICTURE                                          ;    ;
+                            ; SPACEJAM-160-MEDIA                  ; SPACEJAM-160-PICTURE                                          ;    ;
+                            ; SPACEJAM-180-MEDIA                  ; SPACEJAM-180-PICTURE                                          ;    ;
+                            ; SPACEJAM-200-MEDIA                  ; SPACEJAM-200-PICTURE                                          ;    ;
+                            
+                            ; INTHEBOX-DASH-90-MEDIA                  ; INTHEBOX-DASH-90-PICTURE                                           ;    ;
+                            ; INTHEBOX-DASH-100-MEDIA                 ; INTHEBOX-DASH-100-PICTURE                                          ;    ;
+                            ; INTHEBOX-DASH-120-MEDIA                  ; INTHEBOX-DASH-120-PICTURE                                          ;    ;
+                            ; INTHEBOX-DASH-140-MEDIA                  ; INTHEBOX-DASH-140-PICTURE                                          ;    ;
+                            ; INTHEBOX-DASH-160-MEDIA                  ; INTHEBOX-DASH-160-PICTURE                                          ;    ;
+                            ; INTHEBOX-DASH-180-MEDIA                  ; INTHEBOX-DASH-180-PICTURE                                          ;    ;
+                            ; INTHEBOX-DASH-200-MEDIA                  ; INTHEBOX-DASH-200-PICTURE                                          ;    ;
+                            
+                            ; INTHEBOX-101-90-MEDIA                  ; INTHEBOX-101-90-PICTURE                                           ;    ;
+                            ; INTHEBOX-101-100-MEDIA                 ; INTHEBOX-101-100-PICTURE                                          ;    ;
+                            ; INTHEBOX-101-120-MEDIA                  ; INTHEBOX-101-120-PICTURE                                          ;    ;
+                            ; INTHEBOX-101-140-MEDIA                  ; INTHEBOX-101-140-PICTURE                                          ;    ;
+                            ; INTHEBOX-101-160-MEDIA                  ; INTHEBOX-101-160-PICTURE                                          ;    ;
+                            ; INTHEBOX-101-180-MEDIA                  ; INTHEBOX-101-180-PICTURE                                          ;    ;
+                            ; INTHEBOX-101-200-MEDIA                  ; INTHEBOX-101-200-PICTURE                                          ;    ;
+                            
+                            ; INTHEBOX-HYBRID-90-MEDIA                  ; INTHEBOX-HYBRID-90-PICTURE                                           ;    ;
+                            ; INTHEBOX-HYBRID-100-MEDIA                 ; INTHEBOX-HYBRID-100-PICTURE                                          ;    ;
+                            ; INTHEBOX-HYBRID-120-MEDIA                  ; INTHEBOX-HYBRID-120-PICTURE                                          ;    ;
+                            ; INTHEBOX-HYBRID-140-MEDIA                  ; INTHEBOX-HYBRID-140-PICTURE                                          ;    ;
+                            ; INTHEBOX-HYBRID-160-MEDIA                  ; INTHEBOX-HYBRID-160-PICTURE                                          ;    ;
+                            ; INTHEBOX-HYBRID-180-MEDIA                  ; INTHEBOX-HYBRID-180-PICTURE                                          ;    ;
+                            ; INTHEBOX-HYBRID-200-MEDIA                  ; INTHEBOX-HYBRID-200-PICTURE                                          ;    ;
+                            
+                            ; INTHEBOX-HYBRID-15-90-MEDIA                  ; INTHEBOX-HYBRID-15-90-PICTURE                                           ;    ;
+                            ; INTHEBOX-HYBRID-15-100-MEDIA                 ; INTHEBOX-HYBRID-15-100-PICTURE                                          ;    ;
+                            ; INTHEBOX-HYBRID-15-120-MEDIA                  ; INTHEBOX-HYBRID-15-120-PICTURE                                          ;    ;
+                            ; INTHEBOX-HYBRID-15-140-MEDIA                  ; INTHEBOX-HYBRID-15-140-PICTURE                                          ;    ;
+                            ; INTHEBOX-HYBRID-15-160-MEDIA                  ; INTHEBOX-HYBRID-15-160-PICTURE                                          ;    ;
+                            ; INTHEBOX-HYBRID-15-180-MEDIA                  ; INTHEBOX-HYBRID-15-180-PICTURE                                          ;    ;
+                            ; INTHEBOX-HYBRID-15-200-MEDIA                  ; INTHEBOX-HYBRID-15-200-PICTURE                                          ;    ;
+                            
+                            ; KASUR-INTHEBOX-90-MEDIA                  ; KASUR-INTHEBOX-90-PICTURE                                           ;    ;
+                            ; KASUR-INTHEBOX-100-MEDIA                 ; KASUR-INTHEBOX-100-PICTURE                                          ;    ;
+                            ; KASUR-INTHEBOX-120-MEDIA                  ; KASUR-INTHEBOX-120-PICTURE                                          ;    ;
+                            ; KASUR-INTHEBOX-140-MEDIA                  ; KASUR-INTHEBOX-140-PICTURE                                          ;    ;
+                            ; KASUR-INTHEBOX-160-MEDIA                  ; KASUR-INTHEBOX-160-PICTURE                                          ;    ;
+                            ; KASUR-INTHEBOX-180-MEDIA                  ; KASUR-INTHEBOX-180-PICTURE                                          ;    ;
+                            ; KASUR-INTHEBOX-200-MEDIA                  ; KASUR-INTHEBOX-200-PICTURE                                          ;    ;
+                            
+                            ; INTHEBOX-PLUS-90-MEDIA                  ; INTHEBOX-PLUS-90-PICTURE                                           ;    ;
+                            ; INTHEBOX-PLUS-100-MEDIA                 ; INTHEBOX-PLUS-100-PICTURE                                          ;    ;
+                            ; INTHEBOX-PLUS-120-MEDIA                  ; INTHEBOX-PLUS-120-PICTURE                                          ;    ;
+                            ; INTHEBOX-PLUS-140-MEDIA                  ; INTHEBOX-PLUS-140-PICTURE                                          ;    ;
+                            ; INTHEBOX-PLUS-160-MEDIA                  ; INTHEBOX-PLUS-160-PICTURE                                          ;    ;
+                            ; INTHEBOX-PLUS-180-MEDIA                  ; INTHEBOX-PLUS-180-PICTURE                                          ;    ;
+                            ; INTHEBOX-PLUS-200-MEDIA                  ; INTHEBOX-PLUS-200-PICTURE                                          ;    ;
+                            
+                            ; ORGANIX-90-MEDIA                  ; ORGANIX-90-PICTURE                                           ;    ;
+                            ; ORGANIX-100-MEDIA                 ; ORGANIX-100-PICTURE                                          ;    ;
+                            ; ORGANIX-120-MEDIA                  ; ORGANIX-120-PICTURE                                          ;    ;
+                            ; ORGANIX-140-MEDIA                  ; ORGANIX-140-PICTURE                                          ;    ;
+                            ; ORGANIX-160-MEDIA                  ; ORGANIX-160-PICTURE                                          ;    ;
+                            ; ORGANIX-180-MEDIA                  ; ORGANIX-180-PICTURE                                          ;    ;
+                            ; ORGANIX-200-MEDIA                  ; ORGANIX-200-PICTURE                                          ;    ;
+                            
+                            ; KASUR-LIPAT-MEDIA                  ; KASUR-LIPAT-PICTURE                                          ;    ;
+                            ; SOFA-3-SEATER-MEDIA                ; SOFA-3-SEATER-PICTURE                                          ;    ;
+                            ; SOFA-3-SEATER-BLACK-MEDIA          ; SOFA-3-SEATER-BLACK-PICTURE                                          ;    ;
+                            ; SOFA-BED-MEDIA                     ; SOFA-BED-PICTURE                                          ;    ;
+                            ; BANTAL-INTHEBOX-MEDIA              ; BANTAL-INTHEBOX-PICTURE                                          ;    ;
+                            ; GULING-INTHEBOX-MEDIA              ; GULING-INTHEBOX-PICTURE                                          ;    ;
+                            
 # Update Products with Media and Media Containers
-UPDATE Product;code[unique=true];$picture;$thumbnail;$detail;$others;$normal;$thumbnails;$galleryImages;$catalogVersion
+UPDATE Product; code[unique = true]     ; $picture                                  ; $galleryImages                    ; $catalogVersion
+              
+              ; INTHEBOX-FLIP-Z-90      ; INTHEBOX-FLIP-Z-90-PICTURE                ; INTHEBOX-FLIP-Z-90-MEDIA;
+              ; INTHEBOX-FLIP-Z-100      ; INTHEBOX-FLIP-Z-100-PICTURE                ; INTHEBOX-FLIP-Z-100-MEDIA;
+              ; INTHEBOX-FLIP-Z-120      ; INTHEBOX-FLIP-Z-120-PICTURE                ; INTHEBOX-FLIP-Z-120-MEDIA;
+              ; INTHEBOX-FLIP-Z-140      ; INTHEBOX-FLIP-Z-140-PICTURE                ; INTHEBOX-FLIP-Z-140-MEDIA;
+              ; INTHEBOX-FLIP-Z-160      ; INTHEBOX-FLIP-Z-160-PICTURE                ; INTHEBOX-FLIP-Z-160-MEDIA;
+              ; INTHEBOX-FLIP-Z-180      ; INTHEBOX-FLIP-Z-180-PICTURE                ; INTHEBOX-FLIP-Z-180-MEDIA;
+              ; INTHEBOX-FLIP-Z-200      ; INTHEBOX-FLIP-Z-200-PICTURE                ; INTHEBOX-FLIP-Z-200-MEDIA;
+              
+              ; INTHEBOX-X-90       ; INTHEBOX-X-90-PICTURE                 ; INTHEBOX-X-90-MEDIA;
+              ; INTHEBOX-X-100      ; INTHEBOX-X-100-PICTURE                ; INTHEBOX-X-100-MEDIA;
+              ; INTHEBOX-X-120      ; INTHEBOX-X-120-PICTURE                ; INTHEBOX-X-120-MEDIA;
+              ; INTHEBOX-X-140      ; INTHEBOX-X-140-PICTURE                ; INTHEBOX-X-140-MEDIA;
+              ; INTHEBOX-X-160      ; INTHEBOX-X-160-PICTURE                ; INTHEBOX-X-160-MEDIA;
+              ; INTHEBOX-X-180      ; INTHEBOX-X-180-PICTURE                ; INTHEBOX-X-180-MEDIA;
+              ; INTHEBOX-X-200      ; INTHEBOX-X-200-PICTURE                ; INTHEBOX-X-200-MEDIA;
+              
+              ; INTHEBOX-ALPHA-90       ; INTHEBOX-ALPHA-90-PICTURE                 ; INTHEBOX-ALPHA-90-MEDIA;
+              ; INTHEBOX-ALPHA-100      ; INTHEBOX-ALPHA-100-PICTURE                ; INTHEBOX-ALPHA-100-MEDIA;
+              ; INTHEBOX-ALPHA-120      ; INTHEBOX-ALPHA-120-PICTURE                ; INTHEBOX-ALPHA-120-MEDIA;
+              ; INTHEBOX-ALPHA-140      ; INTHEBOX-ALPHA-140-PICTURE                ; INTHEBOX-ALPHA-140-MEDIA;
+              ; INTHEBOX-ALPHA-160      ; INTHEBOX-ALPHA-160-PICTURE                ; INTHEBOX-ALPHA-160-MEDIA;
+              ; INTHEBOX-ALPHA-180      ; INTHEBOX-ALPHA-180-PICTURE                ; INTHEBOX-ALPHA-180-MEDIA;
+              ; INTHEBOX-ALPHA-200      ; INTHEBOX-ALPHA-200-PICTURE                ; INTHEBOX-ALPHA-200-MEDIA;
+              
+              ; INTHEBOX-PRO-90       ; INTHEBOX-PRO-90-PICTURE                 ; INTHEBOX-PRO-90-MEDIA;
+              ; INTHEBOX-PRO-100      ; INTHEBOX-PRO-100-PICTURE                ; INTHEBOX-PRO-100-MEDIA;
+              ; INTHEBOX-PRO-120      ; INTHEBOX-PRO-120-PICTURE                ; INTHEBOX-PRO-120-MEDIA;
+              ; INTHEBOX-PRO-140      ; INTHEBOX-PRO-140-PICTURE                ; INTHEBOX-PRO-140-MEDIA;
+              ; INTHEBOX-PRO-160      ; INTHEBOX-PRO-160-PICTURE                ; INTHEBOX-PRO-160-MEDIA;
+              ; INTHEBOX-PRO-180      ; INTHEBOX-PRO-180-PICTURE                ; INTHEBOX-PRO-180-MEDIA;
+              ; INTHEBOX-PRO-200      ; INTHEBOX-PRO-200-PICTURE                ; INTHEBOX-PRO-200-MEDIA;
+              
+              ; SPACE-JAM-COLLECTION-90       ; SPACEJAM-90-PICTURE                 ; SPACEJAM-90-MEDIA;
+              ; SPACE-JAM-COLLECTION-100      ; SPACEJAM-100-PICTURE                ; SPACEJAM-100-MEDIA;
+              ; SPACE-JAM-COLLECTION-120      ; SPACEJAM-120-PICTURE                ; SPACEJAM-120-MEDIA;
+              ; SPACE-JAM-COLLECTION-140      ; SPACEJAM-140-PICTURE                ; SPACEJAM-140-MEDIA;
+              ; SPACE-JAM-COLLECTION-160      ; SPACEJAM-160-PICTURE                ; SPACEJAM-160-MEDIA;
+              ; SPACE-JAM-COLLECTION-180      ; SPACEJAM-180-PICTURE                ; SPACEJAM-180-MEDIA;
+              ; SPACE-JAM-COLLECTION-200      ; SPACEJAM-200-PICTURE                ; SPACEJAM-200-MEDIA;
+              
+              ; SPACE-JAM-PLUSH-TOP-90       ; SPACEJAM-90-PICTURE                 ; SPACEJAM-90-MEDIA;
+              ; SPACE-JAM-PLUSH-TOP-100      ; SPACEJAM-100-PICTURE                ; SPACEJAM-100-MEDIA;
+              ; SPACE-JAM-PLUSH-TOP-120      ; SPACEJAM-120-PICTURE                ; SPACEJAM-120-MEDIA;
+              ; SPACE-JAM-PLUSH-TOP-140      ; SPACEJAM-140-PICTURE                ; SPACEJAM-140-MEDIA;
+              ; SPACE-JAM-PLUSH-TOP-160      ; SPACEJAM-160-PICTURE                ; SPACEJAM-160-MEDIA;
+              ; SPACE-JAM-PLUSH-TOP-180      ; SPACEJAM-180-PICTURE                ; SPACEJAM-180-MEDIA;
+              ; SPACE-JAM-PLUSH-TOP-200      ; SPACEJAM-200-PICTURE                ; SPACEJAM-200-MEDIA;
+
+              ; INTHEBOX-DASH-90       ; INTHEBOX-DASH-90-PICTURE                 ; INTHEBOX-DASH-90-MEDIA;
+              ; INTHEBOX-DASH-100      ; INTHEBOX-DASH-100-PICTURE                ; INTHEBOX-DASH-100-MEDIA;
+              ; INTHEBOX-DASH-120      ; INTHEBOX-DASH-120-PICTURE                ; INTHEBOX-DASH-120-MEDIA;
+              ; INTHEBOX-DASH-140      ; INTHEBOX-DASH-140-PICTURE                ; INTHEBOX-DASH-140-MEDIA;
+              ; INTHEBOX-DASH-160      ; INTHEBOX-DASH-160-PICTURE                ; INTHEBOX-DASH-160-MEDIA;
+              ; INTHEBOX-DASH-180      ; INTHEBOX-DASH-180-PICTURE                ; INTHEBOX-DASH-180-MEDIA;
+              ; INTHEBOX-DASH-200      ; INTHEBOX-DASH-200-PICTURE                ; INTHEBOX-DASH-200-MEDIA;
+              
+              ; INTHEBOX-101-90       ; INTHEBOX-101-90-PICTURE                 ; INTHEBOX-101-90-MEDIA;
+              ; INTHEBOX-101-100      ; INTHEBOX-101-100-PICTURE                ; INTHEBOX-101-100-MEDIA;
+              ; INTHEBOX-101-120      ; INTHEBOX-101-120-PICTURE                ; INTHEBOX-101-120-MEDIA;
+              ; INTHEBOX-101-140      ; INTHEBOX-101-140-PICTURE                ; INTHEBOX-101-140-MEDIA;
+              ; INTHEBOX-101-160      ; INTHEBOX-101-160-PICTURE                ; INTHEBOX-101-160-MEDIA;
+              ; INTHEBOX-101-180      ; INTHEBOX-101-180-PICTURE                ; INTHEBOX-101-180-MEDIA;
+              ; INTHEBOX-101-200      ; INTHEBOX-101-200-PICTURE                ; INTHEBOX-101-200-MEDIA;
+              
+              ; INTHEBOX-HYBRID-90       ; INTHEBOX-HYBRID-90-PICTURE                 ; INTHEBOX-HYBRID-90-MEDIA;
+              ; INTHEBOX-HYBRID-100      ; INTHEBOX-HYBRID-100-PICTURE                ; INTHEBOX-HYBRID-100-MEDIA;
+              ; INTHEBOX-HYBRID-120      ; INTHEBOX-HYBRID-120-PICTURE                ; INTHEBOX-HYBRID-120-MEDIA;
+              ; INTHEBOX-HYBRID-140      ; INTHEBOX-HYBRID-140-PICTURE                ; INTHEBOX-HYBRID-140-MEDIA;
+              ; INTHEBOX-HYBRID-160      ; INTHEBOX-HYBRID-160-PICTURE                ; INTHEBOX-HYBRID-160-MEDIA;
+              ; INTHEBOX-HYBRID-180      ; INTHEBOX-HYBRID-180-PICTURE                ; INTHEBOX-HYBRID-180-MEDIA;
+              ; INTHEBOX-HYBRID-200      ; INTHEBOX-HYBRID-200-PICTURE                ; INTHEBOX-HYBRID-200-MEDIA;
+              
+              ; INTHEBOX-HYBRID-15-90       ; INTHEBOX-HYBRID-15-90-PICTURE                 ; INTHEBOX-HYBRID-15-90-MEDIA;
+              ; INTHEBOX-HYBRID-15-100      ; INTHEBOX-HYBRID-15-100-PICTURE                ; INTHEBOX-HYBRID-15-100-MEDIA;
+              ; INTHEBOX-HYBRID-15-120      ; INTHEBOX-HYBRID-15-120-PICTURE                ; INTHEBOX-HYBRID-15-120-MEDIA;
+              ; INTHEBOX-HYBRID-15-140      ; INTHEBOX-HYBRID-15-140-PICTURE                ; INTHEBOX-HYBRID-15-140-MEDIA;
+              ; INTHEBOX-HYBRID-15-160      ; INTHEBOX-HYBRID-15-160-PICTURE                ; INTHEBOX-HYBRID-15-160-MEDIA;
+              ; INTHEBOX-HYBRID-15-180      ; INTHEBOX-HYBRID-15-180-PICTURE                ; INTHEBOX-HYBRID-15-180-MEDIA;
+              ; INTHEBOX-HYBRID-15-200      ; INTHEBOX-HYBRID-15-200-PICTURE                ; INTHEBOX-HYBRID-15-200-MEDIA;
+              
+              ; KASUR-INTHEBOX-90       ; KASUR-INTHEBOX-90-PICTURE                 ; KASUR-INTHEBOX-90-MEDIA;
+              ; KASUR-INTHEBOX-100      ; KASUR-INTHEBOX-100-PICTURE                ; KASUR-INTHEBOX-100-MEDIA;
+              ; KASUR-INTHEBOX-120      ; KASUR-INTHEBOX-120-PICTURE                ; KASUR-INTHEBOX-120-MEDIA;
+              ; KASUR-INTHEBOX-140      ; KASUR-INTHEBOX-140-PICTURE                ; KASUR-INTHEBOX-140-MEDIA;
+              ; KASUR-INTHEBOX-160      ; KASUR-INTHEBOX-160-PICTURE                ; KASUR-INTHEBOX-160-MEDIA;
+              ; KASUR-INTHEBOX-180      ; KASUR-INTHEBOX-180-PICTURE                ; KASUR-INTHEBOX-180-MEDIA;
+              ; KASUR-INTHEBOX-200      ; KASUR-INTHEBOX-200-PICTURE                ; KASUR-INTHEBOX-200-MEDIA;
+              
+              ; INTHEBOX-PLUS-90       ; INTHEBOX-PLUS-90-PICTURE                 ; INTHEBOX-PLUS-90-MEDIA;
+              ; INTHEBOX-PLUS-100      ; INTHEBOX-PLUS-100-PICTURE                ; INTHEBOX-PLUS-100-MEDIA;
+              ; INTHEBOX-PLUS-120      ; INTHEBOX-PLUS-120-PICTURE                ; INTHEBOX-PLUS-120-MEDIA;
+              ; INTHEBOX-PLUS-140      ; INTHEBOX-PLUS-140-PICTURE                ; INTHEBOX-PLUS-140-MEDIA;
+              ; INTHEBOX-PLUS-160      ; INTHEBOX-PLUS-160-PICTURE                ; INTHEBOX-PLUS-160-MEDIA;
+              ; INTHEBOX-PLUS-180      ; INTHEBOX-PLUS-180-PICTURE                ; INTHEBOX-PLUS-180-MEDIA;
+              ; INTHEBOX-PLUS-200      ; INTHEBOX-PLUS-200-PICTURE                ; INTHEBOX-PLUS-200-MEDIA;
+              
+              ; ORGANIX-HYBRID-90       ; ORGANIX-90-PICTURE                 ; ORGANIX-90-MEDIA;
+              ; ORGANIX-HYBRID-100      ; ORGANIX-100-PICTURE                ; ORGANIX-100-MEDIA;
+              ; ORGANIX-HYBRID-120      ; ORGANIX-120-PICTURE                ; ORGANIX-120-MEDIA;
+              ; ORGANIX-HYBRID-140      ; ORGANIX-140-PICTURE                ; ORGANIX-140-MEDIA;
+              ; ORGANIX-HYBRID-160      ; ORGANIX-160-PICTURE                ; ORGANIX-160-MEDIA;
+              ; ORGANIX-HYBRID-180      ; ORGANIX-180-PICTURE                ; ORGANIX-180-MEDIA;
+              ; ORGANIX-HYBRID-200      ; ORGANIX-200-PICTURE                ; ORGANIX-200-MEDIA;
+              
+              ; ORGANIX-LITE-90       ; ORGANIX-90-PICTURE                 ; ORGANIX-90-MEDIA;
+              ; ORGANIX-LITE-100      ; ORGANIX-100-PICTURE                ; ORGANIX-100-MEDIA;
+              ; ORGANIX-LITE-120      ; ORGANIX-120-PICTURE                ; ORGANIX-120-MEDIA;
+              ; ORGANIX-LITE-140      ; ORGANIX-140-PICTURE                ; ORGANIX-140-MEDIA;
+              ; ORGANIX-LITE-160      ; ORGANIX-160-PICTURE                ; ORGANIX-160-MEDIA;
+              ; ORGANIX-LITE-180      ; ORGANIX-180-PICTURE                ; ORGANIX-180-MEDIA;
+              ; ORGANIX-LITE-200      ; ORGANIX-200-PICTURE                ; ORGANIX-200-MEDIA;
+
+              ; ORGANIX-PLUSH-90       ; ORGANIX-90-PICTURE                 ; ORGANIX-90-MEDIA;
+              ; ORGANIX-PLUSH-100      ; ORGANIX-100-PICTURE                ; ORGANIX-100-MEDIA;
+              ; ORGANIX-PLUSH-120      ; ORGANIX-120-PICTURE                ; ORGANIX-120-MEDIA;
+              ; ORGANIX-PLUSH-140      ; ORGANIX-140-PICTURE                ; ORGANIX-140-MEDIA;
+              ; ORGANIX-PLUSH-160      ; ORGANIX-160-PICTURE                ; ORGANIX-160-MEDIA;
+              ; ORGANIX-PLUSH-180      ; ORGANIX-180-PICTURE                ; ORGANIX-180-MEDIA;
+              ; ORGANIX-PLUSH-200      ; ORGANIX-200-PICTURE                ; ORGANIX-200-MEDIA;
+              
+              ; KASUR-LIPAT-80         ; KASUR-LIPAT-PICTURE                ; KASUR-LIPAT-MEDIA;
+              ; SOFA-3-SEATER          ; SOFA-3-SEATER-PICTURE              ; SOFA-3-SEATER-MEDIA;
+              ; SOFA-3-SEATER-BLACK    ; SOFA-3-SEATER-BLACK-PICTURE        ; SOFA-3-SEATER-BLACK-MEDIA;
+              ; SOFA-BED-100           ; SOFA-BED-PICTURE                   ; SOFA-BED-MEDIA;
+              ; BANTAL-INTHEBOX        ; BANTAL-INTHEBOX-PICTURE            ; BANTAL-INTHEBOX-MEDIA;
+              ; GULING-INTHEBOX        ; GULING-INTHEBOX-PICTURE            ; GULING-INTHEBOX-MEDIA;
+ 
