@@ -16,7 +16,11 @@
 	<c:otherwise>
 		<%-- jquery --%>
 		<script src="${commonResourcePathHtml}/js/jquery-3.5.1.min.js"></script>
-		
+
+		<%-- slick --%>
+        <script src="${commonResourcePathHtml}/js/slick.js"></script>
+        <script src="${commonResourcePathHtml}/js/slick.min.js"></script>
+
 		<%-- plugins --%>
 
 		<script src="${commonResourcePathHtml}/js/enquire.min.js"></script>
@@ -81,6 +85,8 @@
 		<script src="${commonResourcePathHtml}/js/acc.consent.js"></script>
 		<script src="${commonResourcePathHtml}/js/acc.cookienotification.js"></script>
 		<script src="${commonResourcePathHtml}/js/acc.closeaccount.js"></script>
+		<script src="${commonResourcePathHtml}/js/acc.banner-carousel.js"></script>
+
 
 		<script src="${commonResourcePathHtml}/js/acc.csv-import.js"></script>
 
