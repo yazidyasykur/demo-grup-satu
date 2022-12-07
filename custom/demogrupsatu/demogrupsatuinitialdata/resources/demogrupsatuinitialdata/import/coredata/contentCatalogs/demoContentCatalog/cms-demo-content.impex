@@ -1,0 +1,242 @@
+# -----------------------------------------------------------------------
+# Copyright (c) 2019 SAP SE or an SAP affiliate company. All rights reserved.
+# -----------------------------------------------------------------------
+#
+# Import the CMS content for the site
+#
+$contentCatalog=demoContentCatalog
+$contentCV=catalogVersion(CatalogVersion.catalog(Catalog.id[default=$contentCatalog]),CatalogVersion.version[default=Staged])[default=$contentCatalog:Staged]
+
+# Import modulegen config properties into impex macros
+UPDATE GenericItem[processor=de.hybris.platform.commerceservices.impex.impl.ConfigPropertyImportProcessor];pk[unique=true]
+$jarResourceCms=$config-jarResourceCmsValue
+
+# Create PageTemplates
+# These define the layout for pages
+# "FrontendTemplateName" is used to define the JSP that should be used to render the page for pages with multiple possible layouts.
+# "RestrictedPageTypes" is used to restrict templates to page types
+INSERT_UPDATE PageTemplate;$contentCV[unique=true];uid[unique=true];name;frontendTemplateName;restrictedPageTypes(code);active[default=true]
+                          ;;LandingPage2Template;Landing Page 2 Template;layout/landingLayout2Page;CategoryPage,ContentPage
+
+
+# Add Velocity templates that are in the CMS Cockpit. These give a better layout for editing pages
+# The FileLoaderValueTranslator loads a File into a String property. The templates could also be inserted in-line in this file.
+UPDATE PageTemplate;$contentCV[unique=true];uid[unique=true];velocityTemplate[translator=de.hybris.platform.commerceservices.impex.impl.FileLoaderValueTranslator]
+                 ;;LandingPage2Template      ;$jarResourceCms/structure-view/structure_landingPage2Template.vm
+
+
+INSERT_UPDATE ContentSlotName;name[unique=true];template(uid,$contentCV)[unique=true][default='LandingPage2Template'];validComponentTypes(code);compTypeGroup(code)
+                             ;SiteLogo;;;logo
+                             ;HeaderLinks;;;headerlinks
+                             ;SearchBox;;;searchbox
+                             ;MiniCart;;;minicart
+                             ;NavigationBar;;;navigation
+                             ;Section1;;;wide
+                             ;Section2A;;;wide
+                             ;Section2B;;;wide
+                             ;Section3A;;;wide
+                             ;Section3B;;;narrow
+                             ;Section3C;;;narrow
+                             ;Section4;;;narrow
+                             ;Section5;;;wide
+                             ;Section6;;;wide
+                             ;Section7;;;wide
+                             ;Section8;;;wide
+                             ;Section9;;;wide
+                             ;Footer;;;footer
+                             ;TopHeaderSlot;;;wide
+                             ;BottomHeaderSlot;;;wide
+                             ;PlaceholderContentSlot;;;
+
+
+# Create Content Slots
+INSERT_UPDATE ContentSlot;$contentCV[unique=true];uid[unique=true];name;active
+                         ;;SiteLogoSlot;Default Site Logo Slot;true
+                         ;;HomepageNavLinkSlot;Default Homepage Link;true
+                         ;;MiniCartSlot;Mini Cart;true
+                         ;;NavigationBarSlot;Navigation Bar;true
+                         ;;TabsSlot;Tabs;true
+                         ;;WideContentSlot;Wide Content;true
+                         ;;TopContentSlot;Top Content;true
+                         ;;MiddleContentSlot;Middle Content;true
+                         ;;BottomContentSlot;Bottom Content;true
+                         ;;SideContentSlot;Side Content;true
+                         ;;FeatureContentSlot;Feature Content;true
+                         ;;FooterSlot;Footer;true
+                         ;;HeaderLinksSlot;Header links;true
+                         ;;SearchBoxSlot;Search Box;true
+                         ;;VariantSelectorSlot;Variant Selector;true
+                         ;;AddToCartSlot;Add To Cart;true
+                         ;;UpSellingSlot;Up Selling;true
+                         ;;CrossSellingSlot;Cross Selling;true
+                         ;;TopHeaderSlot;Top Header;true
+                         ;;BottomHeaderSlot;Bottom Header;true
+                         ;;ProductLeftRefinements;Refinements;true
+                         ;;ProductListSlot;Product List;true
+                         ;;ProductGridSlot;Product Grid;true
+                         ;;SearchResultsListSlot;Search Result List;true
+                         ;;SearchResultsGridSlot;Search Result Grid;true
+                         ;;LeftContentSlot;Left Content Slot;true
+                         ;;RightContentSlot;Right Content Slot;true
+                         ;;CenterContentSlot;Center Content Slot;true
+                         ;;CenterLeftContentSlot;Center Left Content Slot;true
+                         ;;CenterRightContentSlot;Center Right Content Slot;true
+                         ;;EmptyCartMiddleContent;Empty Cart Middle Content;true
+                         ;;PlaceholderContentSlot;Placeholder for Addon tag files;true
+
+
+
+
+INSERT_UPDATE ContentSlotForTemplate;$contentCV[unique=true];uid[unique=true];position[unique=true];pageTemplate(uid,$contentCV)[unique=true][default='LandingPage2Template'];contentSlot(uid,$contentCV)[unique=true];allowOverwrite
+                                    ;;SiteLogo-LandingPage2;SiteLogo;;SiteLogoSlot;true
+                                    ;;HomepageLink-LandingPage2;HomepageNavLink;;HomepageNavLinkSlot;true
+                                    ;;NavigationBar-LandingPage2;NavigationBar;;NavigationBarSlot;true
+                                    ;;MiniCart-LandingPage2;MiniCart;;MiniCartSlot;true
+                                    ;;Footer-LandingPage2;Footer;;FooterSlot;true
+                                    ;;HeaderLinks-LandingPage2;HeaderLinks;;HeaderLinksSlot;true
+                                    ;;SearchBox-LandingPage2;SearchBox;;SearchBoxSlot;true
+                                    ;;TopHeaderSlot-LandingPage2;TopHeaderSlot;;TopHeaderSlot;true
+                                    ;;BottomHeaderSlot-LandingPage2;BottomHeaderSlot;;BottomHeaderSlot;true
+                                    ;;PlaceholderContentSlot-LandingPage2;PlaceholderContentSlot;;PlaceholderContentSlot;true
+
+
+# Create Content Pages
+
+# Site-wide Homepage
+INSERT_UPDATE ContentPage;$contentCV[unique=true];uid[unique=true];name;masterTemplate(uid,$contentCV);label;defaultPage[default='true'];approvalStatus(code)[default='approved'];homepage[default='true']
+                         ;;homepage;Homepage;LandingPage2Template;homepage
+
+
+# Preview Image for use in the CMS Cockpit for special ContentPages
+INSERT_UPDATE Media;$contentCV[unique=true];code[unique=true];mime;realfilename;@media[translator=de.hybris.platform.impex.jalo.media.MediaDataTranslator][forceWrite=true]
+                   ;;ContentPageModel__function_preview;text/gif;ContentPageModel__function_preview.gif;$jarResourceCms/preview-images/ContentPageModel__function_preview.gif
+
+# Functional Content Pages
+INSERT_UPDATE ContentPage;$contentCV[unique=true];uid[unique=true];name;masterTemplate(uid,$contentCV);label;defaultPage[default='true'];approvalStatus(code)[default='approved'];homepage[default='false'];previewImage(code, $contentCV)[default='ContentPageModel__function_preview']
+                         ;;multiStepCheckoutSummaryPage;Multi Checkout Summary Page;MultiStepCheckoutSummaryPageTemplate;multiStepCheckoutSummary
+                         ;;orderConfirmationPage;Order Confirmation Page;OrderConfirmationPageTemplate;orderConfirmation
+                         ;;cartPage;Cart Page;CartPageTemplate;cart
+                         ;;search;Search Results Page;SearchResultsListPageTemplate;search
+                         ;;address-book;Address Book Page;AccountPageTemplate;address-book
+                         ;;add-edit-address;Add Edit Address Page;AccountPageTemplate;add-edit-address
+                         ;;payment-details;Payment Details Page;AccountPageTemplate;payment-details
+                         ;;order;Order Details Page;AccountPageTemplate;order
+                         ;;orders;Order History Page;AccountPageTemplate;orders
+                         ;;storefinderPage;StoreFinder Page;StoreFinderPageTemplate;storefinder
+                         ;;checkout-login;Checkout-Login Page;CheckoutLoginPageTemplate;checkout-login
+                         ;;login;Login Page;LoginPageTemplate;login
+                         ;;notFound;Not Found Page;ErrorPageTemplate;notFound
+                         ;;searchEmpty;Search Results Empty Page;SearchResultsEmptyPageTemplate;searchEmpty
+                         ;;updatePassword;Update Forgotten Password Page;AccountPageTemplate;updatePassword
+                         ;;update-profile;Update Profile Page;AccountPageTemplate;update-profile
+                         ;;update-email;Update Email Page;AccountPageTemplate;update-email
+                         ;;consents;Consnet Management Page;AccountPageTemplate;consents
+                         ;;close-account;Close Account Page;AccountPageTemplate;close-account
+
+# Simple Content Pages
+INSERT_UPDATE ContentPage;$contentCV[unique=true];uid[unique=true];name;masterTemplate(uid,$contentCV);label;defaultPage[default='true'];approvalStatus(code)[default='approved'];homepage[default='false']
+                         ;;faq;Frequently Asked Questions FAQ Page;ContentPage1Template;/faq
+
+INSERT_UPDATE ContentPage;$contentCV[unique=true];uid[unique=true];name;masterTemplate(uid,$contentCV);label;defaultPage[default='true'];approvalStatus(code)[default='approved'];homepage[default='false']
+                         ;;orderExpired;Order Expired Page;ContentPage1Template;/orderExpired
+
+INSERT_UPDATE ContentPage;$contentCV[unique=true];uid[unique=true];name;masterTemplate(uid,$contentCV);label;defaultPage[default='true'];approvalStatus(code)[default='approved'];homepage[default='false']
+                         ;;termsAndConditions;Terms and Conditions Page;ContentPage1Template;/termsAndConditions
+
+# Product Details Page
+INSERT_UPDATE ProductPage;$contentCV[unique=true];uid[unique=true];name;masterTemplate(uid,$contentCV);defaultPage;approvalStatus(code)[default='approved']
+                         ;;productDetails;Product Details;ProductDetailsPageTemplate;true;
+
+# Category Pages
+INSERT_UPDATE CategoryPage;$contentCV[unique=true];uid[unique=true];name;masterTemplate(uid,$contentCV);defaultPage;approvalStatus(code)[default='approved']
+                          ;;productList;Product List;ProductListPageTemplate;true;
+                          ;;productGrid;Product Grid;ProductGridPageTemplate;false;
+                          ;;category;Default Category Page;CategoryPageTemplate;false;
+
+############################## above is the desktop data, below is the responsive data ###########################################
+
+# Create PageTemplates
+# These define the layout for pages
+# "FrontendTemplateName" is used to define the JSP that should be used to render the page for pages with multiple possible layouts.
+# "RestrictedPageTypes" is used to restrict templates to page types
+INSERT_UPDATE PageTemplate;$contentCV[unique=true];uid[unique=true];name;frontendTemplateName;restrictedPageTypes(code);active[default=true]
+                          ;;OrderConfirmationPageTemplate;Order Confirmation Page Template;checkout/checkoutConfirmationLayoutPage;ContentPage
+# Templates without a frontendTemplateName
+                          ;;QuickOrderPageTemplate;Quick Order Page Template;;ContentPage;false;
+
+# Add Velocity templates that are in the CMS Cockpit. These give a better layout for editing pages
+# The FileLoaderValueTranslator loads a File into a String property. The templates could also be inserted in-line in this file.
+UPDATE PageTemplate;$contentCV[unique=true];uid[unique=true];velocityTemplate[translator=de.hybris.platform.commerceservices.impex.impl.FileLoaderValueTranslator]
+                   ;;QuickOrderPageTemplate         ;$jarResourceCms/structure-view/structure_quickOrderPageTemplate.vm
+
+INSERT_UPDATE ContentPage;$contentCV[unique=true];uid[unique=true];name;masterTemplate(uid,$contentCV);label;defaultPage[default='true'];approvalStatus(code)[default='approved'];homepage[default='false'];previewImage(code, $contentCV)[default='ContentPageModel__function_preview']
+                         ;;importCSVSavedCartPage;Import CSV as Saved Cart Page;QuickOrderPageTemplate;importCSVSavedCartPage
+                         ;;savedCartDetailsPage;Saved Cart Details Page;AccountPageTemplate;savedCartDetailsPage
+                         ;;saved-carts;Saved Carts Page;AccountPageTemplate;saved-carts
+                         ;;quickOrderPage;Quick Order Page;QuickOrderPageTemplate;quickOrderPage
+
+# Quick Order Page Template
+INSERT_UPDATE ContentSlotName;name[unique=true];template(uid,$contentCV)[unique=true][default='QuickOrderPageTemplate'];validComponentTypes(code);compTypeGroup(code)
+                             ;SiteLogo;;;logo
+                             ;HeaderLinks;;;headerlinks
+                             ;SearchBox;;;searchbox
+                             ;MiniCart;;;minicart
+                             ;NavigationBar;;;navigation
+                             ;Footer;;;footer
+                             ;TopHeaderSlot;;;wide
+                             ;BottomHeaderSlot;;;wide
+                             ;TopContent;;;wide
+                             ;PlaceholderContentSlot;;;
+
+INSERT_UPDATE ContentSlotForTemplate;$contentCV[unique=true];uid[unique=true];position[unique=true];pageTemplate(uid,$contentCV)[unique=true][default='QuickOrderPageTemplate'];contentSlot(uid,$contentCV)[unique=true];allowOverwrite
+                                    ;;SiteLogo-QuickOrderPage;SiteLogo;;SiteLogoSlot;true
+                                    ;;HomepageLink-QuickOrderPage;HomepageNavLink;;HomepageNavLinkSlot;true
+                                    ;;NavigationBar-QuickOrderPage;NavigationBar;;NavigationBarSlot;true
+                                    ;;MiniCart-QuickOrderPage;MiniCart;;MiniCartSlot;true
+                                    ;;Footer-QuickOrderPage;Footer;;FooterSlot;true
+                                    ;;HeaderLinks-QuickOrderPage;HeaderLinks;;HeaderLinksSlot;true
+                                    ;;SearchBox-QuickOrderPage;SearchBox;;SearchBoxSlot;true
+                                    ;;TopHeaderSlot-QuickOrderPage;TopHeaderSlot;;TopHeaderSlot;true
+                                    ;;BottomHeaderSlot-QuickOrderPage;BottomHeaderSlot;;BottomHeaderSlot;true
+                                    ;;PlaceholderContentSlot-QuickOrderPage;PlaceholderContentSlot;;PlaceholderContentSlot;true
+
+### Demo Page Start
+INSERT_UPDATE PageTemplate;$contentCV[unique=true];uid[unique=true];name;frontendTemplateName;restrictedPageTypes(code);active[default=true]
+                          ;;DemoPageTemplate;Demo Static Page Template;demo/demoPage;ContentPage
+
+# Add Velocity templates that are in the CMS Cockpit. These give a better layout for editing pages
+# The FileLoaderValueTranslator loads a File into a String property. The templates could also be inserted in-line in this file.
+UPDATE PageTemplate;$contentCV[unique=true];uid[unique=true];velocityTemplate[translator=de.hybris.platform.commerceservices.impex.impl.FileLoaderValueTranslator]
+                   ;;DemoPageTemplate;$jarResourceCms/structure-view/structure_demoPageTemplate.vm
+
+INSERT_UPDATE ContentSlotName;name[unique=true];template(uid,$contentCV)[unique=true][default='DemoPageTemplate'];validComponentTypes(code);compTypeGroup(code)
+                             ;SiteLogo;;;logo
+                             ;HeaderLinks;;;headerlinks
+                             ;SearchBox;;;searchbox
+                             ;MiniCart;;;minicart
+                             ;NavigationBar;;;navigation
+                             ;MiddleContent;;CMSParagraphComponent,SimpleResponsiveBannerComponent
+                             ;BottomContent;;;wide
+                             ;SideContent;;;narrow
+                             ;Footer;;;footer
+                             ;TopHeaderSlot;;;wide
+                             ;BottomHeaderSlot;;;wide
+                             ;PlaceholderContentSlot;;;
+
+# Bind Content Slots to Page Templates
+INSERT_UPDATE ContentSlotForTemplate;$contentCV[unique=true];uid[unique=true];position[unique=true];pageTemplate(uid,$contentCV)[unique=true][default='DemoPageTemplate'];contentSlot(uid,$contentCV)[unique=true];allowOverwrite
+                                    ;;SiteLogo-DemoPage;SiteLogo;;SiteLogoSlot;true
+                                    ;;HomepageLink-DemoPage;HomepageNavLink;;HomepageNavLinkSlot;true
+                                    ;;NavigationBar-DemoPage;NavigationBar;;NavigationBarSlot;true
+                                    ;;MiniCart-DemoPage;MiniCart;;MiniCartSlot;true
+                                    ;;Footer-DemoPage;Footer;;FooterSlot;true
+                                    ;;HeaderLinks-DemoPage;HeaderLinks;;HeaderLinksSlot;true
+                                    ;;SearchBox-DemoPage;SearchBox;;SearchBoxSlot;true
+                                    ;;TopHeaderSlot-DemoPage;TopHeaderSlot;;TopHeaderSlot;true
+                                    ;;BottomHeaderSlot-DemoPage;BottomHeaderSlot;;BottomHeaderSlot;true
+                                    ;;PlaceholderContentSlot-DemoPage;PlaceholderContentSlot;;PlaceholderContentSlot;true
+
+# Simple Content Pages
+INSERT_UPDATE ContentPage;$contentCV[unique=true];uid[unique=true];name;masterTemplate(uid,$contentCV);label;defaultPage[default='true'];approvalStatus(code)[default='approved'];homepage[default='false']
+                         ;;demo-page;Demo Page;DemoPageTemplate;demo-page
+                         ;;testing-page;Testing Page;DemoPageTemplate;testing-page
