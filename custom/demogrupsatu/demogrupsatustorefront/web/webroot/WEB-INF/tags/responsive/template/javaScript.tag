@@ -18,6 +18,7 @@
 		<script src="${commonResourcePathHtml}/js/jquery-3.5.1.min.js"></script>
 		
 		<%-- plugins --%>
+
 		<script src="${commonResourcePathHtml}/js/enquire.min.js"></script>
 		<script src="${commonResourcePathHtml}/js/Imager.min.js"></script>
 		<script src="${commonResourcePathHtml}/js/purify.min.js"></script>
@@ -37,7 +38,7 @@
 		<script src="${commonResourcePathHtml}/js/jquery.slideviewer.custom.1.2.js"></script>
 		
 		<%-- Custom ACC JS --%>
-		
+		<script src="${commonResourcePathHtml}/js/acc.about.js"></script>
 		<script src="${commonResourcePathHtml}/js/acc.address.js"></script>
 		<script src="${commonResourcePathHtml}/js/acc.autocomplete.js"></script>
 		<script src="${commonResourcePathHtml}/js/acc.carousel.js"></script>
