@@ -10,7 +10,7 @@
 $lang=id
 
 # Create Countries
-UPDATE Country;isocode[unique=true];name[lang=$lang]`
+UPDATE Country;isocode[unique=true];name[lang=$lang]
  ;AD;"Andorra"
  ;AE;"United Arab Emirates"
  ;AF;"Afghanistan"
