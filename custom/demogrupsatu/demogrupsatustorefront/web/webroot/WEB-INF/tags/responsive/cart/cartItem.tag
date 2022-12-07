@@ -74,104 +74,11 @@
 
                 <div class="item__code">${productCodeHtml}</div>
 
-                <%-- availability --%>
-                <div class="item__stock">
-                    <c:set var="entryStock" value="${entry.product.stock.stockLevelStatus.code}"/>
-                    <c:forEach items="${entry.product.baseOptions}" var="option">
-                        <c:if test="${not empty option.selected and option.selected.url eq entry.product.url}">
-                            <c:forEach items="${option.selected.variantOptionQualifiers}" var="selectedOption">
-                                <div>
-                                    <strong>${fn:escapeXml(selectedOption.name)}:</strong>
-                                    <span>${fn:escapeXml(selectedOption.value)}</span>
-                                </div>
-                                <c:set var="entryStock" value="${option.selected.stock.stockLevelStatus.code}"/>
-                            </c:forEach>
-                        </c:if>
-                    </c:forEach>
-
-                    <div>
-                        <c:choose>
-                            <c:when test="${not empty entryStock and entryStock ne 'outOfStock' or entry.product.multidimensional}">
-                                <span class="stock"><spring:theme code="product.variants.in.stock"/></span>
-                            </c:when>
-                            <c:otherwise>
-                                <span class="out-of-stock"><spring:theme code="product.variants.out.of.stock"/></span>
-                            </c:otherwise>
-                        </c:choose>
-                    </div>
+                <%-- price --%>
+                <div class="item__price">
+                    <format:price priceData="${entry.basePrice}" displayFreeForZero="true"/>
                 </div>
 
-                <c:if test="${ycommerce:doesPotentialPromotionExistForOrderEntryOrOrderEntryGroup(cartData, entry)}">
-                    <c:forEach items="${cartData.potentialProductPromotions}" var="promotion">
-                        <c:set var="displayed" value="false"/>
-                        <c:forEach items="${promotion.consumedEntries}" var="consumedEntry">
-                            <c:if test="${not displayed && ycommerce:isConsumedByEntry(consumedEntry,entry) && not empty promotion.description}">
-                                <c:set var="displayed" value="true"/>
-
-                                    <div class="promo">
-                                         <ycommerce:testId code="cart_potentialPromotion_label">
-                                             ${ycommerce:sanitizeHTML(promotion.description)}
-                                         </ycommerce:testId>
-                                    </div>
-                            </c:if>
-                        </c:forEach>
-                    </c:forEach>
-                </c:if>
-                <c:if test="${ycommerce:doesAppliedPromotionExistForOrderEntryOrOrderEntryGroup(cartData, entry)}">
-                    <c:forEach items="${cartData.appliedProductPromotions}" var="promotion">
-                        <c:set var="displayed" value="false"/>
-                        <c:forEach items="${promotion.consumedEntries}" var="consumedEntry">
-                            <c:if test="${not displayed && ycommerce:isConsumedByEntry(consumedEntry,entry) }">
-                                <c:set var="displayed" value="true"/>
-                                <div class="promo">
-                                    <ycommerce:testId code="cart_appliedPromotion_label">
-                                        ${ycommerce:sanitizeHTML(promotion.description)}
-                                    </ycommerce:testId>
-                                </div>
-                            </c:if>
-                        </c:forEach>
-                    </c:forEach>
-                </c:if>
-
-                <c:if test="${entry.product.configurable}">
-                    <div class="hidden-xs hidden-sm">
-                        <spring:url value="/cart/{/entryNumber}/configuration/{/configuratorType}" var="entryConfigUrl" htmlEscape="false">
-                            <spring:param name="entryNumber"  value="${entry.entryNumber}"/>
-                            <spring:param name="configuratorType"  value="${entry.configurationInfos[0].configuratorType}" />
-                        </spring:url>
-                        <div class="item__configurations">
-                            <c:forEach var="config" items="${entry.configurationInfos}">
-                                <c:set var="style" value=""/>
-                                <c:if test="${config.status eq errorStatus}">
-                                    <c:set var="style" value="color:red"/>
-                                </c:if>
-                                <div class="item__configuration--entry" style="${style}">
-                                    <div class="row">
-                                        <div class="item__configuration--name col-sm-4">
-                                                ${fn:escapeXml(config.configurationLabel)}
-                                                <c:if test="${not empty config.configurationLabel}">:</c:if>
-
-                                        </div>
-                                        <div class="item__configuration--value col-sm-8">
-                                                ${fn:escapeXml(config.configurationValue)}
-                                        </div>
-                                    </div>
-                                </div>
-                            </c:forEach>
-                        </div>
-                        <c:if test="${not empty entry.configurationInfos}">
-                            <div class="item__configurations--edit">
-                                <a class="btn" href="${fn:escapeXml(entryConfigUrl)}"><spring:theme code="basket.page.change.configuration"/></a>
-                            </div>
-                        </c:if>
-                    </div>
-                </c:if>
-            </div>
-
-            <%-- price --%>
-            <div class="item__price">
-                <span class="visible-xs visible-sm"><spring:theme code="basket.page.itemPrice"/>: </span>
-                <format:price priceData="${entry.basePrice}" displayFreeForZero="true"/>
             </div>
 
             <%-- quantity --%>
@@ -235,59 +142,6 @@
             </ycommerce:testId>
 
             <%-- menu icon --%>
-            <div class="item__menu">
-                <c:if test="${entry.updateable}" >
-                    <div class="btn-group js-cartItemDetailGroup">
-                        <button type="button" class="btn btn-default js-cartItemDetailBtn" aria-haspopup="true" aria-expanded="false" id="editEntry_${entryNumberHtml}">
-                            <span class="glyphicon glyphicon-option-vertical"></span>
-                        </button>
-                        <ul class="dropdown-menu dropdown-menu-right">
-                            <c:if test="${not empty cartData.quoteData}">
-                                <c:choose>
-                                    <c:when test="${not entry.product.multidimensional}">
-                                        <li>
-                                            <a href="#entryCommentDiv_${fn:escapeXml(ycommerce:encodeUrl(entry.entryNumber))}" data-toggle="collapse" class="js-entry-comment-button">
-                                                <spring:theme code="basket.page.comment.menu"/>
-                                            </a>
-                                        </li>
-                                    </c:when>
-                                    <c:otherwise>
-                                        <li>
-                                            <a href="#entryCommentDiv_${fn:escapeXml(ycommerce:encodeUrl(entry.entries.get(0).entryNumber))}" data-toggle="collapse" class="js-entry-comment-button">
-                                                <spring:theme code="basket.page.comment.menu"/>
-                                            </a>
-                                        </li>
-                                    </c:otherwise>
-                                </c:choose>
-                            </c:if>
-                            <form:form id="cartEntryActionForm" action="" method="post" />
-                             <%-- Build entry numbers string for execute action -- Start --%>
-                            <c:choose>
-					            <c:when test="${entryNumberHtml eq -1}"> <%-- for multid entry --%>
-					                <c:forEach items="${entry.entries}" var="subEntry" varStatus="stat">
-						    			<c:set var="actionFormEntryNumbers" value="${stat.first ? '' : actionFormEntryNumbers.concat(';')}${subEntry.entryNumber}" />
-						    		</c:forEach>
-					            </c:when>
-					            <c:otherwise>
-					                <c:set var="actionFormEntryNumbers" value="${entryNumberHtml}" />
-					            </c:otherwise>
-					        </c:choose>
-					        <%-- Build entry numbers string for execute action -- End --%>
-                            <c:forEach var="entryAction" items="${entry.supportedActions}">
-                                <c:url value="/cart/entry/execute/${ycommerce:encodeUrl(entryAction)}" var="entryActionUrl"/>
-                                <li class="js-execute-entry-action-button" id="actionEntry_${entryNumberHtml}"
-                                    data-entry-action-url="${fn:escapeXml(entryActionUrl)}"
-                                    data-entry-action="${fn:escapeXml(entryAction)}"
-                                    data-entry-product-code="${productCodeHtml}"
-                                    data-entry-initial-quantity="${quantityHtml}"
-                                    data-action-entry-numbers="${fn:escapeXml(actionFormEntryNumbers)}">
-                                    <a href="#"><spring:theme code="basket.page.entry.action.${entryAction}"/></a>
-                                </li>
-                            </c:forEach>
-                        </ul>
-                    </div>
-                </c:if>
-            </div>
 
             <div class="item__quantity__total visible-xs visible-sm">
                 <c:if test="${entry.product.multidimensional}" >
