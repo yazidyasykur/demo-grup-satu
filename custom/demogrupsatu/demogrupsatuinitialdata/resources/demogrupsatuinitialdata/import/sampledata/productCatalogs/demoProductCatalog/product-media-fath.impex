@@ -1,0 +1,31 @@
+$productCatalog = demoProductCatalog
+
+$catalogVersion = catalogversion(catalog(id[default=$productCatalog]), version[default='Staged'])[unique=true, default=$productCatalog]
+$media = @media[translator=de.hybris.platform.impex.jalo.media.MediaDataTranslator]
+$thumbnail = thumbnail(code, $catalogVersion)
+$picture = picture(code, $catalogVersion)
+$thumbnails = thumbnails(code, $catalogVersion)
+$detail = detail(code, $catalogVersion)
+$normal = normal(code, $catalogVersion)
+$others = others(code, $catalogVersion)
+$data_sheet = data_sheet(code, $catalogVersion)
+$medias = medias(code, $catalogVersion)
+$galleryImages = galleryImages(qualifier, $catalogVersion)
+$siteResource = jar:org.demogrupsatu.initialdata.setup.InitialDataSystemSetup&/demogrupsatuinitialdata/import/sampledata/productCatalogs
+
+
+INSERT_UPDATE Media; mediaFormat(qualifier); code[unique = true]         ; $media                                     ; mime[default = 'image/jpeg']; $catalogVersion; folder(qualifier)
+                    ; 1200Wx1200H           ; INTHEBOX-FLIP-Z-90-PICTURE                ; $siteResource/images/INTHEBOX-FLIP-Z-90.jpg      ;                             ;                ; images
+                    ; 515Wx515H             ; INTHEBOX-FLIP-Z-90-THUMBNAIL                ; $siteResource/images/INTHEBOX-FLIP-Z-90.jpg      ;                             ;                ; images
+                    ; 300Wx300H             ; INTHEBOX-FLIP-Z-90-DETAIL                ; $siteResource/images/INTHEBOX-FLIP-Z-90.jpg      ;                             ;                ; images
+                    ; 96Wx96H               ; INTHEBOX-FLIP-Z-90-OTHER                ; $siteResource/images/INTHEBOX-FLIP-Z-90.jpg      ;                             ;                ; images
+                    ; 65Wx65H               ; INTHEBOX-FLIP-Z-90-NORMAL                ; $siteResource/images/INTHEBOX-FLIP-Z-90.jpg      ;                             ;                ; images
+                    ; 30Wx30H               ; INTHEBOX-FLIP-Z-90-THUMBNAILS                ; $siteResource/images/INTHEBOX-FLIP-Z-90.jpg      ;                             ;                ; images
+
+
+INSERT_UPDATE MediaContainer; qualifier[unique = true]; $medias                                                                                                                                                    ; $catalogVersion
+                            ; INTHEBOX-FLIP-Z-90-MEDIA                  ; INTHEBOX-FLIP-Z-90-PICTURE, INTHEBOX-FLIP-Z-90-THUMBNAIL, INTHEBOX-FLIP-Z-90-DETAIL, INTHEBOX-FLIP-Z-90-OTHER, INTHEBOX-FLIP-Z-90-NORMAL, INTHEBOX-FLIP-Z-90-THUMBNAILS                                            ;    ;
+
+UPDATE Product; code[unique = true]; $picture                 ; $thumbnail                 ; $detail                 ; $others                ; $normal                 ; $thumbnails                 ; $galleryImages    ; $catalogVersion
+              ; INTHEBOX-FLIP-Z-90      ; INTHEBOX-FLIP-Z-90-PICTURE                ; INTHEBOX-FLIP-Z-90-THUMBNAIL; INTHEBOX-FLIP-Z-90-DETAIL; INTHEBOX-FLIP-Z-90-OTHER; INTHEBOX-FLIP-Z-90-NORMAL; INTHEBOX-FLIP-Z-90-THUMBNAILS; INTHEBOX-FLIP-Z-90-MEDIA;
+
