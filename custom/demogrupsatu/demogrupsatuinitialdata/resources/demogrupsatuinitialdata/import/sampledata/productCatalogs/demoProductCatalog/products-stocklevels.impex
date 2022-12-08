@@ -4,18 +4,277 @@
 # ImpEx for Importing Products Stock Levels and Warehouses
 
 # Macros / Replacement Parameter definitions
-$productCatalog=__PRODUCT_CATALOG_NAME__
-$productCatalogName=__PRODUCT_CATALOG_FULL_NAME__
-$vendor=__VENDOR_NAME__
+$productCatalog=demoProductCatalog
+$productCatalogName=Demo Product Catalog
+$vendor=demo
 
 $catalogVersion=catalogversion(catalog(id[default=$productCatalog]),version[default='Staged'])[unique=true,default=$productCatalog:Staged]
 
 
 INSERT_UPDATE Vendor;code[unique=true]
-#;$vendor
+                    ;$vendor
 
-INSERT_UPDATE Warehouse;code[unique=true];vendor(code);default[default=true]
+INSERT_UPDATE Warehouse; code[unique = true]; vendor(code); default[default = true]; baseStores(uid)
+                       ; warehouse_demo ; $vendor     ;                        ; demo
 
-INSERT_UPDATE StockLevel;available;warehouse(code)[unique=true];inStockStatus(code);maxPreOrder;maxStockLevelHistoryCount;overSelling;preOrder;productCode[unique=true];reserved
+INSERT_UPDATE StockLevel; available; warehouse(code)[unique = true]; inStockStatus(code); maxPreOrder   ; maxStockLevelHistoryCount; overSelling; preOrder; productCode[unique = true]; reserved
+                        ; 1000000  ; warehouse_demo     ; forceInStock   ; 0            ; 0             ; 0          ; 0       ; INTHEBOX-FLIP-Z-90                 ; 0
+                        ; 1000000  ; warehouse_demo     ; forceInStock   ; 0            ; 0             ; 0          ; 0       ; INTHEBOX-FLIP-Z-100                ; 0
+                        ; 1000000  ; warehouse_demo     ; forceInStock   ; 0            ; 0             ; 0          ; 0       ; INTHEBOX-FLIP-Z-120                 ; 0
+                        ; 1000000  ; warehouse_demo     ; forceInStock   ; 0            ; 0             ; 0          ; 0       ; INTHEBOX-FLIP-Z-140               ; 0
+                        ; 1000000  ; warehouse_demo     ; forceInStock   ; 0            ; 0             ; 0          ; 0       ; INTHEBOX-FLIP-Z-160                ; 0
+                        ; 1000000  ; warehouse_demo     ; forceInStock   ; 0            ; 0             ; 0          ; 0       ; INTHEBOX-FLIP-Z-180                ; 0
+                        ; 1000000  ; warehouse_demo     ; forceInStock   ; 0            ; 0             ; 0          ; 0       ; INTHEBOX-FLIP-Z-200                 ; 0
 
-UPDATE Product;code[unique=true];$catalogVersion;stockLevels(productCode,warehouse(code));vendors(code)
+                        ; 1000000  ; warehouse_demo     ; forceInStock   ; 0            ; 0             ; 0          ; 0       ; INTHEBOX-X-90                ; 0
+                        ; 1000000  ; warehouse_demo     ; forceInStock   ; 0            ; 0             ; 0          ; 0       ; INTHEBOX-X-100                 ; 0
+                        ; 1000000  ; warehouse_demo     ; forceInStock   ; 0            ; 0             ; 0          ; 0       ; INTHEBOX-X-120                 ; 0
+                        ; 1000000  ; warehouse_demo     ; forceInStock   ; 0            ; 0             ; 0          ; 0       ; INTHEBOX-X-140               ; 0
+                        ; 1000000  ; warehouse_demo     ; forceInStock   ; 0            ; 0             ; 0          ; 0       ; INTHEBOX-X-160                ; 0
+                        ; 1000000  ; warehouse_demo     ; forceInStock   ; 0            ; 0             ; 0          ; 0       ; INTHEBOX-X-180                ; 0
+                        ; 1000000  ; warehouse_demo     ; forceInStock   ; 0            ; 0             ; 0          ; 0       ; INTHEBOX-X-200                 ; 0
+
+                        ; 1000000  ; warehouse_demo     ; forceInStock   ; 0            ; 0             ; 0          ; 0       ; INTHEBOX-ALPHA-90                 ; 0
+                        ; 1000000  ; warehouse_demo     ; forceInStock   ; 0            ; 0             ; 0          ; 0       ; INTHEBOX-ALPHA-100                 ; 0
+                        ; 1000000  ; warehouse_demo     ; forceInStock   ; 0            ; 0             ; 0          ; 0       ; INTHEBOX-ALPHA-120               ; 0
+                        ; 1000000  ; warehouse_demo     ; forceInStock   ; 0            ; 0             ; 0          ; 0       ; INTHEBOX-ALPHA-140                 ; 0
+                        ; 1000000  ; warehouse_demo     ; forceInStock   ; 0            ; 0             ; 0          ; 0       ; INTHEBOX-ALPHA-160                ; 0
+                        ; 1000000  ; warehouse_demo     ; forceInStock   ; 0            ; 0             ; 0          ; 0       ; INTHEBOX-ALPHA-180                ; 0
+                        ; 1000000  ; warehouse_demo     ; forceInStock   ; 0            ; 0             ; 0          ; 0       ; INTHEBOX-ALPHA-200                 ; 0
+
+                        ; 1000000  ; warehouse_demo     ; forceInStock   ; 0            ; 0             ; 0          ; 0       ; INTHEBOX-PRO-90                ; 0
+                        ; 1000000  ; warehouse_demo     ; forceInStock   ; 0            ; 0             ; 0          ; 0       ; INTHEBOX-PRO-100                 ; 0
+                        ; 1000000  ; warehouse_demo     ; forceInStock   ; 0            ; 0             ; 0          ; 0       ; INTHEBOX-PRO-120                 ; 0
+                        ; 1000000  ; warehouse_demo     ; forceInStock   ; 0            ; 0             ; 0          ; 0       ; INTHEBOX-PRO-140               ; 0
+                        ; 1000000  ; warehouse_demo     ; forceInStock   ; 0            ; 0             ; 0          ; 0       ; INTHEBOX-PRO-160                ; 0
+                        ; 1000000  ; warehouse_demo     ; forceInStock   ; 0            ; 0             ; 0          ; 0       ; INTHEBOX-PRO-180                ; 0
+                        ; 1000000  ; warehouse_demo     ; forceInStock   ; 0            ; 0             ; 0          ; 0       ; INTHEBOX-PRO-200                 ; 0
+
+                        ; 1000000  ; warehouse_demo     ; forceInStock   ; 0            ; 0             ; 0          ; 0       ; SPACE-JAM-COLLECTION-90                ; 0
+                        ; 1000000  ; warehouse_demo     ; forceInStock   ; 0            ; 0             ; 0          ; 0       ; SPACE-JAM-COLLECTION-100                 ; 0
+                        ; 1000000  ; warehouse_demo     ; forceInStock   ; 0            ; 0             ; 0          ; 0       ; SPACE-JAM-COLLECTION-120                 ; 0
+                        ; 1000000  ; warehouse_demo     ; forceInStock   ; 0            ; 0             ; 0          ; 0       ; SPACE-JAM-COLLECTION-140               ; 0
+                        ; 1000000  ; warehouse_demo     ; forceInStock   ; 0            ; 0             ; 0          ; 0       ; SPACE-JAM-COLLECTION-160                ; 0
+                        ; 1000000  ; warehouse_demo     ; forceInStock   ; 0            ; 0             ; 0          ; 0       ; SPACE-JAM-COLLECTION-180                ; 0
+                        ; 1000000  ; warehouse_demo     ; forceInStock   ; 0            ; 0             ; 0          ; 0       ; SPACE-JAM-COLLECTION-200                 ; 0
+
+                        ; 1000000  ; warehouse_demo     ; forceInStock   ; 0            ; 0             ; 0          ; 0       ; SPACE-JAM-PLUSH-TOP-90                ; 0
+                        ; 1000000  ; warehouse_demo     ; forceInStock   ; 0            ; 0             ; 0          ; 0       ; SPACE-JAM-PLUSH-TOP-100                 ; 0
+                        ; 1000000  ; warehouse_demo     ; forceInStock   ; 0            ; 0             ; 0          ; 0       ; SPACE-JAM-PLUSH-TOP-120                 ; 0
+                        ; 1000000  ; warehouse_demo     ; forceInStock   ; 0            ; 0             ; 0          ; 0       ; SPACE-JAM-PLUSH-TOP-140               ; 0
+                        ; 1000000  ; warehouse_demo     ; forceInStock   ; 0            ; 0             ; 0          ; 0       ; SPACE-JAM-PLUSH-TOP-160                ; 0
+                        ; 1000000  ; warehouse_demo     ; forceInStock   ; 0            ; 0             ; 0          ; 0       ; SPACE-JAM-PLUSH-TOP-180                ; 0
+                        ; 1000000  ; warehouse_demo     ; forceInStock   ; 0            ; 0             ; 0          ; 0       ; SPACE-JAM-PLUSH-TOP-200                 ; 0
+
+                        ; 1000000  ; warehouse_demo     ; forceInStock   ; 0            ; 0             ; 0          ; 0       ; INTHEBOX-DASH-90                ; 0
+                        ; 1000000  ; warehouse_demo     ; forceInStock   ; 0            ; 0             ; 0          ; 0       ; INTHEBOX-DASH-100                 ; 0
+                        ; 1000000  ; warehouse_demo     ; forceInStock   ; 0            ; 0             ; 0          ; 0       ; INTHEBOX-DASH-120                 ; 0
+                        ; 1000000  ; warehouse_demo     ; forceInStock   ; 0            ; 0             ; 0          ; 0       ; INTHEBOX-DASH-140               ; 0
+                        ; 1000000  ; warehouse_demo     ; forceInStock   ; 0            ; 0             ; 0          ; 0       ; INTHEBOX-DASH-160                ; 0
+                        ; 1000000  ; warehouse_demo     ; forceInStock   ; 0            ; 0             ; 0          ; 0       ; INTHEBOX-DASH-180                ; 0
+                        ; 1000000  ; warehouse_demo     ; forceInStock   ; 0            ; 0             ; 0          ; 0       ; INTHEBOX-DASH-200                 ; 0
+
+                        ; 1000000  ; warehouse_demo     ; forceInStock   ; 0            ; 0             ; 0          ; 0       ; INTHEBOX-101-90                ; 0
+                        ; 1000000  ; warehouse_demo     ; forceInStock   ; 0            ; 0             ; 0          ; 0       ; INTHEBOX-101-100                 ; 0
+                        ; 1000000  ; warehouse_demo     ; forceInStock   ; 0            ; 0             ; 0          ; 0       ; INTHEBOX-101-120                 ; 0
+                        ; 1000000  ; warehouse_demo     ; forceInStock   ; 0            ; 0             ; 0          ; 0       ; INTHEBOX-101-140               ; 0
+                        ; 1000000  ; warehouse_demo     ; forceInStock   ; 0            ; 0             ; 0          ; 0       ; INTHEBOX-101-160                ; 0
+                        ; 1000000  ; warehouse_demo     ; forceInStock   ; 0            ; 0             ; 0          ; 0       ; INTHEBOX-101-180                ; 0
+                        ; 1000000  ; warehouse_demo     ; forceInStock   ; 0            ; 0             ; 0          ; 0       ; INTHEBOX-101-200                 ; 0
+
+                        ; 1000000  ; warehouse_demo     ; forceInStock   ; 0            ; 0             ; 0          ; 0       ; INTHEBOX-HYBRID-90                ; 0
+                        ; 1000000  ; warehouse_demo     ; forceInStock   ; 0            ; 0             ; 0          ; 0       ; INTHEBOX-HYBRID-100                 ; 0
+                        ; 1000000  ; warehouse_demo     ; forceInStock   ; 0            ; 0             ; 0          ; 0       ; INTHEBOX-HYBRID-120                 ; 0
+                        ; 1000000  ; warehouse_demo     ; forceInStock   ; 0            ; 0             ; 0          ; 0       ; INTHEBOX-HYBRID-140               ; 0
+                        ; 1000000  ; warehouse_demo     ; forceInStock   ; 0            ; 0             ; 0          ; 0       ; INTHEBOX-HYBRID-160                ; 0
+                        ; 1000000  ; warehouse_demo     ; forceInStock   ; 0            ; 0             ; 0          ; 0       ; INTHEBOX-HYBRID-180                ; 0
+                        ; 1000000  ; warehouse_demo     ; forceInStock   ; 0            ; 0             ; 0          ; 0       ; INTHEBOX-HYBRID-200                 ; 0
+
+                        ; 1000000  ; warehouse_demo     ; forceInStock   ; 0            ; 0             ; 0          ; 0       ; INTHEBOX-HYBRID-15-90                ; 0
+                        ; 1000000  ; warehouse_demo     ; forceInStock   ; 0            ; 0             ; 0          ; 0       ; INTHEBOX-HYBRID-15-100                 ; 0
+                        ; 1000000  ; warehouse_demo     ; forceInStock   ; 0            ; 0             ; 0          ; 0       ; INTHEBOX-HYBRID-15-120                 ; 0
+                        ; 1000000  ; warehouse_demo     ; forceInStock   ; 0            ; 0             ; 0          ; 0       ; INTHEBOX-HYBRID-15-140               ; 0
+                        ; 1000000  ; warehouse_demo     ; forceInStock   ; 0            ; 0             ; 0          ; 0       ; INTHEBOX-HYBRID-15-160                ; 0
+                        ; 1000000  ; warehouse_demo     ; forceInStock   ; 0            ; 0             ; 0          ; 0       ; INTHEBOX-HYBRID-15-180                ; 0
+                        ; 1000000  ; warehouse_demo     ; forceInStock   ; 0            ; 0             ; 0          ; 0       ; INTHEBOX-HYBRID-15-200                 ; 0
+
+                        ; 1000000  ; warehouse_demo     ; forceInStock   ; 0            ; 0             ; 0          ; 0       ; KASUR-INTHEBOX-90                ; 0
+                        ; 1000000  ; warehouse_demo     ; forceInStock   ; 0            ; 0             ; 0          ; 0       ; KASUR-INTHEBOX-100                 ; 0
+                        ; 1000000  ; warehouse_demo     ; forceInStock   ; 0            ; 0             ; 0          ; 0       ; KASUR-INTHEBOX-120                 ; 0
+                        ; 1000000  ; warehouse_demo     ; forceInStock   ; 0            ; 0             ; 0          ; 0       ; KASUR-INTHEBOX-140               ; 0
+                        ; 1000000  ; warehouse_demo     ; forceInStock   ; 0            ; 0             ; 0          ; 0       ; KASUR-INTHEBOX-160                ; 0
+                        ; 1000000  ; warehouse_demo     ; forceInStock   ; 0            ; 0             ; 0          ; 0       ; KASUR-INTHEBOX-180                ; 0
+                        ; 1000000  ; warehouse_demo     ; forceInStock   ; 0            ; 0             ; 0          ; 0       ; KASUR-INTHEBOX-200                 ; 0
+
+                        ; 1000000  ; warehouse_demo     ; forceInStock   ; 0            ; 0             ; 0          ; 0       ; INTHEBOX-PLUS-90                ; 0
+                        ; 1000000  ; warehouse_demo     ; forceInStock   ; 0            ; 0             ; 0          ; 0       ; INTHEBOX-PLUS-100                 ; 0
+                        ; 1000000  ; warehouse_demo     ; forceInStock   ; 0            ; 0             ; 0          ; 0       ; INTHEBOX-PLUS-120                 ; 0
+                        ; 1000000  ; warehouse_demo     ; forceInStock   ; 0            ; 0             ; 0          ; 0       ; INTHEBOX-PLUS-140               ; 0
+                        ; 1000000  ; warehouse_demo     ; forceInStock   ; 0            ; 0             ; 0          ; 0       ; INTHEBOX-PLUS-160                ; 0
+                        ; 1000000  ; warehouse_demo     ; forceInStock   ; 0            ; 0             ; 0          ; 0       ; INTHEBOX-PLUS-180                ; 0
+                        ; 1000000  ; warehouse_demo     ; forceInStock   ; 0            ; 0             ; 0          ; 0       ; INTHEBOX-PLUS-200                 ; 0
+
+                        ; 1000000  ; warehouse_demo     ; forceInStock   ; 0            ; 0             ; 0          ; 0       ; ORGANIX-HYBRID-90                ; 0
+                        ; 1000000  ; warehouse_demo     ; forceInStock   ; 0            ; 0             ; 0          ; 0       ; ORGANIX-HYBRID-100                 ; 0
+                        ; 1000000  ; warehouse_demo     ; forceInStock   ; 0            ; 0             ; 0          ; 0       ; ORGANIX-HYBRID-120                 ; 0
+                        ; 1000000  ; warehouse_demo     ; forceInStock   ; 0            ; 0             ; 0          ; 0       ; ORGANIX-HYBRID-140               ; 0
+                        ; 1000000  ; warehouse_demo     ; forceInStock   ; 0            ; 0             ; 0          ; 0       ; ORGANIX-HYBRID-160                ; 0
+                        ; 1000000  ; warehouse_demo     ; forceInStock   ; 0            ; 0             ; 0          ; 0       ; ORGANIX-HYBRID-180                ; 0
+                        ; 1000000  ; warehouse_demo     ; forceInStock   ; 0            ; 0             ; 0          ; 0       ; ORGANIX-HYBRID-200                 ; 0
+
+                        ; 1000000  ; warehouse_demo     ; forceInStock   ; 0            ; 0             ; 0          ; 0       ; ORGANIX-LITE-90                ; 0
+                        ; 1000000  ; warehouse_demo     ; forceInStock   ; 0            ; 0             ; 0          ; 0       ; ORGANIX-LITE-100                 ; 0
+                        ; 1000000  ; warehouse_demo     ; forceInStock   ; 0            ; 0             ; 0          ; 0       ; ORGANIX-LITE-120                 ; 0
+                        ; 1000000  ; warehouse_demo     ; forceInStock   ; 0            ; 0             ; 0          ; 0       ; ORGANIX-LITE-140               ; 0
+                        ; 1000000  ; warehouse_demo     ; forceInStock   ; 0            ; 0             ; 0          ; 0       ; ORGANIX-LITE-160                ; 0
+                        ; 1000000  ; warehouse_demo     ; forceInStock   ; 0            ; 0             ; 0          ; 0       ; ORGANIX-LITE-180                ; 0
+                        ; 1000000  ; warehouse_demo     ; forceInStock   ; 0            ; 0             ; 0          ; 0       ; ORGANIX-LITE-200                 ; 0
+
+                        ; 1000000  ; warehouse_demo     ; forceInStock   ; 0            ; 0             ; 0          ; 0       ; ORGANIX-PLUSH-90                ; 0
+                        ; 1000000  ; warehouse_demo     ; forceInStock   ; 0            ; 0             ; 0          ; 0       ; ORGANIX-PLUSH-100                 ; 0
+                        ; 1000000  ; warehouse_demo     ; forceInStock   ; 0            ; 0             ; 0          ; 0       ; ORGANIX-PLUSH-120                 ; 0
+                        ; 1000000  ; warehouse_demo     ; forceInStock   ; 0            ; 0             ; 0          ; 0       ; ORGANIX-PLUSH-140               ; 0
+                        ; 1000000  ; warehouse_demo     ; forceInStock   ; 0            ; 0             ; 0          ; 0       ; ORGANIX-PLUSH-160                ; 0
+                        ; 1000000  ; warehouse_demo     ; forceInStock   ; 0            ; 0             ; 0          ; 0       ; ORGANIX-PLUSH-180                ; 0
+                        ; 1000000  ; warehouse_demo     ; forceInStock   ; 0            ; 0             ; 0          ; 0       ; ORGANIX-PLUSH-200                 ; 0
+
+                        ; 1000000  ; warehouse_demo     ; forceInStock   ; 0            ; 0             ; 0          ; 0       ; KASUR-LIPAT-80                ; 0
+
+                        ; 1000000  ; warehouse_demo     ; forceInStock   ; 0            ; 0             ; 0          ; 0       ; SOFA-3-SEATER                ; 0
+                        ; 1000000  ; warehouse_demo     ; forceInStock   ; 0            ; 0             ; 0          ; 0       ; SOFA-3-SEATER-BLACK                 ; 0
+                        ; 1000000  ; warehouse_demo     ; forceInStock   ; 0            ; 0             ; 0          ; 0       ; SOFA-BED-100                ; 0
+
+                        ; 1000000  ; warehouse_demo     ; forceInStock   ; 0            ; 0             ; 0          ; 0       ; BANTAL-INTHEBOX                ; 0
+                        ; 1000000  ; warehouse_demo     ; forceInStock   ; 0            ; 0             ; 0          ; 0       ; GULING-INTHEBOX                 ; 0
+
+
+UPDATE Product  ; code[unique = true]     ; $catalogVersion; stockLevels(productCode, warehouse(code))    ; vendors(code)
+                ; INTHEBOX-FLIP-Z-90      ;                ; INTHEBOX-FLIP-Z-90:warehouse_demo            ; $vendor
+                ; INTHEBOX-FLIP-Z-100     ;                ; INTHEBOX-FLIP-Z-100:warehouse_demo           ; $vendor
+                ; INTHEBOX-FLIP-Z-120     ;                ; INTHEBOX-FLIP-Z-120:warehouse_demo           ; $vendor
+                ; INTHEBOX-FLIP-Z-140     ;                ; INTHEBOX-FLIP-Z-140:warehouse_demo           ; $vendor
+                ; INTHEBOX-FLIP-Z-160     ;                ; INTHEBOX-FLIP-Z-160:warehouse_demo           ; $vendor
+                ; INTHEBOX-FLIP-Z-180     ;                ; INTHEBOX-FLIP-Z-180:warehouse_demo           ; $vendor
+                ; INTHEBOX-FLIP-Z-200     ;                ; INTHEBOX-FLIP-Z-200:warehouse_demo           ; $vendor
+
+                ; INTHEBOX-X-90      ;                ; INTHEBOX-X-90:warehouse_demo            ; $vendor
+                ; INTHEBOX-X-100     ;                ; INTHEBOX-X-100:warehouse_demo           ; $vendor
+                ; INTHEBOX-X-120     ;                ; INTHEBOX-X-120:warehouse_demo           ; $vendor
+                ; INTHEBOX-X-140     ;                ; INTHEBOX-X-140:warehouse_demo           ; $vendor
+                ; INTHEBOX-X-160     ;                ; INTHEBOX-X-160:warehouse_demo           ; $vendor
+                ; INTHEBOX-X-180     ;                ; INTHEBOX-X-180:warehouse_demo           ; $vendor
+                ; INTHEBOX-X-200     ;                ; INTHEBOX-X-200:warehouse_demo           ; $vendor
+
+                ; INTHEBOX-ALPHA-90      ;                ; INTHEBOX-ALPHA-90:warehouse_demo            ; $vendor
+                ; INTHEBOX-ALPHA-100     ;                ; INTHEBOX-ALPHA-100:warehouse_demo           ; $vendor
+                ; INTHEBOX-ALPHA-120     ;                ; INTHEBOX-ALPHA-120:warehouse_demo           ; $vendor
+                ; INTHEBOX-ALPHA-140     ;                ; INTHEBOX-ALPHA-140:warehouse_demo           ; $vendor
+                ; INTHEBOX-ALPHA-160     ;                ; INTHEBOX-ALPHA-160:warehouse_demo           ; $vendor
+                ; INTHEBOX-ALPHA-180     ;                ; INTHEBOX-ALPHA-180:warehouse_demo           ; $vendor
+                ; INTHEBOX-ALPHA-200     ;                ; INTHEBOX-ALPHA-200:warehouse_demo           ; $vendor
+
+                ; INTHEBOX-PRO-90      ;                ; INTHEBOX-PRO-90:warehouse_demo            ; $vendor
+                ; INTHEBOX-PRO-100     ;                ; INTHEBOX-PRO-100:warehouse_demo           ; $vendor
+                ; INTHEBOX-PRO-120     ;                ; INTHEBOX-PRO-120:warehouse_demo           ; $vendor
+                ; INTHEBOX-PRO-140     ;                ; INTHEBOX-PRO-140:warehouse_demo           ; $vendor
+                ; INTHEBOX-PRO-160     ;                ; INTHEBOX-PRO-160:warehouse_demo           ; $vendor
+                ; INTHEBOX-PRO-180     ;                ; INTHEBOX-PRO-180:warehouse_demo           ; $vendor
+                ; INTHEBOX-PRO-200     ;                ; INTHEBOX-PRO-200:warehouse_demo           ; $vendor
+
+                ; SPACE-JAM-COLLECTION-90      ;                ; SPACE-JAM-COLLECTION-90:warehouse_demo            ; $vendor
+                ; SPACE-JAM-COLLECTION-100     ;                ; SPACE-JAM-COLLECTION-100:warehouse_demo           ; $vendor
+                ; SPACE-JAM-COLLECTION-120     ;                ; SPACE-JAM-COLLECTION-120:warehouse_demo           ; $vendor
+                ; SPACE-JAM-COLLECTION-140     ;                ; SPACE-JAM-COLLECTION-140:warehouse_demo           ; $vendor
+                ; SPACE-JAM-COLLECTION-160     ;                ; SPACE-JAM-COLLECTION-160:warehouse_demo           ; $vendor
+                ; SPACE-JAM-COLLECTION-180     ;                ; SPACE-JAM-COLLECTION-180:warehouse_demo           ; $vendor
+                ; SPACE-JAM-COLLECTION-200     ;                ; SPACE-JAM-COLLECTION-200:warehouse_demo           ; $vendor
+
+                ; SPACE-JAM-PLUSH-TOP-90      ;                ; SPACE-JAM-PLUSH-TOP-90:warehouse_demo            ; $vendor
+                ; SPACE-JAM-PLUSH-TOP-100     ;                ; SPACE-JAM-PLUSH-TOP-100:warehouse_demo           ; $vendor
+                ; SPACE-JAM-PLUSH-TOP-120     ;                ; SPACE-JAM-PLUSH-TOP-120:warehouse_demo           ; $vendor
+                ; SPACE-JAM-PLUSH-TOP-140     ;                ; SPACE-JAM-PLUSH-TOP-140:warehouse_demo           ; $vendor
+                ; SPACE-JAM-PLUSH-TOP-160     ;                ; SPACE-JAM-PLUSH-TOP-160:warehouse_demo           ; $vendor
+                ; SPACE-JAM-PLUSH-TOP-180     ;                ; SPACE-JAM-PLUSH-TOP-180:warehouse_demo           ; $vendor
+                ; SPACE-JAM-PLUSH-TOP-200     ;                ; SPACE-JAM-PLUSH-TOP-200:warehouse_demo           ; $vendor
+
+                ; INTHEBOX-DASH-90      ;                ; INTHEBOX-DASH-90:warehouse_demo            ; $vendor
+                ; INTHEBOX-DASH-100     ;                ; INTHEBOX-DASH-100:warehouse_demo           ; $vendor
+                ; INTHEBOX-DASH-120     ;                ; INTHEBOX-DASH-120:warehouse_demo           ; $vendor
+                ; INTHEBOX-DASH-140     ;                ; INTHEBOX-DASH-140:warehouse_demo           ; $vendor
+                ; INTHEBOX-DASH-160     ;                ; INTHEBOX-DASH-160:warehouse_demo           ; $vendor
+                ; INTHEBOX-DASH-180     ;                ; INTHEBOX-DASH-180:warehouse_demo           ; $vendor
+                ; INTHEBOX-DASH-200     ;                ; INTHEBOX-DASH-200:warehouse_demo           ; $vendor
+
+                ; INTHEBOX-101-90      ;                ; INTHEBOX-101-90:warehouse_demo            ; $vendor
+                ; INTHEBOX-101-100     ;                ; INTHEBOX-101-100:warehouse_demo           ; $vendor
+                ; INTHEBOX-101-120     ;                ; INTHEBOX-101-120:warehouse_demo           ; $vendor
+                ; INTHEBOX-101-140     ;                ; INTHEBOX-101-140:warehouse_demo           ; $vendor
+                ; INTHEBOX-101-160     ;                ; INTHEBOX-101-160:warehouse_demo           ; $vendor
+                ; INTHEBOX-101-180     ;                ; INTHEBOX-101-180:warehouse_demo           ; $vendor
+                ; INTHEBOX-101-200     ;                ; INTHEBOX-101-200:warehouse_demo           ; $vendor
+
+                ; INTHEBOX-HYBRID-90      ;                ; INTHEBOX-HYBRID-90:warehouse_demo            ; $vendor
+                ; INTHEBOX-HYBRID-100     ;                ; INTHEBOX-HYBRID-100:warehouse_demo           ; $vendor
+                ; INTHEBOX-HYBRID-120     ;                ; INTHEBOX-HYBRID-120:warehouse_demo           ; $vendor
+                ; INTHEBOX-HYBRID-140     ;                ; INTHEBOX-HYBRID-140:warehouse_demo           ; $vendor
+                ; INTHEBOX-HYBRID-160     ;                ; INTHEBOX-HYBRID-160:warehouse_demo           ; $vendor
+                ; INTHEBOX-HYBRID-180     ;                ; INTHEBOX-HYBRID-180:warehouse_demo           ; $vendor
+                ; INTHEBOX-HYBRID-200     ;                ; INTHEBOX-HYBRID-200:warehouse_demo           ; $vendor
+
+                ; INTHEBOX-HYBRID-15-90      ;                ; INTHEBOX-HYBRID-15-90:warehouse_demo            ; $vendor
+                ; INTHEBOX-HYBRID-15-100     ;                ; INTHEBOX-HYBRID-15-100:warehouse_demo           ; $vendor
+                ; INTHEBOX-HYBRID-15-120     ;                ; INTHEBOX-HYBRID-15-120:warehouse_demo           ; $vendor
+                ; INTHEBOX-HYBRID-15-140     ;                ; INTHEBOX-HYBRID-15-140:warehouse_demo           ; $vendor
+                ; INTHEBOX-HYBRID-15-160     ;                ; INTHEBOX-HYBRID-15-160:warehouse_demo           ; $vendor
+                ; INTHEBOX-HYBRID-15-180     ;                ; INTHEBOX-HYBRID-15-180:warehouse_demo           ; $vendor
+                ; INTHEBOX-HYBRID-15-200     ;                ; INTHEBOX-HYBRID-15-200:warehouse_demo           ; $vendor
+
+                ; KASUR-INTHEBOX-90      ;                ; KASUR-INTHEBOX-90:warehouse_demo            ; $vendor
+                ; KASUR-INTHEBOX-100     ;                ; KASUR-INTHEBOX-100:warehouse_demo           ; $vendor
+                ; KASUR-INTHEBOX-120     ;                ; KASUR-INTHEBOX-120:warehouse_demo           ; $vendor
+                ; KASUR-INTHEBOX-140     ;                ; KASUR-INTHEBOX-140:warehouse_demo           ; $vendor
+                ; KASUR-INTHEBOX-160     ;                ; KASUR-INTHEBOX-160:warehouse_demo           ; $vendor
+                ; KASUR-INTHEBOX-180     ;                ; KASUR-INTHEBOX-180:warehouse_demo           ; $vendor
+                ; KASUR-INTHEBOX-200     ;                ; KASUR-INTHEBOX-200:warehouse_demo           ; $vendor
+
+                ; INTHEBOX-PLUS-90      ;                ; INTHEBOX-PLUS-90:warehouse_demo            ; $vendor
+                ; INTHEBOX-PLUS-100     ;                ; INTHEBOX-PLUS-100:warehouse_demo           ; $vendor
+                ; INTHEBOX-PLUS-120     ;                ; INTHEBOX-PLUS-120:warehouse_demo           ; $vendor
+                ; INTHEBOX-PLUS-140     ;                ; INTHEBOX-PLUS-140:warehouse_demo           ; $vendor
+                ; INTHEBOX-PLUS-160     ;                ; INTHEBOX-PLUS-160:warehouse_demo           ; $vendor
+                ; INTHEBOX-PLUS-180     ;                ; INTHEBOX-PLUS-180:warehouse_demo           ; $vendor
+                ; INTHEBOX-PLUS-200     ;                ; INTHEBOX-PLUS-200:warehouse_demo           ; $vendor
+
+                ; ORGANIX-HYBRID-90      ;                ; ORGANIX-HYBRID-90:warehouse_demo            ; $vendor
+                ; ORGANIX-HYBRID-100     ;                ; ORGANIX-HYBRID-100:warehouse_demo           ; $vendor
+                ; ORGANIX-HYBRID-120     ;                ; ORGANIX-HYBRID-120:warehouse_demo           ; $vendor
+                ; ORGANIX-HYBRID-140     ;                ; ORGANIX-HYBRID-140:warehouse_demo           ; $vendor
+                ; ORGANIX-HYBRID-160     ;                ; ORGANIX-HYBRID-160:warehouse_demo           ; $vendor
+                ; ORGANIX-HYBRID-180     ;                ; ORGANIX-HYBRID-180:warehouse_demo           ; $vendor
+                ; ORGANIX-HYBRID-200     ;                ; ORGANIX-HYBRID-200:warehouse_demo           ; $vendor
+
+                ; ORGANIX-LITE-90      ;                ; ORGANIX-LITE-90:warehouse_demo            ; $vendor
+                ; ORGANIX-LITE-100     ;                ; ORGANIX-LITE-100:warehouse_demo           ; $vendor
+                ; ORGANIX-LITE-120     ;                ; ORGANIX-LITE-120:warehouse_demo           ; $vendor
+                ; ORGANIX-LITE-140     ;                ; ORGANIX-LITE-140:warehouse_demo           ; $vendor
+                ; ORGANIX-LITE-160     ;                ; ORGANIX-LITE-160:warehouse_demo           ; $vendor
+                ; ORGANIX-LITE-180     ;                ; ORGANIX-LITE-180:warehouse_demo           ; $vendor
+                ; ORGANIX-LITE-200     ;                ; ORGANIX-LITE-200:warehouse_demo           ; $vendor
+
+                ; ORGANIX-PLUSH-90      ;                ; ORGANIX-PLUSH-90:warehouse_demo            ; $vendor
+                ; ORGANIX-PLUSH-100     ;                ; ORGANIX-PLUSH-100:warehouse_demo           ; $vendor
+                ; ORGANIX-PLUSH-120     ;                ; ORGANIX-PLUSH-120:warehouse_demo           ; $vendor
+                ; ORGANIX-PLUSH-140     ;                ; ORGANIX-PLUSH-140:warehouse_demo           ; $vendor
+                ; ORGANIX-PLUSH-160     ;                ; ORGANIX-PLUSH-160:warehouse_demo           ; $vendor
+                ; ORGANIX-PLUSH-180     ;                ; ORGANIX-PLUSH-180:warehouse_demo           ; $vendor
+                ; ORGANIX-PLUSH-200     ;                ; ORGANIX-PLUSH-200:warehouse_demo           ; $vendor
+                ; KASUR-LIPAT-80        ;                ; KASUR-LIPAT-80:warehouse_demo              ; $vendor
+
+                ; SOFA-3-SEATER         ;                ; SOFA-3-SEATER:warehouse_demo                 ; $vendor
+                ; SOFA-3-SEATER-BLACK   ;                ; SOFA-3-SEATER-BLACK:warehouse_demo          ; $vendor
+                ; SOFA-BED-100          ;                ; SOFA-BED-100:warehouse_demo                 ; $vendor
+
+                ; BANTAL-INTHEBOX       ;                ; BANTAL-INTHEBOX:warehouse_demo           ; $vendor
+                ; GULING-INTHEBOX       ;                ; GULING-INTHEBOX:warehouse_demo           ; $vendor
+
+
