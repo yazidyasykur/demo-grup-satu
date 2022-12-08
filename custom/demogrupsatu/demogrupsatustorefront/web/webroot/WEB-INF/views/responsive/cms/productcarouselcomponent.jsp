@@ -15,7 +15,7 @@
 
 			<c:choose>
 				<c:when test="${component.popup}">
-					<div class="carousel__component--carousel js-owl-carousel js-owl-lazy-reference js-owl-carousel-reference">
+					<div class="carousel__component--carousel card-product">
 						<div id="quickViewTitle" class="quickView-header display-none">
 							<div class="headline">
 								<span class="headline-text"><spring:theme code="popup.quick.view.select"/></span>
@@ -24,31 +24,39 @@
 						<c:forEach items="${productData}" var="product">
 
 							<c:url value="${product.url}/quickView" var="productQuickViewUrl"/>
-							<div class="carousel__item">
+							<div class="carousel__item layout-card-carousel">
 								<a href="${productQuickViewUrl}" class="js-reference-item">
 									<div class="carousel__item--thumb">
 										<product:productPrimaryReferenceImage product="${product}" format="product"/>
 									</div>
 									<div class="carousel__item--name">${fn:escapeXml(product.name)}</div>
+									<div class="carousel__item--name">${fn:escapeXml(product.description)}</div>
 									<div class="carousel__item--price"><format:fromPrice priceData="${product.price}"/></div>
+									<div class="link text-center">
+                                        <a class="btn btn-brand" href="#">Beli Sekarang</a>
+                                    </div>
 								</a>
 							</div>
 						</c:forEach>
 					</div>
 				</c:when>
 				<c:otherwise>
-					<div class="carousel__component--carousel js-owl-carousel js-owl-default">
+					<div class="carousel__component--carousel card-product">
 						<c:forEach items="${productData}" var="product">
 
 							<c:url value="${product.url}" var="productUrl"/>
 
-							<div class="carousel__item">
+							<div class="carousel__item layout-card-carousel">
 								<a href="${productUrl}">
 									<div class="carousel__item--thumb">
 										<product:productPrimaryImage product="${product}" format="product"/>
 									</div>
 									<div class="carousel__item--name">${fn:escapeXml(product.name)}</div>
+									<div class="carousel__item--name">${fn:escapeXml(product.description)}</div>
 									<div class="carousel__item--price"><format:fromPrice priceData="${product.price}"/></div>
+									<div class="link text-center">
+                                        <a class="btn btn-brand" href="#">Beli Sekarang</a>
+                                    </div>
 								</a>
 							</div>
 						</c:forEach>
