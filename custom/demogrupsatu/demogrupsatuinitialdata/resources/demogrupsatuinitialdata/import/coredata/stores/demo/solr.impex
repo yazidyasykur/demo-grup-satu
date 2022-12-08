@@ -11,7 +11,7 @@ $serverConfigName = $prefixSolrServerConfig
 $indexConfigName = $prefixSolrIndexConfig
 $searchConfigName = $prefixPageSize
 $facetSearchConfigName = $prefixIndex
-$facetSearchConfigDescription = Facet Demo Product Solr Index
+$facetSearchConfigDescription = Facet demo Product Solr Index
 $searchIndexNamePrefix = demo
 $solrIndexedType = $prefixProductType
 $indexBaseSite = demo
@@ -79,24 +79,18 @@ INSERT_UPDATE SolrIndexedProperty; solrIndexedType(identifier)[unique = true]; n
 INSERT_UPDATE SolrIndexedProperty; solrIndexedType(identifier)[unique = true]; name[unique = true]; type(code); localized[default = false]; multiValue[default = true]; categoryField[default = true]; useForSpellchecking[default = false]; useForAutocomplete[default = false]; fieldValueProvider                        ; ftsPhraseQuery[default = false]; ftsPhraseQueryBoost; ftsQuery[default = false]; ftsQueryBoost; ftsFuzzyQuery[default = false]; ftsFuzzyQueryBoost
                                  ; $solrIndexedType                          ; allCategories      ; string    ; false                     ;                           ;                              ;                                     ;                                    ; categoryCodeValueProvider                 ;                                ;                    ;                          ;              ;                               ;
                                  ; $solrIndexedType                          ; categoryName       ; text      ; true                      ;                           ;                              ; true                                ; true                               ; electronicsCategoryNameValueProvider      ; true                           ; 40                 ; true                     ; 20           ; true                          ; 10
-                                 ; $solrIndexedType                          ; brandName          ; text      ; true                      ;                           ;                              ;                                     ;                                    ; electronicsBrandCategoryNameValueProvider ;                                ;                    ;                          ;              ;                               ;
 
 # Category facets
 INSERT_UPDATE SolrIndexedProperty; solrIndexedType(identifier)[unique = true]; name[unique = true]; type(code); multiValue[default = true]; facet[default = true]; facetType(code); facetSort(code); priority; visible; categoryField[default = true]; fieldValueProvider                   ; facetDisplayNameProvider         ; topValuesProvider
                                  ; $solrIndexedType                          ; categoryPath       ; string    ;                           ;                      ; Refine         ; Alpha          ; -9999   ; false  ; false                        ; categoryPathValueProvider            ;
                                  ; $solrIndexedType                          ; category           ; string    ;                           ;                      ; Refine         ; Alpha          ; 6000    ; true   ;                              ; electronicsCategoryCodeValueProvider ; categoryFacetDisplayNameProvider ; defaultTopValuesProvider
 
-# Add new indexed property
-INSERT_UPDATE SolrIndexedProperty; solrIndexedType(identifier)[unique = true]; name[unique = true]; type(code); sortableType(code); currency[default = false]; localized[default = false]; multiValue[default = false]; useForSpellchecking[default = false]; useForAutocomplete[default = false]; fieldValueProvider    ; valueProviderParameter; ftsPhraseQuery[default = false]; ftsPhraseQueryBoost; ftsQuery[default = false]; ftsQueryBoost; ftsFuzzyQuery[default = false]; ftsFuzzyQueryBoost; ftsWildcardQuery[default = false]; ftsWildcardQueryType(code)[default = POSTFIX]; ftsWildcardQueryBoost; ftsWildcardQueryMinTermLength; customFacetSortProvider
-                                 ; $solrIndexedType                          ; sku                ; string    ;                   ;                          ; false                     ;                            ; true                                ; true                               ; springELValueProvider ; sku                   ; true                           ; 30                 ; true                     ; 15           ;                               ;                   ;                                  ;                                              ;                      ;                              ;
-                                 ; $solrIndexedType                          ; material           ; string    ;                   ;                          ; false                     ;                            ; true                                ; true                               ; springELValueProvider ; material              ; true                           ; 30                 ; true                     ; 15           ;                               ;                   ;                                  ;                                              ;                      ;                              ;
-
 # Create the queries that will be used to extract data for Solr
 INSERT_UPDATE SolrIndexerQuery; solrIndexedType(identifier)[unique = true]; identifier[unique = true]          ; type(code); injectCurrentDate[default = true]; injectCurrentTime[default = true]; injectLastIndexTime[default = true]; query                    ; user(uid)
                               ; $solrIndexedType                          ; $searchIndexNamePrefix-fullQuery   ; full      ;                                  ;                                  ; false                              ; "SELECT DISTINCT tbl.pk, tbl.code FROM (
 	{{
 		SELECT DISTINCT{p:PK} AS pk, {p:code} AS code
-		FROM {DemoVariantProduct! AS p left outer join catalogversion as catalog on {p.catalogversion}={catalog.pk} join ArticleApprovalStatus as aas on {p.approvalStatus} = {aas.pk}}
+		FROM {IntheboxSizeVariantProduct! AS p left outer join catalogversion as catalog on {p.catalogversion}={catalog.pk} join ArticleApprovalStatus as aas on {p.approvalStatus} = {aas.pk}}
 		WHERE {catalog.version}='Online' AND {aas.code}='approved'
 	}}
 ) tbl ORDER BY tbl.code" ; anonymous
@@ -105,7 +99,7 @@ INSERT_UPDATE SolrIndexerQuery; solrIndexedType(identifier)[unique = true]; iden
 SELECT DISTINCT tbl.pk, tbl.code FROM (
 	{{
 		SELECT DISTINCT{p:PK} AS pk, {p:code} AS code
-		FROM {DemoVariantProduct! AS p left outer join catalogversion as catalog on {p.catalogversion}={catalog.pk} join ArticleApprovalStatus as aas on {p.approvalStatus} = {aas.pk}}
+		FROM {IntheboxSizeVariantProduct! AS p left outer join catalogversion as catalog on {p.catalogversion}={catalog.pk} join ArticleApprovalStatus as aas on {p.approvalStatus} = {aas.pk}}
 		WHERE {p:modifiedtime} >= ?lastIndexTime AND{catalog.version}='Online' AND {aas.code}='approved'
 	}}
 ) tbl ORDER BY tbl.code" ; anonymous
@@ -125,9 +119,3 @@ INSERT_UPDATE SolrSortField; sort(indexedType(identifier), code)[unique = true];
                            ; $solrIndexedType:name-desc                        ; name                    ; false
                            ; $solrIndexedType:price-asc                        ; priceValue              ; true
                            ; $solrIndexedType:price-desc                       ; priceValue              ; false
-
-# Add new indexed property
-INSERT_UPDATE SolrIndexedProperty; solrIndexedType(identifier)[unique = true]; name[unique = true]; type(code); multiValue[default = true]; facet[default = true]; facetType(code); facetSort(code); priority; visible; categoryField[default = true]; fieldValueProvider                   ; facetDisplayNameProvider         ; topValuesProvider
-                                 ; $solrIndexedType                          ; supplier       ; string    ; false                          ;                      ; Refine         ; Alpha          ; 100   ; true  ; false                        ; supplierValueProvider            ;
-
-

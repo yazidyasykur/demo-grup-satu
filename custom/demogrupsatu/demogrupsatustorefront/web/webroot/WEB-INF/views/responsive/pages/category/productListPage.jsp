@@ -7,7 +7,7 @@
 	<div class="row">		
 		<cms:pageSlot position="Section1" var="feature" element="div" class="product-list-section1-slot">
 			<cms:component component="${feature}" element="div" class="col-xs-12 yComponentWrapper product-list-section1-component"/>
-		</cms:pageSlot>		
+		</cms:pageSlot>		Media;mediaFormat(
 	</div>
 	<div class="row">
 		<div class="col-xs-3">
