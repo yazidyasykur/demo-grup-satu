@@ -638,17 +638,10 @@ INSERT_UPDATE ContentSlot;$contentCV[unique=true];uid[unique=true];cmsComponents
 
 #################    HOME PAGE START     #################
 
-###  Home page splash Slot 1  #######
-INSERT_UPDATE SimpleResponsiveBannerComponent;$contentCV[unique=true];uid[unique=true];name;urlLink;&componentRef
-                                             ;;DemoHompageSplashBannerComponent-1;Demo Homepage Splash Banner Component 1;/c/INTHEBOX;DemoHompageSplashBannerComponent-1
-                                             ;;DemoHompageSplashBannerComponent-2;Demo Homepage Splash Banner Component 2;/c/INTHEBOX;DemoHompageSplashBannerComponent-2
 
-INSERT_UPDATE SimpleResponsiveBannerComponent;$contentCV[unique=true];uid[unique=true];name;urlLink;&componentRef
-                                             ;;DemoHompageDiscountBannerComponent;Demo Homepage Discount Banner Component;/Bed/Springbed/c/SPRINGBED;DemoHompageDiscountBannerComponent
+## Home section 3 demogrupsatu
 
-INSERT_UPDATE ContentSlot;$contentCV[unique=true];uid[unique=true];active;cmsComponents(&componentRef)
-                         ;;Section1Slot-Homepage;true;DemoHompageSplashBannerComponent-1,DemoHompageSplashBannerComponent-2
-#                         ;;Section1Slot-Homepage;true;DemoHompageDiscountBannerComponent
+
 
 
 ## Home section 2A
@@ -1214,5 +1207,34 @@ INSERT_UPDATE ContentSlot;$contentCV[unique=true];uid[unique=true];name;active;c
 INSERT_UPDATE ContentSlotForPage;$contentCV[unique=true];uid[unique=true];position[unique=true];page(uid,$contentCV)[unique=true][default='testing-page'];contentSlot(uid,$contentCV)[unique=true]
                                 ;;MiddleContent-TestingPage;MiddleContent;;MiddleContent-TestingPage
 
+
+###  Home page splash Slot 1  #######
+INSERT_UPDATE SimpleResponsiveBannerComponent;$contentCV[unique=true];uid[unique=true];name;urlLink;&componentRef
+                                             ;;DemoHompageSplashBannerComponent-1;Demo Homepage Splash Banner Component 1;/c/INTHEBOX;DemoHompageSplashBannerComponent-1
+                                             ;;DemoHompageSplashBannerComponent-2;Demo Homepage Splash Banner Component 2;/c/INTHEBOX;DemoHompageSplashBannerComponent-2
+
+INSERT_UPDATE ContentSlot;$contentCV[unique=true];uid[unique=true];active;cmsComponents(&componentRef)
+                         ;;Section1Slot-Homepage;true;DemoHompageSplashBannerComponent-1,DemoHompageSplashBannerComponent-2
+
+## Homepage section 3 carousel product
+INSERT_UPDATE ProductCarouselComponent;$contentCV[unique=true];uid[unique=true];name;products(code,$productCV);scroll(code);popup;&componentRef
+                                      ;;DemoHomepageProductCarouselComponent;Demo Homepage Product Carousel; INTHEBOX-FLIP-Z-90, INTHEBOX-HYBRID-90, INTHEBOX-X-90, INTHEBOX-101-90, INTHEBOX-ALPHA-90 ;allVisible;false;DemoHomepageProductCarouselComponent
+
+INSERT_UPDATE ContentSlot;$contentCV[unique=true];uid[unique=true];name;active;cmsComponents(&componentRef)
+                         ;;Section3Slot-Homepage;Section3 Slot for Homepage;true;DemoHomepageProductCarouselComponent
+
+INSERT_UPDATE ContentSlotForPage;$contentCV[unique=true];uid[unique=true];position[unique=true];page(uid,$contentCV)[unique=true][default='homepage'];contentSlot(uid,$contentCV)[unique=true]
+                                ;;Section3-Homepage;Section3;;Section3Slot-Homepage
+
+## Homepage section 4 unboxing carousel
+
+INSERT_UPDATE SimpleResponsiveBannerComponent;$contentCV[unique=true];uid[unique=true];name;urlLink;&componentRef
+                                             ;;UnboxingHomepageBannerComponent-1;Unboxing Homepage Banner Component 1;/c/INTHEBOX;UnboxingHomepageBannerComponent-1
+                                             ;;UnboxingHomepageBannerComponent-2;Unboxing Homepage Banner Component 2;/c/INTHEBOX;UnboxingHomepageBannerComponent-2
+                                             ;;UnboxingHomepageBannerComponent-3;Unboxing Homepage Banner Component 3;/c/INTHEBOX;UnboxingHomepageBannerComponent-3
+                                             ;;UnboxingHomepageBannerComponent-4;Unboxing Homepage Banner Component 4;/c/INTHEBOX;UnboxingHomepageBannerComponent-4
+
+INSERT_UPDATE ContentSlot;$contentCV[unique=true];uid[unique=true];active;cmsComponents(&componentRef)
+                         ;;Section4Slot-Homepage;true;UnboxingHomepageBannerComponent-1,UnboxingHomepageBannerComponent-2,UnboxingHomepageBannerComponent-3,UnboxingHomepageBannerComponent-4
 
 
