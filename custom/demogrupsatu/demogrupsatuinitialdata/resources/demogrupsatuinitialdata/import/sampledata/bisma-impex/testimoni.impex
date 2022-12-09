@@ -1,0 +1,403 @@
+UPDATE GenericItem[processor = de.hybris.platform.commerceservices.impex.impl.ConfigPropertyImportProcessor]; pk[unique = true]
+
+$contentCatalog=demoContentCatalog
+$contentCatalogName=Demo Content Catalog
+$productCatalog=demoProductCatalog
+$productCatalogName=Demo Product Catalog
+
+$contentCV=catalogVersion(CatalogVersion.catalog(Catalog.id[default=$contentCatalog]),CatalogVersion.version[default=Staged])[default=$contentCatalog:Staged]
+$productCV=catalogVersion(catalog(id[default=$productCatalog]),version[default='Staged'])[unique=true,default=$productCatalog:Staged]
+
+$contentPage=contentPage(uid, $contentCV);
+$product=product(code, $productCV)
+$category=category(code, $productCV)
+
+
+### NOTE: IMPEXNYA SETIAP KETEMU MACRO ###
+
+### FOOTER ###
+#### IMPEX PART 1 ####
+# CMS Link Components
+INSERT_UPDATE CMSLinkComponent;$contentCV[unique=true]  ;uid[unique=true]       ;name                           ;url                                        ;&linkRef               ;target(code)[default='sameWindow'];$category;$product;
+                              ;                         ;ProductLink            ;Product Link                   ;/catalog                                   ;ProductLink            ;;;;
+                              ;                         ;WarrantyLink           ;Warranty Link                  ;/warranty-registration                     ;WarrantyLink           ;;;;
+                              ;                         ;WaybillLink            ;Waybill Link                   ;/waybill-status                            ;WaybillLink            ;;;;
+                              ;                         ;FAQNewLink             ;FAQ New Link                   ;/faq                                       ;FAQNewLink             ;;;;
+                              ;                         ;HelpLink               ;Help Link                      ;/help                                      ;HelpLink               ;;;;
+                              ;                         ;TandCLink              ;Terms and Condition Link       ;/terms-and-condition                       ;TandCLink              ;;;;
+                              ;                         ;PrivacyLink            ;Privacy Link                   ;/privacy-policy                            ;PrivacyLink            ;;;;
+                              ;                         ;AboutUsLink            ;About InTheBox Link            ;/about                                     ;AboutUsLink            ;;;;
+                              ;                         ;OfflineLink            ;Offline Link                   ;/offline-store                             ;OfflineLink            ;;;;
+                              ;                         ;BlogLink               ;Blog Link                      ;/blog                                      ;BlogLink               ;;;;
+                              ;                         ;TestimonyLink          ;Testimony Link                 ;/testimony                                 ;TestimonyLink          ;;;;
+
+
+$contentCatalog=demoContentCatalog
+$contentCatalogName=Demo Content Catalog
+$contentCV=catalogVersion(CatalogVersion.catalog(Catalog.id[default=$contentCatalog]),CatalogVersion.version[default=Staged])[default=$contentCatalog:Staged]
+$lang = en
+# CMS Link Language English
+INSERT_UPDATE CMSLinkComponent;$contentCV[unique=true]  ;uid[unique=true]       ;linkName[lang=$lang]
+                              ;                         ;ProductLink            ;"Produk"
+                              ;                         ;WarrantyLink           ;"Aktivasi Garansi"
+                              ;                         ;WaybillLink            ;"Cek Resi"
+                              ;                         ;FAQLink                ;"FAQ"
+                              ;                         ;HelpLink               ;"Bantuan"
+                              ;                         ;TandCLink              ;"Syarat dan Ketentuan"
+                              ;                         ;PrivacyLink            ;"Kebijakan Privasi"
+                              ;                         ;AboutUsLink            ;"Tentang InTheBox"
+                              ;                         ;OfflineLink            ;"Toko Offline"
+                              ;                         ;BlogLink               ;"Blog"
+                              ;                         ;TestimonyLink          ;"Testimoni"
+#                              ;                         ;ProductLink            ;"Product"
+#                              ;                         ;WarrantyLink           ;"Warranty Registration"
+#                              ;                         ;WaybillLink            ;"Waybill Status"
+#                              ;                         ;FAQLink                ;"FAQ"
+#                              ;                         ;HelpLink               ;"Help"
+#                              ;                         ;TandCLink              ;"Terms and Condition"
+#                              ;                         ;PrivacyLink            ;"Privacy Policy"
+#                              ;                         ;AboutUsLink            ;"About InTheBox"
+#                              ;                         ;OfflineLink            ;"Offline Store"
+#                              ;                         ;BlogLink               ;"Blog"
+#                              ;                         ;TestimonyLink          ;"Testimony"
+
+
+$contentCatalog=demoContentCatalog
+$contentCatalogName=Demo Content Catalog
+$contentCV=catalogVersion(CatalogVersion.catalog(Catalog.id[default=$contentCatalog]),CatalogVersion.version[default=Staged])[default=$contentCatalog:Staged]
+$lang = id
+# CMS Link Language Indonesia
+INSERT_UPDATE CMSLinkComponent;$contentCV[unique=true]  ;uid[unique=true]       ;linkName[lang=$lang]
+                              ;                         ;ProductLink            ;"Produk"
+                              ;                         ;WarrantyLink           ;"Aktivasi Garansi"
+                              ;                         ;WaybillLink            ;"Cek Resi"
+                              ;                         ;FAQLink                ;"FAQ"
+                              ;                         ;HelpLink               ;"Bantuan"
+                              ;                         ;TandCLink              ;"Syarat dan Ketentuan"
+                              ;                         ;PrivacyLink            ;"Kebijakan Privasi"
+                              ;                         ;AboutUsLink            ;"Tentang InTheBox"
+                              ;                         ;OfflineLink            ;"Toko Offline"
+                              ;                         ;BlogLink               ;"Blog"
+                              ;                         ;TestimonyLink          ;"Testimoni"
+
+
+#### IMPEX PART 2 ####
+###### Footer Component Refactor Start ######
+$contentCatalog=demoContentCatalog
+$contentCatalogName=Demo Content Catalog
+$productCatalog=demoProductCatalog
+$productCatalogName=Demo Product Catalog
+
+$contentCV=catalogVersion(CatalogVersion.catalog(Catalog.id[default=$contentCatalog]),CatalogVersion.version[default=Staged])[default=$contentCatalog:Staged]
+$productCV=catalogVersion(catalog(id[default=$productCatalog]),version[default='Staged'])[unique=true,default=$productCatalog:Staged]
+
+$contentPage=contentPage(uid, $contentCV);
+$product=product(code, $productCV)
+$category=category(code, $productCV)
+
+INSERT_UPDATE ContentSlot;$contentCV[unique=true]   ;uid[unique=true]   ;cmsComponents(uid,$contentCV)
+                         ;                          ;FooterSlot         ;FooterNavigationComponentNew
+
+INSERT_UPDATE FooterNavigationComponent;$contentCV[unique=true] ;uid[unique=true]               ;wrapAfter  ;&componentRef                  ;showLanguageCurrency   ;navigationNode(&nodeRef)
+                                       ;                        ;FooterNavigationComponentNew   ;6          ;FooterNavigationComponentNew   ;false                  ;FooterNavNodeNew       ;
+
+# Tambahin Copyright gitu2
+UPDATE FooterNavigationComponent;$contentCV[unique=true] ;uid[unique=true]               ; notice[lang=en][translator=de.hybris.platform.acceleratorservices.dataimport.batch.converter.CopyrightTranslator,dateFormat=yyyy]
+                                ;                        ;FooterNavigationComponentNew   ; "Copyright © {0} 2019-2022 PT Duta Mas Mandiri."
+
+# the order of children is the same as the display order on the site
+INSERT_UPDATE CMSNavigationNode;uid[unique=true]  ;$contentCV[unique=true]; name                        ; parent(uid, $contentCV) ; &nodeRef            ; children(uid,$contentCV)
+                               ;FooterNavNodeNew  ;                       ; Footer for InTheBox Pages   ; DemoNavNode             ; FooterNavNodeNew    ; ProductSuperNavNode, SupportNavNode, AboutNewNavNode
+
+# children of FooterNavNode #
+INSERT_UPDATE CMSNavigationNode;uid[unique=true]                ;$contentCV[unique=true];name                           ;&nodeRef                       ;children(uid,$contentCV)                                                               ;links(&linkRef)
+                               ;ProductSuperNavNode             ;                       ;Product Pages                  ;ProductSuperNavNode            ;ProductNavNode
+                               ;SupportNavNode                  ;                       ;Support Pages                  ;SupportNavNode                 ;WarrantyNavNode, WaybillNavNode, FAQNewNavNode, HelpNavNode, TandCNavNode, PrivacyNavNode
+                               ;AboutNewNavNode                 ;                       ;About Pages                    ;AboutNewNavNode                ;AboutUsNewNavNode, OfflineNavNode, BlogNavNode, TestimonyNavNode
+
+# children of above navigation nodes #
+INSERT_UPDATE CMSNavigationNode;uid[unique=true]                    ;$contentCV[unique=true];name                           ;&nodeRef            ;children(uid,$contentCV);links(&linkRef);
+                               ;ProductNavNode                      ;                       ;Product Page                   ;ProductNavNode
+                               ;WarrantyNavNode                     ;                       ;Warranty Page                  ;WarrantyNavNode
+                               ;WaybillNavNode                      ;                       ;Waybill Page                   ;WaybillNavNode
+                               ;FAQNewNavNode                       ;                       ;FAQ New Page                   ;FAQNewNavNode
+                               ;HelpNavNode                         ;                       ;Help Page                      ;HelpNavNode
+                               ;TandCNavNode                        ;                       ;Terms and Condition Page       ;TandCNavNode
+                               ;PrivacyNavNode                      ;                       ;Privacy Page                   ;PrivacyNavNode
+                               ;AboutUsNewNavNode                   ;                       ;About Us New Page              ;AboutUsNewNavNode
+                               ;OfflineNavNode                      ;                       ;Offline Page                   ;OfflineNavNode
+                               ;BlogNavNode                         ;                       ;Blog Page                      ;BlogNavNode
+                               ;TestimonyNavNode                    ;                       ;Testimony Page                 ;TestimonyNavNode
+
+# entries of the above navigation nodes ##
+INSERT_UPDATE CMSNavigationEntry;uid[unique=true]                       ;$contentCV[unique=true];name                                           ;navigationNode(&nodeRef)           ;item(CMSLinkComponent.uid,CMSLinkComponent.$contentCV) ;
+                                ;ProductNavNodeEntry                    ;                       ;Product Navigation Node Entry                  ;ProductNavNode                     ;ProductLink                                            ;
+                                ;WarrantyNavNodeEntry                   ;                       ;Warranty Navigation Node Entry                 ;WarrantyNavNode                    ;WarrantyLink                                           ;
+                                ;WaybillNavNodeEntry                    ;                       ;Waybill Navigation Node Entry                  ;WaybillNavNode                     ;WaybillLink                                            ;
+                                ;FAQNewNavNodeEntry                     ;                       ;FAQ New Navigation Node Entry                  ;FAQNewNavNode                      ;FAQNewLink                                             ;
+                                ;HelpNavNodeEntry                       ;                       ;Help Navigation Node Entry                     ;HelpNavNode                        ;HelpLink                                               ;
+                                ;TandCNavNodeEntry                      ;                       ;Terms and Condition Navigation Node Entry      ;TandCNavNode                       ;TandCLink                                              ;
+                                ;PrivacyNavNodeEntry                    ;                       ;Privacy Navigation Node Entry                  ;PrivacyNavNode                     ;PrivacyLink                                            ;
+                                ;AboutUsNavNodeEntry                    ;                       ;About Us Navigation Node Entry                 ;AboutUsNewNavNode                  ;AboutUsLink                                            ;
+                                ;OfflineNavNodeEntry                    ;                       ;Offline Navigation Node Entry                  ;OfflineNavNode                     ;OfflineLink                                            ;
+                                ;BlogNavNodeEntry                       ;                       ;Blog Navigation Node Entry                     ;BlogNavNode                        ;BlogLink                                               ;
+                                ;TestimonyNavNodeEntry                  ;                       ;Testimony Navigation Node Entry                ;TestimonyNavNode                   ;TestimonyLink                                          ;
+###### Footer Component Refactor End ######
+
+$contentCatalog=demoContentCatalog
+$contentCatalogName=Demo Content Catalog
+$contentCV=catalogVersion(CatalogVersion.catalog(Catalog.id[default=$contentCatalog]),CatalogVersion.version[default=Staged])[default=$contentCatalog:Staged]
+$lang = en
+# title english
+
+UPDATE CMSNavigationNode;uid[unique=true]                ;$contentCV[unique=true] ; title[lang=$lang]
+                        ;ProductSuperNavNode             ;                        ; "Produk"
+                        ;SupportNavNode                  ;                        ; "Support"
+                        ;AboutNewNavNode                 ;                        ; "About"
+#                        ;ProductSuperNavNode             ;                        ; "Product"
+#                        ;SupportNavNode                  ;                        ; "Support"
+#                        ;AboutNewNavNode                 ;                        ; "About"
+
+
+UPDATE CMSNavigationNode;uid[unique=true]                    ;$contentCV[unique=true]; title[lang=$lang]
+                        ;ProductNavNode                      ;                       ; "Produk"
+                        ;WarrantyNavNode                     ;                       ; "Aktivasi Garansi"
+                        ;WaybillNavNode                      ;                       ; "Cek Resi"
+                        ;FAQNewNavNode                       ;                       ; "FAQ"
+                        ;HelpNavNode                         ;                       ; "Bantuan"
+                        ;TandCNavNode                        ;                       ; "Syarat dan Ketentuan"
+                        ;PrivacyNavNode                      ;                       ; "Kebijakan Privasi"
+                        ;AboutUsNewNavNode                   ;                       ; "Tentang InTheBox"
+                        ;OfflineNavNode                      ;                       ; "Toko Offline"
+                        ;BlogNavNode                         ;                       ; "Blog"
+                        ;TestimonyNavNode                    ;                       ; "Testimoni"
+#                        ;ProductNavNode                      ;                       ; "Product"
+#                        ;WarrantyNavNode                     ;                       ; "Warranty Registration"
+#                        ;WaybillNavNode                      ;                       ; "Waybill Status"
+#                        ;FAQNewNavNode                       ;                       ; "FAQ"
+#                        ;HelpNavNode                         ;                       ; "Help"
+#                        ;TandCNavNode                        ;                       ; "Terms and Condition"
+#                        ;PrivacyNavNode                      ;                       ; "Privacy Policy"
+#                        ;AboutUsNewNavNode                   ;                       ; "About InTheBox"
+#                        ;OfflineNavNode                      ;                       ; "Offline Store"
+#                        ;BlogNavNode                         ;                       ; "Blog"
+#                        ;TestimonyNavNode                    ;                       ; "Testimony"
+
+$contentCatalog=demoContentCatalog
+$contentCatalogName=Demo Content Catalog
+$contentCV=catalogVersion(CatalogVersion.catalog(Catalog.id[default=$contentCatalog]),CatalogVersion.version[default=Staged])[default=$contentCatalog:Staged]
+$lang = id
+# title indo
+UPDATE CMSNavigationNode;uid[unique=true]                ;$contentCV[unique=true] ; title[lang=$lang]
+                        ;ProductSuperNavNode             ;                        ; "Produk"
+                        ;SupportNavNode                  ;                        ; "Support"
+                        ;AboutNewNavNode                 ;                        ; "About"
+
+UPDATE CMSNavigationNode;uid[unique=true]                    ;$contentCV[unique=true]; title[lang=$lang]
+                        ;ProductNavNode                      ;                       ; "Produk"
+                        ;WarrantyNavNode                     ;                       ; "Aktivasi Garansi"
+                        ;WaybillNavNode                      ;                       ; "Cek Resi"
+                        ;FAQNewNavNode                       ;                       ; "FAQ"
+                        ;HelpNavNode                         ;                       ; "Bantuan"
+                        ;TandCNavNode                        ;                       ; "Syarat dan Ketentuan"
+                        ;PrivacyNavNode                      ;                       ; "Kebijakan Privasi"
+                        ;AboutUsNewNavNode                   ;                       ; "Tentang InTheBox"
+                        ;OfflineNavNode                      ;                       ; "Toko Offline"
+                        ;BlogNavNode                         ;                       ; "Blog"
+                        ;TestimonyNavNode                    ;                       ; "Testimoni"
+
+#### IMPEX PART 3 ####
+### DATA TESTIMONI ###
+INSERT_UPDATE Testimoni; id[unique=true]; name                          ; rating; date[dateformat=dd.MM.yyyy HH:mm:ss]
+                       ; 1              ; "Baim Wong"                   ; 5     ; 09.09.2020 18:22:00
+                       ; 2              ; "Raffi Ahmad"                 ; 5     ; 10.08.2020 11:41:00
+                       ; 3              ; "Melaney Ricardo"             ; 5     ; 08.06.2020 20:00:00
+                       ; 4              ; "novika stefani"              ; 5     ; 06.03.2019 11:37:00
+                       ; 5              ; "Rahmatullah Rahmatullah"     ; 5     ; 23.11.2018 11:02:00
+                       ; 6              ; "Diana Veronica"              ; 5     ; 09.10.2018 09:19:00
+                       ; 7              ; "Andika R"                    ; 5     ; 07.10.2018 12:34:00
+                       ; 8              ; "rinaldo fitra"               ; 4     ; 27.09.2018 13:28:00
+                       ; 9              ; "Yunni Hikmah"                ; 5     ; 24.08.2018 16:46:00
+                       ; 10             ; "Wulan Permatasari"           ; 4.5   ; 06.08.2018 08:57:00
+                       ; 11             ; "Feni Rizona"                 ; 5     ; 14.05.2018 10:10:00
+                       ; 12             ; "Salwa unknown"               ; 4     ; 22.04.2018 22:09:00
+                       ; 13             ; "tiara larasati"              ; 5     ; 28.03.2018 13:48:00
+                       ; 14             ; "Nisky Kiki rasuk"            ; 5     ; 27.01.2018 21:23:00
+                       ; 15             ; "Rany May"                    ; 5     ; 28.12.2017 14:10:00
+                       ; 16             ; "Maya Sartika"                ; 5     ; 26.12.2017 09:39:00
+                       ; 17             ; "Maya Sartika"                ; 5     ; 26.12.2017 09:35:00
+                       ; 18             ; "Maya Sartika"                ; 5     ; 26.12.2017 09:30:00
+                       ; 19             ; "Wahyuningsih Wahyuningsih"   ; 4     ; 22.12.2017 13:20:00
+                       ; 20             ; "Aulia Dwi Oktavia"           ; 5     ; 20.12.2017 03:35:00
+                       ; 21             ; "Agung Wisaksono Pangestu"    ; 5     ; 20.11.2017 21:55:00
+                       ; 22             ; "Ceria Nur Rohmah"            ; 5     ; 04.11.2017 05:07:00
+                       ; 23             ; "Dani Rachman"                ; 5     ; 08.09.2017 13:25:00
+                       ; 24             ; "Renni Pirma"                 ; 4     ; 25.04.2017 16:00:00
+                       ; 25             ; "Yoselita Kusumaningrum"      ; 5     ; 25.04.2017 15:31:00
+                       ; 26             ; "olivia natalis"              ; 5     ; 20.04.2017 10:10:00
+                       ; 27             ; "angeline ngan"               ; 5     ; 07.04.2017 16:14:00
+                       ; 28             ; "hartanto koswara"            ; 5     ; 07.04.2017 15:30:00
+                       ; 29             ; "wahyu kurniawan"             ; 5     ; 07.04.2017 14:34:00
+                       ; 30             ; "Stella Lee"                  ; 4.5   ; 07.04.2017 14:24:00
+                       ; 31             ; "Heni Silviana"               ; 5     ; 08.03.2017 16:00:00
+                       ; 32             ; "Andre Wongso"                ; 4     ; 07.03.2017 16:55:00
+                       ; 33             ; "Andre Wongso"                ; 3.5   ; 07.03.2017 16:53:00
+                       ; 34             ; "Victor Adrianus"             ; 4     ; 07.03.2017 16:41:00
+                       ; 35             ; "Victor Adrianus"             ; 3.5   ; 07.03.2017 16:36:00
+                       ; 36             ; "Kris Mateo"                  ; 4.5   ; 07.03.2017 16:16:00
+                       ; 37             ; "Kris Mateo"                  ; 4     ; 07.03.2017 16:14:00
+                       ; 38             ; "Mabelle Earlene"             ; 4.5   ; 07.03.2017 15:49:00
+                       ; 39             ; "Mabelle Earlene"             ; 3.5   ; 07.03.2017 15:38:00
+                       ; 40             ; "Glenn Devos"                 ; 4.5   ; 06.03.2017 23:21:00
+                       ; 41             ; "Glenn Devos"                 ; 4     ; 06.03.2017 23:20:00
+                       ; 42             ; "Adiyanto Hardian"            ; 3.5   ; 06.03.2017 23:16:00
+                       ; 43             ; "Adiyanto Hardian"            ; 4     ; 06.03.2017 23:13:00
+                       ; 44             ; "Neil Ward"                   ; 3.5   ; 06.03.2017 23:04:00
+                       ; 45             ; "Neil Ward"                   ; 4     ; 06.03.2017 23:03:00
+
+
+# Update Title sama desc
+UPDATE Testimoni; id[unique=true]; title                                                ; description
+                ; 1              ; "Mantap banget"                                      ; "Kasur baru yang packing nya simple banget, masuk ke dalam box! Kasur @inthebox.id dengan teknologi Pocket Springbed ini enak banget, nyaman dan empuk! Ada Free Bantal dan Free Ongkirnya juga lhoo! Mantap banget"
+                ; 2              ; "Pilih kasur INTHEBOX aja!"                          ; "Pokoknya kalau mau beli spring bed yang bagus, materialnya berkualitas, nyaman, dan harganya murah, langsung pilih kasur INTHEBOX aja. Apalagi INTHEBOX+ ini nih bagus banget. Selama gue pakai kasur INTHEBOX di rumah itu bikin tidur jadi nyenyak, pas bangun langsung segar badannya."
+                ; 3              ; "Terima kasih Inthebox!"                             ; "Produk memuaskaan sekalii.. dan seru waktu unboxing ya :-D Nyaman sekalii. Pas dapet harga ﬂash sale lagi. Mantap banget sihh klo ini Semoga aweet ya. Trimakasih Inthebox. Trimakasih Tokopedia."
+                ; 4              ; "worth the quality, worth the price"                 ; "awalnya bingung mau beli spring bed keq gimana blm lagi masalah harga kan, tkt beli yang murah tapi cepet rusak, tkt dpt barang jelek, akhirnya keinget sama iklan kasur yang datang nya in the box, akhirnya carilah di shopee eehh nemu donk, harganya juga ok bgt plus yang penting itu free ongkir, proses nya cepet and ga pake lama, tgl 1 pesen, tgl 5 uda sampe dengan aman. langsung deh bongkar, ga pake ribet loohh beb, eh gt digunting plastik nya, instantly ngembang donk, awal dibuka paling baru ngembang halfnya ajah, but after 60 minute ngembang full and bener - bener empuk donk busa nya, pegasnya mantul, gt dicoba bener - bener beda sama spring bed merk lain. ga nyesel beli nya and recommended banget deh. dari pada beli yang ga jelas better langsung aja beli in the box."
+                ; 5              ; "Bed In The Box"                                     ; "Sangat senang dan unik, pengalaman beli kasur pertama kali langsung penasaran kepada in.the.box. Kemudian saya cari2 info produk, rata2 memuaskan. Beli dapet harga promo 1.349k (160x180) dan gratis ongkir. Sangat memuaskan dan unik saat unboxing. :D"
+                ; 6              ; "Love in the box"                                    ; "Awalny sempet ragu , ternyata pas brg dtg plastiknya dibuka.. Langsung ngembang keren bgt"
+                ; 7              ; "Mantap!!"                                           ; "Kasur dan bantalnya empuk...Dan sejauh ini hanya in.the.box yang menyediakan kasur dengan teknologi pocket spring dengan harga yang sangat terjangkau."
+                ; 8              ; "Matras lembut, bantal empuk"                        ; "matras busa, empuk lembut, enak dipakai tidur, tapi jangan duduk karena langsung terbenam. di dalam matrasnya ada per jadi ada support sehingga ketika dipakai tidur tidak terbenam dan sebelah bergerak gerak kita tidak terganggu. saya beli king size, ternyata beratnya minta ampun, perlu 2 org untuk menggotong boxnya. Dapat 2 bantal empuk sebagai bonus, dan gratis ongkos kirim. Sejauh ini puas dengan kualitas dan harganya. Ini bukan Kasur busa biasa .. top deh"
+                ; 9              ; "Ga pake ribet"                                      ; "Bingung cari matras yang nyaman....pas nemu bedinthebox...langsung pesan...praktis, cepat sampai, gratis ongkir....ga pakai ribet...."
+                ; 10             ; "Top banget"                                         ; "puas bgt sama pelayanan in the box, order jumat payment sabtu dan minggu udah sampai rumah barang aman dan rapih dan setelah unboxing, matrasnya emang bener bener empuk dibanding yg lain"
+                ; 11             ; "Top"                                                ; "Udah ga usah ragu-ragu lagi beli spring bed inthebox..top markotop..."
+                ; 12             ; "Nyamann"                                            ; "Nyaman banget"
+                ; 13             ; "Amazing.. ."                                        ; "Bedinthebox oke bgt deh.. Awalnya sempet ragu sempet deg2an beli disini (online) atau di offline store aja.. Tapi akhirnya mutusin pesen di bedinthebox karna penasaran juga. Dan hasilnya amazing puasssss bangeett.. Pengirimnya cepett, operatornya baik ramahhhh banget. Padah bisa dibilang saya cost yg lumayan bawell nanya2 mulu.. HeheheTapi setelah pesenam dateng hasilnya puas banget nget nget gk nyesell pesen disinii... Love.. Love..."
+                ; 14             ; "Bed in the box ... oke..."                          ; "Nggak nyangka... kasur sesuai harapan... kasur nyaman... recommanded bngit... sering2 diskon n bonus ya... hihihi... the best bed in the box."
+                ; 15             ; "Puass..Semoga selalu Awettt.."                      ; "Springbednya KECE KEKINIAN"
+                ; 16             ; "Gulingnya mantabs"                                  ; "Guling in the box mantabs, begitu dibuka plastik pembungkusnya, langsung mengembang, empuk dan bahannya nyaman gak bikin bersin."
+                ; 17             ; "Bantal VIP"                                         ; "Ibu saya biasa pakai bantal kapuk Dan dakron, setelah coba bantal bonus dari in the box,serasa bantal VIP katanya"
+                ; 18             ; "Unboxing seru keren abis!!!"                        ; "Saat unboxing bikin penasaran seisi rumah....pengalaman seru...awalnya semua ragu apakah sesuai iklan....ternyata hasilnya keren!!!Kasur,bantal, dan guling mengembang dengan cepat saat plastik pembungkus dibuka. Andai saja ada pilihan warna kain matrasnya, pasti jadi lebih keren."
+                ; 19             ; "terima kasih ya..."                                 ; "Baru pertama belanja lewat web... tadinya dag dig dug ko udah 1minggu lebih belum sampe... t tapi alhamdulillah setelah 9 hari barangnya sampe dan memuaskan... operatornya juga ramah dan pelayanan 24 jam... tingkatkan waktu pengirimanya ya agar ga trlalu lama... makasih..."
+                ; 20             ; "Kasur apaan nih?"                                   ; "A few weeks ago, my father called me by shouting from outside. I was very surprised because he bought me a new mattress. Yea, this inthebox bed. I thought it was just like an ordinary mattress, but I was wrong. I never imagined this mattress was the most comfort I've ever had. Plus, I got the bonus pillow for free haha. Thank you, you made my day."
+                ; 21             ; "Mantap"                                             ; "Pelayanan dan kualias produk tidak mengecewakan pelanggan. Recomended seller and product.Andai ada inovasi produk baru seperti sova in.the.box"
+                ; 22             ; "Mantap jiwa"                                        ; "Terimakasih, matrasnya sudah sampai. kini aku&suami jd lebih nyaman tidurnya. Empuknya tuuuuuh nyummy bgt ,..."
+                ; 23             ; "Magic & comfortable"                                ; "hahaha nyaman daaaaan.. MAGIC!! udah gitu aja.."
+                ; 24             ; "Terima Kasih inthebox.id !!"                        ; "Terima Kasih inthebox.id, kasurnya mantap banget dan nanti saya belanja lagi di inthebox.id."
+                ; 25             ; "Gak Salah Milih Kasur"                              ; "Sebelum memutuskan membeli kasur ini, sempat bertanya ke admin, mengenai tinggi kasur dan ternyata cukup tinggi juga sesuailah sama pemiliknya besar - besar.Senin kasur datang, ketika mengembang saya ukur. Loh 20cm. Tapi tiap hari iseng memperhatikan kok makin lama makin ngembang kasurnya.Hari ini iseng ukur lagi dan benar benar 24cm. Sang kasur sudah mengembang maksimal.Yang amazing lagi, ketika suami saya yg berbadan besar nyusul naik ke kasur, saya tidak merasakannya dan anteng aja kasurnya ga ikut meyat meyot kayak yang sebelumnya.Tidur nyenyak, hati senang."
+                ; 26             ; "happy parents"                                      ; "saya membeli bed in the box ini di hypermart solo untuk orang tua saya. org tua saya happy sekali krn barangnya bisa langsung dibawa pulang, takjub dengan packagingnya yang compact, suka sekali dengan kenyamanan kasurnya ( pemakaian 6 hari)."
+                ; 27             ; "Welcoming my new mattress for guest's bedroom !"    ; "Welcoming my new mattress for guest's bedroom ! Thank you inthebox.id for wonderful shopping experience, your customer service is top notch! Fast, reliable and very helpful. Love the compact packaging, moving and unpacking to 2nd floor was a breeze. Mattress is soft yet firm, my daughter cannot wait to hop and sleep in it"
+                ; 28             ; "New mattress for new home!"                         ; "New mattress for new home . Untung ada matres inthebox.id yang di packing ke box jadi gampang dibawanya"
+                ; 29             ; "mbokku seneng"                                      ; "senenge mbokkuuu...wkwkwk"
+                ; 30             ; "i'm loving it!"                                     ; "It's an unique and first of its kind in Indonesia, as the mattress would fit inside a box and all you have to do is to open it and wait for the magic happens!Best thing about this mattress is that it's quality is comparable with those average mattress but with more affordable price AND not to forget that you can shop it through their website. No more wasted time at stores to pick your bed. You can just simply order online and they'll arrive at your doorstep in no timeI have used this mattress ever since and I'm loving it!"
+                ; 31             ; "Berbeda Dari Guling Lain"                           ; "Guling Ini Berbeda Dari Guling Lain Yang Sudah Pernah Saya Coba. Jadi Ingin Untuk Mencoba Spring Bednya Juga Nanti"
+                ; 32             ; "bagus"                                              ; "Awalnya saya kurang suka pake guling, tapi waktu saya nyobain guling In The Box sekarang tiap malam saya meluk guling deh jadinya"
+                ; 33             ; "cocok"                                              ; "Awalnya saya kira masuk angin tapi ternyata karena spring bed dirumah ga nyaman yang bikin badan saya kayak ga enak terus. Lalu saya nanya ke teman-teman saya dan mereka banyak yang pakai In The Box. Setelah itu saya order diwebsitenya dan pas lihat boxnya berasa yakin ga nih sama spring bed ini. Pas dicoba ternyata cocok dengan saya, badan jd fresh lagi, In The Box mantap deh."
+                ; 34             ; "sakit leher hilang"                                 ; "Saya biasanya membeli bantal untuk istri saya karena dia mengeluh kalau bantal yang dibeli membuat sakit leher. Walau harganya mahal pun tidak menjamin bahwa bantalnya enak dipakai. Setelah membeli bantal In The Box, sakit leher pun hilang dan tidur menjadi lebih nyenyak. Sangat direkomendasikan"
+                ; 35             ; "harganya oke"                                       ; "Berhubung paling males beli spring bed ke toko karena pusing milih saya pun coba beli spring bed ini karena dikasitau sama saudara kalau spring bed ini bagus dan enak dipakai. Dan memang benar saya ga nyesal belinya, harganya juga masih oke buat spring bed."
+                ; 36             ; "nice pillow"                                        ; "A nice pillow for the money, tried many pillows and this is by far the best. Working for all sleeping position"
+                ; 37             ; "rested and energized"                               ; "I wanted to get something nicer than my old mattress so I went with In The Box after reading their good reviews. This is exactly what I'm looking for, service was great. I feel rested and energized when I wake up. Thank you"
+                ; 38             ; "fantastis"                                          ; "Suamiku komentar kalau pakai bantal ini rasanya seperti tidur dibantal hotel berbintang. Enak dipakai, fantastis."
+                ; 39             ; "spring bed paling nyaman"                           ; "Tidur saya biasanya ga enak banget, kadang suka terbangun ditengah malam. Mungkin karena kasur saya sudah terlalu lama saya gunakan. Karena itu saya berpikir saatnya mencari kasur baru, lalu saya memilih In The Box, dengan harga yang oke dan review yang bagus-bagus saya memberanikan diri untuk membelinya. Saya pun menyukai spring bed ini dan menjadi spring bed paling nyaman yang pernah saya gunakan. Saya engga sabar untuk tidur malam ini."
+                ; 40             ; "Love"                                               ; "Highly recommended this pillow, love the design of the pillow. It doesn't sink and lose shape during the night and it stays cool"
+                ; 41             ; "Sleep like a baby"                                  ; "Sleep like a baby, I also fall asleep faster. The shipping was quick and the bed is very comfortable and gets more comfortable each night"
+                ; 42             ; "lebih pulas"                                        ; "Saya membeli spring bed In The Box karena saya susah tidur dan bantalnya juga ga enak. Setelah membeli spring bednya saya pun membeli bantalnya dan tidur saya lebih pulas setiap malam."
+                ; 43             ; "Sangat puas"                                        ; "Saya tipe orang yang tidak rewel dan bisa tidur dimana saja, tetapi In The Box memang berbeda, tidur saya menjadi jauh lebih nyaman daripada biasanya. Sangat puas membelinya."
+                ; 44             ; "doesn't get too warm"                               ; "I feel that Pillow In The Box does deliver on the give and take suitable for a good night sleep. It doesn't get too warm, stay cool which I like"
+                ; 45             ; "very satisified"                                    ; "Mattress firm yet soft, so supportive. Can't help but fall asleep. I've gotten to a deeper sleep and stayed there longer than my old mattress. I'm very satisified with my purchase"
+
+# OPTIONAL
+# Mau semua data monggo, ini tambahannya
+INSERT_UPDATE Testimoni; id[unique=true]; name                          ; rating; date[dateformat=dd.MM.yyyy HH:mm:ss]
+                       ; 46             ; "Baim Wong"                   ; 5     ; 09.09.2020 18:22:00
+                       ; 47             ; "Raffi Ahmad"                 ; 5     ; 10.08.2020 11:41:00
+                       ; 48             ; "Melaney Ricardo"             ; 5     ; 08.06.2020 20:00:00
+                       ; 49             ; "novika stefani"              ; 5     ; 06.03.2019 11:37:00
+                       ; 50             ; "Rahmatullah Rahmatullah"     ; 5     ; 23.11.2018 11:02:00
+                       ; 51             ; "Diana Veronica"              ; 5     ; 09.10.2018 09:19:00
+                       ; 52             ; "Andika R"                    ; 5     ; 07.10.2018 12:34:00
+                       ; 53             ; "rinaldo fitra"               ; 4     ; 27.09.2018 13:28:00
+                       ; 54             ; "Yunni Hikmah"                ; 5     ; 24.08.2018 16:46:00
+                       ; 55             ; "Wulan Permatasari"           ; 4.5   ; 06.08.2018 08:57:00
+                       ; 56             ; "Feni Rizona"                 ; 5     ; 14.05.2018 10:10:00
+                       ; 57             ; "Salwa unknown"               ; 4     ; 22.04.2018 22:09:00
+                       ; 58             ; "tiara larasati"              ; 5     ; 28.03.2018 13:48:00
+                       ; 59             ; "Nisky Kiki rasuk"            ; 5     ; 27.01.2018 21:23:00
+                       ; 60             ; "Rany May"                    ; 5     ; 28.12.2017 14:10:00
+                       ; 61             ; "Maya Sartika"                ; 5     ; 26.12.2017 09:39:00
+                       ; 62             ; "Maya Sartika"                ; 5     ; 26.12.2017 09:35:00
+                       ; 63             ; "Maya Sartika"                ; 5     ; 26.12.2017 09:30:00
+                       ; 64             ; "Wahyuningsih Wahyuningsih"   ; 4     ; 22.12.2017 13:20:00
+                       ; 65             ; "Aulia Dwi Oktavia"           ; 5     ; 20.12.2017 03:35:00
+                       ; 66             ; "Agung Wisaksono Pangestu"    ; 5     ; 20.11.2017 21:55:00
+                       ; 67             ; "Ceria Nur Rohmah"            ; 5     ; 04.11.2017 05:07:00
+                       ; 68             ; "Dani Rachman"                ; 5     ; 08.09.2017 13:25:00
+                       ; 69             ; "Renni Pirma"                 ; 4     ; 25.04.2017 16:00:00
+                       ; 70             ; "Yoselita Kusumaningrum"      ; 5     ; 25.04.2017 15:31:00
+                       ; 71             ; "olivia natalis"              ; 5     ; 20.04.2017 10:10:00
+                       ; 72             ; "angeline ngan"               ; 5     ; 07.04.2017 16:14:00
+                       ; 73             ; "hartanto koswara"            ; 5     ; 07.04.2017 15:30:00
+                       ; 74             ; "wahyu kurniawan"             ; 5     ; 07.04.2017 14:34:00
+                       ; 75             ; "Stella Lee"                  ; 4.5   ; 07.04.2017 14:24:00
+                       ; 76             ; "Heni Silviana"               ; 5     ; 08.03.2017 16:00:00
+                       ; 77             ; "Andre Wongso"                ; 4     ; 07.03.2017 16:55:00
+                       ; 78             ; "Andre Wongso"                ; 3.5   ; 07.03.2017 16:53:00
+                       ; 79             ; "Victor Adrianus"             ; 4     ; 07.03.2017 16:41:00
+                       ; 80             ; "Victor Adrianus"             ; 3.5   ; 07.03.2017 16:36:00
+                       ; 81             ; "Kris Mateo"                  ; 4.5   ; 07.03.2017 16:16:00
+                       ; 82             ; "Kris Mateo"                  ; 4     ; 07.03.2017 16:14:00
+                       ; 83             ; "Mabelle Earlene"             ; 4.5   ; 07.03.2017 15:49:00
+                       ; 84             ; "Mabelle Earlene"             ; 3.5   ; 07.03.2017 15:38:00
+                       ; 85             ; "Glenn Devos"                 ; 4.5   ; 06.03.2017 23:21:00
+                       ; 86             ; "Glenn Devos"                 ; 4     ; 06.03.2017 23:20:00
+                       ; 87             ; "Adiyanto Hardian"            ; 3.5   ; 06.03.2017 23:16:00
+                       ; 88             ; "Adiyanto Hardian"            ; 4     ; 06.03.2017 23:13:00
+                       ; 89             ; "Neil Ward"                   ; 3.5   ; 06.03.2017 23:04:00
+                       ; 90             ; "Neil Ward"                   ; 4     ; 06.03.2017 23:03:00
+
+
+UPDATE Testimoni; id[unique=true]; title                                                ; description
+                ; 46             ; ""
+                ; 47             ; ""
+                ; 48             ; ""
+                ; 49             ; ""
+                ; 50             ; ""
+                ; 51             ; ""
+                ; 52             ; ""
+                ; 53             ; ""
+                ; 54             ; ""
+                ; 55             ; ""
+                ; 56             ; ""
+                ; 57             ; ""
+                ; 58             ; ""
+                ; 59             ; ""
+                ; 60             ; ""
+                ; 61             ; ""
+                ; 62             ; ""
+                ; 63             ; ""
+                ; 64             ; ""
+                ; 65             ; ""
+                ; 66             ; ""
+                ; 67             ; ""
+                ; 68             ; ""
+                ; 69             ; ""
+                ; 70             ; ""
+                ; 71             ; ""
+                ; 72             ; ""
+                ; 73             ; ""
+                ; 74             ; ""
+                ; 75             ; ""
+                ; 76             ; ""
+                ; 77             ; ""
+                ; 78             ; ""
+                ; 79             ; ""
+                ; 80             ; ""
+                ; 81             ; ""
+                ; 82             ; ""
+                ; 83             ; ""
+                ; 84             ; ""
+                ; 85             ; ""
+                ; 86             ; ""
+                ; 87             ; ""
+                ; 88             ; ""
+                ; 89             ; ""
+                ; 90             ; ""
+
