@@ -192,14 +192,14 @@ public class SummaryCheckoutStepController extends AbstractCheckoutStepControlle
 		}
 		final CartData cartData = getCheckoutFacade().getCheckoutCart();
 
-		if (!getCheckoutFacade().containsTaxValues())
-		{
-			LOGGER.error(String.format(
-					"Cart %s does not have any tax values, which means the tax cacluation was not properly done, placement of order can't continue",
-					cartData.getCode()));
-			GlobalMessages.addErrorMessage(model, "checkout.error.tax.missing");
-			invalid = true;
-		}
+//		if (!getCheckoutFacade().containsTaxValues())
+//		{
+//			LOGGER.error(String.format(
+//					"Cart %s does not have any tax values, which means the tax cacluation was not properly done, placement of order can't continue",
+//					cartData.getCode()));
+//			GlobalMessages.addErrorMessage(model, "checkout.error.tax.missing");
+//			invalid = true;
+//		}
 
 		if (!cartData.isCalculated())
 		{
