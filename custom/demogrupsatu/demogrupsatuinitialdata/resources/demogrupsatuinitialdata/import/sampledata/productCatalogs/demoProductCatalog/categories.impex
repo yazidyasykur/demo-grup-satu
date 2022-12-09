@@ -1,0 +1,13 @@
+$productCatalog = demoProductCatalog
+$productCatalogName = Demo Product Catalog
+
+$catalogVersion = catalogversion(catalog(id[default=$productCatalog]), version[default='Staged'])[unique=true, default=$productCatalog:Staged]
+$supercategories = source(code, $catalogVersion)[unique=true]
+$categories = target(code, $catalogVersion)[unique=true]
+
+# Insert Categories
+INSERT_UPDATE Category; code[unique = true];name                ; $catalogVersion; supercategories(code, $catalogVersion); allowedPrincipals(uid)[default = 'customergroup']; order
+                      ; INTHEBOX           ;INTHEBOX            ;                ;                                       ;                                                  ;
+                      ; BED                ;KASUR INTHEBOX      ;                ; INTHEBOX                              ;                                                  ; 1
+                      ; SOFA               ;SOFA INTHEBOX       ;                ; INTHEBOX                              ;                                                  ; 2
+                      ; PROPS              ;PELENGKAP INTHEBOX  ;                ; INTHEBOX                              ;                                                  ; 2

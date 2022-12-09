@@ -14,22 +14,9 @@
 	<cart:cartValidation/>
 	<cart:cartPickupValidation/>
 
-	<div class="cart-top-bar">
-        <div class="text-right">
-            <spring:theme var="textHelpHtml" code="text.help" />
-            <a href="" class="help js-cart-help" data-help="${fn:escapeXml(textHelpHtml)}">${textHelpHtml}
-                <span class="glyphicon glyphicon-info-sign"></span>
-            </a>
-            <div class="help-popup-content-holder js-help-popup-content">
-                <div class="help-popup-content">
-                    <strong>${fn:escapeXml(cartData.code)}</strong>
-                    <spring:theme var="cartHelpContentVar" code="basket.page.cartHelpContent" htmlEscape="false" />
-                    <c:set var="cartHelpContentVarSanitized" value="${ycommerce:sanitizeHTML(cartHelpContentVar)}" />
-                    <div>${cartHelpContentVarSanitized}</div>
-                </div>
-            </div>
-		</div>
-	</div>
+<div class="container">
+
+    <h1 class="text-center">Keranjang Belanja</h1>
 
 	<div>
 		<div>
@@ -59,4 +46,6 @@
             </cms:pageSlot>
 		</c:if>
 	</div>
+
+</div>
 </template:page>
