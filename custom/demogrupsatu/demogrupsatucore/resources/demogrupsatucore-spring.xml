@@ -538,4 +538,12 @@
 		<property name="itemCleanupHooks" ref="csTicketRetentionHooks"/>
 		<property name="ticketBusinessService" ref="ticketBusinessService"/>
 	</bean>
+
+	<!--Testimoni Dao	-->
+	<alias name="defaultTestimoniDao" alias="testimoniDao" />
+	<bean id="defaultTestimoniDao" class="org.demogrupsatu.core.testimoni.dao.impl.DefaultTestimoniDao" />
+
+	<!--Testimoni Service	-->
+	<alias name="defaultTestimoniService" alias="testimoniService" />
+	<bean id="defaultTestimoniService" class="org.demogrupsatu.core.testimoni.impl.DefaultTestimoniService" />
 </beans>

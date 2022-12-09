@@ -182,4 +182,20 @@
 	</bean>
 
 	<bean id="genderData" class="org.demogrupsatu.facades.product.data.GenderData" scope="prototype"/>
+
+	<!--Testimoni	-->
+	<alias name="testimoniPopulator" alias="testimoniPopulator" />
+	<bean name="testimoniPopulator" class="org.demogrupsatu.facades.populators.TestimoniPopulator" />
+
+	<bean id="testimoniConverter" name="testimoniConverter" parent="abstractPopulatingConverter">
+		<property name="targetClass" value="org.demogrupsatu.facades.testimoni.TestimoniData" />
+		<property name="populators">
+			<list merge="true">
+				<ref bean="testimoniPopulator" />
+			</list>
+		</property>
+	</bean>
+
+	<alias name="testimoniFacade" alias="testimoniFacade" />
+	<bean name="testimoniFacade" class="org.demogrupsatu.facades.testimoni.impl.DefaultTestimoniFacade" />
 </beans>
