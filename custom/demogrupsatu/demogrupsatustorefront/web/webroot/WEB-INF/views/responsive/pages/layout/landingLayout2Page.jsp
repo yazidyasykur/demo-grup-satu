@@ -2,6 +2,7 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@ taglib prefix="template" tagdir="/WEB-INF/tags/responsive/template"%>
 <%@ taglib prefix="cms" uri="http://hybris.com/tld/cmstags"%>
+<%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
 
 <template:page pageTitle="${pageTitle}">
 
@@ -76,25 +77,20 @@
                     yang terdiri dari bantal, guling, dan sofa bed.
                 </div>
             </div>
-            <div class="total-stars text-right">
-                <div class="star d-flex">
-                    <div class="star">
-                        <img src="https://inthebox.net/images/star-full.webp" alt="star">
-                    </div>
-                    <div class="star">
-                        <img src="https://inthebox.net/images/star-full.webp" alt="star">
-                    </div>
-                    <div class="star">
-                        <img src="https://inthebox.net/images/star-full.webp" alt="star">
-                    </div>
-                    <div class="star">
-                        <img src="https://inthebox.net/images/star-full.webp" alt="star">
-                    </div>
-                    <div class="star">
-                        <img src="https://inthebox.net/images/star-half.webp" alt="star">
-                    </div>
-                    <span class="desc">4.9/5 (268 Reviews)</span>
-                </div>
+            <div class="flex-display flex-end-display">
+
+                    <c:forEach begin="1" end="${starCount}" var="i">
+                        <div class="star">
+                            <img src="https://inthebox.net/images/star-full.webp" alt="star">
+                        </div>
+                    </c:forEach>
+                    <c:if test="${isMoreThanHalf}">
+                        <div class="star">
+                            <img src="https://inthebox.net/images/star-half.webp" alt="star">
+                        </div>
+                    </c:if>
+                    <span class="desc">${average}/5 (${totalReview} Reviews)</span>
+
             </div>
         </div>
         <div class="container tengah">
@@ -102,8 +98,28 @@
                 <cms:component component="${feature}" element="div" class="yComponentWrapper"/>
             </cms:pageSlot>
         </div>
+        <div class="box-container-display">
+        <c:forEach items="${showSomeTestimoni}" var="testi">
+            <div class="box-display">
+                <img src="${fn:escapeXml(commonResourcePath)}/images/orang.png" class="pic" />
+                <div class="text">
+                    <h4 class="name-color text-weight-bold">${testi.name}</h4>
+                    <c:forEach begin="1" end="${testi.rating}" var="i">
+                        <img src="https://inthebox.net/images/star-full.png" data-src="https://inthebox.net/images/star-full.png" class="star" alt="Star" />
+                    </c:forEach>
+                    <c:if test="${testi.halfStar}">
+                        <img src="https://inthebox.net/images/star-half.png" data-src="https://inthebox.net/images/star-half.png" class="star" alt="Star" />
+                    </c:if>
+                    <h4 class="text-weight-bold">${testi.title}</h4>
+                    <p>${testi.description}</p>
+                    <p class="date-color">${testi.date}</p>
+                </div>
+            </div>
+        </c:forEach>
+        </div>
         <div class="link text-center">
-            <a class="btn btn-brand" href="#">Lihat Semua Testimoni</a>
+            <c:url value="/testimoni" var="testimony" />
+            <a class="btn btn-brand" href="${fn:escapeXml(testimony)}">Lihat Semua Testimoni</a>
         </div>
     </section>
 

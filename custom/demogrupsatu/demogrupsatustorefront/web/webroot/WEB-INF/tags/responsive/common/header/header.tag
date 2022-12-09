@@ -178,6 +178,91 @@
 	</nav>
 	<a id="skiptonavigation"></a>
 	<nav:topNavigation />
+
+	<div class="header">
+        <div class="top-part-header">
+            <div class="container-part-header flex-display flex-row-display align-center">
+                <div class="small-part-header">
+                    <div class="small-part-margin title-color">
+                        <img src="https://inthebox.net/images/layout-v2/header-icon-10y-warranty.png" />
+                        Garansi 10 Tahun
+                    </div>
+                    <div class="small-part-margin title-color">
+                        <img src="https://inthebox.net/images/layout-v2/header-icon-free-shipping.png" />
+                        Free Shipping pulau Jawa & Sumatera
+                    </div>
+                </div>
+                <div class="small-part-header">
+                    <c:url value="/warranty-registration" var="warranty" />
+                    <c:url value="/payment-confirmation" var="payment" />
+                    <c:url value="/waybill-status" var="waybill" />
+                    <a href="${fn:escapeXml(warranty)}" class="small-part-margin link-hover-white-area">
+                        Garansi
+                    </a>
+                    <a href="${fn:escapeXml(payment)}" class="small-part-margin link-hover-white-area">
+                        Konfirmasi
+                    </a>
+                    <a href="${fn:escapeXml(waybill)}" class="small-part-margin link-hover-white-area">
+                        Cek Resi
+                    </a>
+                </div>
+            </div>
+        </div>
+        <div class="bottom-part-header">
+            <div class="container-part-header flex-display flex-row-display align-center">
+                <cms:pageSlot position="SiteLogo" var="logo" limit="1">
+                    <cms:component component="${logo}" element="div" class="image-resize-2 small-part-margin"/>
+                </cms:pageSlot>
+                <div class="flex-display flex-row-display text-weight-bold">
+                    <c:url value="/product" var="product" />
+                    <c:url value="/about" var="about_us" />
+                    <c:url value="/blog" var="blog" />
+                    <c:url value="/testimoni" var="testimony" />
+                    <a href="${fn:escapeXml(product)}" class="small-part-margin link-hover">
+                        Produck
+                    </a>
+                    <a href="${fn:escapeXml(about_us)}" class="small-part-margin link-hover">
+                        Tentang Kami
+                    </a>
+                    <a href="${fn:escapeXml(blog)}" class="small-part-margin link-hover">
+                        Blog
+                    </a>
+                    <a href="${fn:escapeXml(testimony)}" class="small-part-margin link-hover">
+                        Testimoni
+                    </a>
+                </div>
+                <div class="flex-display flex-row-display align-center">
+                    <sec:authorize access="hasAnyRole('ROLE_ANONYMOUS')" >
+                        <span class="small-part-margin text-weight-bold">
+                            <ycommerce:testId code="header_Login_link">
+                                <c:url value="/login" var="loginUrl" />
+                                <a href="${fn:escapeXml(loginUrl)}" class="link-hover">
+                                    <spring:theme code="header.link.login"/>
+                                </a>
+                            </ycommerce:testId>
+                        </span>
+                    </sec:authorize>
+
+                    <sec:authorize access="!hasAnyRole('ROLE_ANONYMOUS')" >
+                        <span class="small-part-margin text-weight-bold">
+                            <ycommerce:testId code="header_signOut">
+                                <c:url value="/logout" var="logoutUrl"/>
+                                <a href="${fn:escapeXml(logoutUrl)}" class="link-hover">
+                                    <spring:theme code="header.link.logout"/>
+                                </a>
+                            </ycommerce:testId>
+                        </span>
+                    </sec:authorize>
+                    <!-- <a href="${jalosession.tenant.config.getParameter('website.training.https')}/cart">Cart</a> -->
+                    <c:url value="/cart" var="cart" />
+                    <a href="${fn:escapeXml(cart)}">
+                        <img src="https://inthebox.net/images/layout-v2/cart-icon.png" style="max-height: 35px" class="d-none d-md-block small-part-margin" />
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+
 </header>
 
 <cms:pageSlot position="BottomHeaderSlot" var="component" element="div"	class="container-fluid">

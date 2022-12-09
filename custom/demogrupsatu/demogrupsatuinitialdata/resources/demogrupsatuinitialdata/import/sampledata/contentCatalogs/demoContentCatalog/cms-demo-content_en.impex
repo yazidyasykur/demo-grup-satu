@@ -29,7 +29,7 @@ $Image=image(code, $contentCV)
 
 # Site Logo Component
 UPDATE SimpleBannerComponent;$contentCV[unique=true];uid[unique=true];$picture[lang=$lang]
-                            ;;SiteLogoComponent;/images/theme/logo-itb.png;
+                            ;;SiteLogoComponent;/images/theme/header-logo-white.png;
 
 # CMS Link Components
 UPDATE CMSLinkComponent;$contentCV[unique=true];uid[unique=true];linkName[lang=$lang]
@@ -362,12 +362,12 @@ UPDATE CMSParagraphComponent;$contentCV[unique=true];uid[unique=true];content[la
                             ;;DemoParagraphComponent2;"Test Demo Page - Bottom Slot"
 
 # Media Content
-#INSERT_UPDATE Media;mediaFormat(qualifier);$contentCV[unique=true];code[unique=true];@media[translator=de.hybris.platform.impex.jalo.media.MediaDataTranslator][forceWrite=true];mime[default='image/jpeg'];realfilename;folder(qualifier)[default='images'];altText
-#                   ;widescreen;;banner-testing-1400x440.jpg;$siteResource/images/banners/homepage/responsive/banner-demo-1400x440.jpg;;banner-demo-1400x440.jpg;;"Testing Banner"
-#                   ;desktop;;banner-testing-960x330.png;$siteResource/images/banners/homepage/responsive/banner-demo-960x330.png;;banner-demo-960x330.png;;"Testing Banner"
+INSERT_UPDATE Media;mediaFormat(qualifier);$contentCV[unique=true];code[unique=true];@media[translator=de.hybris.platform.impex.jalo.media.MediaDataTranslator][forceWrite=true];mime[default='image/jpeg'];realfilename;folder(qualifier)[default='images'];altText
+                   ;widescreen;;banner-testing-1400x440.jpg;$siteResource/images/banners/homepage/responsive/banner-demo-1400x440.jpg;;banner-demo-1400x440.jpg;;"Testing Banner"
+                   ;desktop;;banner-testing-960x330.png;$siteResource/images/banners/homepage/responsive/banner-demo-960x330.png;;banner-demo-960x330.png;;"Testing Banner"
 
-#INSERT_UPDATE MediaContainer;qualifier[unique=true];$medias;$contentCV[unique=true]
-#                           ;testing-banner-en;banner-testing-1400x440.jpg,banner-testing-960x330.png
+INSERT_UPDATE MediaContainer;qualifier[unique=true];$medias;$contentCV[unique=true]
+                            ;testing-banner-en;banner-testing-1400x440.jpg,banner-testing-960x330.png
 
 UPDATE SimpleResponsiveBannerComponent;$contentCV[unique=true];uid[unique=true];$mediaContainer
                             ;;TestingBannerComponent-1;testing-banner-en
