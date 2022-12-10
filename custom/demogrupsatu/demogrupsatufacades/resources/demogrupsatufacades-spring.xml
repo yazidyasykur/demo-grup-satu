@@ -183,6 +183,7 @@
 
 	<bean id="genderData" class="org.demogrupsatu.facades.product.data.GenderData" scope="prototype"/>
 
+<<<<<<< HEAD
 	<alias name="defaultDemoSearchResultProductPopulator" alias="demoSearchResultProductPopulator"/>
 	<bean id="defaultDemoSearchResultProductPopulator" class="org.demogrupsatu.facades.populators.DemoSearchResultProductPopulator" parent="defaultCommerceSearchResultProductPopulator">
 	</bean>
@@ -193,4 +194,21 @@
 	</bean>
 
 
+=======
+	<!--Testimoni	-->
+	<alias name="testimoniPopulator" alias="testimoniPopulator" />
+	<bean name="testimoniPopulator" class="org.demogrupsatu.facades.populators.TestimoniPopulator" />
+
+	<bean id="testimoniConverter" name="testimoniConverter" parent="abstractPopulatingConverter">
+		<property name="targetClass" value="org.demogrupsatu.facades.testimoni.TestimoniData" />
+		<property name="populators">
+			<list merge="true">
+				<ref bean="testimoniPopulator" />
+			</list>
+		</property>
+	</bean>
+
+	<alias name="testimoniFacade" alias="testimoniFacade" />
+	<bean name="testimoniFacade" class="org.demogrupsatu.facades.testimoni.impl.DefaultTestimoniFacade" />
+>>>>>>> 846c56d4c3f4ba4d5f3c823e0070f58d7a4f90c6
 </beans>

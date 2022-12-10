@@ -17,4 +17,14 @@
 		<property name="code" type="String"/>
 		<property name="name" type="String"/>
 	</bean>
+
+	<bean class="org.demogrupsatu.facades.testimoni.TestimoniData">
+		<property name="id" type="Integer" />
+		<property name="name" type="String" />
+		<property name="rating" type="Integer" />
+		<property name="title" type="String" />
+		<property name="description" type="String" />
+		<property name="date" type="String" />
+		<property name="halfStar" type="Boolean" />
+	</bean>
 </beans>

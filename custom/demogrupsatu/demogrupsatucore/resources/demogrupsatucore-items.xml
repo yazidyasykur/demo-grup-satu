@@ -146,5 +146,61 @@
 
         </typegroup>
 
+        <typegroup name="Testimoni">
+            <itemtype code="Testimoni" extends="GenericItem"
+                      autocreate="true" generate="true"
+                      jaloclass="org.demogrupsatu.core.jalo.Testimoni">
+                <deployment table="Testimoni" typecode="12501" />
+                <attributes>
+                    <attribute qualifier="id" type="java.lang.Integer">
+                        <description>ID Pelanggan</description>
+                        <modifiers read="true" write="true" search="true" optional="false" unique="true" />
+                        <persistence type="property" />
+                    </attribute>
+                    <attribute qualifier="name" type="java.lang.String">
+                        <description>Nama Pelanggan</description>
+                        <modifiers read="true" write="true" search="true" optional="true" unique="false" />
+                        <persistence type="property" />
+                    </attribute>
+                    <attribute qualifier="rating" type="java.lang.Double">
+                        <description>Rating Pelanggan</description>
+                        <modifiers read="true" write="true" search="true" optional="true" unique="false" />
+                        <persistence type="property" />
+                    </attribute>
+                    <attribute qualifier="title" type="java.lang.String">
+                        <description>Judul deskripsi</description>
+                        <modifiers read="true" write="true" search="true" optional="true" unique="false" />
+                        <persistence type="property" />
+                    </attribute>
+                    <attribute qualifier="description" type="java.lang.String">
+                        <description>Deskripsi</description>
+                        <modifiers read="true" write="true" search="true" optional="true" unique="false" />
+                        <persistence type="property">
+                            <columntype database="oracle">
+                                <value>BLOB</value>
+                            </columntype>
+                            <columntype database="sap">
+                                <value>NBLOB</value>
+                            </columntype>
+                            <columntype database="mysql">
+                                <value>text</value>
+                            </columntype>
+                            <columntype database="hsqldb">
+                                <value>LONGVARCHAR</value>
+                            </columntype>
+                            <columntype>
+                                <value>HYBRIS.LONG_STRING</value>
+                            </columntype>
+                        </persistence>
+                    </attribute>
+                    <attribute qualifier="date" type="java.util.Date">
+                        <description>Tanggal</description>
+                        <modifiers read="true" write="true" search="true" optional="true" unique="true" />
+                        <persistence type="property" />
+                    </attribute>
+                </attributes>
+            </itemtype>
+        </typegroup>
+
     </itemtypes>
 </items>
