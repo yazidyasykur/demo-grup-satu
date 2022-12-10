@@ -28,6 +28,20 @@
 			<a class="product__list--name" href="${fn:escapeXml(productUrl)}">${ycommerce:sanitizeHTML(product.name)}</a>
 		</ycommerce:testId>
 
+		<div>
+            <ycommerce:testId code="searchPage_productName_link_${product.dimension}">
+                <p>${ycommerce:sanitizeHTML(product.dimension)}</p>
+            </ycommerce:testId>
+        </div>
+
+        <div>
+            <ycommerce:testId code="searchPage_productName_link_${product.size}">
+                <p>${ycommerce:sanitizeHTML(product.size)}</p>
+            </ycommerce:testId>
+        </div>
+
+
+
 		<div class="product__list--price-panel">
 			<c:if test="${not empty product.potentialPromotions}">
 				<div class="product__listing--promo">
@@ -41,6 +55,8 @@
 				<div class="product__listing--price"><product:productListerItemPrice product="${product}"/></div>
 			</ycommerce:testId>
 		</div>
+
+
 
 		<c:if test="${not empty product.summary}">
 			<div class="product__listing--description">${ycommerce:sanitizeHTML(product.summary)}</div>

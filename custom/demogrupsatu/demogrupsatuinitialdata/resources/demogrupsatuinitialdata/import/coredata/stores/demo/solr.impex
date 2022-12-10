@@ -90,7 +90,7 @@ INSERT_UPDATE SolrIndexerQuery; solrIndexedType(identifier)[unique = true]; iden
                               ; $solrIndexedType                          ; $searchIndexNamePrefix-fullQuery   ; full      ;                                  ;                                  ; false                              ; "SELECT DISTINCT tbl.pk, tbl.code FROM (
 	{{
 		SELECT DISTINCT{p:PK} AS pk, {p:code} AS code
-		FROM {IntheboxSizeVariantProduct! AS p left outer join catalogversion as catalog on {p.catalogversion}={catalog.pk} join ArticleApprovalStatus as aas on {p.approvalStatus} = {aas.pk}}
+		FROM {IntheboxSizeVariantProduct! AS p left outer join catalogversion as catalog on {p.catalogversion}={catalog.pk} join ArticleApprovalStatus as aas on {p.approvalStatus} = {aas.pk} join Size as size on {p.size}={size.pk}}
 		WHERE {catalog.version}='Online' AND {aas.code}='approved'
 	}}
 ) tbl ORDER BY tbl.code" ; anonymous
@@ -99,7 +99,7 @@ INSERT_UPDATE SolrIndexerQuery; solrIndexedType(identifier)[unique = true]; iden
 SELECT DISTINCT tbl.pk, tbl.code FROM (
 	{{
 		SELECT DISTINCT{p:PK} AS pk, {p:code} AS code
-		FROM {IntheboxSizeVariantProduct! AS p left outer join catalogversion as catalog on {p.catalogversion}={catalog.pk} join ArticleApprovalStatus as aas on {p.approvalStatus} = {aas.pk}}
+		FROM {IntheboxSizeVariantProduct! AS p left outer join catalogversion as catalog on {p.catalogversion}={catalog.pk} join ArticleApprovalStatus as aas on {p.approvalStatus} = {aas.pk} join Size as size on {p.size}={size.pk}}
 		WHERE {p:modifiedtime} >= ?lastIndexTime AND{catalog.version}='Online' AND {aas.code}='approved'
 	}}
 ) tbl ORDER BY tbl.code" ; anonymous
@@ -119,3 +119,10 @@ INSERT_UPDATE SolrSortField; sort(indexedType(identifier), code)[unique = true];
                            ; $solrIndexedType:name-desc                        ; name                    ; false
                            ; $solrIndexedType:price-asc                        ; priceValue              ; true
                            ; $solrIndexedType:price-desc                       ; priceValue              ; false
+
+
+# Add new indexed property
+INSERT_UPDATE SolrIndexedProperty; solrIndexedType(identifier)[unique = true]; name[unique = true]; type(code); multiValue[default = true]; facet[default = false]; facetType(code); facetSort(code); priority; visible; categoryField[default = true]; fieldValueProvider                   ;
+                                 ; $solrIndexedType                          ; dimension          ; string    ; false                          ;                      ;         ;        ; ; ;    ; dimensionValueProvider
+                                 ; $solrIndexedType                          ; size               ; string    ; false                          ;                      ; ;;;;                     ; dimensionValueProvider
+                                 ; $solrIndexedType                          ; height               ; string    ; false                          ;                      ; ;;;;                     ; dimensionValueProvider

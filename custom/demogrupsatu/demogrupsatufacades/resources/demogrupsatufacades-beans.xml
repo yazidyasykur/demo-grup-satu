@@ -6,7 +6,12 @@
 
 	<bean class="de.hybris.platform.commercefacades.product.data.ProductData">
 		<property name="genders" type="java.util.List&lt;org.demogrupsatu.facades.product.data.GenderData>"/>
+		<property name="size" type="String"/>
+		<property name="dimension" type="String"/>
+		<property name="height" type="String"/>
 	</bean>
+
+
 
 	<bean class="org.demogrupsatu.facades.product.data.GenderData">
 		<property name="code" type="String"/>
