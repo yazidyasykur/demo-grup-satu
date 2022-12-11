@@ -121,11 +121,6 @@
                         <modifiers read="true" write="true" search="true" optional="true" unique="false" />
                         <persistence type="property"></persistence>
                     </attribute>
-                    <attribute qualifier="height" type="java.lang.String">
-                        <description>Height Dimension Product InTheBox</description>
-                        <modifiers read="true" write="true" search="true" optional="true" />
-                        <persistence type="property"></persistence>
-                    </attribute>
                 </attributes>
             </itemtype>
 
