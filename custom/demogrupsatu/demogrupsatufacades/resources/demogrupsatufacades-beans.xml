@@ -6,7 +6,12 @@
 
 	<bean class="de.hybris.platform.commercefacades.product.data.ProductData">
 		<property name="genders" type="java.util.List&lt;org.demogrupsatu.facades.product.data.GenderData>"/>
+		<property name="size" type="String"/>
+		<property name="dimension" type="String"/>
+		<property name="height" type="String"/>
 	</bean>
+
+
 
 	<bean class="org.demogrupsatu.facades.product.data.GenderData">
 		<property name="code" type="String"/>
@@ -21,5 +26,11 @@
 		<property name="description" type="String" />
 		<property name="date" type="String" />
 		<property name="halfStar" type="Boolean" />
+	</bean>
+
+	<bean class="org.demogrupsatu.facades.intheboxproduct.IntheboxProductData">
+		<property name="code" type="String"/>
+		<property name="name" type="String"/>
+		<property name="description" type="String"/>
 	</bean>
 </beans>

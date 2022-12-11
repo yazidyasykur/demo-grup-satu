@@ -195,10 +195,10 @@ INSERT_UPDATE SimpleResponsiveBannerComponent;$contentCV[unique=true];uid[unique
 
 ### Isi komponen section4 unboxing
 INSERT_UPDATE Media; mediaFormat(qualifier); $contentCV[unique = true]; code[unique = true]      ; @media[translator = de.hybris.platform.impex.jalo.media.MediaDataTranslator][forceWrite = true]      ; mime[default = 'image/jpeg']; realfilename             ; folder(qualifier)[default = 'images']; altText
-                ; widescreen   ;                   ; experience_1.png ; $siteResource/images/banners/experience_1.png ; image/png     ; experience_1.png          ;                   ; "keluarkan"
-                ; widescreen   ;                   ; experience_2.png ; $siteResource/images/banners/experience_2.png ; image/png     ; experience_2.png          ;                   ; "posisikan"
-                ; widescreen   ;                   ; experience_3.png ; $siteResource/images/banners/experience_3.png ; image/png     ; experience_3.png          ;                   ; "buka plastik"
-                ; widescreen   ;                   ; experience_4.png ; $siteResource/images/banners/experience_4.png ; image/png     ; experience_4.png          ;                   ; "tunggu mengembang"
+                   ; widescreen   ;                   ; experience_1.png ; $siteResource/images/banners/experience_1.png ; image/png     ; experience_1.png          ;                   ; "keluarkan"
+                   ; widescreen   ;                   ; experience_2.png ; $siteResource/images/banners/experience_2.png ; image/png     ; experience_2.png          ;                   ; "posisikan"
+                   ; widescreen   ;                   ; experience_3.png ; $siteResource/images/banners/experience_3.png ; image/png     ; experience_3.png          ;                   ; "buka plastik"
+                   ; widescreen   ;                   ; experience_4.png ; $siteResource/images/banners/experience_4.png ; image/png     ; experience_4.png          ;                   ; "tunggu mengembang"
 
 INSERT_UPDATE MediaContainer;qualifier[unique=true];$medias;$contentCV[unique=true]
                             ;unboxing-homepage-1-en;experience_1.png
@@ -207,10 +207,10 @@ INSERT_UPDATE MediaContainer;qualifier[unique=true];$medias;$contentCV[unique=tr
                             ;unboxing-homepage-4-en;experience_4.png
 
 INSERT_UPDATE SimpleResponsiveBannerComponent;$contentCV[unique=true];uid[unique=true];$mediaContainer
-                                            ;;UnboxingHomepageBannerComponent-1;unboxing-homepage-1-en
-                                            ;;UnboxingHomepageBannerComponent-2;unboxing-homepage-2-en
-                                            ;;UnboxingHomepageBannerComponent-3;unboxing-homepage-3-en
-                                            ;;UnboxingHomepageBannerComponent-4;unboxing-homepage-4-en
+                                             ;;UnboxingHomepageBannerComponent-1;unboxing-homepage-1-en
+                                             ;;UnboxingHomepageBannerComponent-2;unboxing-homepage-2-en
+                                             ;;UnboxingHomepageBannerComponent-3;unboxing-homepage-3-en
+                                             ;;UnboxingHomepageBannerComponent-4;unboxing-homepage-4-en
 
 
 
@@ -370,4 +370,4 @@ INSERT_UPDATE MediaContainer;qualifier[unique=true];$medias;$contentCV[unique=tr
                             ;testing-banner-en;banner-testing-1400x440.jpg,banner-testing-960x330.png
 
 UPDATE SimpleResponsiveBannerComponent;$contentCV[unique=true];uid[unique=true];$mediaContainer
-                            ;;TestingBannerComponent-1;testing-banner-en
+                                      ;;TestingBannerComponent-1;testing-banner-en
