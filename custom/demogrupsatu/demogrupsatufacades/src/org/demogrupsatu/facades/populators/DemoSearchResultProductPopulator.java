@@ -12,5 +12,7 @@ public class DemoSearchResultProductPopulator extends SearchResultProductPopulat
        target.setSize(this.<String>getValue(source,"size"));
        target.setDimension(this.<String>getValue(source,"dimension"));
        target.setHeight(this.<String>getValue(source,"height"));
+       target.setBaseProduct(this.<String>getValue(source,"baseProduct"));
+
     }
 }

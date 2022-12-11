@@ -183,7 +183,7 @@
 
 	<bean id="genderData" class="org.demogrupsatu.facades.product.data.GenderData" scope="prototype"/>
 
-<<<<<<< HEAD
+
 	<alias name="defaultDemoSearchResultProductPopulator" alias="demoSearchResultProductPopulator"/>
 	<bean id="defaultDemoSearchResultProductPopulator" class="org.demogrupsatu.facades.populators.DemoSearchResultProductPopulator" parent="defaultCommerceSearchResultProductPopulator">
 	</bean>
@@ -194,7 +194,7 @@
 	</bean>
 
 
-=======
+
 	<!--Testimoni	-->
 	<alias name="testimoniPopulator" alias="testimoniPopulator" />
 	<bean name="testimoniPopulator" class="org.demogrupsatu.facades.populators.TestimoniPopulator" />
@@ -210,5 +210,21 @@
 
 	<alias name="testimoniFacade" alias="testimoniFacade" />
 	<bean name="testimoniFacade" class="org.demogrupsatu.facades.testimoni.impl.DefaultTestimoniFacade" />
->>>>>>> 846c56d4c3f4ba4d5f3c823e0070f58d7a4f90c6
+
+	<!--	InTheBoxProduct-->
+	<alias name="intheboxproductPopulator" alias="intheboxproductPopulator" />
+	<bean name="intheboxproductPopulator" class="org.demogrupsatu.facades.populators.IntheboxProductPopulator" />
+
+	<bean id="intheboxproductDataConverter" name="intheboxproductDataConverter" parent="abstractPopulatingConverter">
+		<property name="targetClass" value="org.demogrupsatu.facades.intheboxproduct.IntheboxProductData" />
+		<property name="populators">
+			<list merge="true">
+				<ref bean="intheboxproductPopulator" />
+			</list>
+		</property>
+	</bean>
+
+	<alias name="intheboxproductFacade" alias="intheboxproductFacade" />
+	<bean name="intheboxproductFacade" class="org.demogrupsatu.facades.intheboxproduct.impl.DefaultIntheboxProductFacade" />
+
 </beans>

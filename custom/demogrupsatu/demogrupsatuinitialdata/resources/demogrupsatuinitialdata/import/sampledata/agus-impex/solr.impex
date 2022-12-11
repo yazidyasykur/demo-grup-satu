@@ -36,7 +36,7 @@ INSERT_UPDATE SolrIndexConfig; name[unique = true]; batchSize; numberOfThreads; 
 
 # Create the faceted search configuration
 INSERT_UPDATE SolrSearchConfig; description[unique = true]; pageSize
-                              ; $searchConfigName         ; 12
+                              ; $searchConfigName         ; 200
 
 # Declare the indexed type Product
 INSERT_UPDATE SolrIndexedType; identifier[unique = true]; type(code); variant; sorts(&sortRefID)

@@ -29,7 +29,7 @@ public class dimensionValueProvider extends AbstractPropertyFieldValueProvider i
         }
         else
         {
-            throw new FieldValueProviderException("Cannot Size");
+            throw new FieldValueProviderException("Solr DimensionValueProvider Eror");
         }
     }
 
@@ -48,6 +48,8 @@ public class dimensionValueProvider extends AbstractPropertyFieldValueProvider i
                     indexName=product.getSize().getSizeName();
                 } else if (fieldName.contains("height")) {
                     indexName=product.getHeight();
+                } else if (fieldName.contains("baseProduct")) {
+                    indexName= product.getBaseProduct().getCode();
                 } else{
                     indexName=product.getSize().getSizeName();
                 }

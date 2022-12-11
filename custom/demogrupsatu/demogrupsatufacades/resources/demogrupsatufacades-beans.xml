@@ -27,4 +27,10 @@
 		<property name="date" type="String" />
 		<property name="halfStar" type="Boolean" />
 	</bean>
+
+	<bean class="org.demogrupsatu.facades.intheboxproduct.IntheboxProductData">
+		<property name="code" type="String"/>
+		<property name="name" type="String"/>
+		<property name="description" type="String"/>
+	</bean>
 </beans>
