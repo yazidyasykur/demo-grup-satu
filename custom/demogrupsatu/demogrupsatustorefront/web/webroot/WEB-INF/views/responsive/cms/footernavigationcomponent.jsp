@@ -47,7 +47,7 @@
 	</div>
 
 	<div class="footer__bottom copyright-part">
-	    <div class="footer__copyright copyright-part flex-display flex-row-display container-part-footer text-weight-bold">
+	    <div class="footer__copyright copyright-part flex-display flex-row-display container-part-footer">
 	        <div class="flex-display align-center">
                 <div class="small-part-right-margin">
                     <img src="https://inthebox.net/images/layout-v2/footer-icon-call.png" class="mr-2" />

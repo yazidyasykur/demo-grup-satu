@@ -111,9 +111,9 @@
             </c:forEach>
             </div>
         </div>
-        <div class="link text-center">
+        <div class="link text-center small-margin-top">
             <c:url value="/testimoni" var="testimony" />
-            <button class="button-lihat-semua small-margin-top" onclick="location.href='${testimony}'">Lihat Semua Testimoni</button>
+            <a class="button-2 text-weight-bold" href="${testimony}">Lihat Semua Testimoni</a>
         </div>
     </section>
 

@@ -33,7 +33,7 @@
 									<div class="carousel__item--name">${fn:escapeXml(product.description)}</div>
 									<div class="carousel__item--price"><format:fromPrice priceData="${product.price}"/></div>
 									<div class="link text-center">
-                                        <a class="btn btn-brand" href="${productQuickViewUrl}">Beli Sekarang</a>
+                                        <button class="button-2" onclick="location.href='${productQuickViewUrl}'">Beli Sekarang</button>
                                     </div>
 								<!-- </a> -->
 							</div>
@@ -48,14 +48,14 @@
 
 							<div class="carousel__item layout-card-carousel">
 								<!-- <a href="${productUrl}"> -->
-									<div class="carousel__item--thumb">
+									<div class="carousel__item--thumb small-margin-top">
 										<product:productPrimaryImage product="${product}" format="product"/>
 									</div>
 									<div class="carousel__item--name">${fn:escapeXml(product.name)}</div>
 									<div class="carousel__item--name">${fn:escapeXml(product.description)}</div>
 									<div class="carousel__item--price"><format:fromPrice priceData="${product.price}"/></div>
-									<div class="link text-center">
-                                        <a class="btn btn-brand" href="${productUrl}">Beli Sekarang</a>
+									<div class="link text-center small-margin-bottom">
+                                        <a class="button-2" href="${productUrl}">Beli Sekarang</a>
                                     </div>
 								<!-- </a> -->
 							</div>

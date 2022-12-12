@@ -28,9 +28,12 @@
                 <div class="box-container-display">
                 <c:forEach items="${testimoniList}" var="testi">
                     <div class="box-display">
-                        <img src="${fn:escapeXml(commonResourcePath)}/images/orang.png" class="pic" />
-                        <div class="text">
+
+                        <div class="flex-display flex-row-display align-center">
                             <h4 class="name-color text-weight-bold">${testi.name}</h4>
+                            <img src="${fn:escapeXml(commonResourcePath)}/images/orang.png" class="pic" />
+                        </div>
+                        <div class="text">
                             <c:forEach begin="1" end="${testi.rating}" var="i">
                                 <img src="${fn:escapeXml(commonResourcePath)}/images/bintang-full.png" data-src="${fn:escapeXml(commonResourcePath)}/images/bintang-full.png" class="star" alt="Star" />
                             </c:forEach>
