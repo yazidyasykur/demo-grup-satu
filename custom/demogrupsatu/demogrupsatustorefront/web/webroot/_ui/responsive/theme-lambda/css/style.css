@@ -1,3 +1,21 @@
+
+@charset "UTF-8";
+@font-face {
+  font-family: 'Brown';
+  src: url('../fonts/brown-regular.eot');
+  src: url('../fonts/brown-regular.eot?#iefix') format('embedded-opentype'), url('../fonts/brown-regular.woff2') format('woff2'), url('../fonts/brown-regular.woff') format('woff'), url('../fonts/brown-regular.ttf') format('truetype'), url('../fonts/brown-regular.svg#glyphicons_halflingsregular') format('svg');
+}
+@font-face {
+  font-family: 'InTheBox';
+  src: url('../fonts/inthebox.eot');
+  src: url('../fonts/inthebox.eot?#iefix') format('embedded-opentype'), url('../fonts/inthebox.woff2') format('woff2'), url('../fonts/inthebox.woff') format('woff'), url('../fonts/inthebox.ttf') format('truetype'), url('../fonts/inthebox.svg#glyphicons_halflingsregular') format('svg');
+}
+@font-face {
+  font-family: 'Palmer Lake';
+  src: url('../fonts/PalmerLakePrint-Regular.eot');
+  src: url('../fonts/PalmerLakePrint-Regular.eot?#iefix') format('embedded-opentype'), url('../fonts/PalmerLakePrint-Regular.woff2') format('woff2'), url('../fonts/PalmerLakePrint-Regular.woff') format('woff'), url('../fonts/PalmerLakePrint-Regular.ttf') format('truetype'), url('../fonts/PalmerLakePrint-Regular.svg#glyphicons_halflingsregular') format('svg');
+}
+
 /* Slider */
 .slick-slider {
   position: relative;
@@ -1312,7 +1330,7 @@ html {
   -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
 }
 body {
-  font-family: "Open Sans", Helvetica, Arial, sans-serif;
+  font-family: "InTheBox", Helvetica, Arial, sans-serif;
   font-size: 14px;
   line-height: 1.42857143;
   color: #3c3c3c;
@@ -6218,7 +6236,7 @@ button.close {
   position: absolute;
   z-index: 1070;
   display: block;
-  font-family: "Open Sans", Helvetica, Arial, sans-serif;
+  font-family: "InTheBox", Helvetica, Arial, sans-serif;
   font-style: normal;
   font-weight: normal;
   letter-spacing: normal;
@@ -6336,7 +6354,7 @@ button.close {
   display: none;
   max-width: 276px;
   padding: 1px;
-  font-family: "Open Sans", Helvetica, Arial, sans-serif;
+  font-family: "InTheBox", Helvetica, Arial, sans-serif;
   font-style: normal;
   font-weight: normal;
   letter-spacing: normal;
@@ -11414,10 +11432,10 @@ fieldset[disabled] .btn-primary.active {
 .carousel .carousel__item .carousel__item--price,
 .carousel__component--carousel .carousel__item .carousel__item--price {
   margin: 10px;
-  color: #3c3c3c;
+  color: #7FC5F9;
   text-align: center;
-  font-size: 24px;
-  font-weight: 600;
+  font-size: 72px;
+  font-family: 'Palmer Lake';
   margin: 0;
 }
 .carousel-component,
@@ -17863,24 +17881,29 @@ select[multiple].input-sm {
   padding: 50px 0px;
 }
 .section-header1 {
-  font-size: 3rem;
+  font-size: 4rem;
   text-align: center;
   font-weight: 700;
   margin-bottom: 20px;
 }
-.subtitle {
-  font-size: 1.5rem;
-  margin-bottom: 50px;
-  text-align: center;
-  font-weight: 400;
-  color: #000;
-}
 .section-header {
-  font-size: 3rem;
+  font-size: 4rem;
   text-align: center;
   font-weight: 700;
   margin-bottom: 20px;
   color: #6086c2;
+}
+.subtitle {
+  font-size: 1.8rem;
+  margin-bottom: 50px;
+  text-align: center;
+  font-weight: 400;
+}
+.subtitle-black {
+  color: #000;
+}
+.subtitle-white {
+  color: #FFF;
 }
 .unbox {
   background-color: #d4effc;
@@ -19155,12 +19178,6 @@ select[multiple].input-sm {
   margin: auto;
 }
 /* Important Part */
-body {
-  background-color: #FFFFFF;
-}
-html {
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-}
 .copyright-part {
   background-color: #6086C2;
   color: #FFF;
@@ -19177,7 +19194,10 @@ html {
 }
 /* Margin */
 .small-part-margin {
-  margin: 0 20px;
+  margin: 0 10px;
+}
+.small-part-margin-for-link {
+  margin: 0 25px;
 }
 .container-display {
   margin: 0 auto;
@@ -19187,6 +19207,14 @@ html {
 }
 .small-part-left-margin {
   margin-left: 15px;
+}
+.small-margin-top {
+  margin-top: 20px;
+}
+.palmer-font {
+  font-family: "Palmer Lake";
+  color: #7FC5F9;
+  font-size: 8rem;
 }
 /* Flexbox */
 .flex-display {
@@ -19235,21 +19263,40 @@ html {
 ::placeholder {
   color: #7FC5F9;
 }
+.review-text {
+  color: #6086C2;
+  margin: auto 5px;
+}
+.description {
+  margin-top: 10px;
+  margin-bottom: 15px;
+  margin-right: 25px;
+}
+.title-testi {
+  margin-top: 25px;
+}
+.normal-size-font {
+  font-size: 18px;
+}
 /* Container */
 .box-display {
   background-color: white;
-  width: 300px;
+  width: 85%;
   height: auto;
   border: 2px solid #F1F1F1;
   border-radius: 25px;
   padding: 15px 20px;
-  margin-top: 20px;
+  margin: 10px auto;
 }
 .box-container-display {
   display: grid;
   grid-template-columns: auto auto auto;
   justify-content: space-evenly;
-  margin-top: 10px;
+  margin: 5px auto;
+}
+.box-on-homepage {
+  width: 80%;
+  margin: 0 auto;
 }
 .button-container {
   margin-top: 25px;
@@ -19276,6 +19323,22 @@ html {
 }
 .button:hover {
   background-color: #FFF;
+  color: #6086C2;
+}
+.button-lihat-semua {
+  width: 250px;
+  height: 50px;
+  font-size: 20px;
+  background-color: #6086C2;
+  border: 0px solid black;
+  border-radius: 5px;
+  color: #FFF;
+  transition: color 100ms;
+  transition: background-color 100ms;
+  transition-timing-function: linear;
+}
+.button-lihat-semua:hover {
+  background-color: #7FC5F9;
   color: #6086C2;
 }
 .button-next-previous {
@@ -22858,11 +22921,6 @@ hidden-sm .cpq-overview-messages {
     -webkit-transform: rotate(359deg);
     transform: rotate(359deg);
   }
-}
-body {
-  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
-  margin: 0px;
-  font-weight: 400;
 }
 img {
   max-width: 100%;

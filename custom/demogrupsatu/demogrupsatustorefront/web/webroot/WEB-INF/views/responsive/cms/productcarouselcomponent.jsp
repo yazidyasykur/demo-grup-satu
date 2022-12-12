@@ -25,7 +25,7 @@
 
 							<c:url value="${product.url}/quickView" var="productQuickViewUrl"/>
 							<div class="carousel__item layout-card-carousel">
-								<a href="${productQuickViewUrl}" class="js-reference-item">
+								<!-- <a href="${productQuickViewUrl}" class="js-reference-item"> -->
 									<div class="carousel__item--thumb">
 										<product:productPrimaryReferenceImage product="${product}" format="product"/>
 									</div>
@@ -33,9 +33,9 @@
 									<div class="carousel__item--name">${fn:escapeXml(product.description)}</div>
 									<div class="carousel__item--price"><format:fromPrice priceData="${product.price}"/></div>
 									<div class="link text-center">
-                                        <a class="btn btn-brand" href="#">Beli Sekarang</a>
+                                        <a class="btn btn-brand" href="${productQuickViewUrl}">Beli Sekarang</a>
                                     </div>
-								</a>
+								<!-- </a> -->
 							</div>
 						</c:forEach>
 					</div>
@@ -47,7 +47,7 @@
 							<c:url value="${product.url}" var="productUrl"/>
 
 							<div class="carousel__item layout-card-carousel">
-								<a href="${productUrl}">
+								<!-- <a href="${productUrl}"> -->
 									<div class="carousel__item--thumb">
 										<product:productPrimaryImage product="${product}" format="product"/>
 									</div>
@@ -55,9 +55,9 @@
 									<div class="carousel__item--name">${fn:escapeXml(product.description)}</div>
 									<div class="carousel__item--price"><format:fromPrice priceData="${product.price}"/></div>
 									<div class="link text-center">
-                                        <a class="btn btn-brand" href="#">Beli Sekarang</a>
+                                        <a class="btn btn-brand" href="${productUrl}">Beli Sekarang</a>
                                     </div>
-								</a>
+								<!-- </a> -->
 							</div>
 						</c:forEach>
 					</div>
