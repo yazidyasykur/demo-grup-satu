@@ -1,5 +1,6 @@
 <%@ tag body-content="empty" trimDirectiveWhitespaces="true" %>
 <%@ attribute name="product" required="true" type="de.hybris.platform.commercefacades.product.data.ProductData" %>
+<%@ attribute name="inthebox" required="true" type="org.demogrupsatu.facades.intheboxproduct.IntheboxProductData" %>
 <%@ taglib prefix="product" tagdir="/WEB-INF/tags/responsive/product" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ taglib prefix="spring" uri="http://www.springframework.org/tags" %>
@@ -19,46 +20,24 @@
 	<c:set value="${productTagClasses} tag-${tag}" var="productTagClasses"/>
 </c:forEach>
 
-<li class="${fn:escapeXml(productTagClasses)}">
-	<ycommerce:testId code="test_searchPage_wholeProduct">
-		<a class="product__list--thumb" href="${fn:escapeXml(productUrl)}" title="${fn:escapeXml(product.name)}" >
-			<product:productPrimaryImage product="${product}" format="thumbnail"/>
-		</a>
-		<ycommerce:testId code="searchPage_productName_link_${product.code}">
-			<a class="product__list--name" href="${fn:escapeXml(productUrl)}">${ycommerce:sanitizeHTML(product.name)}</a>
-		</ycommerce:testId>
+<c:if test="${inthebox.code == product.baseProduct}">
 
-		<div class="product__list--price-panel">
-			<c:if test="${not empty product.potentialPromotions}">
-				<div class="product__listing--promo">
-					<c:forEach items="${product.potentialPromotions}" var="promotion">
-						${ycommerce:sanitizeHTML(promotion.description)}
-					</c:forEach>
-				</div>
-			</c:if>
+            <div class="flowrowblock">
+                <a  href="${fn:escapeXml(productUrl)}" title="${fn:escapeXml(product.name)}" >
+                    <product:productPrimaryImage product="${product}" format="thumbnail"/>
+                </a>
 
-			<ycommerce:testId code="searchPage_price_label_${product.code}">
-				<div class="product__listing--price"><product:productListerItemPrice product="${product}"/></div>
-			</ycommerce:testId>
-		</div>
+                <a  href="${fn:escapeXml(productUrl)}">${ycommerce:sanitizeHTML(product.name)}</a>
 
-		<c:if test="${not empty product.summary}">
-			<div class="product__listing--description">${ycommerce:sanitizeHTML(product.summary)}</div>
-		</c:if>
+                <p>${ycommerce:sanitizeHTML(product.dimension)}</p>
+
+                <p>${ycommerce:sanitizeHTML(product.size)}</p>
 
 
+                <product:productListerItemPrice product="${product}"/>
+          </div>
 
-		<c:set var="product" value="${product}" scope="request"/>
-		<c:set var="addToCartText" value="${addToCartText}" scope="request"/>
-		<c:set var="addToCartUrl" value="${addToCartUrl}" scope="request"/>
-		<div class="addtocart">
-			<div id="actions-container-for-${fn:escapeXml(component.uid)}" class="row">
-				<action:actions element="div" parentComponent="${component}"  />
-			</div>
-		</div>
-
-	</ycommerce:testId>
-</li>
+</c:if>
 
 
 

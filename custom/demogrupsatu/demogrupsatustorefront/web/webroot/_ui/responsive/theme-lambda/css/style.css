@@ -10296,6 +10296,194 @@ fieldset[disabled] .btn-primary.active {
   color: #0068b3;
   background-color: #ffffff;
 }
+.loginregister-page .background-login {
+  background-image: url(https://inthebox.net/images/layout-v2/login-bgimage.png);
+  background-position: center;
+  background-repeat: no-repeat;
+}
+.loginregister-page .login-wrapper {
+  padding: 6% 2rem 1rem 2rem;
+  margin: 0 auto 2rem auto;
+  overflow: hidden;
+}
+.loginregister-page .login-container {
+  width: 430px;
+  margin: 0 auto;
+}
+.loginregister-page .login-logo {
+  text-align: center;
+  margin: 0 auto 4rem auto;
+}
+.loginregister-page .login-head {
+  margin-top: 1rem;
+  margin-bottom: 3rem;
+}
+.loginregister-page .login-title {
+  text-align: center;
+  font-size: 1.5rem;
+  font-weight: 500;
+  color: #6c7293;
+}
+.loginregister-page .login-desc {
+  margin-top: 1.5rem;
+  text-align: center;
+  font-size: 1.1rem;
+  font-weight: 400;
+  color: #a7abc3;
+}
+.loginregister-page .form {
+  margin: 0 auto;
+}
+.loginregister-page .form-control {
+  height: 46px;
+  border: none;
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
+  margin-top: 1.5rem;
+  background: rgba(235, 237, 242, 0.4);
+  font-size: 1rem;
+  font-weight: 400;
+}
+.loginregister-page .invalid-feedback {
+  font-weight: 500;
+  font-size: 0.9rem;
+  padding-left: 1.6rem;
+}
+.loginregister-page .login-extra {
+  margin-top: 30px;
+  margin-bottom: 15px;
+  margin-left: auto;
+  margin-right: auto;
+  color: #a7abc3;
+  font-size: 1rem;
+}
+.loginregister-page .col {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.loginregister-page .align-right {
+  text-align: right;
+}
+.loginregister-page .checkbox {
+  font-size: 1rem;
+  display: flex;
+  align-items: center;
+  padding-left: 20px;
+  margin-bottom: 10px;
+  text-align: left;
+  cursor: pointer;
+  -webkit-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+}
+.loginregister-page .login-link {
+  font-size: 1rem;
+  color: #a7abc3;
+  -webkit-transition: color 0.3s ease;
+  transition: color 0.3s ease;
+}
+.loginregister-page .login-link:hover {
+  color: #22b9ff;
+  -webkit-transition: color 0.3s ease;
+  transition: color 0.3s ease;
+}
+.loginregister-page .login-actions {
+  text-align: center;
+  margin-top: 7%;
+}
+.loginregister-page .login-btn-primary {
+  font-size: 1.25rem;
+  height: 50px;
+  background-color: #6086c2;
+  border: none;
+  color: #fff !important;
+  font-weight: 700;
+  padding: 11px 25px 8px;
+  width: 100%;
+}
+.loginregister-page .login-btn-facebook {
+  font-size: 1.25rem;
+  height: 50px;
+  background-color: #5867dd;
+  border: none;
+  color: #fff !important;
+  font-weight: 700;
+  padding: 11px 25px 8px;
+  width: 100%;
+}
+.loginregister-page .or-text {
+  text-align: center;
+  margin: 1.5rem 0px;
+}
+.loginregister-page .login-account {
+  text-align: center;
+  margin-top: 2rem;
+}
+.loginregister-page .login-account-msg {
+  font-size: 1rem;
+  font-weight: 400;
+  color: #a7abc3;
+}
+.loginregister-page .login-account-link {
+  font-size: 1rem;
+  font-weight: 500;
+  color: #6c7293;
+  -webkit-transition: color 0.3s ease;
+  transition: color 0.3s ease;
+}
+.loginregister-page .login-account-link:hover {
+  color: #22b9ff;
+  -webkit-transition: color 0.3s ease;
+  transition: color 0.3s ease;
+}
+.loginregister-page .checkbox-icon {
+  top: -3px;
+}
+@media (max-width: 1024px) {
+  .loginregister-page .login-wrapper {
+    padding-top: 5rem;
+    width: 100%;
+  }
+  .loginregister-page .login-container {
+    margin: 0 auto;
+  }
+  .loginregister-page .login-account {
+    margin-top: 1rem;
+  }
+}
+@media (max-width: 768px) {
+  .loginregister-page .login-wrapper {
+    width: 100%;
+  }
+  .loginregister-page .login-container {
+    width: 100%;
+    margin: 0 auto;
+  }
+  .loginregister-page .form {
+    width: 100%;
+    margin: 0 auto;
+  }
+  .loginregister-page .login-account {
+    margin-top: 1rem;
+  }
+}
+.loginregister-page ::-webkit-scrollbar {
+  width: 5px;
+}
+.loginregister-page ::-webkit-scrollbar:vertical {
+  width: 5px;
+}
+.loginregister-page ::-webkit-scrollbar:horizontal {
+  height: 5px;
+}
+.loginregister-page ::-webkit-scrollbar-thumb {
+  background-color: #6086c2;
+  border-radius: 10px;
+}
+.loginregister-page ::-webkit-scrollbar-track {
+  border-radius: 10px;
+  background-color: #e3f7ff;
+}
 .pagination-wrap {
   float: right;
   text-align: right;
@@ -11959,6 +12147,49 @@ fieldset[disabled] .btn-primary.active {
   border: none;
   padding: 0;
 }
+::-webkit-scrollbar {
+  height: 6px;
+}
+::-webkit-scrollbar-track-piece {
+  background: #D4EFFC;
+}
+/* Handle */
+::-webkit-scrollbar-thumb {
+  border-radius: 3px;
+}
+.flowrowblock {
+  min-width: 220px;
+  width: 280px;
+  margin: 10px;
+}
+.flowrowblock:empty {
+  display: none;
+}
+.flowrow {
+  display: flex;
+  flex-wrap: nowrap;
+  margin-top: 3vw;
+}
+.flowrow:empty {
+  display: none;
+}
+.tengah {
+  text-align: center;
+  margin: auto;
+  padding: 1vw;
+}
+.pilihan {
+  padding-left: 1vw;
+}
+.kecil {
+  font-size: 15px;
+}
+.mainflow {
+  overflow: auto;
+  margin: 0 auto;
+  max-width: 1440px;
+  padding-bottom: 20px;
+}
 .pageType-CategoryPage .map img {
   min-width: 100%;
 }
@@ -12372,6 +12603,8 @@ a.product__listing .product__listing--promo:focus {
   .product-list-right-component {
     margin-left: 0;
     padding-top: 20px;
+    padding-left: 6vw;
+    padding-right: 6vw;
   }
   .product-list-right-component .pagination-bar {
     margin-top: 0;

@@ -100,11 +100,6 @@
                         <modifiers read="true" write="true" search="true" />
                         <persistence type="property"></persistence>
                     </attribute> -->
-                    <attribute qualifier="height" type="java.lang.String">
-                        <description>Height Dimension Product InTheBox</description>
-                        <modifiers read="true" write="true" search="true" optional="true" />
-                        <persistence type="property"></persistence>
-                    </attribute>
                 </attributes>
             </itemtype>
 
@@ -135,6 +130,22 @@
                         <description>Size Type Product InTheBox</description>
                         <modifiers optional="true" initial="true" />
                         <persistence type="property"></persistence>
+                    </attribute>
+                    <attribute qualifier="height" type="java.lang.String">
+                        <description>Height Dimension Product InTheBox</description>
+                        <modifiers read="true" write="true" search="true" optional="true" />
+                        <persistence type="property"></persistence>
+                    </attribute>
+                </attributes>
+            </itemtype>
+
+            <itemtype code="Customer" autocreate="false" generate="false">
+                <description>Extending Customer type with additional attributes.</description>
+                <attributes>
+                    <attribute qualifier="userId" type="java.lang.String">
+                        <description>Customer User Id</description>
+                        <modifiers read="true" write="true" search="true" optional="true" unique="false" />
+                        <persistence type="property" />
                     </attribute>
                 </attributes>
             </itemtype>

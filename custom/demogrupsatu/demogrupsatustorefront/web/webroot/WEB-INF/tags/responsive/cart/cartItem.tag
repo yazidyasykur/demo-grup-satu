@@ -75,7 +75,7 @@
                 <div class="item__code">${productCodeHtml}</div>
 
                 <%-- price --%>
-                <div class="item__price">
+                <div class="item__code">
                     <format:price priceData="${entry.basePrice}" displayFreeForZero="true"/>
                 </div>
 
@@ -116,23 +116,7 @@
                 </c:choose>
             </div>
 
-            <%-- delivery --%>
-            <div class="item__delivery">
-                <c:if test="${entry.product.purchasable}">
-                    <c:if test="${not empty entryStock and entryStock ne 'outOfStock'}">
-                        <c:if test="${entry.deliveryPointOfService eq null or not entry.product.availableForPickup}">
-                            <span class="item__delivery--label"><spring:theme code="basket.page.shipping.ship"/></span>
-                        </c:if>
-                    </c:if>
-                    <c:if test="${not empty entry.deliveryPointOfService.name}">
-                        <span class="item__delivery--label"><spring:theme code="basket.page.shipping.pickup"/></span>
-                    </c:if>
 
-                    <c:if test="${entry.product.availableForPickup and not empty entry.deliveryPointOfService.name}">
-                        <div class="item__delivery--store">${fn:escapeXml(entry.deliveryPointOfService.name)}</div>
-                    </c:if>
-                </c:if>
-            </div>
 
             <%-- total --%>
             <ycommerce:testId code="cart_totalProductPrice_label">
