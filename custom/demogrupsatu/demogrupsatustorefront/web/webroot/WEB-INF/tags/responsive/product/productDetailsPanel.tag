@@ -3,6 +3,7 @@
 <%@ taglib prefix="cms" uri="http://hybris.com/tld/cmstags"%>
 <%@ taglib prefix="ycommerce" uri="http://hybris.com/tld/ycommercetags"%>
 <%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 
 <div class="container">
     <div class="row">
@@ -25,6 +26,7 @@
                         <product:productPricePanel product="${product}" />
                     </ycommerce:testId>
 
+
                     <div class="description">${ycommerce:sanitizeHTML(product.summary)} tes1</div>
                 </div>tes
                 <cms:pageSlot position="VariantSelector" var="component" element="div" class="page-details-variants-select">
@@ -33,6 +35,11 @@
                 <cms:pageSlot position="AddToCart" var="component" element="div" class="page-details-variants-select">
                     <cms:component component="${component}" element="div" class="yComponentWrapper page-details-add-to-cart-component"/>
                 </cms:pageSlot> tes3
+                <c:forEach items="${variant}" var="tipe">
+                    <h1>${tipe.code}</h1>
+                    <h1>${tipe.name}</h1>
+                    <p>${tipe.description}</p>
+                </c:forEach>
             </div>
         </div>
     </div>

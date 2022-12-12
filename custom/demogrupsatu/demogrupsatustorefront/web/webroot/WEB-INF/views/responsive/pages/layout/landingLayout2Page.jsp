@@ -117,7 +117,7 @@
                 <cms:component component="${feature}" element="div" class="yComponentWrapper"/>
             </cms:pageSlot>
         </div>
-        <div class="box-container-display">
+        <div class="box-container-display tengah">
         <c:forEach items="${showSomeTestimoni}" var="testi">
             <div class="box-display">
                 <img src="${fn:escapeXml(commonResourcePath)}/images/orang.png" class="pic" />

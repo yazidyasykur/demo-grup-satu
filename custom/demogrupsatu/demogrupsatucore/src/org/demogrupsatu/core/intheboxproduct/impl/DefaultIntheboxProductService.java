@@ -16,4 +16,6 @@ public class DefaultIntheboxProductService implements IntheboxProductService {
     public List<IntheboxProductModel> getAllIntheboxProduct() {
         return intheboxproductDao.getAllIntheboxProduct();
     }
+
+    public List<IntheboxProductModel> getProductByVariant(String code) {return intheboxproductDao.getProductByVariant(code);}
 }
