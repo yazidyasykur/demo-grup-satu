@@ -49,14 +49,6 @@
 			</span>
 		</div>
 	</c:if>
-	<c:if test="${cartData.net && cartData.totalTax.value > 0 && showTax}">
-		<div class="tax">
-			<spring:theme code="basket.page.totals.netTax"/>
-			<span>
-				<format:price priceData="${cartData.totalTax}"/>
-			</span>
-		</div>
-	</c:if>
 	<div class="totals">
 		<spring:theme code="basket.page.totals.total"/>
 		<span>
@@ -73,23 +65,6 @@
 			</ycommerce:testId>
 		</span>
 	</div>
-	<c:if test="${not cartData.net}">
-		<div class="realTotals">
-			<ycommerce:testId code="cart_taxes_label">
-				<p>
-					<spring:theme code="basket.page.totals.grossTax" arguments="${cartData.totalTax.formattedValue}" argumentSeparator="!!!!"/>
-				</p>
-			</ycommerce:testId>
-		</div>
-	</c:if>
-	<c:if test="${cartData.net && not showTax }">
-		<div class="realTotals">
-			<ycommerce:testId code="cart_taxes_label">
-				<p>
-					<spring:theme code="basket.page.totals.noNetTax"/>
-				</p>
-			</ycommerce:testId>
-		</div>
-	</c:if>
+
 </div>
 	

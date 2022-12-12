@@ -18,7 +18,7 @@
 <spring:url value="/checkout/multi/summary/placeOrder" var="placeOrderUrl" htmlEscape="false"/>
 <spring:url value="/checkout/multi/termsAndConditions" var="getTermsAndConditionsUrl" htmlEscape="false"/>
 
-<div class="checkout-summary-headline hidden-xs">
+<div class="checkout-summary-headline">
     <spring:theme code="checkout.multi.order.summary" />
 </div>
 <div class="checkout-order-summary">
@@ -33,12 +33,12 @@
 
         <multi-checkout:paymentInfo cartData="${cartData}" paymentInfo="${cartData.paymentInfo}" showPaymentInfo="${showPaymentInfo}" />
 
-
         <multi-checkout:orderTotals cartData="${cartData}" showTaxEstimate="${showTaxEstimate}" showTax="${showTax}" />
     </ycommerce:testId>
 </div>
 
-<div class="visible-xs clearfix">
+<%--
+<div class="">
     <form:form action="${placeOrderUrl}" id="placeOrderForm1" modelAttribute="placeOrderForm" class="place-order-form col-xs-12">
         <div class="checkbox">
             <label> <form:checkbox id="Terms1" path="termsCheck" />
@@ -52,3 +52,4 @@
         </button>
     </form:form>
 </div>
+--%>

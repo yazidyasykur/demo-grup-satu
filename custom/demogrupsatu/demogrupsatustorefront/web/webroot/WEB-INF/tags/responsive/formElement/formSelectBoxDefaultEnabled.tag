@@ -25,7 +25,8 @@
 
 <template:errorSpanField path="${path}">
     <ycommerce:testId code="LoginPage_Item_${idKey}">
-        <label class="control-label ${fn:escapeXml(labelCSS)}" for="${fn:escapeXml(idKey)}">
+    <div class="select-container">
+        <label class="control-label-custom ${fn:escapeXml(labelCSS)}" for="${fn:escapeXml(idKey)}">
             <spring:theme code="${labelKey}"/>
             <c:if test="${mandatory != null && mandatory == true}">
 					<span class="mandatory">
@@ -36,8 +37,8 @@
 						<form:errors path="${path}"/>
 					</span>
         </label>
-        <div class="control">
-            <form:select id="${idKey}" path="${path}" cssClass="${fn:escapeXml(selectCSSClass)}" tabindex="${tabindex}" disabled="${disabled}">
+        <div class="control form-width-custom">
+            <form:select id="${idKey}" path="${path}" cssClass="${fn:escapeXml(selectCSSClass)} select-width-custom" tabindex="${tabindex}" disabled="${disabled}">
                 <c:if test="${skipBlank == null || skipBlank == false}">
                     <option value="" ${empty selectedValue ? 'selected="selected"' : ''}>
                         <spring:theme code='${skipBlankMessageKey}'/>
@@ -46,6 +47,7 @@
                 <form:options items="${items}" itemValue="${not empty itemValue ? itemValue :'code'}"
                               itemLabel="${not empty itemLabel ? itemLabel :'name'}"/>
             </form:select>
+        </div>
         </div>
     </ycommerce:testId>
 </template:errorSpanField>
