@@ -16,6 +16,7 @@
 </cms:pageSlot>
 
 <header class="js-mainHeader">
+    <!--
 	<nav class="navigation navigation--top hidden-xs hidden-sm">
 		<div class="row">
 			<div class="col-sm-12 col-md-4">
@@ -179,6 +180,8 @@
 	<a id="skiptonavigation"></a>
 	<nav:topNavigation />
 
+	-->
+
 	<div class="header">
         <div class="top-part-header">
             <div class="container-part-header flex-display flex-row-display align-center">
@@ -213,21 +216,21 @@
                 <cms:pageSlot position="SiteLogo" var="logo" limit="1">
                     <cms:component component="${logo}" element="div" class="image-resize-2 small-part-margin"/>
                 </cms:pageSlot>
-                <div class="flex-display flex-row-display text-weight-bold">
-                    <c:url value="/product" var="product" />
+                <div class="flex-display flex-row-display text-weight-bold normal-size-font">
+                    <c:url value="/INTHEBOX/c/INTHEBOX" var="product" />
                     <c:url value="/about" var="about_us" />
                     <c:url value="/blog" var="blog" />
                     <c:url value="/testimoni" var="testimony" />
-                    <a href="${fn:escapeXml(product)}" class="small-part-margin link-hover">
-                        Produck
+                    <a href="${fn:escapeXml(product)}" class="small-part-margin-for-link link-hover">
+                        Produk
                     </a>
-                    <a href="${fn:escapeXml(about_us)}" class="small-part-margin link-hover">
+                    <a href="${fn:escapeXml(about_us)}" class="small-part-margin-for-link link-hover">
                         Tentang Kami
                     </a>
-                    <a href="${fn:escapeXml(blog)}" class="small-part-margin link-hover">
+                    <a href="${fn:escapeXml(blog)}" class="small-part-margin-for-link link-hover">
                         Blog
                     </a>
-                    <a href="${fn:escapeXml(testimony)}" class="small-part-margin link-hover">
+                    <a href="${fn:escapeXml(testimony)}" class="small-part-margin-for-link link-hover">
                         Testimoni
                     </a>
                 </div>

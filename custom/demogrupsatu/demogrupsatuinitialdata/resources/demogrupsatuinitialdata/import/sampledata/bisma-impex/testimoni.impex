@@ -19,7 +19,7 @@ $category=category(code, $productCV)
 #### IMPEX PART 1 ####
 # CMS Link Components
 INSERT_UPDATE CMSLinkComponent;$contentCV[unique=true]  ;uid[unique=true]       ;name                           ;url                                        ;&linkRef               ;target(code)[default='sameWindow'];$category;$product;
-                              ;                         ;ProductLink            ;Product Link                   ;/catalog                                   ;ProductLink            ;;;;
+                              ;                         ;ProductLink            ;Product Link                   ;/c/INTHEBOX                                ;ProductLink            ;;INTHEBOX;;
                               ;                         ;WarrantyLink           ;Warranty Link                  ;/warranty-registration                     ;WarrantyLink           ;;;;
                               ;                         ;WaybillLink            ;Waybill Link                   ;/waybill-status                            ;WaybillLink            ;;;;
                               ;                         ;FAQNewLink             ;FAQ New Link                   ;/faq                                       ;FAQNewLink             ;;;;
@@ -307,72 +307,78 @@ UPDATE Testimoni; id[unique=true]; title                                        
 # OPTIONAL
 # Mau semua data monggo, ini tambahannya
 INSERT_UPDATE Testimoni; id[unique=true]; name                          ; rating; date[dateformat=dd.MM.yyyy HH:mm:ss]
-                       ; 46             ; "Baim Wong"                   ; 5     ; 09.09.2020 18:22:00
-                       ; 47             ; "Raffi Ahmad"                 ; 5     ; 10.08.2020 11:41:00
-                       ; 48             ; "Melaney Ricardo"             ; 5     ; 08.06.2020 20:00:00
-                       ; 49             ; "novika stefani"              ; 5     ; 06.03.2019 11:37:00
-                       ; 50             ; "Rahmatullah Rahmatullah"     ; 5     ; 23.11.2018 11:02:00
-                       ; 51             ; "Diana Veronica"              ; 5     ; 09.10.2018 09:19:00
-                       ; 52             ; "Andika R"                    ; 5     ; 07.10.2018 12:34:00
-                       ; 53             ; "rinaldo fitra"               ; 4     ; 27.09.2018 13:28:00
-                       ; 54             ; "Yunni Hikmah"                ; 5     ; 24.08.2018 16:46:00
-                       ; 55             ; "Wulan Permatasari"           ; 4.5   ; 06.08.2018 08:57:00
-                       ; 56             ; "Feni Rizona"                 ; 5     ; 14.05.2018 10:10:00
-                       ; 57             ; "Salwa unknown"               ; 4     ; 22.04.2018 22:09:00
-                       ; 58             ; "tiara larasati"              ; 5     ; 28.03.2018 13:48:00
-                       ; 59             ; "Nisky Kiki rasuk"            ; 5     ; 27.01.2018 21:23:00
-                       ; 60             ; "Rany May"                    ; 5     ; 28.12.2017 14:10:00
-                       ; 61             ; "Maya Sartika"                ; 5     ; 26.12.2017 09:39:00
-                       ; 62             ; "Maya Sartika"                ; 5     ; 26.12.2017 09:35:00
-                       ; 63             ; "Maya Sartika"                ; 5     ; 26.12.2017 09:30:00
-                       ; 64             ; "Wahyuningsih Wahyuningsih"   ; 4     ; 22.12.2017 13:20:00
-                       ; 65             ; "Aulia Dwi Oktavia"           ; 5     ; 20.12.2017 03:35:00
-                       ; 66             ; "Agung Wisaksono Pangestu"    ; 5     ; 20.11.2017 21:55:00
-                       ; 67             ; "Ceria Nur Rohmah"            ; 5     ; 04.11.2017 05:07:00
-                       ; 68             ; "Dani Rachman"                ; 5     ; 08.09.2017 13:25:00
-                       ; 69             ; "Renni Pirma"                 ; 4     ; 25.04.2017 16:00:00
-                       ; 70             ; "Yoselita Kusumaningrum"      ; 5     ; 25.04.2017 15:31:00
-                       ; 71             ; "olivia natalis"              ; 5     ; 20.04.2017 10:10:00
-                       ; 72             ; "angeline ngan"               ; 5     ; 07.04.2017 16:14:00
-                       ; 73             ; "hartanto koswara"            ; 5     ; 07.04.2017 15:30:00
-                       ; 74             ; "wahyu kurniawan"             ; 5     ; 07.04.2017 14:34:00
-                       ; 75             ; "Stella Lee"                  ; 4.5   ; 07.04.2017 14:24:00
-                       ; 76             ; "Heni Silviana"               ; 5     ; 08.03.2017 16:00:00
-                       ; 77             ; "Andre Wongso"                ; 4     ; 07.03.2017 16:55:00
-                       ; 78             ; "Andre Wongso"                ; 3.5   ; 07.03.2017 16:53:00
-                       ; 79             ; "Victor Adrianus"             ; 4     ; 07.03.2017 16:41:00
-                       ; 80             ; "Victor Adrianus"             ; 3.5   ; 07.03.2017 16:36:00
-                       ; 81             ; "Kris Mateo"                  ; 4.5   ; 07.03.2017 16:16:00
-                       ; 82             ; "Kris Mateo"                  ; 4     ; 07.03.2017 16:14:00
-                       ; 83             ; "Mabelle Earlene"             ; 4.5   ; 07.03.2017 15:49:00
-                       ; 84             ; "Mabelle Earlene"             ; 3.5   ; 07.03.2017 15:38:00
-                       ; 85             ; "Glenn Devos"                 ; 4.5   ; 06.03.2017 23:21:00
-                       ; 86             ; "Glenn Devos"                 ; 4     ; 06.03.2017 23:20:00
-                       ; 87             ; "Adiyanto Hardian"            ; 3.5   ; 06.03.2017 23:16:00
-                       ; 88             ; "Adiyanto Hardian"            ; 4     ; 06.03.2017 23:13:00
-                       ; 89             ; "Neil Ward"                   ; 3.5   ; 06.03.2017 23:04:00
-                       ; 90             ; "Neil Ward"                   ; 4     ; 06.03.2017 23:03:00
+                       ; 46             ; "Frans Rizal"                 ; 3.5   ; 06.03.2017 22:43:00
+                       ; 47             ; "Frans Rizal"                 ; 4     ; 06.03.2017 22:40:00
+                       ; 48             ; "Ravi Sharma"                 ; 4.5   ; 06.03.2017 22:05:00
+                       ; 49             ; "Ravi Sharma"                 ; 4     ; 06.03.2017 22:01:00
+                       ; 50             ; "Rio Denny"                   ; 3.5   ; 06.03.2017 21:42:00
+                       ; 51             ; "Rio Denny"                   ; 4.5   ; 06.03.2017 21:40:00
+                       ; 52             ; "Aaron Pearce"                ; 4     ; 06.03.2017 21:32:00
+                       ; 53             ; "Aaron Pearce"                ; 5     ; 06.03.2017 21:31:00
+                       ; 54             ; "Emily William"               ; 4     ; 06.03.2017 21:23:00
+
+                       ; 55             ; "Emily William"               ; 4.5   ; 06.03.2017 21:22:00
+                       ; 56             ; "Winata Eka"                  ; 4     ; 06.03.2017 21:18:00
+                       ; 57             ; "Winata Eka"                  ; 3.5   ; 06.03.2017 21:17:00
+                       ; 58             ; "Ethan Lee"                   ; 4     ; 06.03.2017 21:09:00
+                       ; 59             ; "Ethan Lee"                   ; 5     ; 06.03.2017 21:08:00
+                       ; 60             ; "Florence Monica"             ; 4     ; 06.03.2017 21:05:00
+                       ; 61             ; "Florence Monica"             ; 3.5   ; 06.03.2017 21:04:00
+                       ; 62             ; "Joanna Marie"                ; 5     ; 06.03.2017 20:53:00
+                       ; 63             ; "Joanna Marie"                ; 3.5   ; 06.03.2017 20:52:00
+
+                       ; 64             ; ""   ; 4     ; 22.12.2017 13:20:00
+                       ; 65             ; ""   ; 5     ; 20.12.2017 03:35:00
+                       ; 66             ; ""   ; 5     ; 20.11.2017 21:55:00
+                       ; 67             ; ""   ; 5     ; 04.11.2017 05:07:00
+                       ; 68             ; ""   ; 5     ; 08.09.2017 13:25:00
+                       ; 69             ; ""   ; 4     ; 25.04.2017 16:00:00
+                       ; 70             ; ""   ; 5     ; 25.04.2017 15:31:00
+                       ; 71             ; ""   ; 5     ; 20.04.2017 10:10:00
+                       ; 72             ; ""   ; 5     ; 07.04.2017 16:14:00
+
+                       ; 73             ; ""   ; 5     ; 07.04.2017 15:30:00
+                       ; 74             ; ""   ; 5     ; 07.04.2017 14:34:00
+                       ; 75             ; ""   ; 4.5   ; 07.04.2017 14:24:00
+                       ; 76             ; ""   ; 5     ; 08.03.2017 16:00:00
+                       ; 77             ; ""   ; 4     ; 07.03.2017 16:55:00
+                       ; 78             ; ""   ; 3.5   ; 07.03.2017 16:53:00
+                       ; 79             ; ""   ; 4     ; 07.03.2017 16:41:00
+                       ; 80             ; ""   ; 3.5   ; 07.03.2017 16:36:00
+                       ; 81             ; ""   ; 4.5   ; 07.03.2017 16:16:00
+
+                       ; 82             ; ""   ; 4     ; 07.03.2017 16:14:00
+                       ; 83             ; ""   ; 4.5   ; 07.03.2017 15:49:00
+                       ; 84             ; ""   ; 3.5   ; 07.03.2017 15:38:00
+                       ; 85             ; ""   ; 4.5   ; 06.03.2017 23:21:00
+                       ; 86             ; ""   ; 4     ; 06.03.2017 23:20:00
+                       ; 87             ; ""   ; 3.5   ; 06.03.2017 23:16:00
+                       ; 88             ; ""   ; 4     ; 06.03.2017 23:13:00
+                       ; 89             ; ""   ; 3.5   ; 06.03.2017 23:04:00
+                       ; 90             ; ""   ; 4     ; 06.03.2017 23:03:00
 
 
 UPDATE Testimoni; id[unique=true]; title                                                ; description
-                ; 46             ; ""
-                ; 47             ; ""
-                ; 48             ; ""
-                ; 49             ; ""
-                ; 50             ; ""
-                ; 51             ; ""
-                ; 52             ; ""
-                ; 53             ; ""
-                ; 54             ; ""
-                ; 55             ; ""
-                ; 56             ; ""
-                ; 57             ; ""
-                ; 58             ; ""
-                ; 59             ; ""
-                ; 60             ; ""
-                ; 61             ; ""
-                ; 62             ; ""
-                ; 63             ; ""
+                ; 46             ; "Tidak kempes"                                       ; "Bantal yang nyaman, saya membawanya kemanapun saat saya berpergian. Tidak kempes banget saat dipakai."
+                ; 47             ; "Lebih baik dari kasur saya sebelumnya"              ; "Senang sekali waktu dikirim kasur ini langsung didepan dirumah dan senang juga saat menempatkannya diatas divan. Matrasnya lembut dan padat, harganya pun muraaah. Lebih baik dari kasur saya sebelumnya."
+                ; 48             ; "really ideal for me"                                ; "It's really ideal for me, super soft, perfect amount of cushion and firmness. Feels like a pretty high quality down pillow. Happy sleeping!"
+                ; 49             ; "better sleep"                                       ; "This bed had changed the quality of our lives for the better. Unboxing was fun to watch, bed was supportive when you're lying down. Highly recommend it! Worth the price"
+                ; 50             ; "Oke"                                                ; "Akan membelinya lagi untuk keluarga saya, guling yang oke banget. Nanti saya akan coba membeli bantalnya"
+                ; 51             ; "Springbed didalam kotak?"                           ; "Melihat kotaknya, yang bisa saya katakan adalah wow ini adalah sebuah spring bed. Kami pun mengambilnya dari dalam kotak menaruhnya diatas divan dan membuka kemasan plastiknya. Dan langsung voila mengembang menjadi sebuah spring bed. Saat partner saya membalikkan badan diatas kasur pun saya tidak merasa terganggu."
+                ; 52             ; "holds its shape"                                    ; "I have slept well, pillow was soft, I had no neck pain. It holds its shape well even if I have to fluff it up. Best sleep I've ever had"
+                ; 53             ; "a special big gift"                                 ; "Feel like receiving a special big gift. Great bed and great experience"
+                ; 54             ; "enough support"                                     ; "The pillow fairly breathable and provided enough support. My husband who has sleeping problem fall asleep so quickly on the first night using Pillow In The Box"
+
+                ; 55             ; "enjoying it"                                        ; "Awesome to sleep on, amazing and having been enjoying it. I have no intention to returning it. I'm so glad that I bought this mattress"
+                ; 56             ; "tidak menyesal"                                     ; "Cobalah gulingnya, kamu pasti tidak menyesal. Apalagi saya jomblo, butuh pelukan kehangatan guling hahaha"
+                ; 57             ; "tidur lebih nyenyak"                                ; "Saya belum pernah memakai spring bed pocket spring sebelumnya, sehingga butuh beberapa malam untuk menyesuaikan dengan kasur ini. Sekarang saya tidur lebih nyaman daripada sebelumnya dan saya tidur lebih nyenyak tanpa harus bulak balik lagi."
+                ; 58             ; "awesome"                                            ; "I don't think I will sleep well on any other pillow again, soft, super squishy, and awesome. They hold their shape, sleeping great. Thank you"
+                ; 59             ; "Wake up so rejuvenated"                             ; "I rarely review product and In The Box did it. Wake up so rejuvenated and refreshed, so happy with the product"
+                ; 60             ; "ga terlalu kecil ataupun besar"                     ; "Sudah pakai selama beberapa hari dan merasa cocok dengan guling ini, ga terlalu kecil ataupun besar"
+                ; 61             ; "Overall puas"                                       ; "Biasanya saya pake kasur busa dirumah tapi bikin sakit punggung, terus saya cobain deh beli spring bed In The Box berhubung harganya ga bikin kantong bolong. Overall saya puas dengan spring bed ini, tampilannya juga cantik dan elegan"
+                ; 62             ; "Premium product !"                                  ; "Finally found the one I had been searching for, this pillow is nice. Premium product with premium quality. I have been able to sleep well throught the night."
+                ; 63             ; "lot of fun"                                         ; "Unboxing lot of fun, the quality is beyond my expectation. I got the single size, it's a good investment. I experience no issue. I would highly recommended In The Box."
+
                 ; 64             ; ""
                 ; 65             ; ""
                 ; 66             ; ""
@@ -382,6 +388,7 @@ UPDATE Testimoni; id[unique=true]; title                                        
                 ; 70             ; ""
                 ; 71             ; ""
                 ; 72             ; ""
+
                 ; 73             ; ""
                 ; 74             ; ""
                 ; 75             ; ""
@@ -391,6 +398,7 @@ UPDATE Testimoni; id[unique=true]; title                                        
                 ; 79             ; ""
                 ; 80             ; ""
                 ; 81             ; ""
+
                 ; 82             ; ""
                 ; 83             ; ""
                 ; 84             ; ""
