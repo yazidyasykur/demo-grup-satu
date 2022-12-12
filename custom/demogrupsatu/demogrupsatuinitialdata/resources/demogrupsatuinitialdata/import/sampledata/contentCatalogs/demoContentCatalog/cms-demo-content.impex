@@ -28,7 +28,7 @@ UPDATE CMSSite;uid[unique=true];defaultPreviewCategory(code, $productCV);default
 
 # Site Logo
 INSERT_UPDATE Media;$contentCV[unique=true];code[unique=true];realfilename;@media[translator=de.hybris.platform.impex.jalo.media.MediaDataTranslator];mime[default='image/jpeg'];altText;folder(qualifier)[default='images']
-                   ;;/images/theme/logo-itb.png;logo-itb.png;$siteResource/images/theme/logo-itb.png;image/png;INTHEBOX logo;
+                   ;;/images/theme/header-logo-white.png;header-logo-white.png;$siteResource/images/theme/header-logo-white.png;image/png;INTHEBOX logo;
 
 # Site Logo Component
 INSERT_UPDATE SimpleBannerComponent;$contentCV[unique=true];uid[unique=true];name;&componentRef;urlLink

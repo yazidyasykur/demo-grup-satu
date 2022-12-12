@@ -1,3 +1,63 @@
+::-webkit-scrollbar {
+  height: 6px;
+}
+
+::-webkit-scrollbar-track-piece {
+  background: #D4EFFC;
+
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  border-radius:3px;
+}
+
+
+.flowrowblock{
+    min-width:220px;
+    width:280px;
+    margin:10px;
+    &:empty {
+        display: none;
+      }
+    }
+
+
+
+.flowrow{
+    display:flex;
+    flex-wrap:nowrap;
+    margin-top:3vw;
+    &:empty {
+            display: none;
+          }
+}
+
+.tengah{
+    text-align:center;
+    margin:auto;
+    padding:1vw;
+}
+
+.pilihan{
+    padding-left:1vw;
+}
+
+
+.kecil{
+    font-size:15px;
+    }
+
+.mainflow{
+   overflow:auto;
+   margin:0 auto;
+   max-width:1440px;
+   padding-bottom:20px;
+
+
+}
+
+
 .pageType-CategoryPage .map {
 	img {
 	  min-width: 100%;
@@ -398,6 +458,8 @@
 		.product-list-right-component{
 				margin-left: 0;
 				padding-top: 20px;
+				padding-left:6vw;
+				padding-right:6vw;
 		}
 
 		.product-list-right-component .pagination-bar{

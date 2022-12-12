@@ -383,12 +383,12 @@
 	      parent="defaultCrossSellingProductReferenceTargetStrategy">
 		<property name="productReferenceTargetStrategies">
 			<list merge="true">
-				<ref bean="apparelSizeProductReferenceTargetStrategy"/>
+				<ref bean="apparelSizeReferenceTargetStrategy"/>
 			</list>
 		</property>
 	</bean>
 
-	<bean id="apparelSizeProductReferenceTargetStrategy"
+	<bean id="apparelSizeReferenceTargetStrategy"
 	      class="org.demogrupsatu.core.strategies.impl.ApparelSizeProductReferenceTargetStrategy">
 		<property name="commerceCategoryService" ref="commerceCategoryService"/>
 		<property name="rootCategoryCode" value="categories"/>
@@ -539,14 +539,28 @@
 		<property name="ticketBusinessService" ref="ticketBusinessService"/>
 	</bean>
 
-	<!--INTHEBOX Dao-->
-	<alias name="defaultIntheboxDao" alias="intheboxDao"/>
-	<bean id="defaultIntheboxDao" class="org.demogrupsatu.core.inthebox.dao.impl.DefaultIntheboxDao">
+
+	<bean id="dimensionValueProvider" class="org.demogrupsatu.core.provider.dimensionValueProvider" parent="abstractPropertyFieldValueProvider">
+		<property name="fieldNameProvider" ref="solrFieldNameProvider"/>
 	</bean>
 
-	<!--INHTEBOX Service-->
-	<alias name="defaultIntheboxService" alias="intheboxService"/>
-	<bean id="defaultIntheboxService" class="org.demogrupsatu.core.inthebox.impl.DefaultIntheboxService">
+	<!--Testimoni Dao	-->
+	<alias name="defaultTestimoniDao" alias="testimoniDao" />
+	<bean id="defaultTestimoniDao" class="org.demogrupsatu.core.testimoni.dao.impl.DefaultTestimoniDao" />
+
+	<!--Testimoni Service	-->
+	<alias name="defaultTestimoniService" alias="testimoniService" />
+	<bean id="defaultTestimoniService" class="org.demogrupsatu.core.testimoni.impl.DefaultTestimoniService" />
+
+	<!--IntheboxProductDao-->
+	<alias name="defaultIntheboxProductDao" alias="intheboxproductDao"/>
+	<bean id="defaultIntheboxProductDao" class="org.demogrupsatu.core.intheboxproduct.dao.impl.DefaultintheboxProductDaoDao">
 	</bean>
+
+	<!--IntheboxProductService-->
+	<alias name="defaultIntheboxProductService" alias="intheboxproductService"/>
+	<bean id="defaultIntheboxProductService" class="org.demogrupsatu.core.intheboxproduct.impl.DefaultIntheboxProductService">
+	</bean>
+
 
 </beans>

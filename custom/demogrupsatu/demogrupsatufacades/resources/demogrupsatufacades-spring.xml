@@ -182,4 +182,49 @@
 	</bean>
 
 	<bean id="genderData" class="org.demogrupsatu.facades.product.data.GenderData" scope="prototype"/>
+
+
+	<alias name="defaultDemoSearchResultProductPopulator" alias="demoSearchResultProductPopulator"/>
+	<bean id="defaultDemoSearchResultProductPopulator" class="org.demogrupsatu.facades.populators.DemoSearchResultProductPopulator" parent="defaultCommerceSearchResultProductPopulator">
+	</bean>
+
+	<bean parent="modifyPopulatorList">
+		<property name="list" ref="commerceSearchResultProductConverter"/>
+		<property name="add" ref="demoSearchResultProductPopulator"/>
+	</bean>
+
+
+
+	<!--Testimoni	-->
+	<alias name="testimoniPopulator" alias="testimoniPopulator" />
+	<bean name="testimoniPopulator" class="org.demogrupsatu.facades.populators.TestimoniPopulator" />
+
+	<bean id="testimoniConverter" name="testimoniConverter" parent="abstractPopulatingConverter">
+		<property name="targetClass" value="org.demogrupsatu.facades.testimoni.TestimoniData" />
+		<property name="populators">
+			<list merge="true">
+				<ref bean="testimoniPopulator" />
+			</list>
+		</property>
+	</bean>
+
+	<alias name="testimoniFacade" alias="testimoniFacade" />
+	<bean name="testimoniFacade" class="org.demogrupsatu.facades.testimoni.impl.DefaultTestimoniFacade" />
+
+	<!--	InTheBoxProduct-->
+	<alias name="intheboxproductPopulator" alias="intheboxproductPopulator" />
+	<bean name="intheboxproductPopulator" class="org.demogrupsatu.facades.populators.IntheboxProductPopulator" />
+
+	<bean id="intheboxproductDataConverter" name="intheboxproductDataConverter" parent="abstractPopulatingConverter">
+		<property name="targetClass" value="org.demogrupsatu.facades.intheboxproduct.IntheboxProductData" />
+		<property name="populators">
+			<list merge="true">
+				<ref bean="intheboxproductPopulator" />
+			</list>
+		</property>
+	</bean>
+
+	<alias name="intheboxproductFacade" alias="intheboxproductFacade" />
+	<bean name="intheboxproductFacade" class="org.demogrupsatu.facades.intheboxproduct.impl.DefaultIntheboxProductFacade" />
+
 </beans>

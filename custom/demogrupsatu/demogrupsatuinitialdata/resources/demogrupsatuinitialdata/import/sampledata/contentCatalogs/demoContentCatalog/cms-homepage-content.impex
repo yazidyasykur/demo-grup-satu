@@ -18,7 +18,7 @@ INSERT_UPDATE PageTemplate;$contentCV[unique=true];uid[unique=true]             
 UPDATE PageTemplate; $contentCV[unique = true]; uid[unique = true]                     ;  velocityTemplate[translator = de.hybris.platform.commerceservices.impex.impl.FileLoaderValueTranslator]
                    ;                   ; LandingHomepageTemplate         ;  $jarResourceCms/structure-view/structure_StorefrontHomepageTemplate.vm
 
-##training-fe-3
+##demo-fe-3
 INSERT_UPDATE ContentSlotName; name[unique = true]    ; template(uid, $contentCV)[unique = true][default = 'LandingHomepageTemplate']; validComponentTypes(code)       ; compTypeGroup(code)
                              ; SiteLogo               ;                                                                                      ;                                 ; logo
                              ; HeaderLinks            ;                                                                                      ;                                 ; headerlinks
@@ -189,10 +189,10 @@ INSERT_UPDATE CMSNavigationNode;uid[unique=true];$contentCV[unique=true];name;&n
 
 
 ######################################
-$contentCatalog = trainingContentCatalog
-$contentCatalogName = Training Content Catalog
-$productCatalog = trainingProductCatalog
-$productCatalogName = Training Product Catalog
+$contentCatalog = demoContentCatalog
+$contentCatalogName = Demo Content Catalog
+$productCatalog = demoProductCatalog
+$productCatalogName = Demo Product Catalog
 
 $contentCV = catalogVersion(CatalogVersion.catalog(Catalog.id[default=$contentCatalog]), CatalogVersion.version[default=Staged])[default=$contentCatalog:Staged]
 $productCV = catalogVersion(catalog(id[default=$productCatalog]), version[default='Staged'])[unique=true, default=$productCatalog:Staged]
@@ -202,9 +202,9 @@ $mediaContainer = media(qualifier, $contentCV);
 $contentPage = contentPage(uid, $contentCV);
 $product = product(code, $productCV)
 $category = category(code, $productCV)
-$siteResource = jar:org.training.initialdata.setup.InitialDataSystemSetup&/traininginitialdata/import/sampledata/contentCatalogs/$contentCatalog
-$productResource = jar:org.training.initialdata.setup.InitialDataSystemSetup&/traininginitialdata/import/sampledata/productCatalogs/$productCatalog
-$jarResourceCms = jar:org.training.initialdata.setup.InitialDataSystemSetup&/traininginitialdata/import/sampledata/cockpits/cmscockpit
+$siteResource = jar:org.demo.initialdata.setup.InitialDataSystemSetup&/demoinitialdata/import/sampledata/contentCatalogs/$contentCatalog
+$productResource = jar:org.demo.initialdata.setup.InitialDataSystemSetup&/demoinitialdata/import/sampledata/productCatalogs/$productCatalog
+$jarResourceCms = jar:org.demo.initialdata.setup.InitialDataSystemSetup&/demoinitialdata/import/sampledata/cockpits/cmscockpit
 $lang = en
 
 

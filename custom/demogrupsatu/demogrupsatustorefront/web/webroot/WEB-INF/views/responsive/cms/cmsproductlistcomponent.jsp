@@ -6,22 +6,28 @@
 
 <spring:htmlEscape defaultHtmlEscape="true" />
 
-<nav:pagination top="true" supportShowPaged="${isShowPageAllowed}" supportShowAll="${isShowAllAllowed}" searchPageData="${searchPageData}" searchUrl="${searchPageData.currentQuery.url}"  numberPagesShown="${numberPagesShown}"/>
+<h1 class="tengah">PILIHAN PRODUCT INTHEBOX</h1>
 
-<div class="product__listing product__list">
-    <c:forEach items="${searchPageData.results}" var="product" varStatus="status">
-        <product:productListerItem product="${product}"/>
-    </c:forEach>
-</div>
+<c:forEach items="${intheboxproductList}" var="intheboxproduct">
+     <div class="mainflow">
+      <div class="flowrow">
+      
+         <div class="flowrowblock">
+            <h2>${intheboxproduct.name}
+                </br>
+                </br>
+                <p class="kecil">${intheboxproduct.description}</p>
+            </h2>
+         </div>
 
-<div id="addToCartTitle" class="display-none">
-    <div class="add-to-cart-header">
-        <div class="headline">
-            <span class="headline-text"><spring:theme code="basket.added.to.basket"/></span>
+
+        <c:forEach items="${searchPageData.results}" var="product" varStatus="status">
+            <product:productListerItem product="${product}" inthebox="${intheboxproduct}"/>
+        </c:forEach>
         </div>
     </div>
-</div>
+</c:forEach>
 
-<nav:pagination top="false" supportShowPaged="${isShowPageAllowed}" supportShowAll="${isShowAllAllowed}" searchPageData="${searchPageData}" searchUrl="${searchPageData.currentQuery.url}"  numberPagesShown="${numberPagesShown}"/>
+
 
 <storepickup:pickupStorePopup/>
