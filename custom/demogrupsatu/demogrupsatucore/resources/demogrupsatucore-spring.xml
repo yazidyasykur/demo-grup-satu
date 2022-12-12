@@ -538,4 +538,15 @@
 		<property name="itemCleanupHooks" ref="csTicketRetentionHooks"/>
 		<property name="ticketBusinessService" ref="ticketBusinessService"/>
 	</bean>
+
+	<!--INTHEBOX Dao-->
+	<alias name="defaultIntheboxDao" alias="intheboxDao"/>
+	<bean id="defaultIntheboxDao" class="org.demogrupsatu.core.inthebox.dao.impl.DefaultIntheboxDao">
+	</bean>
+
+	<!--INHTEBOX Service-->
+	<alias name="defaultIntheboxService" alias="intheboxService"/>
+	<bean id="defaultIntheboxService" class="org.demogrupsatu.core.inthebox.impl.DefaultIntheboxService">
+	</bean>
+
 </beans>
