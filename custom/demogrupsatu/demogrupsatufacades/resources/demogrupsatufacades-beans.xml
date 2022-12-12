@@ -33,4 +33,8 @@
 		<property name="name" type="String"/>
 		<property name="description" type="String"/>
 	</bean>
+
+	<bean class="de.hybris.platform.commercefacades.user.data.RegisterData">
+		<property name="userId" type="java.lang.String" />
+	</bean>
 </beans>

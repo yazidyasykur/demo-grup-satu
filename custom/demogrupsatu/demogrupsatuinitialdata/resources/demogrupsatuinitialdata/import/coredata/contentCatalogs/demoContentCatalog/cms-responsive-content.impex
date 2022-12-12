@@ -1,5 +1,5 @@
-# -----------------------------------------------------------------------
-# Copyright (c) 2019 SAP SE or an SAP affiliate company. All rights reserved.
+#-----------------------------------------------------------------------
+#Copyright(c)2019SAPS Eoran SAP affiliate company. All rights reserved.
 # -----------------------------------------------------------------------
 #
 # Import the CMS content for the site
@@ -10,4 +10,106 @@ $contentCV=catalogVersion(CatalogVersion.catalog(Catalog.id[default=$contentCata
 # Import config properties into impex macros
 UPDATE GenericItem[processor=de.hybris.platform.commerceservices.impex.impl.ConfigPropertyImportProcessor];pk[unique=true]
 $jarResourceCms=$config-jarResourceCmsValue
+
+### START LOGIN PAGE CONTROLLER ###
+
+INSERT_UPDATE PageTemplate;$contentCV[unique=true];uid[unique=true];name;frontendTemplateName;restrictedPageTypes(code);active[default=true]
+;;LoginPageTemplate;Login Page Template;;ContentPage;false;
+
+UPDATE PageTemplate;$contentCV[unique=true];uid[unique=true];velocityTemplate[translator=de.hybris.platform.commerceservices.impex.impl.FileLoaderValueTranslator]
+;;LoginPageTemplate;;$jarResourceCms/structure-view/structure_LoginPageTemplate.vm
+
+INSERT_UPDATE ContentSlotName;name[unique=true];template(uid,$contentCV)[unique=true][default='LoginPageTemplate'];validComponentTypes(code);compTypeGroup(code)
+;PlaceholderContentSlot;;;wide
+
+INSERT_UPDATE ContentSlotForTemplate;$contentCV[unique=true];uid[unique=true];position[unique=true];pageTemplate(uid,$contentCV)[unique=true][default='LoginPageTemplate'];contentSlot(uid,$contentCV)[unique=true];allowOverwrite
+;;PlaceholderContentSlot-LoginPage;PlaceholderContentSlot;;PlaceholderContentSlot;true
+
+INSERT_UPDATE ContentPage;$contentCV[unique=true];uid[unique=true];name;masterTemplate(uid,$contentCV);label;defaultPage[default='true'];approvalStatus(code)[default='approved'];homepage[default='false']
+;;login;LoginPage;LoginPageTemplate;login
+
+### END LOGIN PAGE CONTROLLER ###
+
+### REGISTER PAGE CONTROLLER ###
+
+INSERT_UPDATE PageTemplate;$contentCV[unique=true];uid[unique=true];name;frontendTemplateName;restrictedPageTypes(code);active[default=true]
+;;RegisterPageTemplate;Register Page Template;;ContentPage;false;
+
+UPDATE PageTemplate;$contentCV[unique=true];uid[unique=true];velocityTemplate[translator=de.hybris.platform.commerceservices.impex.impl.FileLoaderValueTranslator]
+;;RegisterPageTemplate;;$jarResourceCms/structure-view/structure_RegisterPageTemplate.vm
+
+INSERT_UPDATE ContentSlotName;name[unique=true];template(uid,$contentCV)[unique=true][default='RegisterPageTemplate'];validComponentTypes(code);compTypeGroup(code)
+;PlaceholderContentSlot;;;wide
+
+INSERT_UPDATE ContentSlotForTemplate;$contentCV[unique=true];uid[unique=true];position[unique=true];pageTemplate(uid,$contentCV)[unique=true][default='RegisterPageTemplate'];contentSlot(uid,$contentCV)[unique=true];allowOverwrite
+;;PlaceholderContentSlot-RegisterPage;PlaceholderContentSlot;;PlaceholderContentSlot;true
+
+INSERT_UPDATE ContentPage;$contentCV[unique=true];uid[unique=true];name;masterTemplate(uid,$contentCV);label;defaultPage[default='true'];approvalStatus(code)[default='approved'];homepage[default='false']
+;;register;RegisterPage;RegisterPageTemplate;register
+
+### END REGISTER PAGE CONTROLLER ###
+
+### START CHECKOUT LOGIN PAGE CONTROLLER ###
+
+INSERT_UPDATE PageTemplate;$contentCV[unique=true];uid[unique=true];name;frontendTemplateName;restrictedPageTypes(code);active[default=true]
+;;CheckoutLoginPageTemplate;Checkout Login Page Template;;ContentPage;false;
+
+UPDATE PageTemplate;$contentCV[unique=true];uid[unique=true];velocityTemplate[translator=de.hybris.platform.commerceservices.impex.impl.FileLoaderValueTranslator]
+;;CheckoutLoginPageTemplate ;$jarResourceCms/structure-view/structure_LoginPageTemplate.vm
+
+INSERT_UPDATE ContentSlotName;name[unique=true];template(uid,$contentCV)[unique=true][default='CheckoutLoginPageTemplate'];validComponentTypes(code);compTypeGroup(code)
+;PlaceholderContentSlot;;;wide
+
+INSERT_UPDATE ContentSlotForTemplate;$contentCV[unique=true];uid[unique=true];position[unique=true];pageTemplate(uid,$contentCV)[unique=true][default='CheckoutLoginPageTemplate'];contentSlot(uid,$contentCV)[unique=true];allowOverwrite
+;;PlaceholderContentSlot-CheckoutLoginPage;PlaceholderContentSlot;;PlaceholderContentSlot;true
+
+INSERT_UPDATE ContentPage;$contentCV[unique=true];uid[unique=true];name;masterTemplate(uid,$contentCV);label;defaultPage[default='true'];approvalStatus(code)[default='approved'];homepage[default='false']
+;;checkout-login;Checkout-Login Page;CheckoutLoginPageTemplate;checkout-login
+
+### END CHECKOUT LOGIN PAGE CONTROLLER ###
+
+
+$contentCatalog=demoContentCatalog
+$contentCatalogName=Demo Content Catalog
+$productCatalog=demoProductCatalog
+$productCatalogName=Demo Product Catalog
+
+$contentCV=catalogVersion(CatalogVersion.catalog(Catalog.id[default=$contentCatalog]),CatalogVersion.version[default=Staged])[default=$contentCatalog:Staged]
+$productCV=catalogVersion(catalog(id[default=$productCatalog]),version[default='Staged'])[unique=true,default=$productCatalog:Staged]
+
+$medias=medias(code, $contentCV);
+$mediaContainer=media(qualifier, $contentCV);
+$contentPage=contentPage(uid, $contentCV);
+$product=product(code, $productCV)
+$category=category(code, $productCV)
+$siteResource=jar:org.demogrupsatu.initialdata.setup.InitialDataSystemSetup&/demogrupsatuinitialdata/import/sampledata/contentCatalogs/$contentCatalog
+$productResource=jar:org.demogrupsatu.initialdata.setup.InitialDataSystemSetup&/demogrupsatuinitialdata/import/sampledata/productCatalogs/$productCatalog
+$jarResourceCms=jar:org.demogrupsatu.initialdata.setup.InitialDataSystemSetup&/demogrupsatuinitialdata/import/sampledata/cockpits/cmscockpit
+
+### Customer Login
+INSERT_UPDATE ContentSlot;$contentCV[unique=true];uid[unique=true];name;active;cmsComponents(&componentRef);;;
+;;LeftContentSlot-login;Left Content Slot for Customer Login;true;ReturningCustomerLoginComponent;;;
+#;;RightContentSlot-login;Right Content Slot for Customer Login;true;NewCustomerLoginComponent;;;
+
+INSERT_UPDATE ContentSlotForPage;$contentCV[unique=true];uid[unique=true];position[unique=true];page(uid,$contentCV)[unique=true][default='login'];contentSlot(uid,$contentCV)[unique=true];;;
+;;LeftContentSlot-login;LeftContentSlot;;LeftContentSlot-login;;;
+#;;RightContentSlot-login;RightContentSlot;;RightContentSlot-login;;;
+
+INSERT_UPDATE JspIncludeComponent;$contentCV[unique=true];uid[unique=true];name;page;actions(uid,$contentCV);&componentRef
+;;ReturningCustomerLoginComponent;Returning Customer Login Component;accountReturningCustomerLogin.jsp;;ReturningCustomerLoginComponent
+#;;NewCustomerLoginComponent;New Customer Login Component;accountNewCustomerLogin.jsp;;NewCustomerLoginComponent
+
+
+### Customer Checkout Login
+# INSERT_UPDATE ContentSlot;$contentCV[unique=true];uid[unique=true];name;active;cmsComponents(&componentRef);;;
+# ;;LeftContentSlot-checkoutlogin;Left Content Slot for Customer Login;true;ReturningCustomerCheckoutLoginComponent;;;
+#;;RightContentSlot-login;Right Content Slot for Customer Login;true;NewCustomerLoginComponent;;;
+
+# INSERT_UPDATE ContentSlotForPage;$contentCV[unique=true];uid[unique=true];position[unique=true];page(uid,$contentCV)[unique=true][default='login'];contentSlot(uid,$contentCV)[unique=true];;;
+# ;;LeftContentSlot-checkoutlogin;LeftContentSlot;;LeftContentSlot-checkoutlogin;;;
+#;;RightContentSlot-login;RightContentSlot;;RightContentSlot-login;;;
+
+# INSERT_UPDATE JspIncludeComponent;$contentCV[unique=true];uid[unique=true];name;page;actions(uid,$contentCV);&componentRef
+# ;;ReturningCustomerCheckoutLoginComponent;Returning Customer Login Component;accountReturningCustomerLogin.jsp;;ReturningCustomerCheckoutLoginComponent
+#;;NewCustomerLoginComponent;New Customer Login Component;accountNewCustomerLogin.jsp;;NewCustomerLoginComponent
 
