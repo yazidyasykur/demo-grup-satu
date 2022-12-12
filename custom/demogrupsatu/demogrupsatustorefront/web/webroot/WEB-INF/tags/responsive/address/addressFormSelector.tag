@@ -15,7 +15,7 @@
 <spring:htmlEscape defaultHtmlEscape="true" />
 
 <c:if test="${not empty deliveryAddresses}">
-	<button type="button" class="btn btn-default btn-block js-address-book">
+	<button type="button" class="address-btn js-address-book">
 		<spring:theme code="checkout.checkout.multi.deliveryAddress.viewAddressBook" />
 	</button>
 	<br>
@@ -26,7 +26,8 @@
 		<form:hidden path="addressId" class="add_edit_delivery_address_id"
 			status="${not empty suggestedAddresses ? 'hasSuggestedAddresses' : ''}" />
 		<input type="hidden" name="bill_state" id="address.billstate" />
-	
+
+
 		<div id="countrySelector" data-address-code="${fn:escapeXml(addressData.id)}"
 			data-country-iso-code="${fn:escapeXml(addressData.country.isocode)}"
 			class="form-group">
@@ -37,7 +38,7 @@
 				selectedValue="${addressForm.countryIso}"
 				selectCSSClass="form-control" />
 		</div>
-		<div id="i18nAddressForm" class="i18nAddressForm">
+		<div id="i18nAddressForm" class="i18nAddressForm testclass">
 			<c:if test="${not empty country}">
 				<address:addressFormElements regions="${regions}"
 					country="${country}" />
