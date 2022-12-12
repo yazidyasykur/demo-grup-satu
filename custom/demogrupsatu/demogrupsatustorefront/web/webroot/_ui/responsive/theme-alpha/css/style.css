@@ -11361,7 +11361,7 @@ fieldset[disabled] .btn-primary.active {
 .carousel__component--carousel .item a,
 .carousel .carousel__item a,
 .carousel__component--carousel .carousel__item a {
-  color: #19212b;
+  color: #FFF;
 }
 .carousel .item a:hover,
 .carousel__component--carousel .item a:hover,
@@ -11372,7 +11372,7 @@ fieldset[disabled] .btn-primary.active {
 .carousel .carousel__item a:focus,
 .carousel__component--carousel .carousel__item a:focus {
   text-decoration: none;
-  color: #47b6b1;
+  color: #6086C2;
 }
 .carousel .item .item__name,
 .carousel__component--carousel .item .item__name,
@@ -17960,7 +17960,7 @@ select[multiple].input-sm {
   bottom: -2px;
 }
 .layout-card-carousel {
-  width: 366.667px;
+  width: 30%;
   margin-right: 20px;
   background-color: #fff;
   border-radius: 16px;
@@ -19217,6 +19217,9 @@ select[multiple].input-sm {
 .small-margin-top {
   margin-top: 20px;
 }
+.small-margin-bottom {
+  margin-bottom: 20px;
+}
 .palmer-font {
   font-family: "Palmer Lake";
   color: #7FC5F9;
@@ -19287,9 +19290,9 @@ select[multiple].input-sm {
 /* Container */
 .box-display {
   background-color: white;
-  width: 85%;
+  width: 20vw;
   height: auto;
-  border: 2px solid #F1F1F1;
+  border: 1.5px solid #F1F1F1;
   border-radius: 25px;
   padding: 15px 20px;
   margin: 10px auto;
@@ -19309,15 +19312,14 @@ select[multiple].input-sm {
 }
 /* Other */
 .pic {
-  width: 15%;
-  position: relative;
-  float: right;
+  width: 20%;
 }
 .star {
   max-width: 20px;
 }
 .button {
-  width: 75px;
+  width: auto;
+  padding: 0 10px;
   height: 35px;
   background-color: #6086C2;
   border: 0px solid black;
@@ -19331,9 +19333,10 @@ select[multiple].input-sm {
   background-color: #FFF;
   color: #6086C2;
 }
-.button-lihat-semua {
-  width: 250px;
-  height: 50px;
+.button-2 {
+  width: auto;
+  height: auto;
+  padding: 10px 25px;
   font-size: 20px;
   background-color: #6086C2;
   border: 0px solid black;
@@ -19343,7 +19346,7 @@ select[multiple].input-sm {
   transition: background-color 100ms;
   transition-timing-function: linear;
 }
-.button-lihat-semua:hover {
+.button-2:hover {
   background-color: #7FC5F9;
   color: #6086C2;
 }
