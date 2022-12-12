@@ -155,7 +155,7 @@
   right: -25px;
 }
 .slick-prev:before {
-  content: "�?";
+  content: "←";
 }
 [dir="rtl"] .slick-prev:before {
   content: "→";
@@ -171,7 +171,7 @@
   content: "→";
 }
 [dir="rtl"] .slick-next:before {
-  content: "�?";
+  content: "←";
 }
 /* Dots */
 .slick-dotted .slick-slider {
@@ -14870,6 +14870,7 @@ form .forgotten-password {
   border: 1px solid #cccccc;
   border-top: 0;
   padding-top: 0;
+  border: 1px solid grey;
   padding-bottom: 10px;
 }
 .checkout-shipping .checkout-shipping-items .checkout-shipping-items-header {

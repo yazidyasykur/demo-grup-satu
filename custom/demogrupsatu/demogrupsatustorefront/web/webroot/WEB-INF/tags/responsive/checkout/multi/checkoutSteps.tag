@@ -16,9 +16,10 @@
             <c:choose>
                 <c:when test="${progressBarId eq checkoutStep.progressBarId}">
                     <c:set scope="page"  var="activeCheckoutStepNumber"  value="${checkoutStep.stepNumber}"/>
-                    <a href="${fn:escapeXml(stepUrl)}" class="step-head js-checkout-step active">
-                        <div class="title"><spring:theme code="checkout.multi.${checkoutStep.progressBarId}"/></div>
+                    <a href="${fn:escapeXml(stepUrl)}" class="step-head js-checkout-step actived">
+                        <div class="title-custom"><spring:theme code="checkout.multi.${checkoutStep.progressBarId}"/></div>
                     </a>
+
                     <div class="step-body"><jsp:doBody/></div>
                 </c:when>
                 <c:when test="${checkoutStep.stepNumber > activeCheckoutStepNumber}">

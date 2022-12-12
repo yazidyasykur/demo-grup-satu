@@ -155,7 +155,7 @@
   right: -25px;
 }
 .slick-prev:before {
-  content: "�?";
+  content: "←";
 }
 [dir="rtl"] .slick-prev:before {
   content: "→";
@@ -171,7 +171,7 @@
   content: "→";
 }
 [dir="rtl"] .slick-next:before {
-  content: "�?";
+  content: "←";
 }
 /* Dots */
 .slick-dotted .slick-slider {
@@ -14864,6 +14864,7 @@ form .forgotten-password {
   border: 1px solid #cccccc;
   border-top: 0;
   padding-top: 0;
+  border: 1px solid grey;
   padding-bottom: 10px;
 }
 .checkout-shipping .checkout-shipping-items .checkout-shipping-items-header {
@@ -22785,4 +22786,93 @@ h2 {
 .mono {
   font-family: monospace;
   font-size: 20px;
+}
+.centered {
+  margin: 0 auto;
+}
+.multistep-container {
+  margin-top: 30px;
+}
+.actived {
+  background-color: #6086C2 !important;
+  margin-bottom: 10px;
+  border-radius: 10px;
+  color: white !important;
+}
+.title-custom {
+  color: white;
+}
+.address-btn {
+  background-color: #6086C2;
+  padding: 10px 20px;
+  border-radius: 20px;
+  color: white;
+  border: none;
+  margin: 10px 0px;
+}
+.select-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.input-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.control-custom {
+  max-width: 50%;
+}
+.form-width-custom {
+  max-width: 50%;
+  border-radius: 5px;
+}
+.select-width-custom {
+  max-width: 100%;
+  border-radius: 5px;
+}
+.checkout-shipping {
+  border-radius: 20px;
+}
+.next-btn {
+  border-radius: 20px;
+  color: white;
+  width: 100%;
+  padding: 10px;
+  background-color: #6086C2;
+  margin: 10px 0px !important;
+  border: none !important;
+}
+.checkout-indent-custom {
+  padding: 20px 0px;
+}
+.container-custom {
+  max-width: 1200px;
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+}
+.multistep-container {
+  min-width: 500px;
+}
+.order-details-container {
+  min-width: 400px;
+}
+.summary-address-custom {
+  border: 2px solid #6086C2;
+  color: black;
+  border-radius: 20px;
+}
+.title-summary-custom {
+  color: black;
+  font-weight: bold;
+}
+.checkout-order-summary-list {
+  border-bottom: none !important;
+}
+@media screen and (max-width: 930px) {
+  .container-custom {
+    flex-direction: column-reverse;
+    margin: 0px 20px;
+  }
 }

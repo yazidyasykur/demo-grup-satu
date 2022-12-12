@@ -34,5 +34,16 @@
 		<extension name="demogrupsatuinitialdata"/>
 		<extension name="demogrupsatustorefront"/>
 
+		<extension name='couponbackoffice' />
+		<extension name='droolsruleengineservices' />
+		<extension name='couponfacades' />
+		<extension name='couponservices' />
+		<extension name='rulebuilderbackoffice' />
+
+		<extension name='assistedservicepromotionaddon' />
+		<extension name='personalizationpromotionsbackoffice' />
+		<extension name='personalizationpromotionssmartedit' />
+		<extension name='personalizationpromotionssampledataaddon' />
+
   </extensions>
 </hybrisconfig>

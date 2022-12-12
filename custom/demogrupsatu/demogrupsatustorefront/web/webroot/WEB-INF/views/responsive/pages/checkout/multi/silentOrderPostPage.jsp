@@ -14,19 +14,13 @@
 <spring:htmlEscape defaultHtmlEscape="true" />
 
 <template:page pageTitle="${pageTitle}" hideHeaderLinks="true">
-<div class="row">
-    <div class="col-sm-6">
-        <div class="checkout-headline">
-            <span class="glyphicon glyphicon-lock"></span>
-            <spring:theme code="checkout.multi.secure.checkout"/>
-        </div>
+<div class="centered container-custom">
+    <div class="multistep-container">
 		<multiCheckout:checkoutSteps checkoutSteps="${checkoutSteps}" progressBarId="${progressBarId}">
 			<jsp:body>
                 <c:if test="${not empty paymentFormUrl}">
-                    <div class="checkout-paymentmethod">
+                    <div class="checkout-shipping">
                         <div class="checkout-indent">
-
-                            <div class="headline"><spring:theme code="checkout.multi.paymentMethod"/></div>
 
 							    <ycommerce:testId code="paymentDetailsForm">
 							
@@ -44,7 +38,7 @@
 						
 									<div class="form-group">
 										<c:if test="${not empty paymentInfos}">
-											<button type="button" class="btn btn-default btn-block js-saved-payments"><spring:theme code="checkout.multi.paymentMethod.addPaymentDetails.useSavedCard"/></button>
+											<button type="button" class="address-btn js-saved-payments"><spring:theme code="checkout.multi.paymentMethod.addPaymentDetails.useSavedCard"/></button>
 										</c:if>	
 									</div>
 
@@ -140,7 +134,7 @@
                          </div>
                     </div>
 
-                    <button type="button" class="btn btn-primary btn-block submit_silentOrderPostForm checkout-next"><spring:theme code="checkout.multi.paymentMethod.continue"/></button>
+                    <button type="button" class="next-btn checkout-next"><spring:theme code="checkout.multi.paymentMethod.continue"/></button>
                 </c:if>
 
 				<c:if test="${not empty paymentInfos}">
@@ -179,14 +173,8 @@
 		</multiCheckout:checkoutSteps>
 	</div>
 
-	<div class="col-sm-6 hidden-xs">
+	<div class="">
 		<multiCheckout:checkoutOrderDetails cartData="${cartData}" showDeliveryAddress="true" showPaymentInfo="false" showTaxEstimate="false" showTax="true" />
-    </div>
-
-    <div class="col-sm-12 col-lg-12">
-        <cms:pageSlot position="SideContent" var="feature" element="div" class="checkout-help">
-            <cms:component component="${feature}"/>
-        </cms:pageSlot>
     </div>
 </div>
 
