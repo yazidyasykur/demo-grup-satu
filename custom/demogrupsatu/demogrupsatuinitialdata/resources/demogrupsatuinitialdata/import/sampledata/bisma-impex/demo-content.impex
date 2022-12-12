@@ -20,7 +20,7 @@ $jarResourceCms = $config-jarResourceCmsValue
 INSERT_UPDATE Media;$contentCV[unique=true];code[unique=true];realfilename;@media[translator=de.hybris.platform.impex.jalo.media.MediaDataTranslator];mime[default='image/jpeg'];altText;folder(qualifier)[default='images']
                    ;;/images/theme/header-logo-white.png;header-logo-white.png;$siteResource/images/theme/header-logo-white.png;image/png;INTHEBOX logo;
 
-# Site Logo Component
+## Site Logo Component
 UPDATE SimpleBannerComponent;$contentCV[unique=true];uid[unique=true];$picture[lang=$lang]
                             ;;SiteLogoComponent;/images/theme/header-logo-white.png;
 
