@@ -139,6 +139,17 @@
                 </attributes>
             </itemtype>
 
+            <itemtype code="Customer" autocreate="false" generate="false">
+                <description>Extending Customer type with additional attributes.</description>
+                <attributes>
+                    <attribute qualifier="userId" type="java.lang.String">
+                        <description>Customer User Id</description>
+                        <modifiers read="true" write="true" search="true" optional="true" unique="false" />
+                        <persistence type="property" />
+                    </attribute>
+                </attributes>
+            </itemtype>
+
         </typegroup>
 
         <typegroup name="Testimoni">
