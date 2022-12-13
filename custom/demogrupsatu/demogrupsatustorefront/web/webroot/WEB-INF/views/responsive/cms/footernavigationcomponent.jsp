@@ -9,7 +9,7 @@
 	    <div class="footer__top container-part-footer">
 	        <div class="row">
 	            <div class="col-xs-12 col-sm-12">
-	                <div class="flex-display flex-row-display">
+	                <div class="flex-display flex-row-display footer-container-responsive">
 	                    <div class="left-most-part">
                             <cms:pageSlot position="SiteLogo" var="logo" limit="1">
                                 <cms:component component="${logo}" element="div" class="image-resize"/>
@@ -24,22 +24,24 @@
                                 <a href="https://www.gmail.com"><i class="fa-regular fa-envelope large-icon"></i></a>
                             </div>
                         </div>
-	                	<c:forEach items="${component.navigationNode.children}" var="childLevel1">
-		                	<c:forEach items="${childLevel1.children}" step="${component.wrapAfter}" varStatus="i">
-							   <div class="footer__nav--container">
-		                	       <c:if test="${component.wrapAfter > i.index}">
-	                                   <div class="title text-weight-bold title-color">${fn:escapeXml(childLevel1.title)}</div>
-	                               </c:if>
-	                               <ul class="footer__nav--links link-hover">
-	                                   <c:forEach items="${childLevel1.children}" var="childLevel2" begin="${i.index}" end="${i.index + component.wrapAfter - 1}">
-	                                        <c:forEach items="${childLevel2.entries}" var="childlink" >
-		                                        <cms:component component="${childlink.item}" evaluateRestriction="true" element="li" class="footer__link "/>
-	                                        </c:forEach>
-	                                   </c:forEach>
-	                               </ul>
-	                		   </div>
-						    </c:forEach>
-	                	</c:forEach>
+                        <div class="flex-display flex-row-display">
+                            <c:forEach items="${component.navigationNode.children}" var="childLevel1">
+                                <c:forEach items="${childLevel1.children}" step="${component.wrapAfter}" varStatus="i">
+                                   <div class="footer__nav--container footer-link-list-margin">
+                                       <c:if test="${component.wrapAfter > i.index}">
+                                           <div class="title text-weight-bold title-color">${fn:escapeXml(childLevel1.title)}</div>
+                                       </c:if>
+                                       <ul class="footer__nav--links link-hover">
+                                           <c:forEach items="${childLevel1.children}" var="childLevel2" begin="${i.index}" end="${i.index + component.wrapAfter - 1}">
+                                                <c:forEach items="${childLevel2.entries}" var="childlink" >
+                                                    <cms:component component="${childlink.item}" evaluateRestriction="true" element="li" class="footer__link "/>
+                                                </c:forEach>
+                                           </c:forEach>
+                                       </ul>
+                                   </div>
+                                </c:forEach>
+                            </c:forEach>
+	                	</div>
 	               </div>
 	           </div>
 	        </div>
@@ -47,7 +49,7 @@
 	</div>
 
 	<div class="footer__bottom copyright-part">
-	    <div class="footer__copyright copyright-part flex-display flex-row-display container-part-footer">
+	    <div class="footer__copyright copyright-part footer-container-responsive container-part-footer">
 	        <div class="flex-display align-center">
                 <div class="small-part-right-margin">
                     <img src="https://inthebox.net/images/layout-v2/footer-icon-call.png" class="mr-2" />

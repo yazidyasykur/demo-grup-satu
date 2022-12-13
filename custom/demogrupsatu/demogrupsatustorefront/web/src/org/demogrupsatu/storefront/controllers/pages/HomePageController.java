@@ -80,7 +80,9 @@ public class HomePageController extends AbstractPageController
 
 		averageRate = Math.round((averageRate / listSize) * 10.0 ) / 10.0;
 
-		if(averageRate % 1 >= 0.5) halfStar = true;
+		if(averageRate % 1 >= 0.5) {
+			halfStar = true;
+		}
 
 		model.addAttribute("totalReview", listSize);
 		model.addAttribute("average", averageRate);

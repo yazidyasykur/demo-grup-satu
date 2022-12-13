@@ -32,13 +32,6 @@
 		</div>
 		<main data-currency-iso-code="${fn:escapeXml(currentCurrency.isocode)}">
 			<spring:theme code="text.skipToContent" var="skipToContent" />
-			<a href="#skip-to-content" class="skiptocontent" data-role="none">${fn:escapeXml(skipToContent)}</a>
-			<spring:theme code="text.skipToNavigation" var="skipToNavigation" />
-			<a href="#skiptonavigation" class="skiptonavigation" data-role="none">${fn:escapeXml(skipToNavigation)}</a>
-
-			<header:header hideHeaderLinks="${hideHeaderLinks}" />
-
-			<a id="skip-to-content"></a>
 		
 			<div class="main__inner-wrapper">
 				<common:globalMessages />
@@ -46,7 +39,6 @@
 				<jsp:doBody />
 			</div>
 
-			<footer:footer />
 		</main>
 
 	</jsp:body>
