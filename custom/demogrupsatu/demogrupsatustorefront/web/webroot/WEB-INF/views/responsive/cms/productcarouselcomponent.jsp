@@ -25,7 +25,7 @@
 
 							<c:url value="${product.url}/quickView" var="productQuickViewUrl"/>
 							<div class="carousel__item layout-card-carousel">
-								<a href="${productQuickViewUrl}" class="js-reference-item">
+								<!-- <a href="${productQuickViewUrl}" class="js-reference-item"> -->
 									<div class="carousel__item--thumb">
 										<product:productPrimaryReferenceImage product="${product}" format="product"/>
 									</div>
@@ -33,9 +33,9 @@
 									<div class="carousel__item--name">${fn:escapeXml(product.description)}</div>
 									<div class="carousel__item--price"><format:fromPrice priceData="${product.price}"/></div>
 									<div class="link text-center">
-                                        <a class="btn btn-brand" href="#">Beli Sekarang</a>
+                                        <button class="button-2" onclick="location.href='${productQuickViewUrl}'">Beli Sekarang</button>
                                     </div>
-								</a>
+								<!-- </a> -->
 							</div>
 						</c:forEach>
 					</div>
@@ -47,17 +47,17 @@
 							<c:url value="${product.url}" var="productUrl"/>
 
 							<div class="carousel__item layout-card-carousel">
-								<a href="${productUrl}">
-									<div class="carousel__item--thumb">
+								<!-- <a href="${productUrl}"> -->
+									<div class="carousel__item--thumb small-margin-top">
 										<product:productPrimaryImage product="${product}" format="product"/>
 									</div>
 									<div class="carousel__item--name">${fn:escapeXml(product.name)}</div>
 									<div class="carousel__item--name">${fn:escapeXml(product.description)}</div>
 									<div class="carousel__item--price"><format:fromPrice priceData="${product.price}"/></div>
-									<div class="link text-center">
-                                        <a class="btn btn-brand" href="#">Beli Sekarang</a>
+									<div class="link text-center small-margin-bottom">
+                                        <a class="button-2" href="${productUrl}">Beli Sekarang</a>
                                     </div>
-								</a>
+								<!-- </a> -->
 							</div>
 						</c:forEach>
 					</div>

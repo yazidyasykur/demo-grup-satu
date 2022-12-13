@@ -1,0 +1,5 @@
+UPDATE GenericItem[processor = de.hybris.platform.commerceservices.impex.impl.ConfigPropertyImportProcessor]; pk[unique = true]
+
+
+REMOVE DroolsKIEModule;name[unique=true];mvnGroupId;mvnArtifactId;mvnVersion;ruleType(code);active;version;
+                             ;promotions-preview-module;hybris-rules;promotions-preview;1.0.0;PROMOTION;true;-1;

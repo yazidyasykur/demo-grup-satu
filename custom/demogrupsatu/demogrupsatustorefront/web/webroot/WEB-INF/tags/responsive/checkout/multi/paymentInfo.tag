@@ -9,8 +9,8 @@
 
 <c:if test="${not empty paymentInfo && showPaymentInfo}">
     <ul class="checkout-order-summary-list">
-        <li class="checkout-order-summary-list-heading">
-            <div class="title"><spring:theme code="checkout.multi.payment" text="Payment:" /></div>
+        <li class="summary-address-custom">
+            <div class="title-summary-custom"><spring:theme code="checkout.multi.payment" text="Payment:" /></div>
             <div class="address">
                 <c:if test="${not empty paymentInfo.billingAddress}"> ${fn:escapeXml(paymentInfo.billingAddress.title)}</c:if>
                 ${fn:escapeXml(paymentInfo.accountHolderName)}, ${fn:escapeXml(paymentInfo.cardTypeData.name)},

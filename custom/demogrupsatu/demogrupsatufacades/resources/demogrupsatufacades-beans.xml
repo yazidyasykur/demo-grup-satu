@@ -45,4 +45,8 @@
 		<property name="picture" type="String"/>
 		<property name="harga" type="de.hybris.platform.commercefacades.product.data.PriceData"/>
 	</bean>
+
+	<bean class="de.hybris.platform.commercefacades.user.data.RegisterData">
+		<property name="userId" type="java.lang.String" />
+	</bean>
 </beans>

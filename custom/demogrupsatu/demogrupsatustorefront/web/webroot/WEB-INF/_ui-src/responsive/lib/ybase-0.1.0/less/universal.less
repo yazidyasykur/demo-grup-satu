@@ -1,12 +1,4 @@
 /* Important Part */
-body {
-    background-color: #FFFFFF;
-}
-
-html {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-}
-
 .copyright-part {
     background-color: #6086C2;
     color: #FFF;
@@ -27,7 +19,11 @@ html {
 
 /* Margin */
 .small-part-margin {
-    margin: 0 20px;
+    margin: 0 10px;
+}
+
+.small-part-margin-for-link {
+    margin: 0 25px;
 }
 
 .container-display {
@@ -40,6 +36,20 @@ html {
 
 .small-part-left-margin {
     margin-left: 15px;
+}
+
+.small-margin-top {
+    margin-top: 20px;
+}
+
+.small-margin-bottom {
+    margin-bottom: 20px;
+}
+
+.palmer-font {
+    font-family: "Palmer Lake";
+    color: #7FC5F9;
+    font-size: 8rem;
 }
 
 /* Flexbox */
@@ -100,22 +110,46 @@ html {
     color: #7FC5F9;
 }
 
+.review-text {
+    color: #6086C2;
+    margin: auto 5px;
+}
+
+.description {
+    margin-top: 10px;
+    margin-bottom: 15px;
+    margin-right: 25px;
+}
+
+.title-testi {
+    margin-top: 25px;
+}
+
+.normal-size-font {
+    font-size: 18px;
+}
+
 /* Container */
 .box-display {
     background-color: white;
-    width: 300px;
+    width: 20vw;
     height: auto;
-    border: 2px solid #F1F1F1;
+    border: 1.5px solid #F1F1F1;
     border-radius: 25px;
     padding: 15px 20px;
-    margin-top: 20px;
+    margin: 10px auto;
 }
 
 .box-container-display {
     display: grid;
     grid-template-columns: auto auto auto;
     justify-content: space-evenly;
-    margin-top: 10px;
+    margin: 5px auto;
+}
+
+.box-on-homepage {
+    width: 80%;
+    margin: 0 auto;
 }
 
 .button-container {
@@ -124,9 +158,9 @@ html {
 
 /* Other */
 .pic {
-    width: 15%;
-    position: relative;
-    float: right;
+    width: 20%;
+//     position: relative;
+//     float: right;
 //     top: 10px;
 }
 
@@ -135,7 +169,8 @@ html {
 }
 
 .button {
-    width: 75px;
+    width: auto;
+    padding: 0 10px;
     height: 35px;
     background-color: #6086C2;
     border: 0px solid black;
@@ -148,6 +183,25 @@ html {
 
 .button:hover {
     background-color: #FFF;
+    color: #6086C2;
+}
+
+.button-2 {
+    width: auto;
+    height: auto;
+    padding: 10px 25px;
+    font-size: 20px;
+    background-color: #6086C2;
+    border: 0px solid black;
+    border-radius: 5px;
+    color: #FFF;
+    transition: color 100ms;
+    transition: background-color 100ms;
+    transition-timing-function: linear;
+}
+
+.button-2:hover {
+    background-color: #7FC5F9;
     color: #6086C2;
 }
 

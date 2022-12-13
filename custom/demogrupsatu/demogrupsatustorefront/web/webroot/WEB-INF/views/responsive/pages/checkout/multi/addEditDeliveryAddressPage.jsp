@@ -13,25 +13,19 @@
 
 <template:page pageTitle="${pageTitle}" hideHeaderLinks="true">
 
-<div class="row">
-    <div class="col-sm-6">
-	    <div class="checkout-headline">
-            <span class="glyphicon glyphicon-lock"></span>
-            <spring:theme code="checkout.multi.secure.checkout" />
-        </div>
+<div class="centered container-custom">
+    <div class="multistep-container">
         <multi-checkout:checkoutSteps checkoutSteps="${checkoutSteps}" progressBarId="${progressBarId}">
             <jsp:body>
                 <ycommerce:testId code="checkoutStepOne">
                     <div class="checkout-shipping">
-                            <multi-checkout:shipmentItems cartData="${cartData}" showDeliveryAddress="false" />
 
                             <div class="checkout-indent">
-                                <div class="headline"><spring:theme code="checkout.summary.shippingAddress" /></div>
-
 
                                     <address:addressFormSelector supportedCountries="${countries}"
                                         regions="${regions}" cancelUrl="${currentStepUrl}"
                                         country="${country}" />
+
 
                                         <div id="addressbook">
 
@@ -69,28 +63,20 @@
                                             </c:forEach>
                                         </div>
 
-                                        <address:suggestedAddresses selectedAddressUrl="/checkout/multi/delivery-address/select" />
+                                    <address:suggestedAddresses selectedAddressUrl="/checkout/multi/delivery-address/select" />
                             </div>
 
                                 <multi-checkout:pickupGroups cartData="${cartData}" />
                     </div>
-
-
                     <button id="addressSubmit" type="button"
-                        class="btn btn-primary btn-block checkout-next"><spring:theme code="checkout.multi.deliveryAddress.continue"/></button>
+                        class="next-btn checkout-next"><spring:theme code="checkout.multi.deliveryAddress.continue"/></button>
                 </ycommerce:testId>
             </jsp:body>
         </multi-checkout:checkoutSteps>
     </div>
 
-    <div class="col-sm-6 hidden-xs">
+    <div class="order-details-container">
 		<multi-checkout:checkoutOrderDetails cartData="${cartData}" showDeliveryAddress="false" showPaymentInfo="false" showTaxEstimate="false" showTax="true" />
-    </div>
-
-    <div class="col-sm-12 col-lg-12">
-        <cms:pageSlot position="SideContent" var="feature" element="div" class="checkout-help">
-            <cms:component component="${feature}"/>
-        </cms:pageSlot>
     </div>
 </div>
 

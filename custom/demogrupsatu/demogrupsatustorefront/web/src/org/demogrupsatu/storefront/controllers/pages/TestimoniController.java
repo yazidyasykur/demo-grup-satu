@@ -36,10 +36,11 @@ public class TestimoniController extends AbstractPageController {
         List<TestimoniData> newList = new ArrayList<>();
         int currentPage = Integer.parseInt(number);
         int listSize = dataList.size();
-        int j = 6 * currentPage;
+        int maxShowPerPage = 9;
+        int j = maxShowPerPage * currentPage;
 
 
-        for(int i = 6 * (currentPage - 1); i < listSize; i++) {
+        for(int i = maxShowPerPage * (currentPage - 1); i < listSize; i++) {
             if(j==i) {
                 break;
             }
