@@ -36,8 +36,8 @@ INSERT_UPDATE PageTemplate;$contentCV[unique=true];uid[unique=true];name;fronten
 
 # Templates without a frontendTemplateName
                           ;;CartPageTemplate;Cart Page Template;;ContentPage;false;
-                          ;;LoginPageTemplate;Login Page Template;;ContentPage;false;
-                          ;;CheckoutLoginPageTemplate;Checkout Login Page Template;;ContentPage;false;
+#;;LoginPageTemplate;Login Page Template;;ContentPage;false;
+# ;;CheckoutLoginPageTemplate;Checkout Login Page Template;;ContentPage;false;
                           ;;MultiStepCheckoutSummaryPageTemplate;Multi Step Checkout Summary Page Template;;ContentPage;false;
                           ;;OrderConfirmationPageTemplate;Order Confirmation Page Template;;ContentPage;false;
 
@@ -65,8 +65,8 @@ UPDATE PageTemplate;$contentCV[unique=true];uid[unique=true];velocityTemplate[tr
                    ;;SearchResultsEmptyPageTemplate;$jarResourceCms/structure-view/structure_errorPageTemplate.vm
                    ;;MultiStepCheckoutSummaryPageTemplate   ;$jarResourceCms/structure-view/structure_multiStepCheckoutSummaryPageTemplate.vm
                    ;;OrderConfirmationPageTemplate;$jarResourceCms/structure-view/structure_orderConfirmationPageTemplate.vm
-                   ;;LoginPageTemplate         ;$jarResourceCms/structure-view/structure_loginPageTemplate.vm
-                   ;;CheckoutLoginPageTemplate ;$jarResourceCms/structure-view/structure_checkoutLoginPageTemplate.vm
+#;;LoginPageTemplate         ;$jarResourceCms/structure-view/structure_loginPageTemplate.vm
+#;;CheckoutLoginPageTemplate ;$jarResourceCms/structure-view/structure_checkoutLoginPageTemplate.vm
 
 # Create ContentSlotNames
 # Each PageTemplate has a number of ContentSlotNames, with a list of valid components for the slot.
@@ -365,34 +365,34 @@ INSERT_UPDATE ContentSlotName;name[unique=true];template(uid,$contentCV)[unique=
 
 
 # Login Page Template
-INSERT_UPDATE ContentSlotName;name[unique=true];template(uid,$contentCV)[unique=true][default='LoginPageTemplate'];validComponentTypes(code);compTypeGroup(code)
-                             ;SiteLogo;;;logo
-                             ;HeaderLinks;;;headerlinks
-                             ;SearchBox;;;searchbox
-                             ;MiniCart;;;minicart
-                             ;NavigationBar;;;navigation
-                             ;Footer;;;footer
-                             ;TopHeaderSlot;;;wide
-                             ;BottomHeaderSlot;;;wide
-                             ;LeftContentSlot;;;wide
-                             ;RightContentSlot;;;wide
-                             ;PlaceholderContentSlot;;;
+# INSERT_UPDATE ContentSlotName;name[unique=true];template(uid,$contentCV)[unique=true][default='LoginPageTemplate'];validComponentTypes(code);compTypeGroup(code)
+# ;SiteLogo;;;logo
+# ;HeaderLinks;;;headerlinks
+# ;SearchBox;;;searchbox
+# ;MiniCart;;;minicart
+# ;NavigationBar;;;navigation
+# ;Footer;;;footer
+# ;TopHeaderSlot;;;wide
+# ;BottomHeaderSlot;;;wide
+# ;LeftContentSlot;;;wide
+# ;RightContentSlot;;;wide
+# ;PlaceholderContentSlot;;;
 
 
 # Checkout Login Page Template
-INSERT_UPDATE ContentSlotName;name[unique=true];template(uid,$contentCV)[unique=true][default='CheckoutLoginPageTemplate'];validComponentTypes(code);compTypeGroup(code)
-                             ;SiteLogo;;;logo
-                             ;HeaderLinks;;;headerlinks
-                             ;SearchBox;;;searchbox
-                             ;MiniCart;;;minicart
-                             ;NavigationBar;;;navigation
-                             ;TopContent;;;wide
-                             ;BottomContent;;;wide
-                             ;Footer;;;footer
-                             ;LeftContentSlot;;;wide
-                             ;RightContentSlot;;;wide
-                             ;CenterContentSlot;;;wide
-                             ;PlaceholderContentSlot;;;
+# INSERT_UPDATE ContentSlotName;name[unique=true];template(uid,$contentCV)[unique=true][default='CheckoutLoginPageTemplate'];validComponentTypes(code);compTypeGroup(code)
+# ;SiteLogo;;;logo
+# ;HeaderLinks;;;headerlinks
+# ;SearchBox;;;searchbox
+# ;MiniCart;;;minicart
+# ;NavigationBar;;;navigation
+# ;TopContent;;;wide
+# ;BottomContent;;;wide
+# ;Footer;;;footer
+# ;LeftContentSlot;;;wide
+# ;RightContentSlot;;;wide
+# ;CenterContentSlot;;;wide
+# ;PlaceholderContentSlot;;;
 
 
 # Multi Step Checkout Summary Page Templates
@@ -707,35 +707,35 @@ INSERT_UPDATE ContentSlotForTemplate;$contentCV[unique=true];uid[unique=true];po
                                     ;;PlaceholderContentSlot-CartPage;PlaceholderContentSlot;;PlaceholderContentSlot;true
 
 
-INSERT_UPDATE ContentSlotForTemplate;$contentCV[unique=true];uid[unique=true];position[unique=true];pageTemplate(uid,$contentCV)[unique=true][default='LoginPageTemplate'];contentSlot(uid,$contentCV)[unique=true];allowOverwrite
-                                    ;;SiteLogo-LoginPage;SiteLogo;;SiteLogoSlot;true
-                                    ;;HomepageLink-LoginPage;HomepageNavLink;;HomepageNavLinkSlot;true
-                                    ;;NavigationBar-LoginPage;NavigationBar;;NavigationBarSlot;true
-                                    ;;MiniCart-LoginPage;MiniCart;;MiniCartSlot;true
-                                    ;;Footer-LoginPage;Footer;;FooterSlot;true
-                                    ;;HeaderLinks-LoginPage;HeaderLinks;;HeaderLinksSlot;true
-                                    ;;SearchBox-LoginPage;SearchBox;;SearchBoxSlot;true
-                                    ;;TopHeaderSlot-LoginPage;TopHeaderSlot;;TopHeaderSlot;true
-                                    ;;BottomHeaderSlot-LoginPage;BottomHeaderSlot;;BottomHeaderSlot;true
-                                    ;;LeftContentSlot-LoginPage;LeftContentSlot;;LeftContentSlot;true
-                                    ;;RightContentSlot-LoginPage;RightContentSlot;;RightContentSlot;true
-                                    ;;PlaceholderContentSlot-LoginPage;PlaceholderContentSlot;;PlaceholderContentSlot;true
+#INSERT_UPDATE ContentSlotForTemplate;$contentCV[unique=true];uid[unique=true];position[unique=true];pageTemplate(uid,$contentCV)[unique=true][default='LoginPageTemplate'];contentSlot(uid,$contentCV)[unique=true];allowOverwrite
+#;;SiteLogo-LoginPage;SiteLogo;;SiteLogoSlot;true
+#;;HomepageLink-LoginPage;HomepageNavLink;;HomepageNavLinkSlot;true
+#;;NavigationBar-LoginPage;NavigationBar;;NavigationBarSlot;true
+#;;MiniCart-LoginPage;MiniCart;;MiniCartSlot;true
+#;;Footer-LoginPage;Footer;;FooterSlot;true
+#;;HeaderLinks-LoginPage;HeaderLinks;;HeaderLinksSlot;true
+#;;SearchBox-LoginPage;SearchBox;;SearchBoxSlot;true
+#;;TopHeaderSlot-LoginPage;TopHeaderSlot;;TopHeaderSlot;true
+#;;BottomHeaderSlot-LoginPage;BottomHeaderSlot;;BottomHeaderSlot;true
+#;;LeftContentSlot-LoginPage;LeftContentSlot;;LeftContentSlot;true
+#;;RightContentSlot-LoginPage;RightContentSlot;;RightContentSlot;true
+#;;PlaceholderContentSlot-LoginPage;PlaceholderContentSlot;;PlaceholderContentSlot;true
 
 
-INSERT_UPDATE ContentSlotForTemplate;$contentCV[unique=true];uid[unique=true];position[unique=true];pageTemplate(uid,$contentCV)[unique=true][default='CheckoutLoginPageTemplate'];contentSlot(uid,$contentCV)[unique=true];allowOverwrite
-                                    ;;SiteLogo-CheckoutLoginPage;SiteLogo;;SiteLogoSlot;true
-                                    ;;HomepageLink-CheckoutLoginPage;HomepageNavLink;;HomepageNavLinkSlot;true
-                                    ;;NavigationBar-CheckoutLoginPage;NavigationBar;;NavigationBarSlot;true
-                                    ;;MiniCart-CheckoutLoginPage;MiniCart;;MiniCartSlot;true
-                                    ;;Footer-CheckoutLoginPage;Footer;;FooterSlot;true
-                                    ;;HeaderLinks-CheckoutLoginPage;HeaderLinks;;HeaderLinksSlot;true
-                                    ;;SearchBox-CheckoutLoginPage;SearchBox;;SearchBoxSlot;true
-                                    ;;TopHeaderSlot-CheckoutLoginPage;TopHeaderSlot;;TopHeaderSlot;true
-                                    ;;BottomHeaderSlot-CheckoutLoginPage;BottomHeaderSlot;;BottomHeaderSlot;true
-                                    ;;LeftContentSlot-CheckoutLoginPage;LeftContentSlot;;LeftContentSlot;true
-                                    ;;RightContentSlot-CheckoutLoginPage;RightContentSlot;;RightContentSlot;true
-                                    ;;CenterContentSlot-CheckoutLoginPage;CenterContentSlot;;CenterContentSlot;true
-                                    ;;PlaceholderContentSlot-CheckoutLoginPage;PlaceholderContentSlot;;PlaceholderContentSlot;true
+# INSERT_UPDATE ContentSlotForTemplate;$contentCV[unique=true];uid[unique=true];position[unique=true];pageTemplate(uid,$contentCV)[unique=true][default='CheckoutLoginPageTemplate'];contentSlot(uid,$contentCV)[unique=true];allowOverwrite
+#                                     ;;SiteLogo-CheckoutLoginPage;SiteLogo;;SiteLogoSlot;true
+#                                     ;;HomepageLink-CheckoutLoginPage;HomepageNavLink;;HomepageNavLinkSlot;true
+#                                     ;;NavigationBar-CheckoutLoginPage;NavigationBar;;NavigationBarSlot;true
+#                                     ;;MiniCart-CheckoutLoginPage;MiniCart;;MiniCartSlot;true
+#                                     ;;Footer-CheckoutLoginPage;Footer;;FooterSlot;true
+#                                     ;;HeaderLinks-CheckoutLoginPage;HeaderLinks;;HeaderLinksSlot;true
+#                                     ;;SearchBox-CheckoutLoginPage;SearchBox;;SearchBoxSlot;true
+#                                     ;;TopHeaderSlot-CheckoutLoginPage;TopHeaderSlot;;TopHeaderSlot;true
+#                                     ;;BottomHeaderSlot-CheckoutLoginPage;BottomHeaderSlot;;BottomHeaderSlot;true
+#                                     ;;LeftContentSlot-CheckoutLoginPage;LeftContentSlot;;LeftContentSlot;true
+#                                     ;;RightContentSlot-CheckoutLoginPage;RightContentSlot;;RightContentSlot;true
+#                                     ;;CenterContentSlot-CheckoutLoginPage;CenterContentSlot;;CenterContentSlot;true
+#                                     ;;PlaceholderContentSlot-CheckoutLoginPage;PlaceholderContentSlot;;PlaceholderContentSlot;true
 
 
 # Bind Content Slots to Multi Step Checkout Summary Page Templates
@@ -827,8 +827,8 @@ INSERT_UPDATE ContentPage;$contentCV[unique=true];uid[unique=true];name;masterTe
                          ;;order;Order Details Page;AccountPageTemplate;order
                          ;;orders;Order History Page;AccountPageTemplate;orders
                          ;;storefinderPage;StoreFinder Page;StoreFinderPageTemplate;storefinder
-                         ;;checkout-login;Checkout-Login Page;CheckoutLoginPageTemplate;checkout-login
-                         ;;login;Login Page;LoginPageTemplate;login
+# ;;checkout-login;Checkout-Login Page;CheckoutLoginPageTemplate;checkout-login
+#;;login;Login Page;LoginPageTemplate;login
                          ;;notFound;Not Found Page;ErrorPageTemplate;notFound
                          ;;searchEmpty;Search Results Empty Page;SearchResultsEmptyPageTemplate;searchEmpty
                          ;;updatePassword;Update Forgotten Password Page;AccountPageTemplate;updatePassword

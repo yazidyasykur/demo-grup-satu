@@ -19,7 +19,7 @@ $category=category(code, $productCV)
 #### IMPEX PART 1 ####
 # CMS Link Components
 INSERT_UPDATE CMSLinkComponent;$contentCV[unique=true]  ;uid[unique=true]       ;name                           ;url                                        ;&linkRef               ;target(code)[default='sameWindow'];$category;$product;
-                              ;                         ;ProductLink            ;Product Link                   ;/catalog                                   ;ProductLink            ;;;;
+                              ;                         ;ProductLink            ;Product Link                   ;/c/INTHEBOX                                ;ProductLink            ;;INTHEBOX;;
                               ;                         ;WarrantyLink           ;Warranty Link                  ;/warranty-registration                     ;WarrantyLink           ;;;;
                               ;                         ;WaybillLink            ;Waybill Link                   ;/waybill-status                            ;WaybillLink            ;;;;
                               ;                         ;FAQNewLink             ;FAQ New Link                   ;/faq                                       ;FAQNewLink             ;;;;
@@ -307,97 +307,213 @@ UPDATE Testimoni; id[unique=true]; title                                        
 # OPTIONAL
 # Mau semua data monggo, ini tambahannya
 INSERT_UPDATE Testimoni; id[unique=true]; name                          ; rating; date[dateformat=dd.MM.yyyy HH:mm:ss]
-                       ; 46             ; "Baim Wong"                   ; 5     ; 09.09.2020 18:22:00
-                       ; 47             ; "Raffi Ahmad"                 ; 5     ; 10.08.2020 11:41:00
-                       ; 48             ; "Melaney Ricardo"             ; 5     ; 08.06.2020 20:00:00
-                       ; 49             ; "novika stefani"              ; 5     ; 06.03.2019 11:37:00
-                       ; 50             ; "Rahmatullah Rahmatullah"     ; 5     ; 23.11.2018 11:02:00
-                       ; 51             ; "Diana Veronica"              ; 5     ; 09.10.2018 09:19:00
-                       ; 52             ; "Andika R"                    ; 5     ; 07.10.2018 12:34:00
-                       ; 53             ; "rinaldo fitra"               ; 4     ; 27.09.2018 13:28:00
-                       ; 54             ; "Yunni Hikmah"                ; 5     ; 24.08.2018 16:46:00
-                       ; 55             ; "Wulan Permatasari"           ; 4.5   ; 06.08.2018 08:57:00
-                       ; 56             ; "Feni Rizona"                 ; 5     ; 14.05.2018 10:10:00
-                       ; 57             ; "Salwa unknown"               ; 4     ; 22.04.2018 22:09:00
-                       ; 58             ; "tiara larasati"              ; 5     ; 28.03.2018 13:48:00
-                       ; 59             ; "Nisky Kiki rasuk"            ; 5     ; 27.01.2018 21:23:00
-                       ; 60             ; "Rany May"                    ; 5     ; 28.12.2017 14:10:00
-                       ; 61             ; "Maya Sartika"                ; 5     ; 26.12.2017 09:39:00
-                       ; 62             ; "Maya Sartika"                ; 5     ; 26.12.2017 09:35:00
-                       ; 63             ; "Maya Sartika"                ; 5     ; 26.12.2017 09:30:00
-                       ; 64             ; "Wahyuningsih Wahyuningsih"   ; 4     ; 22.12.2017 13:20:00
-                       ; 65             ; "Aulia Dwi Oktavia"           ; 5     ; 20.12.2017 03:35:00
-                       ; 66             ; "Agung Wisaksono Pangestu"    ; 5     ; 20.11.2017 21:55:00
-                       ; 67             ; "Ceria Nur Rohmah"            ; 5     ; 04.11.2017 05:07:00
-                       ; 68             ; "Dani Rachman"                ; 5     ; 08.09.2017 13:25:00
-                       ; 69             ; "Renni Pirma"                 ; 4     ; 25.04.2017 16:00:00
-                       ; 70             ; "Yoselita Kusumaningrum"      ; 5     ; 25.04.2017 15:31:00
-                       ; 71             ; "olivia natalis"              ; 5     ; 20.04.2017 10:10:00
-                       ; 72             ; "angeline ngan"               ; 5     ; 07.04.2017 16:14:00
-                       ; 73             ; "hartanto koswara"            ; 5     ; 07.04.2017 15:30:00
-                       ; 74             ; "wahyu kurniawan"             ; 5     ; 07.04.2017 14:34:00
-                       ; 75             ; "Stella Lee"                  ; 4.5   ; 07.04.2017 14:24:00
-                       ; 76             ; "Heni Silviana"               ; 5     ; 08.03.2017 16:00:00
-                       ; 77             ; "Andre Wongso"                ; 4     ; 07.03.2017 16:55:00
-                       ; 78             ; "Andre Wongso"                ; 3.5   ; 07.03.2017 16:53:00
-                       ; 79             ; "Victor Adrianus"             ; 4     ; 07.03.2017 16:41:00
-                       ; 80             ; "Victor Adrianus"             ; 3.5   ; 07.03.2017 16:36:00
-                       ; 81             ; "Kris Mateo"                  ; 4.5   ; 07.03.2017 16:16:00
-                       ; 82             ; "Kris Mateo"                  ; 4     ; 07.03.2017 16:14:00
-                       ; 83             ; "Mabelle Earlene"             ; 4.5   ; 07.03.2017 15:49:00
-                       ; 84             ; "Mabelle Earlene"             ; 3.5   ; 07.03.2017 15:38:00
-                       ; 85             ; "Glenn Devos"                 ; 4.5   ; 06.03.2017 23:21:00
-                       ; 86             ; "Glenn Devos"                 ; 4     ; 06.03.2017 23:20:00
-                       ; 87             ; "Adiyanto Hardian"            ; 3.5   ; 06.03.2017 23:16:00
-                       ; 88             ; "Adiyanto Hardian"            ; 4     ; 06.03.2017 23:13:00
-                       ; 89             ; "Neil Ward"                   ; 3.5   ; 06.03.2017 23:04:00
-                       ; 90             ; "Neil Ward"                   ; 4     ; 06.03.2017 23:03:00
+                       ; 46             ; "Frans Rizal"                 ; 3.5   ; 06.03.2017 22:43:00
+                       ; 47             ; "Frans Rizal"                 ; 4     ; 06.03.2017 22:40:00
+                       ; 48             ; "Ravi Sharma"                 ; 4.5   ; 06.03.2017 22:05:00
+                       ; 49             ; "Ravi Sharma"                 ; 4     ; 06.03.2017 22:01:00
+                       ; 50             ; "Rio Denny"                   ; 3.5   ; 06.03.2017 21:42:00
+                       ; 51             ; "Rio Denny"                   ; 4.5   ; 06.03.2017 21:40:00
+                       ; 52             ; "Aaron Pearce"                ; 4     ; 06.03.2017 21:32:00
+                       ; 53             ; "Aaron Pearce"                ; 5     ; 06.03.2017 21:31:00
+                       ; 54             ; "Emily William"               ; 4     ; 06.03.2017 21:23:00
+                       ; 55             ; "Emily William"               ; 4.5   ; 06.03.2017 21:22:00
+                       ; 56             ; "Winata Eka"                  ; 4     ; 06.03.2017 21:18:00
+                       ; 57             ; "Winata Eka"                  ; 3.5   ; 06.03.2017 21:17:00
+                       ; 58             ; "Ethan Lee"                   ; 4     ; 06.03.2017 21:09:00
+                       ; 59             ; "Ethan Lee"                   ; 5     ; 06.03.2017 21:08:00
+                       ; 60             ; "Florence Monica"             ; 4     ; 06.03.2017 21:05:00
+                       ; 61             ; "Florence Monica"             ; 3.5   ; 06.03.2017 21:04:00
+                       ; 62             ; "Joanna Marie"                ; 5     ; 06.03.2017 20:53:00
+                       ; 63             ; "Joanna Marie"                ; 3.5   ; 06.03.2017 20:52:00
+                       ; 64             ; "Vitri Aprilia"               ; 3.5   ; 06.03.2017 20:46:00
+                       ; 65             ; "Vitri Aprilia"               ; 4.5   ; 06.03.2017 20:44:00
+                       ; 66             ; "Jack Harris"                 ; 4     ; 06.03.2017 20:38:00
+                       ; 67             ; "Jack Harris"                 ; 4     ; 06.03.2017 20:37:00
+                       ; 68             ; "Kylie Daniels"               ; 3.5   ; 06.03.2017 19:03:00
+                       ; 69             ; "Kylie Daniels"               ; 3.5   ; 06.03.2017 19:01:00
+                       ; 70             ; "Arista Wijaya"               ; 4     ; 06.03.2017 18:55:00
+                       ; 71             ; "Arista Wijaya"               ; 4     ; 06.03.2017 18:54:00
+                       ; 72             ; "Nathan Ross"                 ; 4     ; 06.03.2017 18:47:00
+                       ; 73             ; "Nathan Ross"                 ; 4.5   ; 06.03.2017 18:46:00
+                       ; 74             ; "Malcolm Calderon"            ; 4     ; 06.03.2017 18:40:00
+                       ; 75             ; "Malcolm Calderon"            ; 4     ; 06.03.2017 18:38:00
+                       ; 76             ; "Amber Robins"                ; 3.5   ; 06.03.2017 18:34:00
+                       ; 77             ; "Amber Robins"                ; 3.5   ; 06.03.2017 18:30:00
+                       ; 78             ; "Dan Spencer"                 ; 4.5   ; 06.03.2017 18:11:00
+                       ; 79             ; "Dan Spencer"                 ; 4     ; 06.03.2017 18:10:00
+                       ; 80             ; "Clara Moina"                 ; 4     ; 06.03.2017 17:47:00
+                       ; 81             ; "Clara Moina"                 ; 3.5   ; 06.03.2017 17:46:00
+                       ; 82             ; "Gina Quinn"                  ; 4     ; 06.03.2017 17:40:00
+                       ; 83             ; "Gina Quinn"                  ; 3.5   ; 06.03.2017 17:38:00
+                       ; 84             ; "Topher Layson"               ; 3.5   ; 06.03.2017 17:34:00
+                       ; 85             ; "Topher Layson"               ; 4     ; 06.03.2017 17:32:00
+                       ; 86             ; "Philip Neumann"              ; 4.5   ; 06.03.2017 17:23:00
+                       ; 87             ; "Philip Neumann"              ; 3.5   ; 06.03.2017 17:22:00
+                       ; 88             ; "Agustin Ayu"                 ; 4     ; 06.03.2017 17:17:00
+                       ; 89             ; "Agustin Ayu"                 ; 3.5   ; 06.03.2017 17:16:00
+                       ; 90             ; "Lorena Jacobson"             ; 3.5   ; 06.03.2017 17:09:00
+                       ; 91             ; "Lorena Jacobson"             ; 4.5   ; 06.03.2017 17:08:00
+                       ; 92             ; "Sarah Conte"                 ; 4     ; 06.03.2017 17:04:00
+                       ; 93             ; "Sarah Conte"                 ; 3.5   ; 06.03.2017 17:02:00
+                       ; 94             ; "July Amelia"                 ; 3.5   ; 06.03.2017 16:57:00
+                       ; 95             ; "July Amelia"                 ; 3.5   ; 06.03.2017 16:50:00
+                       ; 96             ; "Jason Wesley"                ; 3.5   ; 06.03.2017 16:38:00
+                       ; 97             ; "Jason Wesley"                ; 3.5   ; 06.03.2017 16:37:00
+                       ; 98             ; "James Stanley"               ; 4.5   ; 06.03.2017 16:15:00
+                       ; 99             ; "James Stanley"               ; 4     ; 06.03.2017 16:13:00
+                       ; 100            ; "Lia Permatasari"             ; 3.5   ; 04.03.2017 20:51:00
+                       ; 101            ; "Lia Permatasari"             ; 4     ; 04.03.2017 20:47:00
+                       ; 102            ; "Anton Setiawan"              ; 4     ; 04.03.2017 18:55:00
+                       ; 103            ; "Anton Setiawan"              ; 4     ; 04.03.2017 18:19:00
+                       ; 104            ; "Sebastian Darwin"            ; 4     ; 04.03.2017 17:59:00
+                       ; 105            ; "Sebastian Darwin"            ; 3.5   ; 04.03.2017 17:58:00
+                       ; 106            ; "Budiman Saputra"             ; 4     ; 04.03.2017 17:50:00
+                       ; 107            ; "Budiman Saputra"             ; 3.5   ; 04.03.2017 17:48:00
+                       ; 108            ; "Nita Karnadi"                ; 3.5   ; 04.03.2017 17:38:00
+                       ; 109            ; "Nita Karnadi"                ; 4.5   ; 04.03.2017 17:37:00
+                       ; 110            ; "Stephan Allen"               ; 4     ; 04.03.2017 17:28:00
+                       ; 111            ; "Stephan Allen"               ; 4     ; 04.03.2017 17:27:00
+                       ; 112            ; "Martha Vania"                ; 3.5   ; 04.03.2017 17:17:00
+                       ; 113            ; "Martha Vania"                ; 3.5   ; 04.03.2017 17:16:00
+                       ; 114            ; "Diana Permadi"               ; 4     ; 04.03.2017 17:09:00
+                       ; 115            ; "Diana Permadi"               ; 4     ; 04.03.2017 17:08:00
+                       ; 116            ; "Mark Tolga"                  ; 4     ; 04.03.2017 16:57:00
+                       ; 117            ; "Mark Tolga"                  ; 4.5   ; 04.03.2017 16:56:00
+                       ; 118            ; "Doni Irwandi"                ; 3.5   ; 04.03.2017 16:29:00
+                       ; 119            ; "Doni Irwandi"                ; 3.5   ; 04.03.2017 16:18:00
+                       ; 120            ; "Febrian Denis"               ; 4     ; 04.03.2017 15:55:00
+                       ; 121            ; "Febrian Denis"               ; 4.5   ; 04.03.2017 15:43:00
+                       ; 122            ; "Billy Fernando"              ; 4.5   ; 03.03.2017 23:47:00
+                       ; 123            ; "Billy Fernando"              ; 3.5   ; 03.03.2017 23:46:00
+                       ; 124            ; "Edward Chandra"              ; 4     ; 03.03.2017 23:42:00
+                       ; 125            ; "Edward Chandra"              ; 3.5   ; 03.03.2017 23:40:00
+                       ; 126            ; "Vicky Garcia"                ; 4.5   ; 03.03.2017 23:36:00
+                       ; 127            ; "Vicky Garcia"                ; 4     ; 03.03.2017 23:35:00
+                       ; 128            ; "John Chandra"                ; 4.5   ; 03.03.2017 23:28:00
+                       ; 129            ; "John Chandra"                ; 4     ; 03.03.2017 23:26:00
+                       ; 130            ; "Pradipta Iman"               ; 4.5   ; 09.02.2017 20:59:00
+                       ; 131            ; "Nadia Zhu"                   ; 4.5   ; 09.02.2017 18:49:00
+                       ; 132            ; "Shiuly Suherni"              ; 4.5   ; 09.02.2017 18:35:00
+                       ; 133            ; "Shiuly Suherni"              ; 4     ; 09.02.2017 18:33:00
+                       ; 134            ; "Rizky Kurniawan"             ; 4     ; 09.02.2017 17:44:00
+                       ; 135            ; "Rizky Kurniawan"             ; 4.5   ; 09.02.2017 17:43:00
+                       ; 136            ; "Desi Yunita"                 ; 4.5   ; 09.02.2017 17:04:00
+                       ; 137            ; "Desi Yunita"                 ; 5     ; 09.02.2017 17:03:00
+                       ; 138            ; "Wenny Novian"                ; 4     ; 09.02.2017 16:52:00
+                       ; 139            ; "Katharina Jessica"           ; 4     ; 09.02.2017 16:28:00
+                       ; 140            ; "Meta Arshiani"               ; 5     ; 31.01.2017 23:22:00
+                       ; 141            ; "Meta Arshiani"               ; 5     ; 31.01.2017 23:12:00
+                       ; 142            ; "Jane Oktavia"                ; 5     ; 31.01.2017 23:03:00
+                       ; 143            ; "Hendrik Christian"           ; 5     ; 31.01.2017 22:27:00
+                       ; 144            ; "Hendrik Christian"           ; 5     ; 31.01.2017 22:25:00
+                       ; 145            ; "Leo Wiryawan"                ; 5     ; 31.01.2017 22:02:00
+                       ; 146            ; "Leo Wiryawan"                ; 5     ; 31.01.2017 22:00:00
+                       ; 147            ; "Katharina Jessica"           ; 5     ; 25.01.2017 17:09:00
+                       ; 148            ; "Nadia Zhu"                   ; 5     ; 19.01.2017 13:28:00
+
 
 
 UPDATE Testimoni; id[unique=true]; title                                                ; description
-                ; 46             ; ""
-                ; 47             ; ""
-                ; 48             ; ""
-                ; 49             ; ""
-                ; 50             ; ""
-                ; 51             ; ""
-                ; 52             ; ""
-                ; 53             ; ""
-                ; 54             ; ""
-                ; 55             ; ""
-                ; 56             ; ""
-                ; 57             ; ""
-                ; 58             ; ""
-                ; 59             ; ""
-                ; 60             ; ""
-                ; 61             ; ""
-                ; 62             ; ""
-                ; 63             ; ""
-                ; 64             ; ""
-                ; 65             ; ""
-                ; 66             ; ""
-                ; 67             ; ""
-                ; 68             ; ""
-                ; 69             ; ""
-                ; 70             ; ""
-                ; 71             ; ""
-                ; 72             ; ""
-                ; 73             ; ""
-                ; 74             ; ""
-                ; 75             ; ""
-                ; 76             ; ""
-                ; 77             ; ""
-                ; 78             ; ""
-                ; 79             ; ""
-                ; 80             ; ""
-                ; 81             ; ""
-                ; 82             ; ""
-                ; 83             ; ""
-                ; 84             ; ""
-                ; 85             ; ""
-                ; 86             ; ""
-                ; 87             ; ""
-                ; 88             ; ""
-                ; 89             ; ""
-                ; 90             ; ""
-
+                ; 46             ; "Tidak kempes"                                       ; "Bantal yang nyaman, saya membawanya kemanapun saat saya berpergian. Tidak kempes banget saat dipakai."
+                ; 47             ; "Lebih baik dari kasur saya sebelumnya"              ; "Senang sekali waktu dikirim kasur ini langsung didepan dirumah dan senang juga saat menempatkannya diatas divan. Matrasnya lembut dan padat, harganya pun muraaah. Lebih baik dari kasur saya sebelumnya."
+                ; 48             ; "really ideal for me"                                ; "It's really ideal for me, super soft, perfect amount of cushion and firmness. Feels like a pretty high quality down pillow. Happy sleeping!"
+                ; 49             ; "better sleep"                                       ; "This bed had changed the quality of our lives for the better. Unboxing was fun to watch, bed was supportive when you're lying down. Highly recommend it! Worth the price"
+                ; 50             ; "Oke"                                                ; "Akan membelinya lagi untuk keluarga saya, guling yang oke banget. Nanti saya akan coba membeli bantalnya"
+                ; 51             ; "Springbed didalam kotak?"                           ; "Melihat kotaknya, yang bisa saya katakan adalah wow ini adalah sebuah spring bed. Kami pun mengambilnya dari dalam kotak menaruhnya diatas divan dan membuka kemasan plastiknya. Dan langsung voila mengembang menjadi sebuah spring bed. Saat partner saya membalikkan badan diatas kasur pun saya tidak merasa terganggu."
+                ; 52             ; "holds its shape"                                    ; "I have slept well, pillow was soft, I had no neck pain. It holds its shape well even if I have to fluff it up. Best sleep I've ever had"
+                ; 53             ; "a special big gift"                                 ; "Feel like receiving a special big gift. Great bed and great experience"
+                ; 54             ; "enough support"                                     ; "The pillow fairly breathable and provided enough support. My husband who has sleeping problem fall asleep so quickly on the first night using Pillow In The Box"
+                ; 55             ; "enjoying it"                                        ; "Awesome to sleep on, amazing and having been enjoying it. I have no intention to returning it. I'm so glad that I bought this mattress"
+                ; 56             ; "tidak menyesal"                                     ; "Cobalah gulingnya, kamu pasti tidak menyesal. Apalagi saya jomblo, butuh pelukan kehangatan guling hahaha"
+                ; 57             ; "tidur lebih nyenyak"                                ; "Saya belum pernah memakai spring bed pocket spring sebelumnya, sehingga butuh beberapa malam untuk menyesuaikan dengan kasur ini. Sekarang saya tidur lebih nyaman daripada sebelumnya dan saya tidur lebih nyenyak tanpa harus bulak balik lagi."
+                ; 58             ; "awesome"                                            ; "I don't think I will sleep well on any other pillow again, soft, super squishy, and awesome. They hold their shape, sleeping great. Thank you"
+                ; 59             ; "Wake up so rejuvenated"                             ; "I rarely review product and In The Box did it. Wake up so rejuvenated and refreshed, so happy with the product"
+                ; 60             ; "ga terlalu kecil ataupun besar"                     ; "Sudah pakai selama beberapa hari dan merasa cocok dengan guling ini, ga terlalu kecil ataupun besar"
+                ; 61             ; "Overall puas"                                       ; "Biasanya saya pake kasur busa dirumah tapi bikin sakit punggung, terus saya cobain deh beli spring bed In The Box berhubung harganya ga bikin kantong bolong. Overall saya puas dengan spring bed ini, tampilannya juga cantik dan elegan"
+                ; 62             ; "Premium product !"                                  ; "Finally found the one I had been searching for, this pillow is nice. Premium product with premium quality. I have been able to sleep well throught the night."
+                ; 63             ; "lot of fun"                                         ; "Unboxing lot of fun, the quality is beyond my expectation. I got the single size, it's a good investment. I experience no issue. I would highly recommended In The Box."
+                ; 64             ; "akan beli lagi"                                     ; "Saya ga pernah merasa puas dengan bantal apapun bahkan yang bulu angsa. Bantal ini benar-benar sempurna untuk saya. Beli lagi? Tentu saja"
+                ; 65             ; "tidur nyenyak"                                      ; "Sebelumnya saya melihat-lihat ke toko mebel dan tidak tertarik dengan spring bed dengan harga yang mahal. Awalnya saya tidak yakin, tetapi setelah membaca review, saya memberanikan diri untuk membeli spring bed In The Box lagipula kalau tidak cocok saya masih bisa mengembalikannya sampai 7 hari pembelian. Tidur pun nyenyak hingga sulit bangun."
+                ; 66             ; "fall asleep so quickly"                             ; "The pillow fairly breathable and provided enough support. My husband who has sleeping problem fall asleep so quickly on the first night using Pillow In The Box"
+                ; 67             ; "cured all of the morning aches"                     ; "It has cured all of the morning aches that I've been blaming on my pillow, it's worth the money. Just right the amount of support"
+                ; 68             ; "Comfortable sleep"                                  ; "Comfortable sleep, toss and turn as you like. Allows me to sleep on my stomach or on my back. Recommended it to anyone"
+                ; 69             ; "so glad"                                            ; "I am so glad I've found this and ordered In The Box. Keep up the great work, very impressed. Great build quality and overall comfort is great"
+                ; 70             ; "Sempurna"                                           ; "Guling yang sempurna, saya pasti akan beli lagi buat keluarga saya"
+                ; 71             ; "Cocok"                                              ; "Kasurnya enak dilihat dan enak ditiduri. Cukup semalam untuk mengetahui bahwa saya cocok dengan kasur ini"
+                ; 72             ; "feel like I am at a luxury hotel"                   ; "Took a little adjusting but I feel like I am at a luxury hotel. I fell asleep faster and woke up completely rested"
+                ; 73             ; "absolutely wonderful"                               ; "Sudah ga zaman lagi beli kasur ke toko, sekarang semuanya serba online. Pasang kasurnya juga bisa sendiri tanpa perlu bantuan orang lain. Kasurnya pun enak dan langsung bikin tidur lebih pulas. Buat apa repot?"
+                ; 74             ; "soft"                                               ; "Saya menyukai guling ini, setelah mencoba berbagai macam merk guling dan putus asa. Akhirnya dapet juga dan langsung cocok sejak pertama kali pakai"
+                ; 75             ; "super simple to install"                            ; "Unique unboxing experience, the mattress was ready to use within minutes. Didn't imagine it would be this good"
+                ; 76             ; "great comfort"                                      ; "I will never find another bolster that I like this much, well made and comfortable. I've never had a bolster that feel great no matter which position I slept in. Love it!"
+                ; 77             ; "first experience"                                   ; "This is my first experience buying mattress from online store, wasn't sure if it was what I really needed. It's very firm and surprisingly comfortable. It has been a total change.So glad I chose In The Box"
+                ; 78             ; "feel great"                                         ; "The bolster stays cool through the evening, amazing all around, great comfort and support and it has actually helped my sleeping habit"
+                ; 79             ; "Unique experience"                                  ; "It expanded quickly, super simple to install. At the cost was not expecting a quality sleep experience but I'm waking up with no more body pains."
+                ; 80             ; "langsung cocok"                                     ; "This pillow hugs my head, soft and comfortable. Completely changed my sleeping even more"
+                ; 81             ; "sekarang semuanya serba online"                     ; "Perfect sleeping, absolutely wonderful and very simple to unwrap. I was concerned about it being too soft, but it's just right, very glad I give it a try"
+                ; 82             ; "loving this pillow"                                 ; "We are loving this pillow. I sleep in many different ways and had trouble finding the right pillow. Will keep it"
+                ; 83             ; "A high end spring bed at a mid range price"         ; "A high end spring bed at a mid range price. Higly recommended!"
+                ; 84             ; "comfortable in terms of fill and support"           ; "Bolster very comfortable in terms of fill and support. My sleep has been really good, I've been able to fall asleep much faster than I have ever since."
+                ; 85             ; "comfortable for me"                                 ; "The mattress for us, buying process is very simple. Need time for adjust but afterall it comfortable for me"
+                ; 86             ; "it helps me so much at night"                       ; "I am very happy to trying this bolster, it helps me so much at night. I fall right to sleep each night"
+                ; 87             ; "Unboxing was easy"                                  ; "Unboxing was easy, I do it by myself. More comfortable than any of spring bed mattres I've tried before, perfect sleeping"
+                ; 88             ; "Lebih enak dipakai daripada bantal sejenis"         ; "Lebih enak dipakai daripada bantal sejenis"
+                ; 89             ; "spring bed yang bagus"                              ; "Bed In The Box spring bed yang bagus. Sakit pinggang saya sudah berkurang sekarang. Kami sangat senang membelinya"
+                ; 90             ; "took some time to getting used to"                  ; "Comfortable, good construction and quality. This is definitely worth every penny but took some time to getting used to. We're seriuosly considering purchasing another pair of bolster"
+                ; 91             ; "Sleeping soundly"                                   ; "Better than I expected, this things amazing. Sleeping soundly and don't want to get out of bed in the morning. Happy with the purchase and would recommended to my family & friends"
+                ; 92             ; "Excellent"                                          ; "Excellent support and comfort, worth every penny. I've never sleep better, better than I was expected. Loving it!"
+                ; 93             ; "threw out my old mattress"                          ; "Took gamble on a In The Box, threw out my old mattress."
+                ; 94             ; "Enak dipakai"                                       ; "Kirain bantal ini seperti bantal lain tetapi waktu saya coba beberapa lama ternyata enak juga"
+                ; 95             ; "Delivery baik"                                      ; "Sangat puas membelinya. Produknya unik dan enak digunakan. Layanan pelanggan dan deliverynya sangat baik."
+                ; 96             ; "so glad I took chance on In The Box"                ; "Awesome bolster, perfect height, density and size. I'm so glad I took chance on In The Box, so far I'm not disappointed"
+                ; 97             ; "wake up energized"                                  ; "Easy to unpack and use, wake up energized. My wife and I both love the bed In The Box. Great value"
+                ; 98             ; "recommend it to anyone"                             ; "My other pillow can't be compared to this one. Would recommend it to anyone. Does not get as hot as other pillows"
+                ; 99             ; "comfortable"                                        ; "Best Mattress I ever slept In The Box is the best mattress I have ever slept on. Very comfortable to sleep on. Love it"
+                ; 100            ; "sangat direkomendasikan"                            ; "Bantal yang bagus, sangat direkomendasikan"
+                ; 101            ; "Segar"                                              ; "Saat pertama kali memakainya pun kami sudah tertidur dengan pulas. Merasa segar saat bangun pagi. Akhirnya mendapatkan produk yang bagus, sesuai dengan harganya"
+                ; 102            ; "Bantal terbaik"                                     ; "Bantal terbaik membuat rileks saat memakainya. Terimakasih In The Box"
+                ; 103            ; "kasur harga terjangkau"                             ; "Saya suka kasur baru ini. Saya awalnya mengira kalau saya tidak akan menemukan kasur harga terjangkau dengan kualitas yang baik"
+                ; 104            ; "Order lagi"                                         ; "Sebenarnya saya hanya iseng saja beli guling buat istri saya, tapi waktu saya coba ternyata enak dan nyaman dipeluk. Sehingga saya pun order lagi bantalnya. Dan hasilnya 2 2nya bagus"
+                ; 105            ; "Spring bed pertama saya"                            ; "Spring bed pertama yang saya beli karena tampaknya berbeda dengan spring bed pada umumnya. Dan memang benar spring bed ini sesuai dengan apa yang dikatakannya di websitenya."
+                ; 106            ; "Ukurannya lebih besar dari bantal biasa"            ; "kalau kamu menyukai spring bednya maka kamu juga akan menyukai gulingnya juga. Ukurannya lebih besar dari bantal biasa tapi kelebihannya juga memang lebih besar dari bantal biasa."
+                ; 107            ; "i hate it"                                          ; "Saya benci bahwa saya terlalu lama mempertimbangkan untuk membeli kasur ini. Apapun posisi tidur saya, tetap nyaman tidur diatas kasur ini. Investasi terbaik yang pernah saya dapatkan. Terimakasih"
+                ; 108            ; "membuat tidur saya lebih baik"                      ; "Saya membeli spring bednya sekaligus dengan bantal gulingnya supaya sekalian semuanya baru. Ternyata membuat tidur saya lebih baik, berharap bantalnya lebih keras tapi tetap nyaman sih"
+                ; 109            ; "Gampang ditempatkan"                                ; "Spring bed yang bagus saya akan menyarankannya setiap orang untuk mencobanya. Gampang ditempatkan."
+                ; 110            ; "enough sinkage"                                     ; "Fluffy, supportive, and support the neck. Love this pillow, my neck pain was gone. It has just enough sinkage"
+                ; 111            ; "Best Transition"                                    ; "I did a fair amount of research before purchasing a mattress and it become the best transition we have ever made. Unboxing was easy and it was great experience"
+                ; 112            ; "So far so good"                                     ; "Sulit buat menulis review, masih mencoba menyesuaikan dengan bantal ini. Waktu didapatkan sih cukup empuk dan padat. So far so good lha ya"
+                ; 113            ; "Keren"                                              ; "Waktu buka box kayak ajaib, dari lipatan kecil tiba-tiba muncul kasur yang gede. Dan kerennya udah spring bed. Sempat ga percaya kalau box segede gitu doang bisa muat kasur spring bed. Keren banget deh In The Box"
+                ; 114            ; "Bagus"                                              ; "Bantal ini mengerjakan tugasnya dengan baik, memberikan kenyamanan dan bentuknya sesuai dikepala"
+                ; 115            ; "kepadatan kasurnya pas"                             ; "Love it! Suamiku menganggapnya biasa saja, tetapi aku menyukainya. Tingkat kepadatan kasurnya pas"
+                ; 116            ; "This is the best"                                   ; "I tried countless bolster but no luck, It tried Bolster In The Box and this the best! Would recommended it!"
+                ; 117            ; "Huge difference"                                    ; "Huge difference from the previous mattress. Comfortable and so far enjoying it"
+                ; 118            ; "Cocok dengan bantalnya"                             ; "Setelah memakainya beberapa hari saya rasa saya cocok dengan bantal ini. Nyaman dipakai dan mudah-mudahan awet"
+                ; 119            ; "Ga terlalu empuk atau keras"                        ; "Saya suka dengan kemasannya. Walau berat tapi saya masih bisa mengangkatnya sendirian. Kasur ini divakum dan ketika kamu membukanya, kamu harus menunggunya mengembang sempurna. Saya membeli yang ukuran King. Ga terlalu empuk ataupun keras. Saya menikmati kasur In The Box saya."
+                ; 120            ; "Enak dipakai"                                       ; "Enak dipakai, saya akan beli lagi untuk keluarga saya"
+                ; 121            ; "Berkualitas"                                        ; "Dibandingkan spring bed lain, In The Box merupakan kasur yang berkualitas dengan harga yang lebih rendah dibandingkan dengan spring bed yang lain. Tidur yang fantastis. Terima kasih."
+                ; 122            ; "It really works for me"                             ; "The best bolster I have owned, breathable and high quality material. It really works for me. Finally found the perfect bolster for me"
+                ; 123            ; "exactly as advertised"                              ; "The mattress was exactly as advertised, comfortable and have perfect support. The most comfortable mattress we have ever used"
+                ; 124            ; "Bantal yang cocok"                                  ; "Saya terus mencari bantal yang cocok buat saya, akhirnya saya mencoba bantal In The Box karena reviewnya bagus dan ternyata memang bagus bantalnya. Akhirnya pencarian saya berakhir sudah."
+                ; 125            ; "Sangat gampang"                                     ; "Sangat gampang, buka box dan kemasannya, langsung siap dalam beberapa menit dan kuat seperti yang saya inginkan. Cara yang terbaik untuk membeli spring bed"
+                ; 126            ; "Soft"                                               ; "The pillow soft without being squishy, finally found a good pillow. I have never sleep better. These pillow make things a little better"
+                ; 127            ; "Worth every penny"                                  ; "My favorite mattress, the mattress is all I could hope for. Thank you In The Box for great mattress!"
+                ; 128            ; "Cocok"                                              ; "Sulit buat saya untuk menyukai bantal yang ada dipasaran, sehingga kadang saya tidur ga pake bantal. Tapi sejak beli bantal ini, saya sekarang tidur selalu memakai bantal ini. Bantal ini merupakan bantal yang paling cocok buat saya."
+                ; 129            ; "Terbaik"                                            ; "Springbed terbaik yang pernah saya miliki. Saya tidur dan merasa lebih baik. Sangat suka dengan spring bed ini. Terimakasih In The Box"
+                ; 130            ; "Very Nice Pillow"                                   ; "Tidur saya jadi lebih enak dengan bantal ini dibandingkan dengan bantal lain yang pernah saya pakai. Nyaman banget dan ga bikin leher dan kepala sakit. Harganya juga terjangkau. Ga rugi deh belinya."
+                ; 131            ; "Nyaman"                                             ; "Nyaman, mudah beradaptasi, kualitasnya tinggi, bahannya bagus, tidak panas saat dipakai, kelenturannya fantastis. Ga nyesel deh beli guling ini"
+                ; 132            ; "Bantal yang ok banget"                              ; "Akhirnya saya menemukan bantal yang sempurna setelah lama mencari dan mencoba berbagai merk. Lembut tetapi elastis saat dipakai. Cobalah dan kamu tidak akan menyesal membeli bantal ini."
+                ; 133            ; "Saya akan membelinya lagi"                          ; "Produknya bagus dengan kepadatan kasur yang cukup. Pasangnya pun gampang. Saya sudah lama tidak tidur senyenyak ini."
+                ; 134            ; "Guling favorit"                                     ; "Sangat pas dan lentur, tidak ada bau aneh seperti guling lainnya. Tidur lebih baik dan tidak mendengkur. Saya sangat merekomendasikan guling ini untuk siapa pun yang ingin istirahat malam yang lebih baik. Saya suka guling baru saya!"
+                ; 135            ; "Enak untuk yang menyukai kasur empuk ataupun keras" ; "Saya dan istri saya menyukai kasur ini. Saya biasanya lebih suka kasur yang keras tetapi istri saya lebih memilih kasur yang empuk, tetapi kami sama-sama puas dengan kasur ini. Kasur ini gampang dibuka dan hanya dalam beberapa saat langsung bisa untuk digunakan. Worthed banget deh beli kasur ini"
+                ; 136            ; "Guling yang pas"                                    ; "Saya tidur pulas banget sejak mendapatkan guling In The Box ini. Enak untuk dipeluk besarnya pasZzzZ"
+                ; 137            ; "Tidur nyenyak"                                      ; "Suami saya dan saya benar-benar mencintai kasur ini. Kami biasanya terbangun saat kami berguling atau mengubah posisi tidur di tengah malam, tetapi tidak lagi dengan Bed In The Box. Kami berdua beristirahat dengan nyenyak dan mendapatkan tidur yang lebih baik."
+                ; 138            ; "Tidur lebih baik, jarang mendengkur"                ; "Tidur menjadi lebih baik, suamiku juga tidak mendengkur sebanyak biasanya. Sekarang aku bangun dan tidak mengeluh sakit pada badan lagi. Sangat nyaman, tidur lebih baik."
+                ; 139            ; "Love it!"                                           ; "Aku tidak segera jatuh cinta dengan bantal In The Box, tapi setelah beberapa malam saya benar-benar merasakan perbedaan dalam kualitas tidur saya. Terutama leher saya, tidak ada rasa sakit yang terasa. Saya punya beberapa bantal lain yang lebih mahal, tapi saya lebih memilih ke bantal In The Box sekarang. Sangat direkomendasikan!"
+                ; 140            ; "Bantal yang baik untuk yang suka tidur menyamping"  ; "Aku sering banget mengganti bantal karena cepat banget rusak walaupun sudah beli yang mahal. Aku sudah memiliki bantal ini sekitar sebulan dan masih bertahan dengan baik. Bahkan memberikan istirahat yang lebih baik untuk leher. Sangat terkagum, lebih baik dari bantal-bantal yang pernah aku coba."
+                ; 141            ; "Spring bed yang bagus"                              ; "Puas dengan spring bed baru saya. Membentuk punggung dengan tepat saat digunakan dan lebih baik dari kasur lama saya yang terlalu empuk. Kagum saat kasur tersebut datang dalam sebuah kotak lalu langsung mengembang saat sudah ditempatkan dan dibuka."
+                ; 142            ; "Worthed it!"                                        ; "G beli kasur ini dengan bandingin sama kasur yang lain dan kasur ini sesuai dengan apa yang g cari dengan harga yang jauh lebih murah, dan resikonya juga ga ada karena ada ketentuan pengembalian dan garansinya. G awalnya skeptis tapi ternyata kasur ini cocok banget buat g, g akan membelinya lagi karena worthed for the money."
+                ; 143            ; "Best Purchase"                                      ; "Guling yang mengagumkan ! Best purchase I ever had !Kebanyakan guling butuh waktu untuk beradaptasi. Dengan guling ini aku langsung tidur pulas sejak pertama kali mencobanya. Aku sudah menyukainya sejak pertama kali walaupun sudah mencoba guling bantal sebelumnya !"
+                ; 144            ; "Senang dengan kasurnya"                             ; "Sangat senang dengan Bed In The Box. Saat membuka boxnya saya cukup terkagum. Amazing! Desainnya bagus. Enak pula dipakai. Terimakasih !"
+                ; 145            ; "Heaven?"                                            ; "Kepala saya berasa disurga diatas bantal ini. Saya telah menggunakan beberapa jenis bantal sebelumnya, yang satu ini menggantikan bantal apapun yang pernah saya coba. Sangat bersyukur untuk produk ini."
+                ; 146            ; "tidur seperti di surga"                             ; "Rasanya seperti tidur diatas awan, tidak terlalu keras ataupun empuk. Sakit pinggang pun hilang. Kami 100% merekomendasikan matras ini kepada siapapun. Membelinya pun praktis dan memberikan pengalaman yang menarik. Bahkan kucing-kucing kami pun menyukai tidur di matras ini. Nice knitting & very comfortable"
+                ; 147            ; "Tidur nyenyak seperti bayi !"                       ; "Sejak mendapatkan matras In The Box, saya tidur dengan lebih baik sejak 10 tahun !!! Suami dan saya membeli sebuah matras pillow top beberapa tahun lalu dan saya tidak pernah tidur senyaman ini. Kami kemudian membeli matras lain, tapi tetap saja kurang nyaman. Sejauh ini, ini adalah pembelian terbaik yang pernah kami lakukan ! Saya selalu memberitahukan kepada teman-teman dan keluarga tentang matras ini! Saya tidak percaya kami menunggu terlalu lama untuk membeli matras ini."
+                ; 148            ; "Best Mattress Ever"                                 ; "Sangat senang dengan produk ini. Gampang pemesanannya, ga usah repot-repot ke toko dan pengantarannya juga oke. Best mattress ever. Tidak perlu membolak balikkan badan lagi seperti sebelumnya. Tidur menjadi nyenyak dengan In The Box, puas deh pokoknya. Sa"

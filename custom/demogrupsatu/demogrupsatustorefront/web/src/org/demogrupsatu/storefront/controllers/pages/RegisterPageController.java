@@ -13,6 +13,7 @@ import javax.annotation.Resource;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import org.demogrupsatu.storefront.forms.validation.IntheboxRegisterForm;
 import org.springframework.security.web.savedrequest.HttpSessionRequestCache;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -27,7 +28,7 @@ import org.springframework.web.servlet.mvc.support.RedirectAttributes;
  */
 @Controller
 @RequestMapping(value = "/register")
-public class RegisterPageController extends AbstractRegisterPageController
+public class RegisterPageController extends IntheboxAbstractRegisterPageController
 {
 	private HttpSessionRequestCache httpSessionRequestCache;
 
@@ -62,12 +63,13 @@ public class RegisterPageController extends AbstractRegisterPageController
 	@RequestMapping(method = RequestMethod.GET)
 	public String doRegister(final Model model) throws CMSItemNotFoundException
 	{
+		model.addAttribute(new IntheboxRegisterForm());
 		return getDefaultRegistrationPage(model);
 	}
 
 	@RequestMapping(value = "/newcustomer", method = RequestMethod.POST)
-	public String doRegister(final RegisterForm form, final BindingResult bindingResult, final Model model,
-			final HttpServletRequest request, final HttpServletResponse response, final RedirectAttributes redirectModel)
+	public String doRegister(final IntheboxRegisterForm form, final BindingResult bindingResult, final Model model,
+							 final HttpServletRequest request, final HttpServletResponse response, final RedirectAttributes redirectModel)
 			throws CMSItemNotFoundException
 	{
 		getRegistrationValidator().validate(form, bindingResult);
