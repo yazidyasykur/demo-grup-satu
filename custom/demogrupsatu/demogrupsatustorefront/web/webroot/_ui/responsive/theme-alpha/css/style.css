@@ -1,3 +1,21 @@
+@charset "UTF-8";
+@font-face {
+  font-family: 'Brown';
+  src: url('../fonts/brown-regular.eot');
+  src: url('../fonts/brown-regular.eot?#iefix') format('embedded-opentype'), url('../fonts/brown-regular.woff2') format('woff2'), url('../fonts/brown-regular.woff') format('woff'), url('../fonts/brown-regular.ttf') format('truetype'), url('../fonts/brown-regular.svg#glyphicons_halflingsregular') format('svg');
+}
+@font-face {
+  font-family: 'InTheBox';
+  src: url('../fonts/inthebox.eot');
+  src: url('../fonts/inthebox.eot?#iefix') format('embedded-opentype'), url('../fonts/inthebox.woff2') format('woff2'), url('../fonts/inthebox.woff') format('woff'), url('../fonts/inthebox.ttf') format('truetype'), url('../fonts/inthebox.svg#glyphicons_halflingsregular') format('svg');
+}
+@font-face {
+  font-family: 'Palmer Lake';
+  src: url('../fonts/PalmerLakePrint-Regular.eot');
+  src: url('../fonts/PalmerLakePrint-Regular.eot?#iefix') format('embedded-opentype'), url('../fonts/PalmerLakePrint-Regular.woff2') format('woff2'), url('../fonts/PalmerLakePrint-Regular.woff') format('woff'), url('../fonts/PalmerLakePrint-Regular.ttf') format('truetype'), url('../fonts/PalmerLakePrint-Regular.svg#glyphicons_halflingsregular') format('svg');
+}
+
+>>>>>>> 9c417c2888171103124321251346c71ccd090e54
 /* Slider */
 .slick-slider {
   position: relative;
@@ -1312,7 +1330,7 @@ html {
   -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
 }
 body {
-  font-family: "Open Sans", Helvetica, Arial, sans-serif;
+  font-family: "InTheBox", Helvetica, Arial, sans-serif;
   font-size: 14px;
   line-height: 1.42857143;
   color: #19212b;
@@ -6218,7 +6236,7 @@ button.close {
   position: absolute;
   z-index: 1070;
   display: block;
-  font-family: "Open Sans", Helvetica, Arial, sans-serif;
+  font-family: "InTheBox", Helvetica, Arial, sans-serif;
   font-style: normal;
   font-weight: normal;
   letter-spacing: normal;
@@ -6336,7 +6354,7 @@ button.close {
   display: none;
   max-width: 276px;
   padding: 1px;
-  font-family: "Open Sans", Helvetica, Arial, sans-serif;
+  font-family: "InTheBox", Helvetica, Arial, sans-serif;
   font-style: normal;
   font-weight: normal;
   letter-spacing: normal;
@@ -10296,6 +10314,194 @@ fieldset[disabled] .btn-primary.active {
   color: #ec7205;
   background-color: #ffffff;
 }
+.loginregister-page .background-login {
+  background-image: url(https://inthebox.net/images/layout-v2/login-bgimage.png);
+  background-position: center;
+  background-repeat: no-repeat;
+}
+.loginregister-page .login-wrapper {
+  padding: 6% 2rem 1rem 2rem;
+  margin: 0 auto 2rem auto;
+  overflow: hidden;
+}
+.loginregister-page .login-container {
+  width: 430px;
+  margin: 0 auto;
+}
+.loginregister-page .login-logo {
+  text-align: center;
+  margin: 0 auto 4rem auto;
+}
+.loginregister-page .login-head {
+  margin-top: 1rem;
+  margin-bottom: 3rem;
+}
+.loginregister-page .login-title {
+  text-align: center;
+  font-size: 1.5rem;
+  font-weight: 500;
+  color: #6c7293;
+}
+.loginregister-page .login-desc {
+  margin-top: 1.5rem;
+  text-align: center;
+  font-size: 1.1rem;
+  font-weight: 400;
+  color: #a7abc3;
+}
+.loginregister-page .form {
+  margin: 0 auto;
+}
+.loginregister-page .form-control {
+  height: 46px;
+  border: none;
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
+  margin-top: 1.5rem;
+  background: rgba(235, 237, 242, 0.4);
+  font-size: 1rem;
+  font-weight: 400;
+}
+.loginregister-page .invalid-feedback {
+  font-weight: 500;
+  font-size: 0.9rem;
+  padding-left: 1.6rem;
+}
+.loginregister-page .login-extra {
+  margin-top: 30px;
+  margin-bottom: 15px;
+  margin-left: auto;
+  margin-right: auto;
+  color: #a7abc3;
+  font-size: 1rem;
+}
+.loginregister-page .col {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.loginregister-page .align-right {
+  text-align: right;
+}
+.loginregister-page .checkbox {
+  font-size: 1rem;
+  display: flex;
+  align-items: center;
+  padding-left: 20px;
+  margin-bottom: 10px;
+  text-align: left;
+  cursor: pointer;
+  -webkit-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+}
+.loginregister-page .login-link {
+  font-size: 1rem;
+  color: #a7abc3;
+  -webkit-transition: color 0.3s ease;
+  transition: color 0.3s ease;
+}
+.loginregister-page .login-link:hover {
+  color: #22b9ff;
+  -webkit-transition: color 0.3s ease;
+  transition: color 0.3s ease;
+}
+.loginregister-page .login-actions {
+  text-align: center;
+  margin-top: 7%;
+}
+.loginregister-page .login-btn-primary {
+  font-size: 1.25rem;
+  height: 50px;
+  background-color: #6086c2;
+  border: none;
+  color: #fff !important;
+  font-weight: 700;
+  padding: 11px 25px 8px;
+  width: 100%;
+}
+.loginregister-page .login-btn-facebook {
+  font-size: 1.25rem;
+  height: 50px;
+  background-color: #5867dd;
+  border: none;
+  color: #fff !important;
+  font-weight: 700;
+  padding: 11px 25px 8px;
+  width: 100%;
+}
+.loginregister-page .or-text {
+  text-align: center;
+  margin: 1.5rem 0px;
+}
+.loginregister-page .login-account {
+  text-align: center;
+  margin-top: 2rem;
+}
+.loginregister-page .login-account-msg {
+  font-size: 1rem;
+  font-weight: 400;
+  color: #a7abc3;
+}
+.loginregister-page .login-account-link {
+  font-size: 1rem;
+  font-weight: 500;
+  color: #6c7293;
+  -webkit-transition: color 0.3s ease;
+  transition: color 0.3s ease;
+}
+.loginregister-page .login-account-link:hover {
+  color: #22b9ff;
+  -webkit-transition: color 0.3s ease;
+  transition: color 0.3s ease;
+}
+.loginregister-page .checkbox-icon {
+  top: -3px;
+}
+@media (max-width: 1024px) {
+  .loginregister-page .login-wrapper {
+    padding-top: 5rem;
+    width: 100%;
+  }
+  .loginregister-page .login-container {
+    margin: 0 auto;
+  }
+  .loginregister-page .login-account {
+    margin-top: 1rem;
+  }
+}
+@media (max-width: 768px) {
+  .loginregister-page .login-wrapper {
+    width: 100%;
+  }
+  .loginregister-page .login-container {
+    width: 100%;
+    margin: 0 auto;
+  }
+  .loginregister-page .form {
+    width: 100%;
+    margin: 0 auto;
+  }
+  .loginregister-page .login-account {
+    margin-top: 1rem;
+  }
+}
+.loginregister-page ::-webkit-scrollbar {
+  width: 5px;
+}
+.loginregister-page ::-webkit-scrollbar:vertical {
+  width: 5px;
+}
+.loginregister-page ::-webkit-scrollbar:horizontal {
+  height: 5px;
+}
+.loginregister-page ::-webkit-scrollbar-thumb {
+  background-color: #6086c2;
+  border-radius: 10px;
+}
+.loginregister-page ::-webkit-scrollbar-track {
+  border-radius: 10px;
+  background-color: #e3f7ff;
+}
 .pagination-wrap {
   float: right;
   text-align: right;
@@ -11155,7 +11361,7 @@ fieldset[disabled] .btn-primary.active {
 .carousel__component--carousel .item a,
 .carousel .carousel__item a,
 .carousel__component--carousel .carousel__item a {
-  color: #19212b;
+  color: #FFF;
 }
 .carousel .item a:hover,
 .carousel__component--carousel .item a:hover,
@@ -11166,7 +11372,7 @@ fieldset[disabled] .btn-primary.active {
 .carousel .carousel__item a:focus,
 .carousel__component--carousel .carousel__item a:focus {
   text-decoration: none;
-  color: #47b6b1;
+  color: #6086C2;
 }
 .carousel .item .item__name,
 .carousel__component--carousel .item .item__name,
@@ -11226,10 +11432,10 @@ fieldset[disabled] .btn-primary.active {
 .carousel .carousel__item .carousel__item--price,
 .carousel__component--carousel .carousel__item .carousel__item--price {
   margin: 10px;
-  color: #19212b;
+  color: #7FC5F9;
   text-align: center;
-  font-size: 24px;
-  font-weight: 600;
+  font-size: 72px;
+  font-family: 'Palmer Lake';
   margin: 0;
 }
 .carousel-component,
@@ -14984,6 +15190,7 @@ form .forgotten-password {
   border: 1px solid #cccccc;
   border-top: 0;
   padding-top: 0;
+  border: 1px solid grey;
   padding-bottom: 10px;
 }
 .checkout-shipping .checkout-shipping-items .checkout-shipping-items-header {
@@ -17749,24 +17956,29 @@ select[multiple].input-sm {
   padding: 50px 0px;
 }
 .section-header1 {
-  font-size: 3rem;
+  font-size: 4rem;
   text-align: center;
   font-weight: 700;
   margin-bottom: 20px;
 }
-.subtitle {
-  font-size: 1.5rem;
-  margin-bottom: 50px;
-  text-align: center;
-  font-weight: 400;
-  color: #000;
-}
 .section-header {
-  font-size: 3rem;
+  font-size: 4rem;
   text-align: center;
   font-weight: 700;
   margin-bottom: 20px;
   color: #6086c2;
+}
+.subtitle {
+  font-size: 1.8rem;
+  margin-bottom: 50px;
+  text-align: center;
+  font-weight: 400;
+}
+.subtitle-black {
+  color: #000;
+}
+.subtitle-white {
+  color: #FFF;
 }
 .unbox {
   background-color: #d4effc;
@@ -17817,7 +18029,7 @@ select[multiple].input-sm {
   bottom: -2px;
 }
 .layout-card-carousel {
-  width: 366.667px;
+  width: 30%;
   margin-right: 20px;
   background-color: #fff;
   border-radius: 16px;
@@ -19041,12 +19253,6 @@ select[multiple].input-sm {
   margin: auto;
 }
 /* Important Part */
-body {
-  background-color: #FFFFFF;
-}
-html {
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-}
 .copyright-part {
   background-color: #6086C2;
   color: #FFF;
@@ -19063,7 +19269,10 @@ html {
 }
 /* Margin */
 .small-part-margin {
-  margin: 0 20px;
+  margin: 0 10px;
+}
+.small-part-margin-for-link {
+  margin: 0 25px;
 }
 .container-display {
   margin: 0 auto;
@@ -19073,6 +19282,17 @@ html {
 }
 .small-part-left-margin {
   margin-left: 15px;
+}
+.small-margin-top {
+  margin-top: 20px;
+}
+.small-margin-bottom {
+  margin-bottom: 20px;
+}
+.palmer-font {
+  font-family: "Palmer Lake";
+  color: #7FC5F9;
+  font-size: 8rem;
 }
 /* Flexbox */
 .flex-display {
@@ -19121,36 +19341,54 @@ html {
 ::placeholder {
   color: #7FC5F9;
 }
+.review-text {
+  color: #6086C2;
+  margin: auto 5px;
+}
+.description {
+  margin-top: 10px;
+  margin-bottom: 15px;
+  margin-right: 25px;
+}
+.title-testi {
+  margin-top: 25px;
+}
+.normal-size-font {
+  font-size: 18px;
+}
 /* Container */
 .box-display {
   background-color: white;
-  width: 300px;
+  width: 20vw;
   height: auto;
-  border: 2px solid #F1F1F1;
+  border: 1.5px solid #F1F1F1;
   border-radius: 25px;
   padding: 15px 20px;
-  margin-top: 20px;
+  margin: 10px auto;
 }
 .box-container-display {
   display: grid;
   grid-template-columns: auto auto auto;
   justify-content: space-evenly;
-  margin-top: 10px;
+  margin: 5px auto;
+}
+.box-on-homepage {
+  width: 80%;
+  margin: 0 auto;
 }
 .button-container {
   margin-top: 25px;
 }
 /* Other */
 .pic {
-  width: 15%;
-  position: relative;
-  float: right;
+  width: 20%;
 }
 .star {
   max-width: 20px;
 }
 .button {
-  width: 75px;
+  width: auto;
+  padding: 0 10px;
   height: 35px;
   background-color: #6086C2;
   border: 0px solid black;
@@ -19162,6 +19400,23 @@ html {
 }
 .button:hover {
   background-color: #FFF;
+  color: #6086C2;
+}
+.button-2 {
+  width: auto;
+  height: auto;
+  padding: 10px 25px;
+  font-size: 20px;
+  background-color: #6086C2;
+  border: 0px solid black;
+  border-radius: 5px;
+  color: #FFF;
+  transition: color 100ms;
+  transition: background-color 100ms;
+  transition-timing-function: linear;
+}
+.button-2:hover {
+  background-color: #7FC5F9;
   color: #6086C2;
 }
 .button-next-previous {

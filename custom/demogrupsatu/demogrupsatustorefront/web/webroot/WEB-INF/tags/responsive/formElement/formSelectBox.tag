@@ -25,27 +25,30 @@
 
 <template:errorSpanField path="${path}">
     <ycommerce:testId code="LoginPage_Item_${idKey}">
-        <label class="control-label ${fn:escapeXml(labelCSS)}" for="${fn:escapeXml(idKey)}">
-            <spring:theme code="${labelKey}"/>
-            <c:if test="${mandatory != null && mandatory == true}">
-					<span class="mandatory">
-						<spring:theme code="login.required" var="loginRequiredText"/>
-					</span>
-            </c:if>
-            <span class="skip">
-						<form:errors path="${path}"/>
-					</span>
-        </label>
-        <div class="control">
-            <form:select id="${idKey}" path="${path}" cssClass="${fn:escapeXml(selectCSSClass)}" tabindex="${tabindex}" disabled="${disabled}">
-                <c:if test="${skipBlank == null || skipBlank == false}">
-                    <option value="" disabled="disabled" ${empty selectedValue ? 'selected="selected"' : ''}>
-                        <spring:theme code='${skipBlankMessageKey}'/>
-                    </option>
-                </c:if>
-                <form:options items="${items}" itemValue="${not empty itemValue ? itemValue :'code'}"
-                              itemLabel="${not empty itemLabel ? itemLabel :'name'}"/>
-            </form:select>
+        <div class="select-container">
+        <label class="control-label-custom ${fn:escapeXml(labelCSS)}" for="${fn:escapeXml(idKey)}"">
+                    <spring:theme code="${labelKey}"/>
+                    <c:if test="${mandatory != null && mandatory == true}">
+        					<span class="mandatory">
+        						<spring:theme code="login.required" var="loginRequiredText"/>
+        					</span>
+                    </c:if>
+                    <span class="skip">
+        						<form:errors path="${path}"/>
+        					</span>
+                </label>
+
+                <div class="control-custom ">
+                    <form:select id="${idKey}" path="${path}" cssClass="${fn:escapeXml(selectCSSClass)} select-width-custom" tabindex="${tabindex}" disabled="${disabled}">
+                        <c:if test="${skipBlank == null || skipBlank == false}">
+                            <option value="" disabled="disabled" ${empty selectedValue ? 'selected="selected"' : ''}>
+                                <spring:theme code='${skipBlankMessageKey}'/>
+                            </option>
+                        </c:if>
+                        <form:options items="${items}" itemValue="${not empty itemValue ? itemValue :'code'}"
+                                      itemLabel="${not empty itemLabel ? itemLabel :'name'}"/>
+                    </form:select>
+                </div>
         </div>
     </ycommerce:testId>
 </template:errorSpanField>

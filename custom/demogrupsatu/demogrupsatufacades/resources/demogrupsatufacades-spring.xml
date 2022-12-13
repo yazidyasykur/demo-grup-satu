@@ -40,6 +40,10 @@
 		</property>
 	</bean>
 
+	<alias name="defaultIntheboxCustomerFacade" alias="customerFacade" />
+	<bean id="defaultIntheboxCustomerFacade" class="org.demogrupsatu.facades.customer.DefaultIntheboxCustomerFacade" parent="defaultCustomerFacade" >
+	</bean>
+
 	<alias name="defaultAcceleratorVariantOptionDataPopulator" alias="acceleratorVariantOptionDataPopulator"/>
 	<bean id="defaultAcceleratorVariantOptionDataPopulator"  class="org.demogrupsatu.facades.populators.AcceleratorVariantOptionDataPopulator"
 	      parent="variantOptionDataPopulator" >

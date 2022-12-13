@@ -22,6 +22,7 @@
 
 <template:errorSpanField path="${path}">
 	<ycommerce:testId code="LoginPage_Item_${idKey}">
+	<div class="input-container">
 		<label class="control-label ${fn:escapeXml(labelCSS)}" for="${fn:escapeXml(idKey)}">
 			<spring:theme code="${labelKey}" />
 			<c:if test="${mandatory != null && mandatory == false}">
@@ -31,9 +32,9 @@
 			
 		<spring:theme code="${placeholder}" var="placeHolderMessage" htmlEscape="false"/>
 
-		<form:input cssClass="${fn:escapeXml(inputCSS)} form-control" id="${idKey}" path="${path}"
+		<form:input cssClass="${fn:escapeXml(inputCSS)} form-control form-width-custom" id="${idKey}" path="${path}"
 					tabindex="${tabindex}" autocomplete="${autocomplete}" placeholder="${placeHolderMessage}"
 					disabled="${disabled}" maxlength="${maxlength}"/>
-						
+	</div>
 	</ycommerce:testId>
 </template:errorSpanField>
