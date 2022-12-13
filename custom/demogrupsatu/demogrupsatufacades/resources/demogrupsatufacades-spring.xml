@@ -241,6 +241,9 @@
 		<property name="populators">
 			<list merge="true">
 				<ref bean="faqPopulator" />
+			</list>
+		</property>
+	</bean>
 
 <!--	inthebox variant product-->
 	<alias name="intheboxVariantPopulator" alias="intheboxVariantPopulator" />
@@ -251,7 +254,6 @@
 		<property name="populators">
 			<list merge="true">
 				<ref bean="intheboxVariantPopulator" />
-
 			</list>
 		</property>
 	</bean>
