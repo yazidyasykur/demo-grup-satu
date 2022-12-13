@@ -231,4 +231,19 @@
 	<alias name="intheboxproductFacade" alias="intheboxproductFacade" />
 	<bean name="intheboxproductFacade" class="org.demogrupsatu.facades.intheboxproduct.impl.DefaultIntheboxProductFacade" />
 
+	<!-- FAQ -->
+	<alias name="faqPopulator" alias="faqPopulator" />
+	<bean name="faqPopulator" class="org.demogrupsatu.facades.populators.FaqPopulator" />
+
+	<bean id="faqConverter" name="faqConverter" parent="abstractPopulatingConverter">
+		<property name="targetClass" value="org.demogrupsatu.facades.faq.FaqData" />
+		<property name="populators">
+			<list merge="true">
+				<ref bean="faqPopulator" />
+			</list>
+		</property>
+	</bean>
+
+	<alias name="faqFacade" alias="faqFacade" />
+	<bean name="faqFacade" class="org.demogrupsatu.facades.faq.impl.DefaultFaqFacade" />
 </beans>

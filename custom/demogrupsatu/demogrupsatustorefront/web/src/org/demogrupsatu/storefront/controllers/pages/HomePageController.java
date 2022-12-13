@@ -10,6 +10,7 @@ import de.hybris.platform.cms2.exceptions.CMSItemNotFoundException;
 import de.hybris.platform.cms2.model.pages.AbstractPageModel;
 import de.hybris.platform.cms2.model.pages.ContentPageModel;
 
+import org.demogrupsatu.facades.faq.FaqFacade;
 import org.demogrupsatu.facades.testimoni.TestimoniData;
 import org.demogrupsatu.facades.testimoni.TestimoniFacade;
 import org.springframework.stereotype.Controller;
@@ -34,6 +35,7 @@ public class HomePageController extends AbstractPageController
 
 	@Resource(name = "testimoniFacade")
 	private TestimoniFacade testimoniFacade;
+
 	private static final String LOGOUT = "logout";
 	private static final String ACCOUNT_CONFIRMATION_SIGNOUT_TITLE = "account.confirmation.signout.title";
 	private static final String ACCOUNT_CONFIRMATION_CLOSE_TITLE = "account.confirmation.close.title";

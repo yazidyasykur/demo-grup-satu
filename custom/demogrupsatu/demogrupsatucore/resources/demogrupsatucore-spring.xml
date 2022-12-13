@@ -562,5 +562,12 @@
 	<bean id="defaultIntheboxProductService" class="org.demogrupsatu.core.intheboxproduct.impl.DefaultIntheboxProductService">
 	</bean>
 
+	<!--FAQ Dao	-->
+	<alias name="defaultFaqDao" alias="faqDao" />
+	<bean id="defaultFaqDao" class="org.demogrupsatu.core.faq.dao.impl.DefaultFaqDao" />
+
+	<!--FAQ Service	-->
+	<alias name="defaultFaqService" alias="faqService" />
+	<bean id="defaultFaqService" class="org.demogrupsatu.core.faq.impl.DefaultFaqService" />
 
 </beans>
