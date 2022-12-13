@@ -4,6 +4,21 @@
     src: url("../fonts/PalmerLakePrint-Regular.otf")
 }
 
+@media (max-width: @screen-sm-max) {
+
+    .batas{
+        width:90% !important;
+        margin:auto;
+    }
+
+    th {
+            background-color: @entry-group-header  ;
+            font-size: 2rem !important;
+            font-weight: normal !important;
+            color: black !important;
+            padding-right: 0 !important;
+          }
+}
 
 
 .tombolbiru{
@@ -20,7 +35,14 @@
 .untukharga{
     font-family:fontHarga !important;
     font-weight:normal !important;
-    font-size:3vw !important;
+    font-size:5rem !important;
+    color:#6086c2;
+}
+
+.untukhargasatuan{
+    font-family:fontHarga !important;
+    font-weight:normal !important;
+    font-size:4rem !important;
     color:#6086c2;
 }
 
@@ -29,17 +51,13 @@
     margin:auto;
 }
 
-.tinggi{
-    height:10vw !important;
-}
-
 .fixtotal{
     font-family:fontHarga !important;
     font-weight:normal;
     color:#6086c2;
     font-weight:bold;
     text-align:center;
-    font-size:5vw !important;
+    font-size:5vw ;
     font-weight:normal;
 }
 
@@ -201,13 +219,7 @@
   & > table {
     tbody > .entry-group-header {
 
-      & > th {
-        background-color: @entry-group-header  ;
-        font-size: 16px;
-        font-weight: 700;
-        color: @entry-group-text;
-        padding-right: 35px;
-      }
+
 
       a { color: @link-color; }
 

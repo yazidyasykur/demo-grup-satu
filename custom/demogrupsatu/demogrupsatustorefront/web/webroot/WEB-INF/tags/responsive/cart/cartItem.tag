@@ -38,7 +38,7 @@
                         <spring:param name="entryNumber"  value="${entry.entryNumber}"/>
                         <spring:param name="configuratorType"  value="${entry.configurationInfos[0].configuratorType}" />
                     </spring:url>
-                    
+
                     <spring:theme code="basket.error.invalid.configuration" arguments="${errorCount}"/>
                     <a href="${fn:escapeXml(entryConfigUrl)}">
                         <spring:theme code="basket.error.invalid.configuration.edit"/>
@@ -69,19 +69,19 @@
             <%-- product name, code, promotions --%>
             <div class="item__info">
                  <ycommerce:testId code="cart_product_name">
-                    <a href="${fn:escapeXml(productUrl)}"><span class="item__name">${fn:escapeXml(entry.product.baseProduct)}</span></a>
+                    <a href="${fn:escapeXml(productUrl)}"><span class="item__name hitam">${fn:escapeXml(entry.product.baseProduct)}</span></a>
                 </ycommerce:testId>
+
+                <br>
 
                 <ycommerce:testId code="cart_product_name">
-                    <a href="${fn:escapeXml(productUrl)}"><span class="item__name">${fn:escapeXml(entry.product.name)}</span></a>
+                    <a href="${fn:escapeXml(productUrl)}"><span class="item__name hitam">${fn:escapeXml(entry.product.name)}</span></a>
                 </ycommerce:testId>
-
-                <div class="item__code">${productCodeHtml}</div>
 
                 <br>
 
                 <%-- price --%>
-                <div class="item__code untukharga">
+                <div class="item__code untukhargasatuan">
                     <format:price priceData="${entry.basePrice}" displayFreeForZero="true"/>
                 </div>
 
@@ -133,7 +133,7 @@
 
             <%-- menu icon --%>
 
-            <div class="item__quantity__total visible-xs visible-sm">
+            <div class=" visible-xs visible-sm">
                 <c:if test="${entry.product.multidimensional}" >
                     <ycommerce:testId code="cart_product_updateQuantity">
                         <c:set var="showEditableGridClass" value="js-show-editable-grid"/>
@@ -178,7 +178,7 @@
                             </ycommerce:testId>
                         </c:if>
                         <ycommerce:testId code="cart_totalProductPrice_label">
-                            <div class="item__total js-item-total">
+                            <div class="untukharga item__total js-item-total">
                                 <format:price priceData="${entry.totalPrice}" displayFreeForZero="true"/>
                             </div>
                         </ycommerce:testId>

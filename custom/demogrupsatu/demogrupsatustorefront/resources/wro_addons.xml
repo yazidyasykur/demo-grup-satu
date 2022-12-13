@@ -1,9 +1,12 @@
-<!--
- Copyright (c) 2019 SAP SE or an SAP affiliate company. All rights reserved.
--->
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+
 <groups xmlns="http://www.isdc.ro/wro" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.isdc.ro/wro wro.xsd">
-	<group name="addons_responsive">
-	</group>
-	
-	
+   <group name="addons_responsive">
+      <js>/_ui/addons/smarteditaddon/shared/common/js/webApplicationInjector.js</js>
+      <js>/_ui/addons/smarteditaddon/shared/common/js/reprocessPage.js</js>
+      <js>/_ui/addons/smarteditaddon/shared/common/js/adjustComponentRenderingToSE.js</js>
+      <js>/_ui/addons/smarteditaddon/responsive/common/js/smarteditaddon.js</js>
+      <css>/_ui/addons/smarteditaddon/responsive/common/css/smarteditaddon.css</css>
+   </group>
 </groups>
+
