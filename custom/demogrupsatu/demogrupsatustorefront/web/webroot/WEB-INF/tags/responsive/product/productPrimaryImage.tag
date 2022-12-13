@@ -24,10 +24,10 @@
 		<c:choose>
 			<c:when test="${not empty primaryImage.altText}">
 				<c:set value="${fn:escapeXml(primaryImage.altText)}" var="altTextHtml"/>
-				<img src="${fn:escapeXml(primaryImageUrl)}" alt="${altTextHtml}" title="${altTextHtml}"/>
+				<img class="gambar" src="${fn:escapeXml(primaryImageUrl)}" alt="${altTextHtml}" title="${altTextHtml}"/>
 			</c:when>
 			<c:otherwise>
-                <img src="${fn:escapeXml(primaryImageUrl)}" alt="${productNameHtml}" title="${productNameHtml}"/>
+                <img class="gambar" src="${fn:escapeXml(primaryImageUrl)}" alt="${productNameHtml}" title="${productNameHtml}"/>
 			</c:otherwise>
 		</c:choose>
 	</c:when>
