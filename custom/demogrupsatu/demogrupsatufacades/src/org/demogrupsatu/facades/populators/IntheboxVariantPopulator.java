@@ -10,28 +10,27 @@ import de.hybris.platform.core.model.media.MediaModel;
 import de.hybris.platform.jalo.order.price.PriceInformation;
 import de.hybris.platform.servicelayer.dto.converter.ConversionException;
 import org.apache.commons.collections.CollectionUtils;
-import org.demogrupsatu.core.model.IntheboxProductModel;
-import org.demogrupsatu.core.model.SizeModel;
-import org.demogrupsatu.facades.intheboxproduct.IntheboxProductData;
+import org.demogrupsatu.core.model.IntheboxSizeVariantProductModel;
+import org.demogrupsatu.facades.intheboxvariantproduct.IntheboxVariantPoductData;
 
 import javax.annotation.Resource;
 import java.math.BigDecimal;
 
-public class IntheboxProductPopulator implements Populator<IntheboxProductModel, IntheboxProductData> {
+public class IntheboxVariantPopulator implements Populator<IntheboxSizeVariantProductModel, IntheboxVariantPoductData> {
     @Resource
     private CommercePriceService commercePriceService;
 
     @Resource
     private PriceDataFactory priceDataFactory;
-
     @Override
-    public void populate(IntheboxProductModel source, IntheboxProductData target  ) throws ConversionException {
+    public void populate(IntheboxSizeVariantProductModel source, IntheboxVariantPoductData target) throws ConversionException {
         target.setCode(source.getCode());
-        target.setName(source.getName());
-        target.setDescription(source.getDescription());
+        target.setHeight(source.getHeight());
+        target.setDimension(source.getSize().getDimension());
+        target.setSize(source.getSize().getSizeName());
 
         MediaModel image = source.getPicture();
-        if (image!=null){
+        if(image!=null){
             final ImageData img = new ImageData();
             img.setFormat(image.getMime());
             img.setUrl(image.getURL());

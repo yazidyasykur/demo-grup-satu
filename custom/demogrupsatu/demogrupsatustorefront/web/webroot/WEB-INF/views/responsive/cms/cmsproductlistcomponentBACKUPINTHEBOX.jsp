@@ -4,18 +4,30 @@
 <%@ taglib prefix="storepickup" tagdir="/WEB-INF/tags/responsive/storepickup" %>
 <%@ taglib prefix="spring" uri="http://www.springframework.org/tags" %>
 
-<img style="width: 100%;" src="https://inthebox.net/images/layout-v2/catalog-header.png"/>
-
-
 <spring:htmlEscape defaultHtmlEscape="true" />
 
-<h1 class="tengah">PILIHAN PRODUK INTHEBOX</h1>
+<h1 class="tengah">PILIHAN PRODUCT INTHEBOX</h1>
 
-<div class="flowrow">
+<c:forEach items="${intheboxproductList}" var="intheboxproduct">
+     <div class="mainflow">
+      <div class="flowrow">
+
+
+         <div class="flowrowblock">
+            <h2>${intheboxproduct.name}
+                </br>
+                </br>
+                <p class="kecil">${intheboxproduct.description}</p>
+            </h2>
+         </div>
+
+
         <c:forEach items="${searchPageData.results}" var="product" varStatus="status">
             <product:productListerItem product="${product}" inthebox="${intheboxproduct}"/>
         </c:forEach>
-</div>
+        </div>
+    </div>
+</c:forEach>
 
 
 
