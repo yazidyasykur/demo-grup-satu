@@ -1,5 +1,3 @@
-
-@charset "UTF-8";
 @font-face {
   font-family: 'Brown';
   src: url('../fonts/brown-regular.eot');
@@ -10324,6 +10322,7 @@ fieldset[disabled] .btn-primary.active {
   overflow: hidden;
 }
 .loginregister-page .login-container {
+  font-family: "Brown";
   width: 430px;
   margin: 0 auto;
 }
@@ -10337,14 +10336,14 @@ fieldset[disabled] .btn-primary.active {
 }
 .loginregister-page .login-title {
   text-align: center;
-  font-size: 1.5rem;
-  font-weight: 500;
+  font-size: 18px;
+  font-weight: 600;
   color: #6c7293;
 }
 .loginregister-page .login-desc {
   margin-top: 1.5rem;
   text-align: center;
-  font-size: 1.1rem;
+  font-size: 14px;
   font-weight: 400;
   color: #a7abc3;
 }
@@ -10358,8 +10357,8 @@ fieldset[disabled] .btn-primary.active {
   padding-right: 1.5rem;
   margin-top: 1.5rem;
   background: rgba(235, 237, 242, 0.4);
-  font-size: 1rem;
-  font-weight: 400;
+  font-size: 14px;
+  font-weight: 500;
 }
 .loginregister-page .invalid-feedback {
   font-weight: 500;
@@ -10383,9 +10382,10 @@ fieldset[disabled] .btn-primary.active {
   text-align: right;
 }
 .loginregister-page .checkbox {
-  font-size: 1rem;
+  font-size: 14px;
+  font-weight: 600;
   display: flex;
-  align-items: center;
+  align-items: flex-end;
   padding-left: 20px;
   margin-bottom: 10px;
   text-align: left;
@@ -10394,7 +10394,7 @@ fieldset[disabled] .btn-primary.active {
   transition: all 0.3s ease;
 }
 .loginregister-page .login-link {
-  font-size: 1rem;
+  font-size: 14px;
   color: #a7abc3;
   -webkit-transition: color 0.3s ease;
   transition: color 0.3s ease;
@@ -10430,20 +10430,22 @@ fieldset[disabled] .btn-primary.active {
 }
 .loginregister-page .or-text {
   text-align: center;
-  margin: 1.5rem 0px;
+  font-size: 12px;
+  font-weight: 600;
+  margin: 18px 0px;
 }
 .loginregister-page .login-account {
   text-align: center;
   margin-top: 2rem;
 }
 .loginregister-page .login-account-msg {
-  font-size: 1rem;
+  font-size: 14px;
   font-weight: 400;
   color: #a7abc3;
 }
 .loginregister-page .login-account-link {
-  font-size: 1rem;
-  font-weight: 500;
+  font-size: 14px;
+  font-weight: 600;
   color: #6c7293;
   -webkit-transition: color 0.3s ease;
   transition: color 0.3s ease;
@@ -10453,8 +10455,11 @@ fieldset[disabled] .btn-primary.active {
   -webkit-transition: color 0.3s ease;
   transition: color 0.3s ease;
 }
+.loginregister-page #chk-terms {
+  top: -2px;
+}
 .loginregister-page .checkbox-icon {
-  top: -3px;
+  top: -2px;
 }
 @media (max-width: 1024px) {
   .loginregister-page .login-wrapper {
