@@ -1237,4 +1237,14 @@ INSERT_UPDATE SimpleResponsiveBannerComponent; $contentCV[unique = true]; uid[un
 INSERT_UPDATE ContentSlot; $contentCV[unique = true]; uid[unique = true]    ; active; cmsComponents(&componentRef)
                          ;                          ; Section4Slot-Homepage ; true  ; UnboxingHomepageBannerComponent-1,UnboxingHomepageBannerComponent-2,UnboxingHomepageBannerComponent-3,UnboxingHomepageBannerComponent-4
 
+## Homepage section 5 for backup productcarousel component
+INSERT_UPDATE ProductCarouselComponent; $contentCV[unique = true]; uid[unique = true]                   ; name                           ; products(code, $productCV)                                                                ; scroll(code); popup ; &componentRef
+;                          ; DemoHomepageProductCarouselComponent2 ; Demo Homepage Product Carousel 2 ; INTHEBOX-FLIP-Z-90, INTHEBOX-HYBRID-90, INTHEBOX-X-90, INTHEBOX-101-90, INTHEBOX-ALPHA-90 ; allVisible  ; false ; DemoHomepageProductCarouselComponent2
+
+INSERT_UPDATE ContentSlot; $contentCV[unique = true]; uid[unique = true]    ; name                       ; active; cmsComponents(&componentRef)
+;                          ; Section5Slot-Homepage ; Section5 Slot for Homepage ; true  ; DemoHomepageProductCarouselComponent2
+
+INSERT_UPDATE ContentSlotForPage; $contentCV[unique = true]; uid[unique = true]; position[unique = true]; page(uid, $contentCV)[unique = true][default = 'homepage']; contentSlot(uid, $contentCV)[unique = true]
+;                          ; Section5-Homepage ; Section5               ;                                                           ; Section5Slot-Homepage
+
 

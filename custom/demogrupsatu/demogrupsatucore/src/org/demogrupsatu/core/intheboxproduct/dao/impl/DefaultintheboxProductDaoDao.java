@@ -31,8 +31,8 @@ public class DefaultintheboxProductDaoDao implements IntheboxProductDao {
 
     @Override
     public List<IntheboxProductModel> getProductByVariant(String code) {
-        final String query = "select {pk} from {IntheboxSizeVariantProduct as v join IntheboxProduct as p on {v.baseproduct}={p.pk}} " +
-                "where {p.code} = ?code";
+        final String query = "select distinct {p.pk} from {IntheboxSizeVariantProduct as v join IntheboxProduct as p on {v.baseproduct}={p.pk}} " +
+                "where {p.code} like concat(substring(?code,1,11),'%')";
         final FlexibleSearchQuery flexibleSearchQuery = new FlexibleSearchQuery(query);
         flexibleSearchQuery.addQueryParameter("code",code);
         final SearchResult<IntheboxProductModel> searchResult = flexibleSearchService.search(flexibleSearchQuery);
