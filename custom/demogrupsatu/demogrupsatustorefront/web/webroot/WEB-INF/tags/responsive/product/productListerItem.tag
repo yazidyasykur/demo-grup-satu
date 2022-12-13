@@ -20,24 +20,23 @@
 	<c:set value="${productTagClasses} tag-${tag}" var="productTagClasses"/>
 </c:forEach>
 
-<c:if test="${inthebox.code == product.baseProduct}">
-
             <div class="flowrowblock">
                 <a  href="${fn:escapeXml(productUrl)}" title="${fn:escapeXml(product.name)}" >
                     <product:productPrimaryImage product="${product}" format="thumbnail"/>
                 </a>
-
-                <a  href="${fn:escapeXml(productUrl)}">${ycommerce:sanitizeHTML(product.name)}</a>
-
-                <p>${ycommerce:sanitizeHTML(product.dimension)}</p>
-
-                <p>${ycommerce:sanitizeHTML(product.size)}</p>
-
-
-                <product:productListerItemPrice product="${product}"/>
+                <br>
+                <a class="tebal nama" href="${fn:escapeXml(productUrl)}">${ycommerce:sanitizeHTML(product.name)}</a>
+                <br>
+                <c:if test="${product.height!=null}">
+                    <a class="kecil" href="${fn:escapeXml(productUrl)}">${ycommerce:sanitizeHTML(product.dimension)}</a>
+                </c:if>
+                <br>
+                <a class="kecil" href="${fn:escapeXml(productUrl)}">${ycommerce:sanitizeHTML(product.size)}</a>
+                <br>
+                <a class="untukhargalist"   href="${fn:escapeXml(productUrl)}"><product:productListerItemPrice product="${product}"/></a>
           </div>
 
-</c:if>
+
 
 
 

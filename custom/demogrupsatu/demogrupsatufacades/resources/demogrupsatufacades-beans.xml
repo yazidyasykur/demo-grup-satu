@@ -11,8 +11,6 @@
 		<property name="height" type="String"/>
 	</bean>
 
-
-
 	<bean class="org.demogrupsatu.facades.product.data.GenderData">
 		<property name="code" type="String"/>
 		<property name="name" type="String"/>
@@ -32,9 +30,26 @@
 		<property name="code" type="String"/>
 		<property name="name" type="String"/>
 		<property name="description" type="String"/>
+		<property name="picture" type="String"/>
+		<property name="harga" type="de.hybris.platform.commercefacades.product.data.PriceData"/>
+<!--		<property name="varian" type="java.util.List&lt;org.demogrupsatu.facades.intheboxvariantproduct.IntheboxVariantPoductData"/>-->
+	</bean>
+
+	<bean class="org.demogrupsatu.facades.intheboxvariantproduct.IntheboxVariantPoductData">
+		<property name="code" type="String"/>
+		<property name="size" type="String"/>
+		<property name="dimension" type="String"/>
+		<property name="height" type="String"/>
+		<property name="picture" type="String"/>
+		<property name="harga" type="de.hybris.platform.commercefacades.product.data.PriceData"/>
 	</bean>
 
 	<bean class="de.hybris.platform.commercefacades.user.data.RegisterData">
 		<property name="userId" type="java.lang.String" />
+	</bean>
+
+	<bean class="org.demogrupsatu.facades.faq.FaqData">
+		<property name="question" type="String"/>
+		<property name="answer" type="String"/>
 	</bean>
 </beans>

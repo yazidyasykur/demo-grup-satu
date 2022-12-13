@@ -29,9 +29,9 @@
         </div>
         <div class="login-signin">
           <div class="login-head">
-            <h3 class="login-title">Daftar Sekarang</h3>
+            <h3 class="login-title"><spring:theme code="register.title" /></h3>
             <h6 class="login-desc">
-              Masukkan detail Anda untuk menciptakan akun:
+              <spring:theme code="register.description" />
             </h6>
           </div>
           <form:form
@@ -56,7 +56,7 @@
                 labelKey="register.firstName"
                 path="firstName"
                 inputCSS="form-control"
-                placeholder="Nama"
+                placeholder="Name"
                 mandatory="true"
               />
             </div>
@@ -66,7 +66,7 @@
                 labelKey="register.email"
                 path="email"
                 inputCSS="form-control"
-                placeholder="Alamat Email"
+                placeholder="Email Address"
                 mandatory="true"
               />
             </div>
@@ -85,7 +85,7 @@
                 idKey="register.checkPwd"
                 labelKey="register.checkPwd"
                 path="checkPwd"
-                placeholder="Konfirmasi Password"
+                placeholder="Confirm Password"
                 inputCSS="form-control"
                 mandatory="true"
               />
@@ -97,32 +97,31 @@
                     <form:checkbox
                       id="chk-terms"
                       required="true"
+                      inputCSS="checkbox-icon"
                       name="accept-terms"
                       path="termsCheck"
                     />
-                    Saya menyetujui Syarat & Ketentuan .
+                      <spring:theme code="register.checkbox.termsConditions" />
                     <span></span>
                   </label>
                 </div>
               </template:errorSpanField>
             </div>
             <div class="login-actions">
-              <button class="login-btn-primary">Daftar</button>
+              <button class="login-btn-primary"><spring:theme code="register.button.register" /></button>
             </div>
           </form:form>
-          <div class="or-text">or</div>
+          <div class="or-text"><spring:theme code="register.text.or" /></div>
           <a href="https://inthebox.net/auth/facebook">
-            <button class="login-btn-facebook">Masuk dengan Facebook</button>
+            <button class="login-btn-facebook"><spring:theme code="register.button.fb" /></button>
           </a>
         </div>
         <div class="login-account">
-          <span class="login-account-msg"> Sudah memiliki akun ? </span>
-          &nbsp;&nbsp;
+          <span class="login-account-msg"> <spring:theme code="register.text.haveAccount" /></span>
           <a
             href="${fn:escapeXml(loginUrl)}"
             class="login-account-link evt-click-links-register"
-          >
-            Masuk
+          > <spring:theme code="register.link.login" />
           </a>
         </div>
       </div>

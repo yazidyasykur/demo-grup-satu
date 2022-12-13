@@ -1,6 +1,5 @@
 .loginregister-page {
 
-
     .background-login {
         background-image: url(https://inthebox.net/images/layout-v2/login-bgimage.png);
         background-position: center;
@@ -14,6 +13,7 @@
     }
 
     .login-container {
+        font-family: "Brown";
         width: 430px;
         margin: 0 auto;
     }
@@ -30,15 +30,15 @@
 
     .login-title {
         text-align: center;
-        font-size: 1.5rem;
-        font-weight: 500;
+        font-size: 18px;
+        font-weight: 600;
         color: #6c7293;
     }
 
     .login-desc {
         margin-top: 1.5rem;
         text-align: center;
-        font-size: 1.1rem;
+        font-size: 14px;
         font-weight: 400;
         color: #a7abc3;
     }
@@ -54,8 +54,8 @@
         padding-right: 1.5rem;
         margin-top: 1.5rem;
         background: rgba(235, 237, 242, 0.4);
-        font-size: 1rem;
-        font-weight: 400;
+        font-size: 14px;
+        font-weight: 500;
     }
 
     .invalid-feedback {
@@ -84,9 +84,10 @@
     }
 
     .checkbox {
-        font-size: 1rem;
+        font-size: 14px;
+        font-weight: 600;
         display: flex;
-        align-items: center;
+        align-items: flex-end;
         padding-left: 20px;
         margin-bottom: 10px;
         text-align: left;
@@ -96,7 +97,7 @@
     }
 
     .login-link {
-        font-size: 1rem;
+        font-size: 14px;
         color: #a7abc3;
         -webkit-transition: color 0.3s ease;
         transition: color 0.3s ease;
@@ -137,7 +138,9 @@
 
     .or-text {
         text-align: center;
-        margin: 1.5rem 0px;
+        font-size: 12px;
+        font-weight: 600;
+        margin: 18px 0px;
     }
 
     .login-account {
@@ -146,14 +149,14 @@
     }
 
     .login-account-msg {
-        font-size: 1rem;
+        font-size: 14px;
         font-weight: 400;
         color: #a7abc3;
     }
 
     .login-account-link {
-        font-size: 1rem;
-        font-weight: 500;
+        font-size: 14px;
+        font-weight: 600;
         color: #6c7293;
         -webkit-transition: color 0.3s ease;
         transition: color 0.3s ease;
@@ -165,8 +168,12 @@
         transition: color 0.3s ease;
     }
 
+    #chk-terms {
+        top: -2px;
+    }
+
     .checkbox-icon {
-        top: -3px;
+        top: -2px;
     }
 
     @media (max-width: 1024px) {
@@ -225,5 +232,4 @@
         border-radius: 10px;
         background-color: #e3f7ff;
     }
-
 }

@@ -208,5 +208,44 @@
             </itemtype>
         </typegroup>
 
+        <typegroup name="FAQ">
+            <itemtype code="FAQ" extends="GenericItem" autocreate="true">
+                <deployment table="FAQ" typecode="25007" />
+                <attributes>
+                    <attribute qualifier="id" type="java.lang.Integer">
+                        <description>FAQ ID</description>
+                        <modifiers read="true" write="true" search="true" optional="false" unique="true" />
+                        <persistence type="property" />
+                    </attribute>
+                    <attribute qualifier="question" type="java.lang.String">
+                        <description>Question</description>
+                        <modifiers read="true" write="true" search="true"/>
+                        <persistence type="property" />
+                    </attribute>
+                    <attribute qualifier="answer" type="java.lang.String">
+                        <description>Answer</description>
+                        <modifiers read="true" write="true" search="true"/>
+                        <persistence type="property">
+                            <columntype database="oracle">
+                                <value>BLOB</value>
+                            </columntype>
+                            <columntype database="sap">
+                                <value>NBLOB</value>
+                            </columntype>
+                            <columntype database="mysql">
+                                <value>text</value>
+                            </columntype>
+                            <columntype database="hsqldb">
+                                <value>LONGVARCHAR</value>
+                            </columntype>
+                            <columntype>
+                                <value>HYBRIS.LONG_STRING</value>
+                            </columntype>
+                        </persistence>
+                    </attribute>
+                </attributes>
+            </itemtype>
+        </typegroup>
+
     </itemtypes>
 </items>
