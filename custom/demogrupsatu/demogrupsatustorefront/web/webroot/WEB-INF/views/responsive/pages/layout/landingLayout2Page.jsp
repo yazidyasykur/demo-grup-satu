@@ -5,7 +5,6 @@
 <%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
 
 <template:page pageTitle="${pageTitle}">
-
     <div class="homepage-card-product">
         <cms:pageSlot position="Section1" var="feature">
             <cms:component component="${feature}" element="div" class="banner-homepage"/>
@@ -58,9 +57,29 @@
             </div>
         </div>
         <div class="container tengah">
-            <cms:pageSlot position="Section4" var="feature" element="div" class="row no-margin">
-                <cms:component component="${feature}" element="div" class="col-xs-6 col-md-3 no-space yComponentWrapper"/>
-            </cms:pageSlot>
+            <div class="unboxing-product">
+                <cms:pageSlot position="Section4" var="feature" element="div" class="row no-margin">
+                    <cms:component component="${feature}" element="div" class="col-xs-6 col-md-3 no-space yComponentWrapper"/>
+                </cms:pageSlot>
+            </div>
+            <div class="row text-justify">
+                <div class="col-sm-3">
+                    <h3 class="title text-center">Keluarkan</h3>
+                    Keluarkan kasur INTHEBOX dari kemasannya secara perlahan-lahan
+                </div>
+                <div class="col-sm-3">
+                    <h3 class="title text-center">Posisikan</h3>
+                    Keluarkan kasur INTHEBOX dari kemasannya secara perlahan-lahan
+                </div>
+                <div class="col-sm-3">
+                    <h3 class="title text-center">Buka Plastik</h3>
+                    Lepaskan plastik pembungkus dan pastikan logo INTHEBOX ada di bawah
+                </div>
+                <div class="col-sm-3">
+                    <h3 class="title text-center">Tunggu Mengembang</h3>
+                    Kasur INTHEBOX akan langsung mengembang. Tunggu 60 menit untuk digunakan
+                </div>
+            </div>
         </div>
     </section>
 
