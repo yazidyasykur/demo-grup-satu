@@ -112,4 +112,3 @@ INSERT_UPDATE JspIncludeComponent;$contentCV[unique=true];uid[unique=true];name;
 # INSERT_UPDATE JspIncludeComponent;$contentCV[unique=true];uid[unique=true];name;page;actions(uid,$contentCV);&componentRef
 # ;;ReturningCustomerCheckoutLoginComponent;Returning Customer Login Component;accountReturningCustomerLogin.jsp;;ReturningCustomerCheckoutLoginComponent
 #;;NewCustomerLoginComponent;New Customer Login Component;accountNewCustomerLogin.jsp;;NewCustomerLoginComponent
-
