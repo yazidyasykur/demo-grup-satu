@@ -17,5 +17,12 @@
 
     <cart:cartItems cartData="${cartData}"/>
 
+    <div class="cartNote row">
+        <p>Catatan Pembelian :</p>
+        <div>
+            <textarea rows="5" id="catatan" name="catatan" placeholder="" class="form-control"></textarea>
+        </div>
+    </div>
+
 </c:if>
 <cart:ajaxCartTopTotalSection/>
