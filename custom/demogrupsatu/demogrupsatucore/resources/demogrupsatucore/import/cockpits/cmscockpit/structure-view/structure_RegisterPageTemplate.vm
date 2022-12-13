@@ -1,14 +1,13 @@
 <div>
-	<table>
+	<table width="100%" cellspacing="0" style="margin:0;padding:0;table-layout:auto;border:1px solid #1E4EBF;">
 		<tbody>
-			<tr width="100%" cellspacing="0" style="margin:0;padding:0;table-layout:auto;border:1px solid #1E4EBF;">
-				<td colspan="2" class="structureViewSection">
-					<cockpit code="RightContentSlot"/>
+			<tr>
+				<td colspan="4" class="structureViewSection">
+					<cockpit code="TopHeaderSlot"/>
 				</td>
-			</tr>	
-		</tbody>
-	</table>
-	<div style="width:100%; border-top: 2px solid #bbb" class="cmsContentEditor">
-		<cockpit code="editor" />
-	</div>
-</div>
+			</tr>
+			<tr>
+				<td height="125px" colspan="2" width="25%" rowspan="2" class="structureViewSection">
+					<cockpit code="SiteLogo" />
+				</td>
+				<td c
