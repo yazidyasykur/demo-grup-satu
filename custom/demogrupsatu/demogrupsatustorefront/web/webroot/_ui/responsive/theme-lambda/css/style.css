@@ -1,3 +1,20 @@
+
+@charset "UTF-8";
+@font-face {
+  font-family: 'Brown';
+  src: url('../fonts/brown-regular.eot');
+  src: url('../fonts/brown-regular.eot?#iefix') format('embedded-opentype'), url('../fonts/brown-regular.woff2') format('woff2'), url('../fonts/brown-regular.woff') format('woff'), url('../fonts/brown-regular.ttf') format('truetype'), url('../fonts/brown-regular.svg#glyphicons_halflingsregular') format('svg');
+}
+@font-face {
+  font-family: 'InTheBox';
+  src: url('../fonts/inthebox.eot');
+  src: url('../fonts/inthebox.eot?#iefix') format('embedded-opentype'), url('../fonts/inthebox.woff2') format('woff2'), url('../fonts/inthebox.woff') format('woff'), url('../fonts/inthebox.ttf') format('truetype'), url('../fonts/inthebox.svg#glyphicons_halflingsregular') format('svg');
+}
+@font-face {
+  font-family: 'Palmer Lake';
+  src: url('../fonts/PalmerLakePrint-Regular.eot');
+  src: url('../fonts/PalmerLakePrint-Regular.eot?#iefix') format('embedded-opentype'), url('../fonts/PalmerLakePrint-Regular.woff2') format('woff2'), url('../fonts/PalmerLakePrint-Regular.woff') format('woff'), url('../fonts/PalmerLakePrint-Regular.ttf') format('truetype'), url('../fonts/PalmerLakePrint-Regular.svg#glyphicons_halflingsregular') format('svg');
+}
 /* Slider */
 .slick-slider {
   position: relative;
@@ -1312,7 +1329,7 @@ html {
   -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
 }
 body {
-  font-family: "Open Sans", Helvetica, Arial, sans-serif;
+  font-family: "InTheBox", Helvetica, Arial, sans-serif;
   font-size: 14px;
   line-height: 1.42857143;
   color: #3c3c3c;
@@ -6218,7 +6235,7 @@ button.close {
   position: absolute;
   z-index: 1070;
   display: block;
-  font-family: "Open Sans", Helvetica, Arial, sans-serif;
+  font-family: "InTheBox", Helvetica, Arial, sans-serif;
   font-style: normal;
   font-weight: normal;
   letter-spacing: normal;
@@ -6336,7 +6353,7 @@ button.close {
   display: none;
   max-width: 276px;
   padding: 1px;
-  font-family: "Open Sans", Helvetica, Arial, sans-serif;
+  font-family: "InTheBox", Helvetica, Arial, sans-serif;
   font-style: normal;
   font-weight: normal;
   letter-spacing: normal;
@@ -11343,7 +11360,7 @@ fieldset[disabled] .btn-primary.active {
 .carousel__component--carousel .item a,
 .carousel .carousel__item a,
 .carousel__component--carousel .carousel__item a {
-  color: #3c3c3c;
+  color: #FFF;
 }
 .carousel .item a:hover,
 .carousel__component--carousel .item a:hover,
@@ -11354,7 +11371,7 @@ fieldset[disabled] .btn-primary.active {
 .carousel .carousel__item a:focus,
 .carousel__component--carousel .carousel__item a:focus {
   text-decoration: none;
-  color: #0068b3;
+  color: #6086C2;
 }
 .carousel .item .item__name,
 .carousel__component--carousel .item .item__name,
@@ -11414,10 +11431,10 @@ fieldset[disabled] .btn-primary.active {
 .carousel .carousel__item .carousel__item--price,
 .carousel__component--carousel .carousel__item .carousel__item--price {
   margin: 10px;
-  color: #3c3c3c;
+  color: #7FC5F9;
   text-align: center;
-  font-size: 24px;
-  font-weight: 600;
+  font-size: 72px;
+  font-family: 'Palmer Lake';
   margin: 0;
 }
 .carousel-component,
@@ -12157,6 +12174,20 @@ fieldset[disabled] .btn-primary.active {
 ::-webkit-scrollbar-thumb {
   border-radius: 3px;
 }
+.gambar {
+  margin-bottom: 10px;
+}
+.tebal {
+  font-weight: bold;
+}
+.nama {
+  font-size: 1.5vw;
+  color: black;
+}
+.kecil {
+  color: #404040;
+  font-size: 1vw;
+}
 .flowrowblock {
   min-width: 220px;
   width: 280px;
@@ -12166,12 +12197,18 @@ fieldset[disabled] .btn-primary.active {
   display: none;
 }
 .flowrow {
-  display: flex;
-  flex-wrap: nowrap;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
   margin-top: 3vw;
 }
 .flowrow:empty {
   display: none;
+}
+.untukhargalist {
+  font-family: fontHarga !important;
+  font-weight: normal !important;
+  font-size: 3vw !important;
+  color: #6086c2;
 }
 .tengah {
   text-align: center;
@@ -12183,12 +12220,6 @@ fieldset[disabled] .btn-primary.active {
 }
 .kecil {
   font-size: 15px;
-}
-.mainflow {
-  overflow: auto;
-  margin: 0 auto;
-  max-width: 1440px;
-  padding-bottom: 20px;
 }
 .pageType-CategoryPage .map img {
   min-width: 100%;
@@ -12889,8 +12920,9 @@ a.product__listing .product__listing--promo:focus {
 }
 .item__list .item__list--header li {
   display: table-cell;
-  background-color: #142939;
-  color: #7f919e;
+  background-color: transparent;
+  font-weight: bold;
+  color: black;
   font-size: 13px;
   text-transform: uppercase;
   padding: 7px 10px;
@@ -12909,11 +12941,11 @@ a.product__listing .product__listing--promo:focus {
   content: "\e113";
 }
 .item__list .item__image {
-  width: 136px;
+  width: 210px;
   padding: 0 20px;
 }
 .item__list .item__image img {
-  max-width: 96px;
+  max-width: 170px;
 }
 .item__list .item__name {
   font-size: 16px;
@@ -13199,7 +13231,7 @@ a.product__listing .product__listing--promo:focus {
     position: relative;
   }
   .item__list--item > div {
-    margin-left: 136px;
+    margin-left: 210px;
     padding: 0 80px 0 0;
     overflow: hidden;
     text-overflow: ellipsis;
@@ -13208,6 +13240,61 @@ a.product__listing .product__listing--promo:focus {
 .account-orderdetail .item__list {
   clear: both;
   margin-top: 0;
+}
+@font-face {
+  font-family: "fontHarga";
+  src: url("../fonts/PalmerLakePrint-Regular.otf");
+}
+.tombolbiru {
+  height: 3vw;
+  width: 12vw;
+  font-size: 0.9vw;
+  border-radius: 4px;
+  border-color: transparent;
+  color: white;
+  background-color: #6086c2;
+  margin-left: 8px;
+}
+.untukharga {
+  font-family: fontHarga !important;
+  font-weight: normal !important;
+  font-size: 3vw !important;
+  color: #6086c2;
+}
+.batas {
+  width: 70%;
+  margin: auto;
+}
+.tinggi {
+  height: 10vw !important;
+}
+.fixtotal {
+  font-family: fontHarga !important;
+  color: #6086c2;
+  font-weight: bold;
+  text-align: center;
+  font-size: 5vw !important;
+  font-weight: normal;
+}
+.tombolbiru:hover {
+  background-color: #7fc5f9;
+  color: #6086c2;
+}
+.tombolputih {
+  height: 3vw;
+  width: 12vw;
+  font-size: 0.9vw;
+  border-radius: 4px;
+  border-width: thin;
+  border-color: #d9d9d9;
+  color: #cccccc;
+  background-color: white;
+  margin-right: 8px;
+}
+.tombolputih:hover {
+  background-color: #7fc5f9;
+  color: white;
+  border-color: transparent;
 }
 .cart-header {
   padding-left: 30px;
@@ -13329,22 +13416,21 @@ a.product__listing .product__listing--promo:focus {
 .cart__actions.border {
   border-bottom: 1px solid #e5e5e5;
 }
-.cart__actions,
-.cart__actions--top {
+.cart__actions {
+  margin: auto;
+  text-align: center;
   padding-left: 30px;
   padding-right: 30px;
   padding-bottom: 32px;
 }
 @media (max-width: 1024px) {
-  .cart__actions,
-  .cart__actions--top {
+  .cart__actions {
     padding-left: 20px;
     padding-right: 20px;
   }
 }
 @media (max-width: 640px) {
-  .cart__actions,
-  .cart__actions--top {
+  .cart__actions {
     padding-left: 10px;
     padding-right: 10px;
     padding-bottom: 10px;
@@ -17863,24 +17949,29 @@ select[multiple].input-sm {
   padding: 50px 0px;
 }
 .section-header1 {
-  font-size: 3rem;
+  font-size: 4rem;
   text-align: center;
   font-weight: 700;
   margin-bottom: 20px;
 }
-.subtitle {
-  font-size: 1.5rem;
-  margin-bottom: 50px;
-  text-align: center;
-  font-weight: 400;
-  color: #000;
-}
 .section-header {
-  font-size: 3rem;
+  font-size: 4rem;
   text-align: center;
   font-weight: 700;
   margin-bottom: 20px;
   color: #6086c2;
+}
+.subtitle {
+  font-size: 1.8rem;
+  margin-bottom: 50px;
+  text-align: center;
+  font-weight: 400;
+}
+.subtitle-black {
+  color: #000;
+}
+.subtitle-white {
+  color: #FFF;
 }
 .unbox {
   background-color: #d4effc;
@@ -17931,7 +18022,7 @@ select[multiple].input-sm {
   bottom: -2px;
 }
 .layout-card-carousel {
-  width: 366.667px;
+  width: 30%;
   margin-right: 20px;
   background-color: #fff;
   border-radius: 16px;
@@ -19155,12 +19246,6 @@ select[multiple].input-sm {
   margin: auto;
 }
 /* Important Part */
-body {
-  background-color: #FFFFFF;
-}
-html {
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-}
 .copyright-part {
   background-color: #6086C2;
   color: #FFF;
@@ -19177,7 +19262,10 @@ html {
 }
 /* Margin */
 .small-part-margin {
-  margin: 0 20px;
+  margin: 0 10px;
+}
+.small-part-margin-for-link {
+  margin: 0 25px;
 }
 .container-display {
   margin: 0 auto;
@@ -19187,6 +19275,17 @@ html {
 }
 .small-part-left-margin {
   margin-left: 15px;
+}
+.small-margin-top {
+  margin-top: 20px;
+}
+.small-margin-bottom {
+  margin-bottom: 20px;
+}
+.palmer-font {
+  font-family: "Palmer Lake";
+  color: #7FC5F9;
+  font-size: 8rem;
 }
 /* Flexbox */
 .flex-display {
@@ -19235,36 +19334,54 @@ html {
 ::placeholder {
   color: #7FC5F9;
 }
+.review-text {
+  color: #6086C2;
+  margin: auto 5px;
+}
+.description {
+  margin-top: 10px;
+  margin-bottom: 15px;
+  margin-right: 25px;
+}
+.title-testi {
+  margin-top: 25px;
+}
+.normal-size-font {
+  font-size: 18px;
+}
 /* Container */
 .box-display {
   background-color: white;
-  width: 300px;
+  width: 20vw;
   height: auto;
-  border: 2px solid #F1F1F1;
+  border: 1.5px solid #F1F1F1;
   border-radius: 25px;
   padding: 15px 20px;
-  margin-top: 20px;
+  margin: 10px auto;
 }
 .box-container-display {
   display: grid;
   grid-template-columns: auto auto auto;
   justify-content: space-evenly;
-  margin-top: 10px;
+  margin: 5px auto;
+}
+.box-on-homepage {
+  width: 80%;
+  margin: 0 auto;
 }
 .button-container {
   margin-top: 25px;
 }
 /* Other */
 .pic {
-  width: 15%;
-  position: relative;
-  float: right;
+  width: 20%;
 }
 .star {
   max-width: 20px;
 }
 .button {
-  width: 75px;
+  width: auto;
+  padding: 0 10px;
   height: 35px;
   background-color: #6086C2;
   border: 0px solid black;
@@ -19276,6 +19393,23 @@ html {
 }
 .button:hover {
   background-color: #FFF;
+  color: #6086C2;
+}
+.button-2 {
+  width: auto;
+  height: auto;
+  padding: 10px 25px;
+  font-size: 20px;
+  background-color: #6086C2;
+  border: 0px solid black;
+  border-radius: 5px;
+  color: #FFF;
+  transition: color 100ms;
+  transition: background-color 100ms;
+  transition-timing-function: linear;
+}
+.button-2:hover {
+  background-color: #7FC5F9;
   color: #6086C2;
 }
 .button-next-previous {
@@ -22858,11 +22992,6 @@ hidden-sm .cpq-overview-messages {
     -webkit-transform: rotate(359deg);
     transform: rotate(359deg);
   }
-}
-body {
-  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
-  margin: 0px;
-  font-weight: 400;
 }
 img {
   max-width: 100%;

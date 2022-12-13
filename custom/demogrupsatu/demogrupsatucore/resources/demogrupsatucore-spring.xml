@@ -570,4 +570,13 @@
 	<alias name="defaultFaqService" alias="faqService" />
 	<bean id="defaultFaqService" class="org.demogrupsatu.core.faq.impl.DefaultFaqService" />
 
+<!--	variant dao-->
+	<alias name="defaultIntheboxVariantDao" alias="intheboxVariantDao"/>
+	<bean id="defaultIntheboxVariantDao" class="org.demogrupsatu.core.intheboxvariant.dao.impl.DefaultIntheboxVariantDao">
+	</bean>
+
+<!--	variant service-->
+	<alias name="defaultIntheboxVariantService" alias="intheboxVariantService"/>
+	<bean id="defaultIntheboxVariantService" class="org.demogrupsatu.core.intheboxvariant.impl.DefaultIntheboxVariantService">
+	</bean>
 </beans>

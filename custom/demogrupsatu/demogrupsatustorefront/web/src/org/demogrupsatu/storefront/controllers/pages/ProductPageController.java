@@ -32,6 +32,9 @@ import de.hybris.platform.core.model.product.ProductModel;
 import de.hybris.platform.product.ProductService;
 import de.hybris.platform.servicelayer.exceptions.UnknownIdentifierException;
 import de.hybris.platform.util.Config;
+import org.demogrupsatu.core.model.IntheboxSizeVariantProductModel;
+import org.demogrupsatu.facades.intheboxproduct.IntheboxProductFacade;
+import org.demogrupsatu.facades.intheboxvariant.IntheboxVariantFacade;
 import org.demogrupsatu.storefront.controllers.ControllerConstants;
 
 import java.io.UnsupportedEncodingException;
@@ -111,6 +114,12 @@ public class ProductPageController extends AbstractPageController
 	@Resource(name = "futureStockFacade")
 	private FutureStockFacade futureStockFacade;
 
+	@Resource(name = "intheboxproductFacade")
+	private IntheboxProductFacade intheboxproductFacade;
+
+	@Resource(name = "intheboxVariantFacade")
+	private IntheboxVariantFacade intheboxVariantFacade;
+
 	@RequestMapping(value = PRODUCT_CODE_PATH_VARIABLE_PATTERN, method = RequestMethod.GET)
 	public String productDetail(@PathVariable("productCode") final String productCode, final Model model,
 			final HttpServletRequest request, final HttpServletResponse response)
@@ -120,6 +129,8 @@ public class ProductPageController extends AbstractPageController
 				ProductOption.VARIANT_MATRIX_MEDIA);
 
 		final ProductData productData = productFacade.getProductForCodeAndOptions(productCode, extraOptions);
+		final ProductModel productModel = productService.getProductForCode(productCode);
+		productModel.getSupercategories().stream();
 
 		final String redirection = checkRequestUrl(request, response, productDataUrlResolver.resolve(productData));
 		if (StringUtils.isNotEmpty(redirection))
@@ -135,6 +146,11 @@ public class ProductPageController extends AbstractPageController
 		model.addAttribute(new ReviewForm());
 		model.addAttribute("pageType", PageType.PRODUCT.name());
 		model.addAttribute("futureStockEnabled", Boolean.valueOf(Config.getBoolean(FUTURE_STOCK_ENABLED, false)));
+//		((IntheboxSizeVariantProductModel) productModel).getSize().getSizeName()
+		model.addAttribute("size",((IntheboxSizeVariantProductModel) productModel).getSize().getSizeName());
+		model.addAttribute("dimensi",((IntheboxSizeVariantProductModel) productModel).getSize().getDimension());
+		model.addAttribute("tinggi",((IntheboxSizeVariantProductModel) productModel).getHeight());
+		model.addAttribute("variant", intheboxVariantFacade.getVariantByProductCode(productCode));
 
 		final String metaKeywords = MetaSanitizerUtil.sanitizeKeywords(productData.getKeywords());
 		final String metaDescription = MetaSanitizerUtil.sanitizeDescription(productData.getDescription());

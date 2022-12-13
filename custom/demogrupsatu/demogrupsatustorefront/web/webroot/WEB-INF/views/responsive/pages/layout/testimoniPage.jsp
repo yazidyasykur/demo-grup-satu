@@ -28,17 +28,20 @@
                 <div class="box-container-display">
                 <c:forEach items="${testimoniList}" var="testi">
                     <div class="box-display">
-                        <img src="${fn:escapeXml(commonResourcePath)}/images/orang.png" class="pic" />
-                        <div class="text">
+
+                        <div class="flex-display flex-row-display align-center">
                             <h4 class="name-color text-weight-bold">${testi.name}</h4>
+                            <img src="${fn:escapeXml(commonResourcePath)}/images/orang.png" class="pic" />
+                        </div>
+                        <div class="text">
                             <c:forEach begin="1" end="${testi.rating}" var="i">
-                                <img src="https://inthebox.net/images/star-full.png" data-src="https://inthebox.net/images/star-full.png" class="star" alt="Star" />
+                                <img src="${fn:escapeXml(commonResourcePath)}/images/bintang-full.png" data-src="${fn:escapeXml(commonResourcePath)}/images/bintang-full.png" class="star" alt="Star" />
                             </c:forEach>
                             <c:if test="${testi.halfStar}">
-                                <img src="https://inthebox.net/images/star-half.png" data-src="https://inthebox.net/images/star-half.png" class="star" alt="Star" />
+                                <img src="${fn:escapeXml(commonResourcePath)}/images/bintang-setengah.png" data-src="${fn:escapeXml(commonResourcePath)}/images/bintang-setengah.png" class="star" alt="Star" />
                             </c:if>
-                            <h4 class="text-weight-bold">${testi.title}</h4>
-                            <p>${testi.description}</p>
+                            <h4 class="text-weight-bold title-testi">${testi.title}</h4>
+                            <p class="description">${testi.description}</p>
                             <p class="date-color">${testi.date}</p>
                         </div>
                     </div>

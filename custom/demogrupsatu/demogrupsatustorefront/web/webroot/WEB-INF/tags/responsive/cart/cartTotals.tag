@@ -10,9 +10,8 @@
 
 <spring:htmlEscape defaultHtmlEscape="true" />
 
-<div class="js-cart-totals row">
-    <div class="col-xs-6 cart-totals-left grand-total"><spring:theme code="basket.page.totals.total"/></div>
-    <div class="col-xs-6 cart-totals-right text-right grand-total">
+
+   <spring:theme code="basket.page.totals.total"/>
         <ycommerce:testId code="cart_totalPrice_label">
             <c:choose>
                 <c:when test="${showTax}">
@@ -23,5 +22,3 @@
                 </c:otherwise>
             </c:choose>
         </ycommerce:testId>
-    </div>
-</div>
