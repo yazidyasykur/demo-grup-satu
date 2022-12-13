@@ -33,12 +33,9 @@
 					<cockpit code="Section1" />
 				</td>
 			</tr>
-                <td colspan="2" class="structureViewSection">
-                    <cockpit code="ProductLeftRefinements"/>
-                </td>
-                <td colspan="5" class="structureViewSection">
-                    <cockpit code="ProductListSlot"/>
-                </td>
+                <td colspan="7" class="structureViewSection">
+					<cockpit code="ProductListSlot"/>
+				</td>
 			</tr>
 			<tr>
 				<td colspan="7" class="structureViewSection">
