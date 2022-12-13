@@ -32,7 +32,7 @@
 									<div class="carousel__item--name">${fn:escapeXml(product.name)}</div>
 									<div class="carousel__item--name">${fn:escapeXml(product.description)}</div>
 									<div class="carousel__item--price"><format:fromPrice priceData="${product.price}"/></div>
-									<div class="link text-center">
+									<div class="text-center">
                                         <button class="button-2" onclick="location.href='${productQuickViewUrl}'">Beli Sekarang</button>
                                     </div>
 								<!-- </a> -->
@@ -54,7 +54,7 @@
 									<div class="carousel__item--name">${fn:escapeXml(product.name)}</div>
 									<div class="carousel__item--name">${fn:escapeXml(product.description)}</div>
 									<div class="carousel__item--price"><format:fromPrice priceData="${product.price}"/></div>
-									<div class="link text-center small-margin-bottom">
+									<div class="text-center small-margin-bottom">
                                         <a class="button-2" href="${productUrl}">Beli Sekarang</a>
                                     </div>
 								<!-- </a> -->

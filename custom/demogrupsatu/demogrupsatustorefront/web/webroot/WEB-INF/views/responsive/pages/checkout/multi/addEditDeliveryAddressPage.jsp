@@ -12,7 +12,7 @@
 <spring:htmlEscape defaultHtmlEscape="true" />
 
 <template:page pageTitle="${pageTitle}" hideHeaderLinks="true">
-
+<h2 class="text-center">Checkout</h1>
 <div class="centered container-custom">
     <div class="multistep-container">
         <multi-checkout:checkoutSteps checkoutSteps="${checkoutSteps}" progressBarId="${progressBarId}">

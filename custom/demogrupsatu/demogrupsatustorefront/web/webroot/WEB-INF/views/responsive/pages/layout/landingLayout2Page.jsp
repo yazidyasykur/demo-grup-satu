@@ -34,7 +34,7 @@
     <section class="layout-2-home">
         <div class="container tengah">
             <div class="section-header1">
-                <h1>BELI <span class="palmer-font">KASUR</span> INTHEBOX</h1>
+                <p>BELI <span class="palmer-font">KASUR</span> INTHEBOX</p>
             </div>
             <div class="subtitle subtitle-white text-center">
                 Tersedia beragam jenis kasur INTHEBOX dengan kualitas premium.
@@ -53,7 +53,7 @@
     <section class="unbox">
         <div class="container tengah">
             <div class="section-header">
-                <h1>UNBOXING INTHEBOX</h1>
+                <p>UNBOXING INTHEBOX</p>
             </div>
         </div>
         <div class="container tengah">
@@ -86,15 +86,17 @@
     <!-- carousel testimoni -->
     <section class="testimoni">
         <div class="container tengah">
-            <h2 class="section-header">TESTIMONI</h2>
-            <div class="subtitle subtitle-black text-center">
+            <p class="section-header">TESTIMONI</p>
+            <div class="subtitle subtitle-black text-justify">
+                <div class="testimoni-home-box-responsive">
                 Banyak pembeli yang merasa puas dengan kualitas kasur INTHEBOX
                 Kami menerima beragam komentar positif dari pembeli di seluruh Indonesia,
                 bahkan dari kalangan artis. Bukan hanya pengalaman membeli kasur sping bed
                 atau kasur busa, banyak juga yang merasa puas dengan produk INTHEBOX lainnya
                 yang terdiri dari bantal, guling, dan sofa bed.
+                </div>
             </div>
-            <div class="flex-display flex-end-display align-center">
+            <div class="total-review-responsive align-center">
                 <c:forEach begin="1" end="${starCount}" var="i">
                     <div class="star">
                         <img src="${fn:escapeXml(commonResourcePath)}/images/bintang-full.png" alt="star">
@@ -113,16 +115,18 @@
             <div class="box-container-display">
             <c:forEach items="${showSomeTestimoni}" var="testi">
                 <div class="box-display">
-                    <img src="${fn:escapeXml(commonResourcePath)}/images/orang.png" class="pic" />
+                    <div class="flex-display flex-row-display align-center">
+                        <p class="name-color text-weight-bold text-responsive">${testi.name}</p>
+                        <img src="${fn:escapeXml(commonResourcePath)}/images/orang.png" class="pic" />
+                    </div>
                     <div class="text">
-                        <h4 class="name-color text-weight-bold">${testi.name}</h4>
                         <c:forEach begin="1" end="${testi.rating}" var="i">
                             <img src="${fn:escapeXml(commonResourcePath)}/images/bintang-full.png" data-src="${fn:escapeXml(commonResourcePath)}/images/bintang-full.png" class="star" alt="Star" />
                         </c:forEach>
                         <c:if test="${testi.halfStar}">
                             <img src="${fn:escapeXml(commonResourcePath)}/images/bintang-setengah.png" data-src="${fn:escapeXml(commonResourcePath)}/images/bintang-setengah.png" class="star" alt="Star" />
                         </c:if>
-                        <h4 class="text-weight-bold title-testi">${testi.title}</h4>
+                        <p class="text-weight-bold title-testi text-responsive">${testi.title}</p>
                         <p class="description">${testi.description}</p>
                         <p class="date-color">${testi.date}</p>
                     </div>
@@ -132,7 +136,7 @@
         </div>
         <div class="link text-center small-margin-top">
             <c:url value="/testimoni" var="testimony" />
-            <a class="button-2 text-weight-bold" href="${testimony}">Lihat Semua Testimoni</a>
+            <a class="button-3 text-weight-bold" href="${testimony}">Lihat Semua Testimoni</a>
         </div>
     </section>
 

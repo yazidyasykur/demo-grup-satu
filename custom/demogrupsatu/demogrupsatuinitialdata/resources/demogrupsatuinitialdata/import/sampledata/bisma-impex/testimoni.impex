@@ -12,9 +12,6 @@ $contentPage=contentPage(uid, $contentCV);
 $product=product(code, $productCV)
 $category=category(code, $productCV)
 
-
-### NOTE: IMPEXNYA SETIAP KETEMU MACRO ###
-
 ### FOOTER ###
 #### IMPEX PART 1 ####
 # CMS Link Components
@@ -31,70 +28,8 @@ INSERT_UPDATE CMSLinkComponent;$contentCV[unique=true]  ;uid[unique=true]       
                               ;                         ;BlogLink               ;Blog Link                      ;/blog                                      ;BlogLink               ;;;;
                               ;                         ;TestimonyLink          ;Testimony Link                 ;/testimony                                 ;TestimonyLink          ;;;;
 
-
-$contentCatalog=demoContentCatalog
-$contentCatalogName=Demo Content Catalog
-$contentCV=catalogVersion(CatalogVersion.catalog(Catalog.id[default=$contentCatalog]),CatalogVersion.version[default=Staged])[default=$contentCatalog:Staged]
-$lang = en
-# CMS Link Language English
-INSERT_UPDATE CMSLinkComponent;$contentCV[unique=true]  ;uid[unique=true]       ;linkName[lang=$lang]
-                              ;                         ;ProductLink            ;"Produk"
-                              ;                         ;WarrantyLink           ;"Aktivasi Garansi"
-                              ;                         ;WaybillLink            ;"Cek Resi"
-                              ;                         ;FAQLink                ;"FAQ"
-                              ;                         ;HelpLink               ;"Bantuan"
-                              ;                         ;TandCLink              ;"Syarat dan Ketentuan"
-                              ;                         ;PrivacyLink            ;"Kebijakan Privasi"
-                              ;                         ;AboutUsLink            ;"Tentang InTheBox"
-                              ;                         ;OfflineLink            ;"Toko Offline"
-                              ;                         ;BlogLink               ;"Blog"
-                              ;                         ;TestimonyLink          ;"Testimoni"
-#                              ;                         ;ProductLink            ;"Product"
-#                              ;                         ;WarrantyLink           ;"Warranty Registration"
-#                              ;                         ;WaybillLink            ;"Waybill Status"
-#                              ;                         ;FAQLink                ;"FAQ"
-#                              ;                         ;HelpLink               ;"Help"
-#                              ;                         ;TandCLink              ;"Terms and Condition"
-#                              ;                         ;PrivacyLink            ;"Privacy Policy"
-#                              ;                         ;AboutUsLink            ;"About InTheBox"
-#                              ;                         ;OfflineLink            ;"Offline Store"
-#                              ;                         ;BlogLink               ;"Blog"
-#                              ;                         ;TestimonyLink          ;"Testimony"
-
-
-$contentCatalog=demoContentCatalog
-$contentCatalogName=Demo Content Catalog
-$contentCV=catalogVersion(CatalogVersion.catalog(Catalog.id[default=$contentCatalog]),CatalogVersion.version[default=Staged])[default=$contentCatalog:Staged]
-$lang = id
-# CMS Link Language Indonesia
-INSERT_UPDATE CMSLinkComponent;$contentCV[unique=true]  ;uid[unique=true]       ;linkName[lang=$lang]
-                              ;                         ;ProductLink            ;"Produk"
-                              ;                         ;WarrantyLink           ;"Aktivasi Garansi"
-                              ;                         ;WaybillLink            ;"Cek Resi"
-                              ;                         ;FAQLink                ;"FAQ"
-                              ;                         ;HelpLink               ;"Bantuan"
-                              ;                         ;TandCLink              ;"Syarat dan Ketentuan"
-                              ;                         ;PrivacyLink            ;"Kebijakan Privasi"
-                              ;                         ;AboutUsLink            ;"Tentang InTheBox"
-                              ;                         ;OfflineLink            ;"Toko Offline"
-                              ;                         ;BlogLink               ;"Blog"
-                              ;                         ;TestimonyLink          ;"Testimoni"
-
-
 #### IMPEX PART 2 ####
 ###### Footer Component Refactor Start ######
-$contentCatalog=demoContentCatalog
-$contentCatalogName=Demo Content Catalog
-$productCatalog=demoProductCatalog
-$productCatalogName=Demo Product Catalog
-
-$contentCV=catalogVersion(CatalogVersion.catalog(Catalog.id[default=$contentCatalog]),CatalogVersion.version[default=Staged])[default=$contentCatalog:Staged]
-$productCV=catalogVersion(catalog(id[default=$productCatalog]),version[default='Staged'])[unique=true,default=$productCatalog:Staged]
-
-$contentPage=contentPage(uid, $contentCV);
-$product=product(code, $productCV)
-$category=category(code, $productCV)
-
 INSERT_UPDATE ContentSlot;$contentCV[unique=true]   ;uid[unique=true]   ;cmsComponents(uid,$contentCV)
                          ;                          ;FooterSlot         ;FooterNavigationComponentNew
 
@@ -143,68 +78,6 @@ INSERT_UPDATE CMSNavigationEntry;uid[unique=true]                       ;$conten
                                 ;BlogNavNodeEntry                       ;                       ;Blog Navigation Node Entry                     ;BlogNavNode                        ;BlogLink                                               ;
                                 ;TestimonyNavNodeEntry                  ;                       ;Testimony Navigation Node Entry                ;TestimonyNavNode                   ;TestimonyLink                                          ;
 ###### Footer Component Refactor End ######
-
-$contentCatalog=demoContentCatalog
-$contentCatalogName=Demo Content Catalog
-$contentCV=catalogVersion(CatalogVersion.catalog(Catalog.id[default=$contentCatalog]),CatalogVersion.version[default=Staged])[default=$contentCatalog:Staged]
-$lang = en
-# title english
-
-UPDATE CMSNavigationNode;uid[unique=true]                ;$contentCV[unique=true] ; title[lang=$lang]
-                        ;ProductSuperNavNode             ;                        ; "Produk"
-                        ;SupportNavNode                  ;                        ; "Support"
-                        ;AboutNewNavNode                 ;                        ; "About"
-#                        ;ProductSuperNavNode             ;                        ; "Product"
-#                        ;SupportNavNode                  ;                        ; "Support"
-#                        ;AboutNewNavNode                 ;                        ; "About"
-
-
-UPDATE CMSNavigationNode;uid[unique=true]                    ;$contentCV[unique=true]; title[lang=$lang]
-                        ;ProductNavNode                      ;                       ; "Produk"
-                        ;WarrantyNavNode                     ;                       ; "Aktivasi Garansi"
-                        ;WaybillNavNode                      ;                       ; "Cek Resi"
-                        ;FAQNewNavNode                       ;                       ; "FAQ"
-                        ;HelpNavNode                         ;                       ; "Bantuan"
-                        ;TandCNavNode                        ;                       ; "Syarat dan Ketentuan"
-                        ;PrivacyNavNode                      ;                       ; "Kebijakan Privasi"
-                        ;AboutUsNewNavNode                   ;                       ; "Tentang InTheBox"
-                        ;OfflineNavNode                      ;                       ; "Toko Offline"
-                        ;BlogNavNode                         ;                       ; "Blog"
-                        ;TestimonyNavNode                    ;                       ; "Testimoni"
-#                        ;ProductNavNode                      ;                       ; "Product"
-#                        ;WarrantyNavNode                     ;                       ; "Warranty Registration"
-#                        ;WaybillNavNode                      ;                       ; "Waybill Status"
-#                        ;FAQNewNavNode                       ;                       ; "FAQ"
-#                        ;HelpNavNode                         ;                       ; "Help"
-#                        ;TandCNavNode                        ;                       ; "Terms and Condition"
-#                        ;PrivacyNavNode                      ;                       ; "Privacy Policy"
-#                        ;AboutUsNewNavNode                   ;                       ; "About InTheBox"
-#                        ;OfflineNavNode                      ;                       ; "Offline Store"
-#                        ;BlogNavNode                         ;                       ; "Blog"
-#                        ;TestimonyNavNode                    ;                       ; "Testimony"
-
-$contentCatalog=demoContentCatalog
-$contentCatalogName=Demo Content Catalog
-$contentCV=catalogVersion(CatalogVersion.catalog(Catalog.id[default=$contentCatalog]),CatalogVersion.version[default=Staged])[default=$contentCatalog:Staged]
-$lang = id
-# title indo
-UPDATE CMSNavigationNode;uid[unique=true]                ;$contentCV[unique=true] ; title[lang=$lang]
-                        ;ProductSuperNavNode             ;                        ; "Produk"
-                        ;SupportNavNode                  ;                        ; "Support"
-                        ;AboutNewNavNode                 ;                        ; "About"
-
-UPDATE CMSNavigationNode;uid[unique=true]                    ;$contentCV[unique=true]; title[lang=$lang]
-                        ;ProductNavNode                      ;                       ; "Produk"
-                        ;WarrantyNavNode                     ;                       ; "Aktivasi Garansi"
-                        ;WaybillNavNode                      ;                       ; "Cek Resi"
-                        ;FAQNewNavNode                       ;                       ; "FAQ"
-                        ;HelpNavNode                         ;                       ; "Bantuan"
-                        ;TandCNavNode                        ;                       ; "Syarat dan Ketentuan"
-                        ;PrivacyNavNode                      ;                       ; "Kebijakan Privasi"
-                        ;AboutUsNewNavNode                   ;                       ; "Tentang InTheBox"
-                        ;OfflineNavNode                      ;                       ; "Toko Offline"
-                        ;BlogNavNode                         ;                       ; "Blog"
-                        ;TestimonyNavNode                    ;                       ; "Testimoni"
 
 #### IMPEX PART 3 ####
 ### DATA TESTIMONI ###

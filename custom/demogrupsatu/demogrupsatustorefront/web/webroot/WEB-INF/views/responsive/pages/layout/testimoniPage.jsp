@@ -17,20 +17,20 @@
    <div class="container">
 
        <div class="main-section col-lg-12">
-
             <div class="container-display">
-                <h1 class="text-center">TESTIMONI PEMBELI INTHEBOX</h1>
-                <p class="text-center">Banyak pembeli yang merasa puas dengan kualitas kasur INTHEBOX</p>
-                <p>Kami menerima beragam komentar positif dari pembeli di seluruh Indonesia, bahkan dari kalangan artis. Bukan hanya pengalaman membeli kasur sping bed atau kasur busa, banyak juga yang merasa puas dengan produk INTHEBOX lainnya yang terdiri dari bantal, guling, dan sofa bed.</p>
-                <p>
-                    Kami selalu berinovasi menghadirkan beragam jenis kasur dan produk penunjang istirahat lainnya. Kami paham bahwa istirahat yang cukup dan tidur berkualitas adalah hal yang penting. Oleh karena itu, kami selalu menggunakan material berkualitas premium, namun kamu bisa memilikinya dengan harga terjangkau.
-                </p>
+                <div class="box-top-testimoni">
+                    <h1 class="text-center text-weight-bold">TESTIMONI PEMBELI INTHEBOX</h1>
+                    <p class="text-center">Banyak pembeli yang merasa puas dengan kualitas kasur INTHEBOX</p>
+                    <p class="text-justify">Kami menerima beragam komentar positif dari pembeli di seluruh Indonesia, bahkan dari kalangan artis. Bukan hanya pengalaman membeli kasur sping bed atau kasur busa, banyak juga yang merasa puas dengan produk INTHEBOX lainnya yang terdiri dari bantal, guling, dan sofa bed.</p>
+                    <p class="text-justify">
+                        Kami selalu berinovasi menghadirkan beragam jenis kasur dan produk penunjang istirahat lainnya. Kami paham bahwa istirahat yang cukup dan tidur berkualitas adalah hal yang penting. Oleh karena itu, kami selalu menggunakan material berkualitas premium, namun kamu bisa memilikinya dengan harga terjangkau.
+                    </p>
+                </div>
                 <div class="box-container-display">
                 <c:forEach items="${testimoniList}" var="testi">
                     <div class="box-display">
-
                         <div class="flex-display flex-row-display align-center">
-                            <h4 class="name-color text-weight-bold">${testi.name}</h4>
+                            <p class="name-color text-weight-bold text-responsive">${testi.name}</p>
                             <img src="${fn:escapeXml(commonResourcePath)}/images/orang.png" class="pic" />
                         </div>
                         <div class="text">
@@ -40,7 +40,7 @@
                             <c:if test="${testi.halfStar}">
                                 <img src="${fn:escapeXml(commonResourcePath)}/images/bintang-setengah.png" data-src="${fn:escapeXml(commonResourcePath)}/images/bintang-setengah.png" class="star" alt="Star" />
                             </c:if>
-                            <h4 class="text-weight-bold title-testi">${testi.title}</h4>
+                            <p class="text-weight-bold title-testi text-responsive">${testi.title}</p>
                             <p class="description">${testi.description}</p>
                             <p class="date-color">${testi.date}</p>
                         </div>
