@@ -1,7 +1,4 @@
-<<<<<<< HEAD
 @charset "UTF-8";
-=======
->>>>>>> 4eb8570e8504a10688550b80b6c5776f3a19b8d2
 @font-face {
   font-family: 'Brown';
   src: url('../fonts/brown-regular.eot');
@@ -13600,7 +13597,7 @@ a.product__listing .product__listing--promo:focus {
   margin: auto;
   display: block;
   width: 50%;
-  height: calc(4.8em);
+  height: calc(1.5em + 1.3rem + 2px);
   padding: 0.65rem 1rem;
   font-size: 1.5rem;
   font-weight: 400;
@@ -13625,7 +13622,7 @@ textarea {
     margin: auto;
   }
   th {
-    background-color: #e4e4e4;
+    background-color: #E4E4E4;
     font-size: 2rem !important;
     font-weight: normal !important;
     color: black !important;
@@ -13835,16 +13832,6 @@ textarea {
 .item__list__cart table td {
   padding: 0;
 }
-<<<<<<< HEAD
-.item__list__cart > table tbody > .entry-group-header > th {
-  background-color: #E4E4E4;
-  font-size: 16px;
-  font-weight: 700;
-  color: #000000;
-  padding-right: 35px;
-}
-=======
->>>>>>> 4eb8570e8504a10688550b80b6c5776f3a19b8d2
 .item__list__cart > table tbody > .entry-group-header a {
   color: #ec7205;
 }
