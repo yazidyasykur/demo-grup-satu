@@ -12306,6 +12306,7 @@ fieldset[disabled] .btn-primary.active {
   display: none;
 }
 .untukhargalist {
+  line-height: 30px;
   font-family: fontHarga !important;
   font-weight: normal !important;
   font-size: 3vw !important;
@@ -12317,6 +12318,12 @@ fieldset[disabled] .btn-primary.active {
   padding: 1vw;
   margin-top: 1vw;
   font-family: Gradual;
+}
+.mt-5 {
+  margin-top: 50px;
+}
+.gradual {
+  font-family: Gradual !important;
 }
 .pilihan {
   padding-left: 1vw;
@@ -13510,12 +13517,14 @@ textarea {
   margin-left: 8px;
 }
 .untukharga {
+  line-height: 30px;
   font-family: fontHarga !important;
   font-weight: normal !important;
   font-size: 5rem !important;
   color: #6086c2;
 }
 .untukhargasatuan {
+  line-height: 30px;
   font-family: fontHarga !important;
   font-weight: normal !important;
   font-size: 4rem !important;
