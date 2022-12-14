@@ -1,5 +1,6 @@
 package org.demogrupsatu.core.intheboxvariant.dao.impl;
 
+import de.hybris.platform.core.model.product.ProductModel;
 import de.hybris.platform.servicelayer.search.FlexibleSearchQuery;
 import de.hybris.platform.servicelayer.search.FlexibleSearchService;
 import de.hybris.platform.servicelayer.search.SearchResult;
@@ -26,6 +27,18 @@ public class DefaultIntheboxVariantDao implements IntheboxVariantDao {
 
         if (CollectionUtils.isNotEmpty(intheboxSizeVariantProductModels)){
             return intheboxSizeVariantProductModels;
+        }
+        return Collections.emptyList();
+    }
+
+    @Override
+    public List<ProductModel> getAllProduct() {
+        final String query = "SELECT {pk} FROM {IntheboxSizeVariantProduct}";
+        final FlexibleSearchQuery flexibleSearchQuery = new FlexibleSearchQuery(query);
+        final SearchResult<ProductModel> searchResult = flexibleSearchService.search(flexibleSearchQuery);
+        List<ProductModel> productModel = searchResult.getResult();
+        if(CollectionUtils.isNotEmpty(productModel)){
+            return productModel;
         }
         return Collections.emptyList();
     }

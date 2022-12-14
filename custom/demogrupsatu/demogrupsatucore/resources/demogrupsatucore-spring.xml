@@ -579,4 +579,9 @@
 	<alias name="defaultIntheboxVariantService" alias="intheboxVariantService"/>
 	<bean id="defaultIntheboxVariantService" class="org.demogrupsatu.core.intheboxvariant.impl.DefaultIntheboxVariantService">
 	</bean>
+
+	<!--	Product Approval Sync Job Perfomable	-->
+	<bean id="productsApprovalSyncJobPerformable" class="org.demogrupsatu.core.job.ProductsApprovalSyncJobPerformable"
+		  parent="abstractJobPerformable"></bean>
+
 </beans>

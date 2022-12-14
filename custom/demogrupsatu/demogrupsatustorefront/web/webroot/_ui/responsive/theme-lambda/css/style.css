@@ -10453,6 +10453,7 @@ fieldset[disabled] .btn-primary.active {
   background: rgba(235, 237, 242, 0.4);
   font-size: 14px;
   font-weight: 500;
+  width: 100%;
 }
 .loginregister-page .invalid-feedback {
   font-weight: 500;
