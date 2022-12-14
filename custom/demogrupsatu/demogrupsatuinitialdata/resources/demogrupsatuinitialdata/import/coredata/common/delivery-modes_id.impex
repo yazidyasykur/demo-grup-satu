@@ -9,8 +9,10 @@
 $lang=id
 
 # Zone Delivery Modes
-UPDATE ZoneDeliveryMode;code[unique=true];name[lang=$lang];description[lang=$lang];
-                       ;premium-gross;"Premium Delivery";"1-2 business days"
-                       ;premium-net;"Premium Delivery";"1-2 business days"
-                       ;standard-gross;"Standard Delivery";"3-5 business days"
-                       ;standard-net;"Standard Delivery";"3-5 business days"
+UPDATE ZoneDeliveryMode;code[unique=true]   ;name[lang=$lang]       ;description[lang=$lang];
+                       ;premium-gross       ;"Premium Delivery"     ;"1-2 business days"
+                       ;premium-net         ;"Premium Delivery"     ;"1-2 business days"
+                       ;standard-gross      ;"Standard Delivery"    ;"3-5 business days"
+                       ;standard-net        ;"Standard Delivery"    ;"3-5 business days"
+                       ;gojek-net           ;"Gojek Delivery"       ;"1-2 business weeks"
+                       ;gojek-gross         ;"Gojek Delivery"       ;"1-2 business weeks"
