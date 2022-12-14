@@ -147,11 +147,10 @@ public class ProductPageController extends AbstractPageController
 		model.addAttribute(new ReviewForm());
 		model.addAttribute("pageType", PageType.PRODUCT.name());
 		model.addAttribute("futureStockEnabled", Boolean.valueOf(Config.getBoolean(FUTURE_STOCK_ENABLED, false)));
-//		((IntheboxSizeVariantProductModel) productModel).getSize().getSizeName()
+
 		model.addAttribute("size",((IntheboxSizeVariantProductModel) productModel).getSize().getSizeName());
 		model.addAttribute("dimensi",((IntheboxSizeVariantProductModel) productModel).getSize().getDimension());
 		model.addAttribute("tinggi",((IntheboxSizeVariantProductModel) productModel).getHeight());
-		model.addAttribute("description",productModel.getDescription());
 		model.addAttribute("variant", intheboxVariantFacade.getVariantByProductCode(productCode));
 
 		final String metaKeywords = MetaSanitizerUtil.sanitizeKeywords(productData.getKeywords());

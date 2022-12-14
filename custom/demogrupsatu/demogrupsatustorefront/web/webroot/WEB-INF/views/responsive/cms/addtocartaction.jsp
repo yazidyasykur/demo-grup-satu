@@ -66,7 +66,7 @@
                 </c:when>
                 <c:otherwise>
                     <ycommerce:testId code="addToCartButton">
-                        <button id="addToCartButton" type="${buttonType}" class="btn btn-default btn-block js-add-to-cart js-enable-btn btn-icon glyphicon-shopping-cart" disabled="disabled">
+                        <button id="addToCartButton" type="${buttonType}" class="button-pdp js-add-to-cart js-enable-btn" disabled="disabled">
                             <spring:theme code="basket.add.to.basket"/>
                         </button>
                     </ycommerce:testId>
@@ -78,7 +78,7 @@
     <div class="col-sm-6">
         <div class"w-full mx-auto">
             <c:url value="/cart" var="keranjang"/>
-            <button class="button-2" onclick="location.href='${keranjang}'">Beli Sekarang</button>
+            <button class="button-2-pdp" onclick="location.href='${keranjang}'">Beli Sekarang</button>
         </div>
     </div>
 </div>

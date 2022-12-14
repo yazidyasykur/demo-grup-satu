@@ -42,7 +42,7 @@
             </div>
         </div>
     </div>
-    <div class="row container tengah ">
+    <div class="row container tengah-pdp ">
         <c:forEach items="${variant}" var="tipe">
             <div class="col-sm-4 text-left">
                 <c:url value="/p/${tipe.code}" var="pdp"/>
@@ -58,7 +58,7 @@
             </div>
         </c:forEach>
     </div>
-    <div class"w-full mx-auto">
+    <div class="centered-button">
         <c:url value="/c/INTHEBOX" var="plp"/>
         <button class="button-2" onclick="location.href='${plp}'">Lihat Semua Produk</button>
     </div>
