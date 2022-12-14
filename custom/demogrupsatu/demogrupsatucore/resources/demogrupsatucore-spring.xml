@@ -17,6 +17,7 @@
 	<import resource="classpath:/demogrupsatucore/integration/hot-folder-store-electronics-spring.xml"/>
 	<import resource="classpath:/demogrupsatucore/integration/hot-folder-store-apparel-spring.xml"/>
 	<import resource="classpath:/demogrupsatucore/integration/hot-folder-common-spring.xml"/>
+	<import resource="classpath:/demogrupsatucore/integration/hot-folder-store-inthebox-spring.xml"/>
 
 	<!-- SystemSetup for the DemogrupsatuCore -->
 	<bean id="acceleratorCoreSystemSetup" class="org.demogrupsatu.core.setup.CoreSystemSetup"
