@@ -1,0 +1,61 @@
+# -----------------------------------------------------------------------
+# Copyright (c) 2019 SAP SE or an SAP affiliate company. All rights reserved.
+# -----------------------------------------------------------------------
+# ImpEx for Importing CMS Content
+
+# Macros / Replacement Parameter definitions
+$contentCatalog=demoContentCatalog
+$contentCatalogName=Demo Content Catalog
+$productCatalog=demoProductCatalog
+$productCatalogName=Demo Product Catalog
+
+$contentCV=catalogVersion(CatalogVersion.catalog(Catalog.id[default=$contentCatalog]),CatalogVersion.version[default=Staged])[default=$contentCatalog:Staged]
+$productCV=catalogVersion(catalog(id[default=$productCatalog]),version[default='Staged'])[unique=true,default=$productCatalog:Staged]
+
+$picture=media(code, $contentCV);
+$medias=medias(code, $contentCV);
+$mediaContainer=media(qualifier, $contentCV)[lang=$lang];
+$siteResource=jar:org.demogrupsatu.initialdata.setup.InitialDataSystemSetup&/demogrupsatuinitialdata/import/sampledata/contentCatalogs/$contentCatalog
+$productResource=jar:org.demogrupsatu.initialdata.setup.InitialDataSystemSetup&/demogrupsatuinitialdata/import/sampledata/productCatalogs/$productCatalog
+
+$lang=en
+
+INSERT_UPDATE JspIncludeComponent;$contentCV[unique=true];uid[unique=true];name;page;actions(uid,$contentCV);&componentRef
+                                 ;;CartComponent;Cart Display Component;cartDisplay.jsp;;CartComponent
+                                 ;;CartTotalsComponent;Cart Totals Display Component;cartTotalsDisplay.jsp;;CartTotalsComponent
+                                 ;;CheckoutComponent;Checkout Display Component;checkoutDisplay.jsp;;CheckoutComponent
+                                 ;;EmptyCartJSPIncludeComponent;Empty Cart Display Component;emptyCart.jsp;;EmptyCartJSPIncludeComponent
+
+
+INSERT_UPDATE ContentSlot;$contentCV[unique=true];uid[unique=true];name;active;cmsComponents(&componentRef)
+                         ;;EmptyCartMiddleContent-cartPage;Empty Cart Middle Slot for Cart Page;true;EmptyCartJSPIncludeComponent
+                         ;;CenterRightContentSlot-cartPage;Center Right Content Slot for Cart Page;true;CartTotalsComponent
+                         ;;BottomContentSlot-cartPage;Bottom Content Slot for Cart Page;true;CheckoutComponent
+                         ;;TopContent-cartPage;Top Slot for Cart Page;true;CartComponent
+
+INSERT_UPDATE ContentSlotForPage;$contentCV[unique=true];uid[unique=true];position[unique=true];page(uid,$contentCV)[unique=true][default='cartPage'];contentSlot(uid,$contentCV)[unique=true]
+                                ;;TopContentSlotForCartPage;TopContent;;TopContent-cartPage
+                                ;;EmptyCartMiddleForCartPage;EmptyCartMiddleContent;;EmptyCartMiddleContent-cartPage
+                                ;;CenterRightContentSlotForCartPage;CenterRightContentSlot;;CenterRightContentSlot-cartPage
+                                ;;BottomContentSlotForCartPage;BottomContentSlot;;BottomContentSlot-cartPage
+
+
+INSERT_UPDATE Media; mediaFormat(qualifier); $contentCV[unique = true]; code[unique = true]      ; @media[translator = de.hybris.platform.impex.jalo.media.MediaDataTranslator][forceWrite = true]      ; mime[default = 'image/jpeg']; realfilename             ; folder(qualifier)[default = 'images']; altText
+                   ; desktop   ;                   ; catalog-header.jpg ; $siteResource/images/banners/catalog-header.jpg ;                   ; catalog-header.jpg          ;                   ; "2 Free Pillows"
+
+
+INSERT_UPDATE MediaContainer; qualifier[unique = true]  ; $medias; $contentCV[unique = true]
+                            ; catalogbanner ;catalog-header.jpg;
+
+INSERT_UPDATE SimpleResponsiveBannerComponent; $contentCV[unique = true]; uid[unique = true]      ; $mediaContainer
+                                             ;                   ; CatalogBannerComponent ; catalogbanner
+
+INSERT_UPDATE SimpleResponsiveBannerComponent; $contentCV[unique = true]; uid[unique = true]      ; name                      ; &componentRef
+                                             ;                          ; CatalogBannerComponent ; CatalogBannerComponent ;  CatalogBannerComponent
+
+
+INSERT_UPDATE ContentSlot; $contentCV[unique = true]; uid[unique = true]                  ; name                                     ; cmsComponents(&componentRef)      ; active[default = true]
+                         ;                          ; CatalogBannerContentSlot ; CatalogBannerContentSlot ; CatalogBannerComponent     ; true
+
+INSERT_UPDATE ContentSlotForPage; $contentCV[unique = true]; uid[unique = true]; position[unique = true]; page(uid, $contentCV)[unique = true][default = 'productList']; contentSlot(uid, $contentCV)[unique = true]
+                                ;                          ; Banner    ; Banner                         ;                                                              ; CatalogBannerContentSlot
