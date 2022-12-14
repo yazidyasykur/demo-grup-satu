@@ -150,19 +150,19 @@ INSERT_UPDATE SearchResultsGridComponent;$contentCV[unique=true];uid[unique=true
                                         ;;SearchResultsGrid;Search Result Grid Component;ListPickUpInStoreAction,ListAddToCartAction;SearchResultsGrid
 
 # Content Slots
-INSERT_UPDATE ContentSlot;$contentCV[unique=true];uid[unique=true];cmsComponents(&componentRef)
-                         ;;SiteLogoSlot;SiteLogoComponent
-                         ;;HomepageNavLinkSlot;HomepageNavLink
-                         ;;MiniCartSlot;MiniCart
-                         ;;TabsSlot;TabPanelContainer
-                         ;;FooterSlot;
-                         ;;HeaderLinksSlot;
-                         ;;SearchBoxSlot;SearchBox,LangCurrencyComponent
-                         ;;VariantSelectorSlot;VariantSelector
-                         ;;AddToCartSlot;AddToCart
-                         ;;UpSellingSlot;Similar
-                         ;;CrossSellingSlot;accessories
-                         ;;ProductLeftRefinements;RefinementFacetComponent
+INSERT_UPDATE ContentSlot; $contentCV[unique = true]; uid[unique = true]     ; cmsComponents(&componentRef)
+                         ;                          ; SiteLogoSlot           ; SiteLogoComponent
+                         ;                          ; HomepageNavLinkSlot    ; HomepageNavLink
+                         ;                          ; MiniCartSlot           ; MiniCart
+                         ;                          ; TabsSlot               ; TabPanelContainer
+                         ;                          ; FooterSlot             ;
+                         ;                          ; HeaderLinksSlot        ;
+                         ;                          ; SearchBoxSlot          ; SearchBox,LangCurrencyComponent
+                         ;                          ; VariantSelectorSlot    ; VariantSelector
+                         ;                          ; AddToCartSlot          ; AddToCart
+                         ;                          ; UpSellingSlot          ; Similar
+                         ;                          ; CrossSellingSlot       ; accessories
+                         ;                          ; ProductLeftRefinements ; RefinementFacetComponent
 
 #INSERT_UPDATE Media;$contentCV[unique=true];code[unique=true];mime;realfilename;@media[translator=de.hybris.platform.impex.jalo.media.MediaDataTranslator][forceWrite=true];folder(qualifier)[default='images']
 #                   ;;CamerasPagePreview;text/png;CamerasPage.png;$jarResourceCms/preview-images/training/CamerasPage.png
@@ -170,10 +170,10 @@ INSERT_UPDATE ContentSlot;$contentCV[unique=true];uid[unique=true];cmsComponents
 #                   ;;CameraAccessoriesPagePreview;text/png;CameraAccessoriesPage.png;$jarResourceCms/preview-images/training/CameraAccessoriesPage.png
 
 # Category Pages
-INSERT_UPDATE CategoryPage;$contentCV[unique=true];uid[unique=true];name;masterTemplate(uid,$contentCV);defaultPage;approvalStatus(code)[default='approved'];previewImage(code, $contentCV)
-                          ;;Springbed;Springbed;ProductGridPageTemplate;false;;
-                          ;;Sofabed;Sofabed;ProductGridPageTemplate;false;;
-                          ;;Props;Props;ProductGridPageTemplate;false;;
+INSERT_UPDATE CategoryPage; $contentCV[unique = true]; uid[unique = true]; name      ; masterTemplate(uid, $contentCV); defaultPage; approvalStatus(code)[default = 'approved']; previewImage(code, $contentCV)
+                          ;                          ; Springbed         ; Springbed ; ProductGridPageTemplate        ; false      ;                                           ;
+                          ;                          ; Sofabed           ; Sofabed   ; ProductGridPageTemplate        ; false      ;                                           ;
+                          ;                          ; Props             ; Props     ; ProductGridPageTemplate        ; false      ;                                           ;
 
 # Category Page Restrictions
 #INSERT_UPDATE CMSCategoryRestriction;$contentCV[unique=true];uid[unique=true];name;categories(code, $productCV);pages(uid, $contentCV)
@@ -185,21 +185,21 @@ INSERT_UPDATE CMSNavigationNode;uid[unique=true];$contentCV[unique=true];name;ch
                                ;root;;root;;
 
 # CMS Navigation Nodes
-INSERT_UPDATE CMSNavigationNode;uid[unique=true];$contentCV[unique=true];name;parent(uid, $contentCV);links(&linkRef);&nodeRef
-                               ;SiteRootNode;;SiteRootNode;root;;SiteRootNode
+INSERT_UPDATE CMSNavigationNode; uid[unique = true]  ; $contentCV[unique = true]; name               ; parent(uid, $contentCV); links(&linkRef)                                             ; &nodeRef
+                               ; SiteRootNode        ;                          ; SiteRootNode       ; root                   ;                                                             ; SiteRootNode
 #                               ;ElectronicsNavNode;;Electronics Site;SiteRootNode;HomepageNavLink;ElectronicsNavNode
-                               ;DemoNavNode;;demos Site;SiteRootNode;HomepageNavLink;demoNavNode
-                               ;AllBedsNavNode;;Beds Links;DemoNavNode;AllBedsCategoryLink;AllBedsNavNode
-                               ;BrandsNavNode;;Brand Links;DemoNavNode;AllBrandsCategoryLink;BrandsNavNode
-                               ;AboutUsNavNode;;About Us Links;DemoNavNode;AboutUsLink;AboutUsNavNode
-                               ;BlogsNavNode;;Blogs Links;DemoNavNode;BlogsLink;BlogsNavNode
-                               ;GuaranteeNavNode;;Guarantee Links;DemoNavNode;GuaranteeLink;GuaranteeNavNode
-                               ;ConfirmationNavNode;;Confirmation Links;DemoNavNode;ConfirmationLink;ConfirmationNavNode
+                               ; DemoNavNode         ;                          ; demos Site         ; SiteRootNode           ; HomepageNavLink                                             ; demoNavNode
+                               ; AllBedsNavNode      ;                          ; Beds Links         ; DemoNavNode            ; AllBedsCategoryLink                                         ; AllBedsNavNode
+                               ; BrandsNavNode       ;                          ; Brand Links        ; DemoNavNode            ; AllBrandsCategoryLink                                       ; BrandsNavNode
+                               ; AboutUsNavNode      ;                          ; About Us Links     ; DemoNavNode            ; AboutUsLink                                                 ; AboutUsNavNode
+                               ; BlogsNavNode        ;                          ; Blogs Links        ; DemoNavNode            ; BlogsLink                                                   ; BlogsNavNode
+                               ; GuaranteeNavNode    ;                          ; Guarantee Links    ; DemoNavNode            ; GuaranteeLink                                               ; GuaranteeNavNode
+                               ; ConfirmationNavNode ;                          ; Confirmation Links ; DemoNavNode            ; ConfirmationLink                                            ; ConfirmationNavNode
 
-                               ;BedLinksNavNode;;Bed Links;AllBedsNavNode;SpringBedCategoryLink,SofaBedCategoryLink,PropsCategoryLink;BedLinksNavNode
-                               ;SpringbedNavNode;;Springbed Links;BedLinksNavNode;SpringBedCategoryLink;SpringbedNavNode
-                                ;SofabedNavNode;;Sofabed Links;BedLinksNavNode;SofaBedCategoryLink;SofabedNavNode
-                                ;PropsNavNode;;Property Links;BedLinksNavNode;PropsCategoryLink;PropsNavNode
+                               ; BedLinksNavNode     ;                          ; Bed Links          ; AllBedsNavNode         ; SpringBedCategoryLink,SofaBedCategoryLink,PropsCategoryLink ; BedLinksNavNode
+                               ; SpringbedNavNode    ;                          ; Springbed Links    ; BedLinksNavNode        ; SpringBedCategoryLink                                       ; SpringbedNavNode
+                               ; SofabedNavNode      ;                          ; Sofabed Links      ; BedLinksNavNode        ; SofaBedCategoryLink                                         ; SofabedNavNode
+                               ; PropsNavNode        ;                          ; Property Links     ; BedLinksNavNode        ; PropsCategoryLink                                           ; PropsNavNode
 
 
 # Site-wide Homepage
@@ -1209,32 +1209,42 @@ INSERT_UPDATE ContentSlotForPage;$contentCV[unique=true];uid[unique=true];positi
 
 
 ###  Home page splash Slot 1  #######
-INSERT_UPDATE SimpleResponsiveBannerComponent;$contentCV[unique=true];uid[unique=true];name;urlLink;&componentRef
-                                             ;;DemoHompageSplashBannerComponent-1;Demo Homepage Splash Banner Component 1;/c/INTHEBOX;DemoHompageSplashBannerComponent-1
-                                             ;;DemoHompageSplashBannerComponent-2;Demo Homepage Splash Banner Component 2;/c/INTHEBOX;DemoHompageSplashBannerComponent-2
+INSERT_UPDATE SimpleResponsiveBannerComponent; $contentCV[unique = true]; uid[unique = true]                 ; name                                    ; urlLink     ; &componentRef
+                                             ;                          ; DemoHompageSplashBannerComponent-1 ; Demo Homepage Splash Banner Component 1 ; /c/INTHEBOX ; DemoHompageSplashBannerComponent-1
+                                             ;                          ; DemoHompageSplashBannerComponent-2 ; Demo Homepage Splash Banner Component 2 ; /c/INTHEBOX ; DemoHompageSplashBannerComponent-2
 
-INSERT_UPDATE ContentSlot;$contentCV[unique=true];uid[unique=true];active;cmsComponents(&componentRef)
-                         ;;Section1Slot-Homepage;true;DemoHompageSplashBannerComponent-1,DemoHompageSplashBannerComponent-2
+INSERT_UPDATE ContentSlot; $contentCV[unique = true]; uid[unique = true]    ; active; cmsComponents(&componentRef)
+                         ;                          ; Section1Slot-Homepage ; true  ; DemoHompageSplashBannerComponent-1,DemoHompageSplashBannerComponent-2
 
 ## Homepage section 3 carousel product
-INSERT_UPDATE ProductCarouselComponent;$contentCV[unique=true];uid[unique=true];name;products(code,$productCV);scroll(code);popup;&componentRef
-                                      ;;DemoHomepageProductCarouselComponent;Demo Homepage Product Carousel; INTHEBOX-FLIP-Z-90, INTHEBOX-HYBRID-90, INTHEBOX-X-90, INTHEBOX-101-90, INTHEBOX-ALPHA-90 ;allVisible;false;DemoHomepageProductCarouselComponent
+INSERT_UPDATE ProductCarouselComponent; $contentCV[unique = true]; uid[unique = true]                   ; name                           ; products(code, $productCV)                                                                ; scroll(code); popup ; &componentRef
+                                      ;                          ; DemoHomepageProductCarouselComponent ; Demo Homepage Product Carousel ; INTHEBOX-FLIP-Z-90, INTHEBOX-HYBRID-90, INTHEBOX-X-90, INTHEBOX-101-90, INTHEBOX-ALPHA-90 ; allVisible  ; false ; DemoHomepageProductCarouselComponent
 
-INSERT_UPDATE ContentSlot;$contentCV[unique=true];uid[unique=true];name;active;cmsComponents(&componentRef)
-                         ;;Section3Slot-Homepage;Section3 Slot for Homepage;true;DemoHomepageProductCarouselComponent
+INSERT_UPDATE ContentSlot; $contentCV[unique = true]; uid[unique = true]    ; name                       ; active; cmsComponents(&componentRef)
+                         ;                          ; Section3Slot-Homepage ; Section3 Slot for Homepage ; true  ; DemoHomepageProductCarouselComponent
 
-INSERT_UPDATE ContentSlotForPage;$contentCV[unique=true];uid[unique=true];position[unique=true];page(uid,$contentCV)[unique=true][default='homepage'];contentSlot(uid,$contentCV)[unique=true]
-                                ;;Section3-Homepage;Section3;;Section3Slot-Homepage
+INSERT_UPDATE ContentSlotForPage; $contentCV[unique = true]; uid[unique = true]; position[unique = true]; page(uid, $contentCV)[unique = true][default = 'homepage']; contentSlot(uid, $contentCV)[unique = true]
+                                ;                          ; Section3-Homepage ; Section3               ;                                                           ; Section3Slot-Homepage
 
 ## Homepage section 4 unboxing carousel
 
-INSERT_UPDATE SimpleResponsiveBannerComponent;$contentCV[unique=true];uid[unique=true];name;urlLink;&componentRef
-                                             ;;UnboxingHomepageBannerComponent-1;Unboxing Homepage Banner Component 1;/c/INTHEBOX;UnboxingHomepageBannerComponent-1
-                                             ;;UnboxingHomepageBannerComponent-2;Unboxing Homepage Banner Component 2;/c/INTHEBOX;UnboxingHomepageBannerComponent-2
-                                             ;;UnboxingHomepageBannerComponent-3;Unboxing Homepage Banner Component 3;/c/INTHEBOX;UnboxingHomepageBannerComponent-3
-                                             ;;UnboxingHomepageBannerComponent-4;Unboxing Homepage Banner Component 4;/c/INTHEBOX;UnboxingHomepageBannerComponent-4
+INSERT_UPDATE SimpleResponsiveBannerComponent; $contentCV[unique = true]; uid[unique = true]                ; name                                 ; urlLink     ; &componentRef
+                                             ;                          ; UnboxingHomepageBannerComponent-1 ; Unboxing Homepage Banner Component 1 ; /c/INTHEBOX ; UnboxingHomepageBannerComponent-1
+                                             ;                          ; UnboxingHomepageBannerComponent-2 ; Unboxing Homepage Banner Component 2 ; /c/INTHEBOX ; UnboxingHomepageBannerComponent-2
+                                             ;                          ; UnboxingHomepageBannerComponent-3 ; Unboxing Homepage Banner Component 3 ; /c/INTHEBOX ; UnboxingHomepageBannerComponent-3
+                                             ;                          ; UnboxingHomepageBannerComponent-4 ; Unboxing Homepage Banner Component 4 ; /c/INTHEBOX ; UnboxingHomepageBannerComponent-4
 
-INSERT_UPDATE ContentSlot;$contentCV[unique=true];uid[unique=true];active;cmsComponents(&componentRef)
-                         ;;Section4Slot-Homepage;true;UnboxingHomepageBannerComponent-1,UnboxingHomepageBannerComponent-2,UnboxingHomepageBannerComponent-3,UnboxingHomepageBannerComponent-4
+INSERT_UPDATE ContentSlot; $contentCV[unique = true]; uid[unique = true]    ; active; cmsComponents(&componentRef)
+                         ;                          ; Section4Slot-Homepage ; true  ; UnboxingHomepageBannerComponent-1,UnboxingHomepageBannerComponent-2,UnboxingHomepageBannerComponent-3,UnboxingHomepageBannerComponent-4
+
+## Homepage section 5 for backup productcarousel component
+INSERT_UPDATE ProductCarouselComponent; $contentCV[unique = true]; uid[unique = true]                   ; name                           ; products(code, $productCV)                                                                ; scroll(code); popup ; &componentRef
+;                          ; DemoHomepageProductCarouselComponent2 ; Demo Homepage Product Carousel 2 ; INTHEBOX-FLIP-Z-90, INTHEBOX-HYBRID-90, INTHEBOX-X-90, INTHEBOX-101-90, INTHEBOX-ALPHA-90 ; allVisible  ; false ; DemoHomepageProductCarouselComponent2
+
+INSERT_UPDATE ContentSlot; $contentCV[unique = true]; uid[unique = true]    ; name                       ; active; cmsComponents(&componentRef)
+;                          ; Section5Slot-Homepage ; Section5 Slot for Homepage ; true  ; DemoHomepageProductCarouselComponent2
+
+INSERT_UPDATE ContentSlotForPage; $contentCV[unique = true]; uid[unique = true]; position[unique = true]; page(uid, $contentCV)[unique = true][default = 'homepage']; contentSlot(uid, $contentCV)[unique = true]
+;                          ; Section5-Homepage ; Section5               ;                                                           ; Section5Slot-Homepage
 
 

@@ -10321,6 +10321,7 @@ fieldset[disabled] .btn-primary.active {
   overflow: hidden;
 }
 .loginregister-page .login-container {
+  font-family: "Brown";
   width: 430px;
   margin: 0 auto;
 }
@@ -10334,14 +10335,14 @@ fieldset[disabled] .btn-primary.active {
 }
 .loginregister-page .login-title {
   text-align: center;
-  font-size: 1.5rem;
-  font-weight: 500;
+  font-size: 18px;
+  font-weight: 600;
   color: #6c7293;
 }
 .loginregister-page .login-desc {
   margin-top: 1.5rem;
   text-align: center;
-  font-size: 1.1rem;
+  font-size: 14px;
   font-weight: 400;
   color: #a7abc3;
 }
@@ -10355,8 +10356,8 @@ fieldset[disabled] .btn-primary.active {
   padding-right: 1.5rem;
   margin-top: 1.5rem;
   background: rgba(235, 237, 242, 0.4);
-  font-size: 1rem;
-  font-weight: 400;
+  font-size: 14px;
+  font-weight: 500;
 }
 .loginregister-page .invalid-feedback {
   font-weight: 500;
@@ -10380,9 +10381,10 @@ fieldset[disabled] .btn-primary.active {
   text-align: right;
 }
 .loginregister-page .checkbox {
-  font-size: 1rem;
+  font-size: 14px;
+  font-weight: 600;
   display: flex;
-  align-items: center;
+  align-items: flex-end;
   padding-left: 20px;
   margin-bottom: 10px;
   text-align: left;
@@ -10391,7 +10393,7 @@ fieldset[disabled] .btn-primary.active {
   transition: all 0.3s ease;
 }
 .loginregister-page .login-link {
-  font-size: 1rem;
+  font-size: 14px;
   color: #a7abc3;
   -webkit-transition: color 0.3s ease;
   transition: color 0.3s ease;
@@ -10427,20 +10429,22 @@ fieldset[disabled] .btn-primary.active {
 }
 .loginregister-page .or-text {
   text-align: center;
-  margin: 1.5rem 0px;
+  font-size: 12px;
+  font-weight: 600;
+  margin: 18px 0px;
 }
 .loginregister-page .login-account {
   text-align: center;
   margin-top: 2rem;
 }
 .loginregister-page .login-account-msg {
-  font-size: 1rem;
+  font-size: 14px;
   font-weight: 400;
   color: #a7abc3;
 }
 .loginregister-page .login-account-link {
-  font-size: 1rem;
-  font-weight: 500;
+  font-size: 14px;
+  font-weight: 600;
   color: #6c7293;
   -webkit-transition: color 0.3s ease;
   transition: color 0.3s ease;
@@ -10450,8 +10454,11 @@ fieldset[disabled] .btn-primary.active {
   -webkit-transition: color 0.3s ease;
   transition: color 0.3s ease;
 }
+.loginregister-page #chk-terms {
+  top: -2px;
+}
 .loginregister-page .checkbox-icon {
-  top: -3px;
+  top: -2px;
 }
 @media (max-width: 1024px) {
   .loginregister-page .login-wrapper {
@@ -12167,6 +12174,20 @@ fieldset[disabled] .btn-primary.active {
 ::-webkit-scrollbar-thumb {
   border-radius: 3px;
 }
+.gambar {
+  margin-bottom: 10px;
+}
+.tebal {
+  font-weight: bold;
+}
+.nama {
+  font-size: 1.5vw;
+  color: black;
+}
+.kecil {
+  color: #404040;
+  font-size: 1vw;
+}
 .flowrowblock {
   min-width: 220px;
   width: 280px;
@@ -12176,12 +12197,18 @@ fieldset[disabled] .btn-primary.active {
   display: none;
 }
 .flowrow {
-  display: flex;
-  flex-wrap: nowrap;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
   margin-top: 3vw;
 }
 .flowrow:empty {
   display: none;
+}
+.untukhargalist {
+  font-family: fontHarga !important;
+  font-weight: normal !important;
+  font-size: 3vw !important;
+  color: #6086c2;
 }
 .tengah {
   text-align: center;
@@ -12193,12 +12220,6 @@ fieldset[disabled] .btn-primary.active {
 }
 .kecil {
   font-size: 15px;
-}
-.mainflow {
-  overflow: auto;
-  margin: 0 auto;
-  max-width: 1440px;
-  padding-bottom: 20px;
 }
 .pageType-CategoryPage .map img {
   min-width: 100%;
@@ -12905,8 +12926,9 @@ a.product__listing .product__listing--promo:focus {
 }
 .item__list .item__list--header li {
   display: table-cell;
-  background-color: #128a9e;
-  color: #ffffff;
+  background-color: transparent;
+  font-weight: bold;
+  color: black;
   font-size: 13px;
   text-transform: uppercase;
   padding: 7px 10px;
@@ -12925,11 +12947,11 @@ a.product__listing .product__listing--promo:focus {
   content: "\e113";
 }
 .item__list .item__image {
-  width: 136px;
+  width: 210px;
   padding: 0 20px;
 }
 .item__list .item__image img {
-  max-width: 96px;
+  max-width: 170px;
 }
 .item__list .item__name {
   font-size: 16px;
@@ -13215,7 +13237,7 @@ a.product__listing .product__listing--promo:focus {
     position: relative;
   }
   .item__list--item > div {
-    margin-left: 136px;
+    margin-left: 210px;
     padding: 0 80px 0 0;
     overflow: hidden;
     text-overflow: ellipsis;
@@ -13224,6 +13246,61 @@ a.product__listing .product__listing--promo:focus {
 .account-orderdetail .item__list {
   clear: both;
   margin-top: 0;
+}
+@font-face {
+  font-family: "fontHarga";
+  src: url("../fonts/PalmerLakePrint-Regular.otf");
+}
+.tombolbiru {
+  height: 3vw;
+  width: 12vw;
+  font-size: 0.9vw;
+  border-radius: 4px;
+  border-color: transparent;
+  color: white;
+  background-color: #6086c2;
+  margin-left: 8px;
+}
+.untukharga {
+  font-family: fontHarga !important;
+  font-weight: normal !important;
+  font-size: 3vw !important;
+  color: #6086c2;
+}
+.batas {
+  width: 70%;
+  margin: auto;
+}
+.tinggi {
+  height: 10vw !important;
+}
+.fixtotal {
+  font-family: fontHarga !important;
+  color: #6086c2;
+  font-weight: bold;
+  text-align: center;
+  font-size: 5vw !important;
+  font-weight: normal;
+}
+.tombolbiru:hover {
+  background-color: #7fc5f9;
+  color: #6086c2;
+}
+.tombolputih {
+  height: 3vw;
+  width: 12vw;
+  font-size: 0.9vw;
+  border-radius: 4px;
+  border-width: thin;
+  border-color: #d9d9d9;
+  color: #cccccc;
+  background-color: white;
+  margin-right: 8px;
+}
+.tombolputih:hover {
+  background-color: #7fc5f9;
+  color: white;
+  border-color: transparent;
 }
 .cart-header {
   padding-left: 30px;
@@ -13345,22 +13422,21 @@ a.product__listing .product__listing--promo:focus {
 .cart__actions.border {
   border-bottom: 1px solid #e5e5e5;
 }
-.cart__actions,
-.cart__actions--top {
+.cart__actions {
+  margin: auto;
+  text-align: center;
   padding-left: 30px;
   padding-right: 30px;
   padding-bottom: 32px;
 }
 @media (max-width: 1024px) {
-  .cart__actions,
-  .cart__actions--top {
+  .cart__actions {
     padding-left: 20px;
     padding-right: 20px;
   }
 }
 @media (max-width: 640px) {
-  .cart__actions,
-  .cart__actions--top {
+  .cart__actions {
     padding-left: 10px;
     padding-right: 10px;
     padding-bottom: 10px;

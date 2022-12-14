@@ -14,7 +14,7 @@
 	<cart:cartValidation/>
 	<cart:cartPickupValidation/>
 
-<div class="container">
+<div class="batas">
 
     <h1 class="text-center">Keranjang Belanja</h1>
 

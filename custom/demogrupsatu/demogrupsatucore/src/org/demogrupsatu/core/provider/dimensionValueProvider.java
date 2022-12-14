@@ -51,7 +51,7 @@ public class dimensionValueProvider extends AbstractPropertyFieldValueProvider i
                 } else if (fieldName.contains("baseProduct")) {
                     indexName= product.getBaseProduct().getCode();
                 } else{
-                    indexName=product.getSize().getSizeName();
+                    indexName=product.getBaseProduct().getCode();
                 }
                 fieldValues.add(new FieldValue(fieldName,indexName ));
             }

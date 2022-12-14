@@ -12,6 +12,22 @@
   border-radius:3px;
 }
 
+.gambar{
+    margin-bottom:10px;
+}
+.tebal{
+    font-weight:bold
+}
+
+.nama{
+    font-size:1.5vw;
+    color:black;
+}
+
+.kecil{
+    color:#404040;
+    font-size:1vw;
+}
 
 .flowrowblock{
     min-width:220px;
@@ -22,16 +38,52 @@
       }
     }
 
-
-
 .flowrow{
-    display:flex;
-    flex-wrap:nowrap;
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
     margin-top:3vw;
     &:empty {
             display: none;
           }
 }
+
+.untukhargalist{
+    font-family:fontHarga !important;
+    font-weight:normal !important;
+    font-size:3vw !important;
+    color:#6086c2;
+}
+
+//
+//  UNTUK SEPERTI INTHEBOX(INTHEBOX BACKUP)
+// .flowrowblock{
+//     min-width:220px;
+//     width:280px;
+//     margin:10px;
+//     &:empty {
+//         display: none;
+//       }
+//     }
+//
+//
+//
+// .flowrow{
+//     display:flex;
+//     flex-wrap:nowrap;
+//     margin-top:3vw;
+//     &:empty {
+//             display: none;
+//           }
+// }
+//
+// .mainflow{
+//    overflow:auto;
+//    margin:0 auto;
+//    max-width:1440px;
+//    padding-bottom:20px;
+//
+//
+// }
 
 .tengah{
     text-align:center;
@@ -48,14 +100,7 @@
     font-size:15px;
     }
 
-.mainflow{
-   overflow:auto;
-   margin:0 auto;
-   max-width:1440px;
-   padding-bottom:20px;
 
-
-}
 
 
 .pageType-CategoryPage .map {

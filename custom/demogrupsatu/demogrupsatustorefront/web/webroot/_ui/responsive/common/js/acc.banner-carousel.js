@@ -9,3 +9,7 @@ $(document).ready(function(){
       slidesToScroll: 3
     });
 });
+
+$(document).ready(function(){
+    $(".unboxing-product").slick();
+});

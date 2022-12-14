@@ -24,11 +24,13 @@
         </div>
         <div class="login-signin">
           <div class="login-head">
-            <h3 class="login-title">Masuk</h3>
+            <h3 class="login-title">
+              <spring:theme code="login.title" />
+            </h3>
           </div>
 		    <form:form class="form" method="POST" action="${action}" modelAttribute="loginForm">
         <div class="form-group email">
-			    <form:input class="form-control" required="true" placeholder="Alamat Email" path="j_username"/>
+			    <form:input class="form-control" required="true" placeholder="Email Address" path="j_username"/>
         </div>
             <div class="form-group password">
 			          <form:input class="form-control" type="password" required="true" autocomplete="off" placeholder="Password" path="j_password"/>
@@ -41,35 +43,35 @@
                     name="remember"
                     class="checkbox-icon"
                   />
-                  Ingat Saya
+                  <spring:theme code="login.checkbox.rememberMe" />
                   <span></span>
                 </label>
                 <a
                   href="https://inthebox.net/id/password/reset"
                   class="login-link"
                 >
-                  Lupa Kata Sandi?
+                  <spring:theme code="login.link.forgottenPwd" />
                 </a>
               </div>
               <div class="col align-right"></div>
             </div>
             <div class="login-actions">
-              <button class="login-btn-primary" type="submit">Masuk</button>
+              <button class="login-btn-primary" type="submit"><spring:theme code="login.button.login" /></button>
             </div>
 		  </form:form>
-          <div class="or-text">or</div>
+          <div class="or-text"><spring:theme code="login.text.or" /></div>
           <a href="https://inthebox.net/auth/facebook">
-            <button class="login-btn-facebook">Masuk dengan Facebook</button>
+            <button class="login-btn-facebook"><spring:theme code="login.button.fb" /></button>
           </a>
         </div>
         <div class="login-account">
-          <span class="login-account-msg"> Belum memiliki akun? </span>
+          <span class="login-account-msg"><spring:theme code="login.text.donthaveaccount" /></span>
           <ycommerce:testId code="header_Register_link">
             <a
               href="${fn:escapeXml(registerUrl)}"
               class="login-account-link evt-click-links-register"
             >
-              Daftar Sekarang
+            <spring:theme code="login.link.registerNow" />
             </a>
           </ycommerce:testId>
         </div>
