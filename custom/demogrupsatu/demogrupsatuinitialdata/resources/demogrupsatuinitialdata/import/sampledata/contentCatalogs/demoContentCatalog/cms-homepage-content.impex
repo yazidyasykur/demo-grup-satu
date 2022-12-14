@@ -148,7 +148,7 @@ INSERT_UPDATE MediaContainer; qualifier[unique = true]  ; $medias; $contentCV[un
                             ; itb-homepage-discount-atom ; Banner-Atom-1400.jpg,Banner-Atom-960.jpg,Banner-Atom-770.jpg,Banner-Atom-480.jpg
                             ; itb-homepage-discount-kredivo ; Banner-Promo-Kredivo-1400.jpg,Banner-Promo-Kredivo-960.jpg,Banner-Promo-Kredivo-770.jpg,Banner-Promo-Kredivo-480.jpg
 
-UPDATE SimpleResponsiveBannerComponent; $contentCV[unique = true]; uid[unique = true]                 ; $mediaContainer
+UPDATE SimpleBannerComponent; $contentCV[unique = true]; uid[unique = true]                 ; $mediaContainer
                                     ;                   ; intheboxBannerComponent     ; itb-homepage-discount-atom,itb-homepage-discount-kredivo
 
 

@@ -1,7 +1,10 @@
 //////////////////////////////////
 //          general             //
 //////////////////////////////////
-@max-item-image-width: 96px;
+@max-item-image-width: 170px;
+
+
+
 .item__list {
   margin-top: 30px;
   margin-bottom: @grid-gutter-width;
@@ -68,8 +71,9 @@
 
     li {
       display: table-cell;
-      background-color: @table-head-bg;
-      color: @table-head-color;
+      background-color: transparent;
+      font-weight:bold;
+      color: black;
       font-size: 13px;
       text-transform: uppercase;
       padding: 7px 10px;
@@ -104,8 +108,7 @@
   }
 
   .item__name {
-    font-size: @font-size-large-1;
-    font-weight: 700;
+    font-size: 2rem;
   }
 
   .item__quantity {
@@ -300,6 +303,119 @@
 //      tablet  and mobile      //
 //////////////////////////////////
 @media (max-width: @screen-sm-max) {
+    .tengah{
+        margin-top:20px;
+        font-size:2rem;
+    }
+
+    .nama{
+        font-size:1.3rem;
+        color:black;
+    }
+
+    .kecil{
+        color:#404040;
+        font-size:1rem;
+    }
+
+    .untukharga{
+        font-size:2rem !important;
+        color:#6086c2;
+    }
+
+    .untukhargasatuan{
+            font-size:1rem !important;
+            color:#6086c2;
+        }
+
+    .flowrow{
+        justify-items:center;
+        display:grid;
+        grid-template-columns:repeat(3,1fr);
+        margin-top:3vw;
+        &:empty {
+                display: none;
+              }
+    }
+
+    .flowrowblock{
+        min-width:120px;
+        width:20vw;
+        margin:10px;
+        &:empty {
+            display: none;
+          };
+    }
+
+    .fixtotal{
+        font-family:fontHarga !important;
+        font-weight:normal;
+        color:#6086c2;
+        font-weight:bold;
+        text-align:center;
+        font-size:4rem !important;
+        font-weight:normal;
+    }
+
+    .tombolputih{
+        height:6vw !important;
+        width:20vw !important;
+        font-size:2vw !important;
+    }
+
+    .tombolbiru{
+            height:6vw !important;
+            width:24vw !important;
+            font-size:2vw !important;
+    }
+
+    .item__quantity__total {
+          clear: both;
+          float: none;
+          width: auto;
+          padding-right: 0 !important;
+
+          > .details {
+            cursor: pointer;
+          }
+
+          .qty{
+            .clearfix;
+            line-height: 0 !important;
+            padding-top: 0 !important;
+
+            label{
+              float: left;
+              margin: 0 !important;
+            }
+
+            input {
+              float: left;
+              width: 70px;
+              text-align: center;
+              padding-left: 12px;
+              padding-right: 12px;
+              margin-right: (@grid-gutter-width/2);
+            }
+            .qtyValue {
+              float: left;
+            }
+            .glyphicon {
+              float: right;
+              line-height: 40px;
+              padding-left: 5px;
+            }
+          }
+
+          .open {
+            .qty{
+              .glyphicon {
+                .glyphicon-chevron-down();
+              }
+            }
+          }
+        }
+
 
   .item__list {
     border-top: 1px solid @border-color-2;
@@ -463,7 +579,6 @@
     position: relative;
     > div {
       margin-left: @max-item-image-width + @grid-gutter-width * 2;
-      padding: 0 80px 0 0;
       overflow: hidden;
       text-overflow: ellipsis;
     }

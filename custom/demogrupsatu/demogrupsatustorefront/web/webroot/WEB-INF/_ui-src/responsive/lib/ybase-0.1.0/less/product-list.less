@@ -1,3 +1,13 @@
+
+@font-face {
+    font-family: "Gradual";
+    src: url("../fonts/BwGradual.otf")
+}
+
+.hitam{
+    color:black !important;
+ }
+
 ::-webkit-scrollbar {
   height: 6px;
 }
@@ -12,31 +22,97 @@
   border-radius:3px;
 }
 
+.gambar{
+    margin-bottom:10px;
+}
+.tebal{
+    font-weight:bold
+}
+
+.nama{
+    font-size:2rem;
+    color:black;
+}
+
+.kecil{
+    color:#404040;
+    font-size:1.6rem;
+}
 
 .flowrowblock{
-    min-width:220px;
-    width:280px;
+    width:22rem;
     margin:10px;
     &:empty {
         display: none;
-      }
+      };
     }
 
-
+ .flowrowblock:hover a{
+        color:#6086c2;
+    }
 
 .flowrow{
-    display:flex;
-    flex-wrap:nowrap;
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
     margin-top:3vw;
     &:empty {
             display: none;
           }
 }
 
+.untukhargalist{
+    line-height: 30px;
+    font-family:fontHarga !important;
+    font-weight:normal !important;
+    font-size:3vw !important;
+    color:#6086c2;
+}
+
+//
+//  UNTUK SEPERTI INTHEBOX(INTHEBOX BACKUP)
+// .flowrowblock{
+//     min-width:220px;
+//     width:280px;
+//     margin:10px;
+//     &:empty {
+//         display: none;
+//       }
+//     }
+//
+//
+//
+// .flowrow{
+//     display:flex;
+//     flex-wrap:nowrap;
+//     margin-top:3vw;
+//     &:empty {
+//             display: none;
+//           }
+// }
+//
+// .mainflow{
+//    overflow:auto;
+//    margin:0 auto;
+//    max-width:1440px;
+//    padding-bottom:20px;
+//
+//
+// }
+
 .tengah{
     text-align:center;
     margin:auto;
     padding:1vw;
+    margin-top:1vw;
+    font-family:Gradual;
+}
+
+.mt-5{
+    margin-top:50px;
+}
+
+.gradual{
+    font-family:Gradual !important;
 }
 
 .pilihan{
@@ -44,18 +120,8 @@
 }
 
 
-.kecil{
-    font-size:15px;
-    }
-
-.mainflow{
-   overflow:auto;
-   margin:0 auto;
-   max-width:1440px;
-   padding-bottom:20px;
 
 
-}
 
 
 .pageType-CategoryPage .map {

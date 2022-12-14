@@ -1,0 +1,75 @@
+.definition-container {
+    max-width: 1200px;
+    margin: 0px auto;
+    padding: 0px 30px;
+}
+
+div.definition > p {
+    font-size: 16px !important;
+}
+
+div.definition > ul {
+    font-size: 16px !important;
+}
+
+.definition-container > p {
+    font-size: 1.4rem;
+}
+
+.definition {
+    margin: 20px 0px;
+}
+
+.def-detail-container{
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+    max-width: 30%
+}
+
+.def-item-container{
+    display: flex;
+    gap: 20px;
+}
+
+div.def-detail-container > img {
+  width:100%;
+  margin:auto;
+}
+
+.def-ref-text {
+    font-size: 20px !important;
+    font-weight: bold;
+    min-height: 50px;
+    text-align: center;
+}
+
+div.definition-container > div.content{
+    text-align: center;
+    font-size: 2em;
+}
+
+
+
+@media screen and (max-width: 900px) {
+    .definition-container {
+        max-width: 700px;
+    }
+}
+
+@media screen and (max-width: 769px) {
+    .def-item-container{
+        flex-direction: column;
+    }
+
+    .def-detail-container{
+        max-width: 100%
+    }
+
+}
+
+@media screen and (max-width: 700px) {
+    .definition-container {
+        max-width: 500px;
+    }
+}

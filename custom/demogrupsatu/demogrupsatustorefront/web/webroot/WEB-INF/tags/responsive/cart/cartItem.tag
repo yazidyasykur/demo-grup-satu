@@ -38,7 +38,7 @@
                         <spring:param name="entryNumber"  value="${entry.entryNumber}"/>
                         <spring:param name="configuratorType"  value="${entry.configurationInfos[0].configuratorType}" />
                     </spring:url>
-                    
+
                     <spring:theme code="basket.error.invalid.configuration" arguments="${errorCount}"/>
                     <a href="${fn:escapeXml(entryConfigUrl)}">
                         <spring:theme code="basket.error.invalid.configuration.edit"/>
@@ -49,7 +49,7 @@
         <c:set var="showEditableGridClass" value=""/>
         <c:url value="${entry.product.url}" var="productUrl"/>
 
-        <li class="item__list--item">
+        <li class="item__list--item tinggi">
             <%-- chevron for multi-d products --%>
             <div class="hidden-xs hidden-sm item__toggle">
                 <c:if test="${entry.product.multidimensional}" >
@@ -68,14 +68,22 @@
 
             <%-- product name, code, promotions --%>
             <div class="item__info">
-                <ycommerce:testId code="cart_product_name">
-                    <a href="${fn:escapeXml(productUrl)}"><span class="item__name">${fn:escapeXml(entry.product.name)}</span></a>
+                 <ycommerce:testId code="cart_product_name">
+                    <a href="${fn:escapeXml(productUrl)}"><span class="item__name hitam">${fn:escapeXml(entry.product.baseProduct)}</span></a>
                 </ycommerce:testId>
 
-                <div class="item__code">${productCodeHtml}</div>
+                <br>
+
+                <ycommerce:testId code="cart_product_name">
+                    <a href="${fn:escapeXml(productUrl)}"><span class="item__name hitam">${fn:escapeXml(entry.product.name)}</span></a>
+                </ycommerce:testId>
+
+                <br>
+                <br>
+                <br>
 
                 <%-- price --%>
-                <div class="item__code">
+                <div class="item__code untukhargasatuan">
                     <format:price priceData="${entry.basePrice}" displayFreeForZero="true"/>
                 </div>
 
@@ -120,14 +128,14 @@
 
             <%-- total --%>
             <ycommerce:testId code="cart_totalProductPrice_label">
-                <div class="item__total js-item-total hidden-xs hidden-sm">
+                <div class="untukharga item__total js-item-total hidden-xs hidden-sm">
                     <format:price priceData="${entry.totalPrice}" displayFreeForZero="true"/>
                 </div>
             </ycommerce:testId>
 
             <%-- menu icon --%>
 
-            <div class="item__quantity__total visible-xs visible-sm">
+            <div class=" visible-xs visible-sm">
                 <c:if test="${entry.product.multidimensional}" >
                     <ycommerce:testId code="cart_product_updateQuantity">
                         <c:set var="showEditableGridClass" value="js-show-editable-grid"/>
@@ -172,7 +180,7 @@
                             </ycommerce:testId>
                         </c:if>
                         <ycommerce:testId code="cart_totalProductPrice_label">
-                            <div class="item__total js-item-total">
+                            <div class="untukharga item__total js-item-total">
                                 <format:price priceData="${entry.totalPrice}" displayFreeForZero="true"/>
                             </div>
                         </ycommerce:testId>

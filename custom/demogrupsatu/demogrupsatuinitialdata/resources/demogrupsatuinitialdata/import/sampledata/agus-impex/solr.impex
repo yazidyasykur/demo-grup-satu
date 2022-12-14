@@ -54,7 +54,7 @@ INSERT_UPDATE SolrValueRangeSet; name[unique = true]   ; qualifier; type   ; sol
 
 # Define price ranges
 INSERT_UPDATE SolrValueRange; &rangeValueRefID; solrValueRangeSet(name)[unique = true]; name[unique = true]   ; from    ; to
-                            ; rangeRefIDR1    ; demoPriceRangeIDR                 ; Rp.1 Juta-Rp.1,5 Juta ; 0       ; 1500000
+                            ; rangeRefIDR1    ; demoPriceRangeIDR                 ; < Rp.1,5 Juta ; 0       ; 1500000
                             ; rangeRefIDR2    ; demoPriceRangeIDR                 ; Rp.1,5 Juta-Rp.2 Juta ; 1500001 ; 2000000
                             ; rangeRefIDR3    ; demoPriceRangeIDR                 ; > Rp.2 Juta           ; 2000001 ; 10000000
 
@@ -81,9 +81,9 @@ INSERT_UPDATE SolrIndexedProperty; solrIndexedType(identifier)[unique = true]; n
                                  ; $solrIndexedType                          ; categoryName       ; text      ; true                      ;                           ;                              ; true                                ; true                               ; electronicsCategoryNameValueProvider      ; true                           ; 40                 ; true                     ; 20           ; true                          ; 10
 
 # Category facets
-INSERT_UPDATE SolrIndexedProperty; solrIndexedType(identifier)[unique = true]; name[unique = true]; type(code); multiValue[default = true]; facet[default = true]; facetType(code); facetSort(code); priority; visible; categoryField[default = true]; fieldValueProvider                   ; facetDisplayNameProvider         ; topValuesProvider
-                                 ; $solrIndexedType                          ; categoryPath       ; string    ;                           ;                      ; Refine         ; Alpha          ; -9999   ; false  ; false                        ; categoryPathValueProvider            ;
-                                 ; $solrIndexedType                          ; category           ; string    ;                           ;                      ; Refine         ; Alpha          ; 6000    ; true   ;                              ; electronicsCategoryCodeValueProvider ; categoryFacetDisplayNameProvider ; defaultTopValuesProvider
+#INSERT_UPDATE SolrIndexedProperty; solrIndexedType(identifier)[unique = true]; name[unique = true] ; type(code)  ; multiValue[default = true]; facet[default = true]; facetType(code); facetSort(code); priority; visible; categoryField[default = true]; fieldValueProvider                   ; facetDisplayNameProvider         ; topValuesProvider
+#                                 ; $solrIndexedType         ; categoryPath ; string  ;                 ;            ; Refine     ; Alpha      ; -9999   ; false  ; false              ; categoryPathValueProvider            ;
+#                                 ; $solrIndexedType      ; category     ; string  ;                 ;            ; Refine     ; Alpha      ; 6000    ; true   ;                    ; electronicsCategoryCodeValueProvider ; categoryFacetDisplayNameProvider ; defaultTopValuesProvider
 
 # Create the queries that will be used to extract data for Solr
 INSERT_UPDATE SolrIndexerQuery; solrIndexedType(identifier)[unique = true]; identifier[unique = true]          ; type(code); injectCurrentDate[default = true]; injectCurrentTime[default = true]; injectLastIndexTime[default = true]; query                    ; user(uid)
@@ -123,7 +123,16 @@ INSERT_UPDATE SolrSortField; sort(indexedType(identifier), code)[unique = true];
 
 # Add new indexed property
 INSERT_UPDATE SolrIndexedProperty; solrIndexedType(identifier)[unique = true]; name[unique = true]; type(code); multiValue[default = true]; facet[default = false]; facetType(code); facetSort(code); priority; visible; categoryField[default = true]; fieldValueProvider                   ;
-                                 ; $solrIndexedType                          ; dimension          ; string    ; false                          ;                      ;         ;        ; ; ;    ; dimensionValueProvider
-                                 ; $solrIndexedType                          ; size               ; string    ; false                          ;                      ; ;;;;                     ; dimensionValueProvider
-                                 ; $solrIndexedType                          ; height             ; string    ; false                          ;                      ; ;;;;                     ; dimensionValueProvider
-				 ; $solrIndexedType                          ; baseProduct     	  ; string    ; false                          ;                      ; ;;;;                     ; dimensionValueProvider;
+                                 ; $solrIndexedType                          ; dimension          ; string    ; false                          ;                      ;         ;        ; ; ;    ; dimensionValueProvider;
+                                 ; $solrIndexedType                          ; size            ; string    ; false                          ;                      ; ;;;;                     ; dimensionValueProvider;
+                                 ; $solrIndexedType                          ; height          ; string    ; false                          ;                      ; ;;;;                     ; dimensionValueProvider;
+                                 ; $solrIndexedType                          ; baseProduct     ; string    ; false                          ;                      ; ;;;;                     ; dimensionValueProvider;
+
+
+# Add new indexed property
+INSERT_UPDATE SolrIndexedProperty; solrIndexedType(identifier)[unique = true]; name[unique = true]; type(code); multiValue[default = true]; facet[default = true]; facetType(code); facetSort(code); priority; visible; categoryField[default = true]; fieldValueProvider              ; facetDisplayNameProvider         ; topValuesProvider
+                                 ; $solrIndexedType                       ; Kategori        ; string    ; false                      ;                     ; MultiSelectOr  ; Alpha          ; 100     ; true  ; false                        ; dimensionValueProvider           ;
+
+
+INSERT_UPDATE SolrIndexedProperty;solrIndexedType(identifier)[unique=true];name[unique=true];type(code);sortableType(code);currency[default=false];localized[default=false];multiValue[default=false];facet[default=true];facetType(code);facetSort(code);priority;visible;useForSpellchecking[default=false];useForAutocomplete[default=false];fieldValueProvider;facetDisplayNameProvider;customFacetSortProvider;topValuesProvider;rangeSets(name)
+                                 ;$solrIndexedType                        ; Range Harga            ;double ; ;true ;    ;    ; ;MultiSelectOr ;Alpha ; 4000;true;    ;    ;productPriceValueProvider              ;                                             ;                             ;defaultTopValuesProvider ;demoPriceRangeIDR

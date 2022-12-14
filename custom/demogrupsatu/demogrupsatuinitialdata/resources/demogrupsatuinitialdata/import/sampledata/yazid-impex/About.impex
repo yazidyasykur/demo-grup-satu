@@ -41,7 +41,7 @@ INSERT_UPDATE ContentSlotForTemplate; $contentCV[unique = true]; uid[unique = tr
                                     ;                          ; PlaceholderContentSlot-AboutPageTemplate ; PlaceholderContentSlot ;                                                                           		; PlaceholderContentSlot                     ; true
 
 INSERT_UPDATE ContentPage; $contentCV[unique = true]; uid[unique = true]     	; name                     ; masterTemplate(uid, $contentCV) 	; label; defaultPage[default = 'true']; approvalStatus(code)[default = 'approved']; homepage[default = 'false']
-                         ;                   ; about			; About Page 	   		   ; AboutPageTemplate 	; about;;;
+                         ;                   ; aboutPage			; About Page 	   		   ; AboutPageTemplate 	; aboutPage;;;
                          
 
 ###############################
@@ -58,7 +58,7 @@ INSERT_UPDATE ContentSlot; $contentCV[unique = true]; uid[unique = true]        
                          ;                          ; Section3-AboutPageSlot 		  ; Section3-AboutPageTemplate 	     ; DefinitionComp 		 ; true
                          ;                          ; Section4-AboutPageSlot 		  ; Section4-AboutPageTemplate 	     ; FAQComp			 ; true
 
-INSERT_UPDATE ContentSlotForPage; $contentCV[unique = true]; uid[unique = true]	; position[unique = true]; page(uid, $contentCV)[unique = true][default = 'about']; contentSlot(uid, $contentCV)[unique = true]; ; ;
+INSERT_UPDATE ContentSlotForPage; $contentCV[unique = true]; uid[unique = true]	; position[unique = true]; page(uid, $contentCV)[unique = true][default = 'aboutPage']; contentSlot(uid, $contentCV)[unique = true]; ; ;
                                 ;                          ; Section1-jumbotron  	; Section1               ;                                                                    ; Section1-AboutPageSlot     		   ; ; ;
                                 ;                          ; Section2-about; Section2               ;                                                                    ; Section2-AboutPageSlot        ; ; ;
                                 ;                          ; Section3-definition	; Section3               ;                                                                    ; Section3-AboutPageSlot        ; ; ;

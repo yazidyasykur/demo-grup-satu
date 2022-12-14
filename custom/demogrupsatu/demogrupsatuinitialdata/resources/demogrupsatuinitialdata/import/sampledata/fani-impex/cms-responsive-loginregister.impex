@@ -19,10 +19,32 @@ INSERT_UPDATE PageTemplate;$contentCV[unique=true];uid[unique=true];name;fronten
 UPDATE PageTemplate;$contentCV[unique=true];uid[unique=true];velocityTemplate[translator=de.hybris.platform.commerceservices.impex.impl.FileLoaderValueTranslator]
 ;;LoginPageTemplate;;$jarResourceCms/structure-view/structure_LoginPageTemplate.vm
 
+# Login Page Template
 INSERT_UPDATE ContentSlotName;name[unique=true];template(uid,$contentCV)[unique=true][default='LoginPageTemplate'];validComponentTypes(code);compTypeGroup(code)
-;PlaceholderContentSlot;;;wide
+;SiteLogo;;;logo
+;HeaderLinks;;;headerlinks
+;SearchBox;;;searchbox
+;MiniCart;;;minicart
+;NavigationBar;;;navigation
+;Footer;;;footer
+;TopHeaderSlot;;;wide
+;BottomHeaderSlot;;;wide
+;LeftContentSlot;;;wide
+;RightContentSlot;;;wide
+;PlaceholderContentSlot;;;
 
 INSERT_UPDATE ContentSlotForTemplate;$contentCV[unique=true];uid[unique=true];position[unique=true];pageTemplate(uid,$contentCV)[unique=true][default='LoginPageTemplate'];contentSlot(uid,$contentCV)[unique=true];allowOverwrite
+;;SiteLogo-LoginPage;SiteLogo;;SiteLogoSlot;true
+;;HomepageLink-LoginPage;HomepageNavLink;;HomepageNavLinkSlot;true
+;;NavigationBar-LoginPage;NavigationBar;;NavigationBarSlot;true
+;;MiniCart-LoginPage;MiniCart;;MiniCartSlot;true
+;;Footer-LoginPage;Footer;;FooterSlot;true
+;;HeaderLinks-LoginPage;HeaderLinks;;HeaderLinksSlot;true
+;;SearchBox-LoginPage;SearchBox;;SearchBoxSlot;true
+;;TopHeaderSlot-LoginPage;TopHeaderSlot;;TopHeaderSlot;true
+;;BottomHeaderSlot-LoginPage;BottomHeaderSlot;;BottomHeaderSlot;true
+;;LeftContentSlot-LoginPage;LeftContentSlot;;LeftContentSlot;true
+;;RightContentSlot-LoginPage;RightContentSlot;;RightContentSlot;true
 ;;PlaceholderContentSlot-LoginPage;PlaceholderContentSlot;;PlaceholderContentSlot;true
 
 INSERT_UPDATE ContentPage;$contentCV[unique=true];uid[unique=true];name;masterTemplate(uid,$contentCV);label;defaultPage[default='true'];approvalStatus(code)[default='approved'];homepage[default='false']
@@ -39,9 +61,30 @@ UPDATE PageTemplate;$contentCV[unique=true];uid[unique=true];velocityTemplate[tr
 ;;RegisterPageTemplate;;$jarResourceCms/structure-view/structure_RegisterPageTemplate.vm
 
 INSERT_UPDATE ContentSlotName;name[unique=true];template(uid,$contentCV)[unique=true][default='RegisterPageTemplate'];validComponentTypes(code);compTypeGroup(code)
-;PlaceholderContentSlot;;;wide
+;SiteLogo;;;logo
+;HeaderLinks;;;headerlinks
+;SearchBox;;;searchbox
+;MiniCart;;;minicart
+;NavigationBar;;;navigation
+;Footer;;;footer
+;TopHeaderSlot;;;wide
+;BottomHeaderSlot;;;wide
+;LeftContentSlot;;;wide
+;RightContentSlot;;;wide
+;PlaceholderContentSlot;;;
 
 INSERT_UPDATE ContentSlotForTemplate;$contentCV[unique=true];uid[unique=true];position[unique=true];pageTemplate(uid,$contentCV)[unique=true][default='RegisterPageTemplate'];contentSlot(uid,$contentCV)[unique=true];allowOverwrite
+;;SiteLogo-RegisterPage;SiteLogo;;SiteLogoSlot;true
+;;HomepageLink-RegisterPage;HomepageNavLink;;HomepageNavLinkSlot;true
+;;NavigationBar-RegisterPage;NavigationBar;;NavigationBarSlot;true
+;;MiniCart-RegisterPage;MiniCart;;MiniCartSlot;true
+;;Footer-RegisterPage;Footer;;FooterSlot;true
+;;HeaderLinks-RegisterPage;HeaderLinks;;HeaderLinksSlot;true
+;;SearchBox-RegisterPage;SearchBox;;SearchBoxSlot;true
+;;TopHeaderSlot-RegisterPage;TopHeaderSlot;;TopHeaderSlot;true
+;;BottomHeaderSlot-RegisterPage;BottomHeaderSlot;;BottomHeaderSlot;true
+;;LeftContentSlot-RegisterPage;LeftContentSlot;;LeftContentSlot;true
+;;RightContentSlot-RegisterPage;RightContentSlot;;RightContentSlot;true
 ;;PlaceholderContentSlot-RegisterPage;PlaceholderContentSlot;;PlaceholderContentSlot;true
 
 INSERT_UPDATE ContentPage;$contentCV[unique=true];uid[unique=true];name;masterTemplate(uid,$contentCV);label;defaultPage[default='true'];approvalStatus(code)[default='approved'];homepage[default='false']
@@ -51,20 +94,44 @@ INSERT_UPDATE ContentPage;$contentCV[unique=true];uid[unique=true];name;masterTe
 
 ### START CHECKOUT LOGIN PAGE CONTROLLER ###
 
-# INSERT_UPDATE PageTemplate;$contentCV[unique=true];uid[unique=true];name;frontendTemplateName;restrictedPageTypes(code);active[default=true]
-# ;;CheckoutLoginPageTemplate;Checkout Login Page Template;;ContentPage;false;
+INSERT_UPDATE PageTemplate;$contentCV[unique=true];uid[unique=true];name;frontendTemplateName;restrictedPageTypes(code);active[default=true]
+;;CheckoutLoginPageTemplate;Checkout Login Page Template;;ContentPage;false;
 
-# UPDATE PageTemplate;$contentCV[unique=true];uid[unique=true];velocityTemplate[translator=de.hybris.platform.commerceservices.impex.impl.FileLoaderValueTranslator]
-# ;;CheckoutLoginPageTemplate ;$jarResourceCms/structure-view/structure_LoginPageTemplate.vm
+UPDATE PageTemplate;$contentCV[unique=true];uid[unique=true];velocityTemplate[translator=de.hybris.platform.commerceservices.impex.impl.FileLoaderValueTranslator]
+;;CheckoutLoginPageTemplate ;$jarResourceCms/structure-view/structure_checkoutLoginPageTemplate.vm
 
-# INSERT_UPDATE ContentSlotName;name[unique=true];template(uid,$contentCV)[unique=true][default='CheckoutLoginPageTemplate'];validComponentTypes(code);compTypeGroup(code)
-# ;PlaceholderContentSlot;;;wide
+# Checkout Login Page Template
+INSERT_UPDATE ContentSlotName;name[unique=true];template(uid,$contentCV)[unique=true][default='CheckoutLoginPageTemplate'];validComponentTypes(code);compTypeGroup(code)
+;SiteLogo;;;logo
+;HeaderLinks;;;headerlinks
+;SearchBox;;;searchbox
+;MiniCart;;;minicart
+;NavigationBar;;;navigation
+;TopContent;;;wide
+;BottomContent;;;wide
+;Footer;;;footer
+;LeftContentSlot;;;wide
+;RightContentSlot;;;wide
+;CenterContentSlot;;;wide
+;PlaceholderContentSlot;;;
 
-# INSERT_UPDATE ContentSlotForTemplate;$contentCV[unique=true];uid[unique=true];position[unique=true];pageTemplate(uid,$contentCV)[unique=true][default='CheckoutLoginPageTemplate'];contentSlot(uid,$contentCV)[unique=true];allowOverwrite
-# ;;PlaceholderContentSlot-CheckoutLoginPage;PlaceholderContentSlot;;PlaceholderContentSlot;true
+INSERT_UPDATE ContentSlotForTemplate;$contentCV[unique=true];uid[unique=true];position[unique=true];pageTemplate(uid,$contentCV)[unique=true][default='CheckoutLoginPageTemplate'];contentSlot(uid,$contentCV)[unique=true];allowOverwrite
+                                    ;;SiteLogo-CheckoutLoginPage;SiteLogo;;SiteLogoSlot;true
+                                    ;;HomepageLink-CheckoutLoginPage;HomepageNavLink;;HomepageNavLinkSlot;true
+                                    ;;NavigationBar-CheckoutLoginPage;NavigationBar;;NavigationBarSlot;true
+                                    ;;MiniCart-CheckoutLoginPage;MiniCart;;MiniCartSlot;true
+                                    ;;Footer-CheckoutLoginPage;Footer;;FooterSlot;true
+                                    ;;HeaderLinks-CheckoutLoginPage;HeaderLinks;;HeaderLinksSlot;true
+                                    ;;SearchBox-CheckoutLoginPage;SearchBox;;SearchBoxSlot;true
+                                    ;;TopHeaderSlot-CheckoutLoginPage;TopHeaderSlot;;TopHeaderSlot;true
+                                    ;;BottomHeaderSlot-CheckoutLoginPage;BottomHeaderSlot;;BottomHeaderSlot;true
+                                    ;;LeftContentSlot-CheckoutLoginPage;LeftContentSlot;;LeftContentSlot;true
+                                    ;;RightContentSlot-CheckoutLoginPage;RightContentSlot;;RightContentSlot;true
+                                    ;;CenterContentSlot-CheckoutLoginPage;CenterContentSlot;;CenterContentSlot;true
+                                    ;;PlaceholderContentSlot-CheckoutLoginPage;PlaceholderContentSlot;;PlaceholderContentSlot;true
 
-# INSERT_UPDATE ContentPage;$contentCV[unique=true];uid[unique=true];name;masterTemplate(uid,$contentCV);label;defaultPage[default='true'];approvalStatus(code)[default='approved'];homepage[default='false']
-# ;;checkout-login;Checkout-Login Page;CheckoutLoginPageTemplate;checkout-login
+INSERT_UPDATE ContentPage;$contentCV[unique=true];uid[unique=true];name;masterTemplate(uid,$contentCV);label;defaultPage[default='true'];approvalStatus(code)[default='approved'];homepage[default='false'];previewImage(code, $contentCV)[default='ContentPageModel__function_preview']
+ ;;checkout-login;Checkout-Login Page;CheckoutLoginPageTemplate;checkout-login
 
 ### END CHECKOUT LOGIN PAGE CONTROLLER ###
 
@@ -89,27 +156,31 @@ $jarResourceCms=jar:org.demogrupsatu.initialdata.setup.InitialDataSystemSetup&/d
 ### Customer Login
 INSERT_UPDATE ContentSlot;$contentCV[unique=true];uid[unique=true];name;active;cmsComponents(&componentRef);;;
 ;;LeftContentSlot-login;Left Content Slot for Customer Login;true;ReturningCustomerLoginComponent;;;
-#;;RightContentSlot-login;Right Content Slot for Customer Login;true;NewCustomerLoginComponent;;;
 
 INSERT_UPDATE ContentSlotForPage;$contentCV[unique=true];uid[unique=true];position[unique=true];page(uid,$contentCV)[unique=true][default='login'];contentSlot(uid,$contentCV)[unique=true];;;
 ;;LeftContentSlot-login;LeftContentSlot;;LeftContentSlot-login;;;
-#;;RightContentSlot-login;RightContentSlot;;RightContentSlot-login;;;
 
 INSERT_UPDATE JspIncludeComponent;$contentCV[unique=true];uid[unique=true];name;page;actions(uid,$contentCV);&componentRef
 ;;ReturningCustomerLoginComponent;Returning Customer Login Component;accountReturningCustomerLogin.jsp;;ReturningCustomerLoginComponent
-#;;NewCustomerLoginComponent;New Customer Login Component;accountNewCustomerLogin.jsp;;NewCustomerLoginComponent
-
 
 ### Customer Checkout Login
-# INSERT_UPDATE ContentSlot;$contentCV[unique=true];uid[unique=true];name;active;cmsComponents(&componentRef);;;
-# ;;LeftContentSlot-checkoutlogin;Left Content Slot for Customer Login;true;ReturningCustomerCheckoutLoginComponent;;;
-#;;RightContentSlot-login;Right Content Slot for Customer Login;true;NewCustomerLoginComponent;;;
-
-# INSERT_UPDATE ContentSlotForPage;$contentCV[unique=true];uid[unique=true];position[unique=true];page(uid,$contentCV)[unique=true][default='login'];contentSlot(uid,$contentCV)[unique=true];;;
-# ;;LeftContentSlot-checkoutlogin;LeftContentSlot;;LeftContentSlot-checkoutlogin;;;
-#;;RightContentSlot-login;RightContentSlot;;RightContentSlot-login;;;
+### Checkout Login
+INSERT_UPDATE ContentSlot;$contentCV[unique=true];uid[unique=true];name;active;cmsComponents(&componentRef);;;
+                         ;;LeftContentSlot-checkout-login;Left Content Slot for Checkout Login;true;ReturningCustomerCheckoutLoginComponent;;;
+                         ;;CenterContentSlot-checkout-login;Center Content Slot for Checkout Login;true;NewCustomerCheckoutLoginComponent;;;
+                         ;;RightContentSlot-checkout-login;Right Content Slot for Checkout Login;true;GuestCheckoutLoginComponent;;;
 
 # INSERT_UPDATE JspIncludeComponent;$contentCV[unique=true];uid[unique=true];name;page;actions(uid,$contentCV);&componentRef
 # ;;ReturningCustomerCheckoutLoginComponent;Returning Customer Login Component;accountReturningCustomerLogin.jsp;;ReturningCustomerCheckoutLoginComponent
 #;;NewCustomerLoginComponent;New Customer Login Component;accountNewCustomerLogin.jsp;;NewCustomerLoginComponent
+
+INSERT_UPDATE ContentSlotForPage;$contentCV[unique=true];uid[unique=true];position[unique=true];page(uid,$contentCV)[unique=true][default='checkout-login'];contentSlot(uid,$contentCV)[unique=true];;;
+                                ;;LeftContentSlot-checkout-login;LeftContentSlot;;LeftContentSlot-checkout-login;;;
+                                ;;CenterContentSlot-checkout-login;CenterContentSlot;;CenterContentSlot-checkout-login;;;
+                                ;;RightContentSlot-checkout-login;RightContentSlot;;RightContentSlot-checkout-login;;;
+
+INSERT_UPDATE JspIncludeComponent;$contentCV[unique=true];uid[unique=true];name;page;actions(uid,$contentCV);&componentRef
+;;NewCustomerCheckoutLoginComponent;New Customer Checkout Login Component;checkoutNewCustomerLogin.jsp;;NewCustomerCheckoutLoginComponent
+;;ReturningCustomerCheckoutLoginComponent;Returning Customer Checkout Login Component;checkouReturningCustomerLogin.jsp;;ReturningCustomerCheckoutLoginComponent
+;;GuestCheckoutLoginComponent;Guest Checkout Login Component;checkoutGuestLogin.jsp;;GuestCheckoutLoginComponent
 

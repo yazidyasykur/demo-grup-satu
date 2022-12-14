@@ -6,7 +6,7 @@
 
 <spring:htmlEscape defaultHtmlEscape="true" />
 
-<div class="well well-tertiary well-lg">
+<div class="well-custom well-tertiary well-lg">
     <ycommerce:testId code="orderDetail_overview_section">
         <order:accountOrderDetailsOverview order="${orderData}"/>
     </ycommerce:testId>

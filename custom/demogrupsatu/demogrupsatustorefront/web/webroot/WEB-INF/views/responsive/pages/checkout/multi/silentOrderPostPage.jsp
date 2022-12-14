@@ -14,6 +14,7 @@
 <spring:htmlEscape defaultHtmlEscape="true" />
 
 <template:page pageTitle="${pageTitle}" hideHeaderLinks="true">
+<h2 class="text-center">Checkout</h1>
 <div class="centered container-custom">
     <div class="multistep-container">
 		<multiCheckout:checkoutSteps checkoutSteps="${checkoutSteps}" progressBarId="${progressBarId}">
@@ -134,7 +135,7 @@
                          </div>
                     </div>
 
-                    <button type="button" class="next-btn checkout-next"><spring:theme code="checkout.multi.paymentMethod.continue"/></button>
+                    <button type="button" class="next-btn checkout-next submit_silentOrderPostForm"><spring:theme code="checkout.multi.paymentMethod.continue"/></button>
                 </c:if>
 
 				<c:if test="${not empty paymentInfos}">
@@ -173,7 +174,7 @@
 		</multiCheckout:checkoutSteps>
 	</div>
 
-	<div class="">
+	<div class="order-details-container">
 		<multiCheckout:checkoutOrderDetails cartData="${cartData}" showDeliveryAddress="true" showPaymentInfo="false" showTaxEstimate="false" showTax="true" />
     </div>
 </div>

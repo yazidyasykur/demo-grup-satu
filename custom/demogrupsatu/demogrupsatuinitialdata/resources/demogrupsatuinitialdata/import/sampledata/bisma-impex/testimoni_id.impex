@@ -1,0 +1,38 @@
+UPDATE GenericItem[processor = de.hybris.platform.commerceservices.impex.impl.ConfigPropertyImportProcessor]; pk[unique = true]
+
+## IMPEX YANG testimoni DULU
+$contentCatalog=demoContentCatalog
+$contentCatalogName=Demo Content Catalog
+$contentCV=catalogVersion(CatalogVersion.catalog(Catalog.id[default=$contentCatalog]),CatalogVersion.version[default=Staged])[default=$contentCatalog:Staged]
+$lang = id
+INSERT_UPDATE CMSLinkComponent;$contentCV[unique=true]  ;uid[unique=true]       ;linkName[lang=$lang]
+                              ;                         ;ProductLink            ;"Produk"
+                              ;                         ;WarrantyLink           ;"Aktivasi Garansi"
+                              ;                         ;WaybillLink            ;"Cek Resi"
+                              ;                         ;FAQLink                ;"FAQ"
+                              ;                         ;HelpLink               ;"Bantuan"
+                              ;                         ;TandCLink              ;"Syarat dan Ketentuan"
+                              ;                         ;PrivacyLink            ;"Kebijakan Privasi"
+                              ;                         ;AboutUsLink            ;"Tentang InTheBox"
+                              ;                         ;OfflineLink            ;"Toko Offline"
+                              ;                         ;BlogLink               ;"Blog"
+                              ;                         ;TestimonyLink          ;"Testimoni"
+
+UPDATE CMSNavigationNode;uid[unique=true]                ;$contentCV[unique=true] ; title[lang=$lang]
+                        ;ProductSuperNavNode             ;                        ; "Produk"
+                        ;SupportNavNode                  ;                        ; "Support"
+                        ;AboutNewNavNode                 ;                        ; "About"
+
+UPDATE CMSNavigationNode;uid[unique=true]                    ;$contentCV[unique=true]; title[lang=$lang]
+                        ;ProductNavNode                      ;                       ; "Produk"
+                        ;WarrantyNavNode                     ;                       ; "Aktivasi Garansi"
+                        ;WaybillNavNode                      ;                       ; "Cek Resi"
+                        ;FAQNewNavNode                       ;                       ; "FAQ"
+                        ;HelpNavNode                         ;                       ; "Bantuan"
+                        ;TandCNavNode                        ;                       ; "Syarat dan Ketentuan"
+                        ;PrivacyNavNode                      ;                       ; "Kebijakan Privasi"
+                        ;AboutUsNewNavNode                   ;                       ; "Tentang InTheBox"
+                        ;OfflineNavNode                      ;                       ; "Toko Offline"
+                        ;BlogNavNode                         ;                       ; "Blog"
+                        ;TestimonyNavNode                    ;                       ; "Testimoni"
+
