@@ -6,8 +6,8 @@
 
 <spring:htmlEscape defaultHtmlEscape="true" />
 
-<div class="account-orderdetail well well-tertiary">
-    <div class="well-headline">
+<div class="account-orderdetail well well-custom">
+    <div class="well-headline well-headline-custom">
         <spring:theme code="text.account.order.orderDetails.billingInformtion" />
     </div>
     <ycommerce:testId code="orderDetails_paymentDetails_section">

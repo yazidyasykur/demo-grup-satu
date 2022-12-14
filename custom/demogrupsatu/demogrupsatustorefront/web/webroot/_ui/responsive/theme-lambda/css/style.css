@@ -23407,6 +23407,20 @@ h2 {
 .coupon-list {
   border: none !important;
 }
+.well-custom {
+  background-color: #6086C2 !important;
+  color: white !important;
+}
+.well-custom > span {
+  color: white !important;
+}
+.well-headline-custom {
+  background-color: #6086C2 !important;
+  border: none;
+}
+.item-group-custom {
+  color: white !important;
+}
 @media screen and (max-width: 948px) {
   .container-custom {
     flex-direction: column-reverse;

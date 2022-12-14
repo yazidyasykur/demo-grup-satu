@@ -12,7 +12,7 @@
 <div class="order-detail-overview">
     <div class="row">
         <div class="col-sm-3">
-            <div class="item-group">
+            <div class="item-group-custom">
                 <ycommerce:testId code="orderDetail_overviewOrderID_label">
                     <span class="item-label"><spring:theme code="text.account.orderHistory.orderNumber"/></span>
                     <span class="item-value">${fn:escapeXml(orderData.code)}</span>
@@ -21,7 +21,7 @@
         </div>
         <c:if test="${not empty orderData.statusDisplay}">
             <div class="col-sm-3">
-                <div class="item-group">
+                <div class="item-group-custom">
                     <ycommerce:testId code="orderDetail_overviewOrderStatus_label">
                         <span class="item-label"><spring:theme code="text.account.orderHistory.orderStatus"/></span>
                         <span class="item-value"><spring:theme code="text.account.order.status.display.${orderData.statusDisplay}"/></span>
@@ -30,7 +30,7 @@
             </div>
         </c:if>
         <div class="col-sm-3">
-            <div class="item-group">
+            <div class="item-group-custom">
                 <ycommerce:testId code="orderDetail_overviewStatusDate_label">
                     <span class="item-label"><spring:theme code="text.account.orderHistory.datePlaced"/></span>
                     <span class="item-value"><fmt:formatDate value="${order.created}" dateStyle="medium" timeStyle="short" type="both"/></span>
@@ -38,7 +38,7 @@
             </div>
         </div>
         <div class="col-sm-3">
-            <div class="item-group">
+            <div class="item-group-custom">
                 <ycommerce:testId code="orderDetail_overviewOrderTotal_label">
                     <span class="item-label"><spring:theme code="text.account.order.total"/></span>
                     <span class="item-value"><format:price priceData="${order.totalPriceWithTax}"/></span>
@@ -47,7 +47,7 @@
         </div>
         <c:if test="${orderData.quoteCode ne null}">
 			  <div class="col-sm-3">
-			  	  <div class="item-group">
+			  	  <div class="item-group-custom">
 					  <spring:url htmlEscape="false" value="/my-account/my-quotes/{/quoteCode}" var="quoteDetailUrl">
 					  <spring:param name="quoteCode"  value="${orderData.quoteCode}"/>
 					  </spring:url>

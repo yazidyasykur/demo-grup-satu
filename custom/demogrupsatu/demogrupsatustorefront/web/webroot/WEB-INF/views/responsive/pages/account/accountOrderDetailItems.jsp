@@ -9,6 +9,7 @@
         <c:if test="${not empty orderData.unconsignedEntries}">
             <order:orderUnconsignedEntries order="${orderData}"/>
         </c:if>
+
         <c:forEach items="${orderData.consignments}" var="consignment">
             <c:if test="${consignment.status.code eq 'WAITING' or consignment.status.code eq 'PICKPACK' or consignment.status.code eq 'READY'}">
                 <div class="productItemListHolder fulfilment-states-${fn:escapeXml(consignment.status.code)}">
