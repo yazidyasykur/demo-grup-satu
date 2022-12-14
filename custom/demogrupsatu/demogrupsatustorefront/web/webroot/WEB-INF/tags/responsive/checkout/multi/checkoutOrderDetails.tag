@@ -24,5 +24,5 @@
     <order:appliedVouchers order="${cartData}" />
 
     <multi-checkout:paymentInfo cartData="${cartData}" paymentInfo="${cartData.paymentInfo}" showPaymentInfo="${showPaymentInfo}" />
-
+    <p>${cartData.description}</p>
 </div>
