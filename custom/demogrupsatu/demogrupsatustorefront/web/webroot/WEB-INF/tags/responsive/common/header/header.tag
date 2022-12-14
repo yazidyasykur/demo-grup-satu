@@ -149,7 +149,7 @@
                         <sec:authorize access="!hasAnyRole('ROLE_ANONYMOUS')" >
                             <ycommerce:testId code="header_signOut">
                                 <c:url value="/logout" var="logoutUrl"/>
-                                <a href="${fn:escapeXml(logoutUrl)}" class="link-hover">
+                                <a href="${fn:escapeXml(logoutUrl)}" class="link-hover text-on-nav-link text-weight-bold">
                                     <spring:theme code="header.link.logout"/>
                                 </a>
                             </ycommerce:testId>
