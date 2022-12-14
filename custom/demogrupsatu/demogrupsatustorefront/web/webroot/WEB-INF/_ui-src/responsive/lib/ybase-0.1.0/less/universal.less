@@ -104,6 +104,18 @@
         justify-content: flex-end;
     }
 
+    .unboxing-responsive {
+        width: 1000px;
+        margin: 0 auto;
+     }
+
+    .on-nav-link {
+        width: 100%;
+        height: auto;
+        margin: 30px auto;
+        text-align: center;
+    }
+
     // Text
     .text-responsive {
         font-size: 18px;
@@ -117,6 +129,18 @@
         font-size: 16px;
     }
 
+    .unboxing-title-responsive {
+        font-size: 24px;
+     }
+
+     .unboxing-text-responsive {
+        font-size: 14px;
+     }
+
+    .carousel__item--desc {
+       font-size: 18px;
+       width: 260px;
+    }
     // Margin
     // Hampir semua
     .small-part-margin, .small-part-margin-logo {
@@ -135,7 +159,7 @@
 
     // Show/Hide Link
     .link-header {
-        display: inline-block;
+        display: block;
     }
 
     .link-header-small-web, .on-nav-link {
@@ -149,6 +173,24 @@
           max-height: 140px;
         }
     }
+}
+
+@media only screen and (max-width: 1050px) {
+     .unboxing-responsive {
+        width: 800px;
+     }
+
+     .unboxing-title-responsive {
+        font-size: 20px;
+     }
+
+     .unboxing-text-responsive {
+        font-size: 11px;
+     }
+
+     .carousel__item--desc {
+        font-size: 14px;
+     }
 }
 
 @media only screen and (max-width: 975px) {
@@ -178,8 +220,12 @@
         width: 700px;
     }
 
-    .top-part-header, .nav-link-header {
+    .top-part-header {
         font-size: 12px;
+    }
+
+    .nav-link-header {
+        font-size: 13px;
     }
 
     // Footer
@@ -208,6 +254,10 @@
         font-size: 1.4rem;
     }
 
+    .carousel__item--desc {
+       width: 200px;
+    }
+
     // Margin
     // Hampir semua
     .small-part-margin, .small-part-margin-logo {
@@ -233,6 +283,20 @@
     a.button-3 {
         padding: 8px 20px;
         font-size: 18px;
+    }
+}
+
+@media only screen and (max-width: 825px) {
+    .unboxing-responsive {
+       width: 600px;
+    }
+
+    .unboxing-title-responsive {
+       font-size: 16px;
+    }
+
+    .unboxing-text-responsive {
+       font-size: 9px;
     }
 }
 
@@ -302,7 +366,12 @@
     }
 
     .carousel__item--name {
-        font-size: 10px;
+        font-size: 12px;
+    }
+
+    .carousel__item--desc {
+       font-size: 10px;
+       width: 160px;
     }
 
     // Margin
@@ -316,7 +385,7 @@
     }
 
     .link-header-small-web {
-        display: inline-block;
+        display: block;
     }
 
     // Img
@@ -376,6 +445,10 @@
 }
 
 /* Text editing */
+.text-weight-regular {
+    font-weight: normal;
+}
+
 .palmer-font {
     font-family: "Palmer Lake";
     color: #7FC5F9;
@@ -440,6 +513,11 @@
 .text-justify {
     text-align: justify;
     text-justify: inter-word;
+}
+
+.text-on-nav-link {
+    margin: 10px auto;
+    font-size: 20px;
 }
 
 /* Other */

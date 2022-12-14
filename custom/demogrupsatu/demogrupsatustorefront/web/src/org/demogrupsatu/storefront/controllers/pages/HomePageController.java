@@ -66,6 +66,7 @@ public class HomePageController extends AbstractPageController
 		double averageRate = 0;
 		int listSize = dataList.size();
 		boolean halfStar = false;
+		int emptyStar = 0;
 
 		for(int i = 0; i < 3; i++) {
 			newList.add(dataList.get(i));
@@ -82,6 +83,10 @@ public class HomePageController extends AbstractPageController
 
 		if(averageRate % 1 >= 0.5) {
 			halfStar = true;
+			emptyStar = 5 - (int) Math.floor(averageRate) - 1;
+		}
+		else {
+			emptyStar = 5 - (int) Math.floor(averageRate);
 		}
 
 		model.addAttribute("totalReview", listSize);
@@ -89,6 +94,7 @@ public class HomePageController extends AbstractPageController
 		model.addAttribute("showSomeTestimoni", newList);
 		model.addAttribute("starCount", (int) Math.floor(averageRate));
 		model.addAttribute("isMoreThanHalf", halfStar);
+		model.addAttribute("emptyStar", emptyStar);
 
 		return getViewForPage(model);
 	}
