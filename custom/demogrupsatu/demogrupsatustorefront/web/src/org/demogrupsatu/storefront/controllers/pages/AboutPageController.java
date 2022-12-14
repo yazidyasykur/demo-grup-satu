@@ -5,21 +5,28 @@ package org.demogrupsatu.storefront.controllers.pages;
 import de.hybris.platform.acceleratorstorefrontcommons.controllers.pages.AbstractPageController;
 import de.hybris.platform.cms2.exceptions.CMSItemNotFoundException;
 import de.hybris.platform.cms2.model.pages.ContentPageModel;
+import org.demogrupsatu.facades.faq.FaqFacade;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
+import javax.annotation.Resource;
+
 @Controller
 @RequestMapping("/about")
 public class AboutPageController extends AbstractPageController {
-    private static final String TEMPLATE_PAGE = "about";
-    @RequestMapping(value=TEMPLATE_PAGE, method = RequestMethod.GET)
+    private static final String TEMPLATE_PAGE = "aboutPage";
+
+    @Resource(name="faqFacade")
+    private FaqFacade faqFacade;
+
+    @RequestMapping(method = RequestMethod.GET)
     public String getAbout(final Model model) throws CMSItemNotFoundException{
-        System.out.println("Hello");
         final ContentPageModel demoData = getContentPageForLabelOrId(TEMPLATE_PAGE);
         storeCmsPageInModel(model, demoData);
         setUpMetaDataForContentPage(model, demoData);
+        model.addAttribute("faqs",faqFacade.getAllFaq());
         return getViewForPage(model);
     }
 }

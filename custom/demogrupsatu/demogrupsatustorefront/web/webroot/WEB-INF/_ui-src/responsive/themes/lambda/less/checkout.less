@@ -3,7 +3,7 @@
 }
 
 .multistep-container{
-    margin-top: 30px;
+    margin: 30px 20px;
 }
 
 .actived {
@@ -44,7 +44,6 @@
 
 .control-custom {
     max-width: 50%;
-
 }
 
 .form-width-custom {
@@ -105,9 +104,67 @@
     border-bottom: none !important;
 }
 
-@media screen and (max-width: 930px) {
+.checkout-order-summary {
+    border: none;
+}
+
+.voucher-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0px 20px;
+}
+
+.voucher-input {
+    min-width: 200px;
+    padding: 10px 5px;
+    border-radius: 10px;
+    margin: 0px 5px;
+    border: 1px solid grey;
+}
+
+.voucher-btn {
+    padding: 10px;
+    border-radius: 10px;
+    background-color : #6086C2;
+    color: white !important;
+}
+
+.checkout-review {
+    border: none;
+}
+
+.review-custom {
+    border: 1px solid grey;
+    border-radius: 20px;
+    padding: 10px;
+}
+
+.voucher-list-custom{
+    border-radius: 20px;
+    background-color: #23cf51;
+    color: white !important;
+    margin-left: 20px;
+}
+
+.checkout-coupon-list {
+    border: none !important;
+}
+
+.coupon-list {
+    border: none !important;
+}
+
+@media screen and (max-width: 948px) {
     .container-custom {
         flex-direction: column-reverse;
         margin: 0px 20px;
+    }
+}
+
+
+@media screen and (max-width: 680px) {
+    .multistep-container {
+        min-width: 0px;
     }
 }

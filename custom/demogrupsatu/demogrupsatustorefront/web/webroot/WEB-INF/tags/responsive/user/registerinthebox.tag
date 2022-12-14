@@ -14,12 +14,13 @@
 <spring:url value="/login/register/termsandconditions" var="getTermsAndConditionsUrl"/>
 <c:url value="/login" var="loginUrl" />
 <c:url value="/register/newcustomer" var="submitAction" />
+<c:url value="/" var="home" />
 <section class="loginregister-page">
   <div class="background-login">
     <div class="login-wrapper">
       <div class="login-container">
         <div class="login-logo">
-          <a href="https://inthebox.net">
+          <a href="${fn:escapeXml(home)}">
             <img
               src="https://inthebox.net/images/logo-inthebox-440x80.png"
               style="max-width: 300px"

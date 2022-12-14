@@ -15,12 +15,13 @@
 <spring:url value="/checkout/multi/termsAndConditions" var="getTermsAndConditionsUrl" htmlEscape="false"/>
 
 <template:page pageTitle="${pageTitle}" hideHeaderLinks="true">
-
+<h2 class="text-center">Checkout</h1>
 <div class="centered container-custom">
     <div class="multistep-container">
 
 		<multi-checkout:checkoutSteps checkoutSteps="${checkoutSteps}" progressBarId="${progressBarId}">
 			<ycommerce:testId code="checkoutStepFour">
+                <div class="review-custom">
 
                 <multi-checkout:checkoutVoucher cartData="${cartData}"/>
 
@@ -29,6 +30,7 @@
                         <multi-checkout:orderTotals cartData="${cartData}" showTaxEstimate="${showTaxEstimate}" showTax="${showTax}" subtotalsCssClasses="dark"/>
                     </div>
                 </div>
+
                 <div class="place-order-form">
                     <form:form action="${placeOrderUrl}" id="placeOrderForm1" modelAttribute="placeOrderForm">
                         <div class="checkbox">
@@ -43,11 +45,13 @@
                         </button>
                     </form:form>
                 </div>
+                </div>
 			</ycommerce:testId>
 		</multi-checkout:checkoutSteps>
+
     </div>
 
-    <div class="">
+    <div class="order-details-container">
 		<multi-checkout:checkoutOrderSummary cartData="${cartData}" showDeliveryAddress="true" showPaymentInfo="true" showTaxEstimate="true" showTax="true" />
 	</div>
 </div>

@@ -4,6 +4,56 @@
     src: url("../fonts/PalmerLakePrint-Regular.otf")
 }
 
+.cartNote{
+    margin-top:20px;
+    text-align:center;
+}
+
+.m-auto{
+    margin:auto;
+}
+
+.form-control {
+    margin:auto;
+    display: block;
+    width: 50%;
+    height: calc(1.5em + 1.3rem + 2px);
+    padding: 0.65rem 1rem;
+    font-size: 1.5rem;
+    font-weight: 400;
+    line-height: 1.5;
+    color: #495057;
+    background-color: #fff;
+    background-clip: padding-box;
+    border: 1px solid #ebedf2;
+    border-radius: 4px;
+    -webkit-transition: border-color 0.15s ease-in-out,-webkit-box-shadow 0.15s ease-in-out;
+    transition: border-color 0.15s ease-in-out,-webkit-box-shadow 0.15s ease-in-out;
+    transition: border-color 0.15s ease-in-out,box-shadow 0.15s ease-in-out;
+    transition: border-color 0.15s ease-in-out,box-shadow 0.15s ease-in-out,-webkit-box-shadow 0.15s ease-in-out;
+}
+
+textarea {
+    overflow: auto;
+    resize: vertical;
+}
+
+
+@media (max-width: @screen-sm-max) {
+
+    .batas{
+        width:90% !important;
+        margin:auto;
+    }
+
+    th {
+            background-color: @entry-group-header  ;
+            font-size: 2rem !important;
+            font-weight: normal !important;
+            color: black !important;
+            padding-right: 0 !important;
+          }
+}
 
 
 .tombolbiru{
@@ -20,7 +70,14 @@
 .untukharga{
     font-family:fontHarga !important;
     font-weight:normal !important;
-    font-size:3vw !important;
+    font-size:5rem !important;
+    color:#6086c2;
+}
+
+.untukhargasatuan{
+    font-family:fontHarga !important;
+    font-weight:normal !important;
+    font-size:4rem !important;
     color:#6086c2;
 }
 
@@ -29,17 +86,13 @@
     margin:auto;
 }
 
-.tinggi{
-    height:10vw !important;
-}
-
 .fixtotal{
     font-family:fontHarga !important;
     font-weight:normal;
     color:#6086c2;
     font-weight:bold;
     text-align:center;
-    font-size:5vw !important;
+    font-size:5vw ;
     font-weight:normal;
 }
 
@@ -201,13 +254,7 @@
   & > table {
     tbody > .entry-group-header {
 
-      & > th {
-        background-color: @entry-group-header  ;
-        font-size: 16px;
-        font-weight: 700;
-        color: @entry-group-text;
-        padding-right: 35px;
-      }
+
 
       a { color: @link-color; }
 

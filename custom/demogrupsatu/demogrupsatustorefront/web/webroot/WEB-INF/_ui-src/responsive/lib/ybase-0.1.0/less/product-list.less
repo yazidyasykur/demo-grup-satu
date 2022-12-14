@@ -1,3 +1,13 @@
+
+@font-face {
+    font-family: "Gradual";
+    src: url("../fonts/BwGradual.otf")
+}
+
+.hitam{
+    color:black !important;
+ }
+
 ::-webkit-scrollbar {
   height: 6px;
 }
@@ -20,27 +30,26 @@
 }
 
 .nama{
-    font-size:1.5vw;
+    font-size:2rem;
     color:black;
 }
 
 .kecil{
     color:#404040;
-    font-size:1vw;
+    font-size:1.6rem;
 }
 
 .flowrowblock{
-    min-width:220px;
-    width:280px;
+    width:22rem;
     margin:10px;
     &:empty {
         display: none;
-      }
+      };
     }
 
 .flowrow{
     display:grid;
-    grid-template-columns:repeat(3,1fr);
+    grid-template-columns:repeat(4,1fr);
     margin-top:3vw;
     &:empty {
             display: none;
@@ -89,6 +98,8 @@
     text-align:center;
     margin:auto;
     padding:1vw;
+    margin-top:1vw;
+    font-family:Gradual;
 }
 
 .pilihan{
@@ -96,9 +107,6 @@
 }
 
 
-.kecil{
-    font-size:15px;
-    }
 
 
 

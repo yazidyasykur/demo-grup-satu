@@ -36,12 +36,8 @@
 			<spring:theme code="text.skipToNavigation" var="skipToNavigation" />
 			<a href="#skiptonavigation" class="skiptonavigation" data-role="none">${fn:escapeXml(skipToNavigation)}</a>
 
-
 			<header:header hideHeaderLinks="${hideHeaderLinks}" />
 
-
-			
-			
 			<a id="skip-to-content"></a>
 		
 			<div class="main__inner-wrapper">

@@ -23,6 +23,7 @@
 </div>
 <div class="checkout-order-summary">
     <ycommerce:testId code="orderSummary">
+
         <multi-checkout:deliveryCartItems cartData="${cartData}" showDeliveryAddress="${showDeliveryAddress}" />
 
         <c:forEach items="${cartData.pickupOrderGroups}" var="groupData" varStatus="status">
