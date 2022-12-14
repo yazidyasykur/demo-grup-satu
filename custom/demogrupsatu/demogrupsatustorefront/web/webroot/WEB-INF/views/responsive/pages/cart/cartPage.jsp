@@ -10,7 +10,6 @@
 <spring:htmlEscape defaultHtmlEscape="true" />
 
 <template:page pageTitle="${pageTitle}">
-    <c:url value="/INTHEBOX/c/INTHEBOX" var="product" />
 	<cart:cartValidation/>
 	<cart:cartPickupValidation/>
 
@@ -24,12 +23,6 @@
                 <cms:component component="${feature}" element="div" class="yComponentWrapper"/>
             </cms:pageSlot>
 		</div>
-
-	   <c:if test="${not empty cartData.rootGroups}">
-           <cms:pageSlot position="CenterLeftContentSlot" var="feature">
-                <cms:component component="${feature}" element="div" class="yComponentWrapper"/>
-           </cms:pageSlot>
-        </c:if>
 		
 		 <c:if test="${not empty cartData.rootGroups}">
             <cms:pageSlot position="CenterRightContentSlot" var="feature">
@@ -41,10 +34,9 @@
 		</c:if>
 				
 		<c:if test="${empty cartData.rootGroups}">
-            <div class="tengah">
-                <h4>Belum ada barang dalam keranjang belanja Anda</h4>
-                <p>Lihat <a href="${fn:escapeXml(product)}">Produk</a> untuk mulai berbelanja.</p>
-            </div>
+             <cms:pageSlot position="EmptyCartMiddleContent" var="feature">
+                <cms:component component="${feature}" element="div" class="yComponentWrapper content__empty"/>
+            </cms:pageSlot>
 		</c:if>
 	</div>
 

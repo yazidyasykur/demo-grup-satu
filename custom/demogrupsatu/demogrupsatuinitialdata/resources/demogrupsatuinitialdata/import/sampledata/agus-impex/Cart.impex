@@ -8,31 +8,15 @@ $contentCatalog=demoContentCatalog
 $contentCV=catalogVersion(CatalogVersion.catalog(Catalog.id[default=$contentCatalog]),CatalogVersion.version[default=Staged])[default=$contentCatalog:Staged]
 $lang=en
 
-UPDATE CMSParagraphComponent;$contentCV[unique=true];uid[unique=true];content[lang=$lang]
-                            ;;EmptyCartParagraphComponent;"<h4>Keranjang Belanja Anda Kosong</h4>"
-
-
-INSERT_UPDATE CMSParagraphComponent;$contentCV[unique=true];uid[unique=true];name;&componentRef
-                                   ;;EmptyCartParagraphComponent;Empty Cart Paragraph Component;EmptyCartParagraphComponent
-
-
-
 INSERT_UPDATE JspIncludeComponent;$contentCV[unique=true];uid[unique=true];name;page;actions(uid,$contentCV);&componentRef
-                                 ;;StoreFinderComponent;Store Finder Component;storeFinderContent.jsp;ViewStoreAction;StoreFinderComponent
                                  ;;CartComponent;Cart Display Component;cartDisplay.jsp;;CartComponent
                                  ;;CartTotalsComponent;Cart Totals Display Component;cartTotalsDisplay.jsp;;CartTotalsComponent
-                                 ;;PromotionsComponent;Promotions Component;cartPromotionsDisplay.jsp;;PromotionsComponent
-                                 ;;PotentialPromotionsComponent;Potential Promotions Component;potentialPromotionsDisplay.jsp;;PotentialPromotionsComponent
                                  ;;CheckoutComponent;Checkout Display Component;checkoutDisplay.jsp;;CheckoutComponent
-
-# CMS View Store Action
-INSERT_UPDATE ViewStoreAction;$contentCV[unique=true];uid[unique=true];url;name;&actionRef
-                             ;;ViewStoreAction;;View Store Action;ViewStoreAction
+                                 ;;EmptyCartJSPIncludeComponent;Empty Cart Display Component;emptyCart.jsp;;EmptyCartJSPIncludeComponent
 
 
 INSERT_UPDATE ContentSlot;$contentCV[unique=true];uid[unique=true];name;active;cmsComponents(&componentRef)
-                         ;;EmptyCartMiddleContent-cartPage;Empty Cart Middle Slot for Cart Page;true;EmptyCartParagraphComponent
-                         ;;CenterLeftContentSlot-cartPage;Center Left Content Slot for Cart Page;true;PromotionsComponent,PotentialPromotionsComponent
+                         ;;EmptyCartMiddleContent-cartPage;Empty Cart Middle Slot for Cart Page;true;EmptyCartJSPIncludeComponent
                          ;;CenterRightContentSlot-cartPage;Center Right Content Slot for Cart Page;true;CartTotalsComponent
                          ;;BottomContentSlot-cartPage;Bottom Content Slot for Cart Page;true;CheckoutComponent
                          ;;TopContent-cartPage;Top Slot for Cart Page;true;CartComponent
@@ -40,7 +24,6 @@ INSERT_UPDATE ContentSlot;$contentCV[unique=true];uid[unique=true];name;active;c
 INSERT_UPDATE ContentSlotForPage;$contentCV[unique=true];uid[unique=true];position[unique=true];page(uid,$contentCV)[unique=true][default='cartPage'];contentSlot(uid,$contentCV)[unique=true]
                                 ;;TopContentSlotForCartPage;TopContent;;TopContent-cartPage
                                 ;;EmptyCartMiddleForCartPage;EmptyCartMiddleContent;;EmptyCartMiddleContent-cartPage
-                                ;;CenterLeftContentSlotForCartPage;CenterLeftContentSlot;;CenterLeftContentSlot-cartPage
                                 ;;CenterRightContentSlotForCartPage;CenterRightContentSlot;;CenterRightContentSlot-cartPage
                                 ;;BottomContentSlotForCartPage;BottomContentSlot;;BottomContentSlot-cartPage
 
