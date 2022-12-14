@@ -142,7 +142,7 @@
 			</value>
 		</property>
 		<property name="impexRow">
-			<value>;{+0};{1};{2}</value>
+			<value>;{+0};{1};{2};</value>
 		</property>
 		<property name="type" value="Size"/>
 	</bean>

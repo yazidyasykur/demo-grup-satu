@@ -1,6 +1,8 @@
+<%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
+
 <section class="section1">
       <img
         class="cover-img"
-        src="https://inthebox.net/images/layout-v2/about-header.png"
+        src="${fn:escapeXml(commonResourcePath)}/images/about-header.png"
       />
 </section>
