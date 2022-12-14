@@ -1,0 +1,9 @@
+# CRON JOB SYNC APPROVED PRODUCT AND INDEXING
+INSERT_UPDATE ServicelayerJob;code[unique=true];springId
+                             ;productsApprovalSyncJobPerformable;productsApprovalSyncJobPerformable
+
+INSERT_UPDATE CronJob;code[unique=true];job(code);singleExecutable;sessionLanguage(isocode)
+                     ;productsApprovalSyncJob;productsApprovalSyncJobPerformable;false;en
+
+#INSERT_UPDATE Trigger;cronjob(code)[unique=true];cronExpression
+#                     ;productsApprovalSyncJob; 0 0 17 ? * *
