@@ -55,7 +55,7 @@ ACC.cartitem = {
 			ACC.cartitem.submitTriggered = ACC.cartitem.handleUpdateQuantity(elementRef, event);
 			return false;
 		}
-		else 
+		else
 		{
 			// Ignore all key events once submit was triggered
 			if (ACC.cartitem.submitTriggered)
