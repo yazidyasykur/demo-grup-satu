@@ -14,7 +14,7 @@
                             <cms:pageSlot position="SiteLogo" var="logo" limit="1">
                                 <cms:component component="${logo}" element="div" class="image-resize"/>
                             </cms:pageSlot>
-                            <div>
+                            <div class="input-and-button">
                                 <input type="text" name="email" placeholder="Masukkan Alamat Email" class="input-email" />
                                 <button class="button">Submit</button>
                             </div>
