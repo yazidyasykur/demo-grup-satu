@@ -13701,9 +13701,19 @@ textarea {
 .item__list__cart table td {
   padding: 0;
 }
+
+.item__list__cart > table tbody > .entry-group-header > th {
+  background-color: #E4E4E4;
+  font-size: 16px;
+  font-weight: 700;
+  color: #000000;
+  padding-right: 35px;
+}
+
 .item__list__cart > table tbody > .entry-group-header a {
   color: #ec7205;
 }
+
 .item__list__cart > table table td {
   background-color: #F4F4F4;
 }

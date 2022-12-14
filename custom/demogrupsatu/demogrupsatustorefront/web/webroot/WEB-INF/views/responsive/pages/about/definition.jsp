@@ -9,7 +9,7 @@
               pilihan produk dengan harga yang terjangkau. Ketahui lebih lanjut
               agar kamu bisa memiliki tidur yang berkualitas.
             </p>
-            <button class="more-btn">Selengkapnya</button>
+            <a href="apa-itu-kasur-inthebox"><button class="more-btn">Selengkapnya</button></a>
           </div>
           <div class="what-img">
             <img
@@ -34,7 +34,7 @@
               dengan material premium, teknologi modern, dan desain yang elegan.
               Bisa dapat bantal gratis, free ongkir, dan garansi 10 tahun.
             </p>
-            <button class="more-btn">Selengkapnya</button>
+            <a href="alasan-pilih-kasur-inthebox"><button class="more-btn">Selengkapnya</button></a>
           </div>
         </div>
 
@@ -47,7 +47,7 @@
               pilihan produk dengan harga yang terjangkau. Ketahui lebih lanjut
               agar kamu bisa memiliki tidur yang berkualitas.
             </p>
-            <button class="more-btn">Selengkapnya</button>
+            <a href="cara-beli-inthebox"><button class="more-btn">Selengkapnya</button></a>
           </div>
 
           <div class="how-img">

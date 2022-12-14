@@ -5,6 +5,7 @@
 <%@ taglib prefix="ycommerce" uri="http://hybris.com/tld/ycommercetags" %>
 <%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
 <%@ taglib prefix="order" tagdir="/WEB-INF/tags/responsive/order" %>
+<%@ taglib prefix="multi-checkout" tagdir="/WEB-INF/tags/responsive/checkout/multi"%>
 <%@ taglib prefix="template" tagdir="/WEB-INF/tags/responsive/template"%>
 
 <spring:htmlEscape defaultHtmlEscape="true" />
@@ -13,14 +14,12 @@
 <div class="checkout-success">
 	<div class="checkout-success__body">
 		<div class="checkout-success__body__headline">
-			<spring:theme code="checkout.orderConfirmation.thankYouForOrder" />
+			<spring:theme code="checkout.orderConfirmation.detailPesanan" />
 		</div>
 		<p><spring:theme code="text.account.order.orderNumberLabel"/><b> ${fn:escapeXml(orderData.code)}</b></p>
 		<p><spring:theme code="checkout.orderConfirmation.copySentToShort"/><b> ${fn:escapeXml(email)}</b></p>
 	</div>
-	
-	<order:giftCoupons giftCoupons="${giftCoupons}"/>
-		
+
 	<c:if test="${not empty guestRegisterForm}">
 		<div class="checkout__new-account">
 			<div class="checkout__new-account__headline"><spring:theme code="guest.register"/></div>
@@ -73,8 +72,8 @@
 	</c:if>
 </div>
 
-<div class="well well-tertiary well-single-headline">
-    <div class="well-headline">
+<div class="well well-custom well-single-headline">
+    <div class="well-headline well-headline-custom">
         <spring:theme code="checkout.multi.order.summary" />
     </div>
 </div>
