@@ -41,7 +41,7 @@ INSERT_UPDATE IntheboxProduct    ; code[unique = true]        ; name            
                                     ;GULING                                         ;Guling                                          ;"PROPS"          ;                                                             ;         ;                            ;                  ; Guling premium dengan komposisi kapas organik, virgin fiber, dan hollow fiber. Ukuran guling pas untuk memberikan kenyamanan saat memeluknya.;
 
 
-    INSERT_UPDATE Size;code[unique = true];sizeName;dimension;
+INSERT_UPDATE Size;code[unique = true];sizeName;dimension;
     ;SingleSize;Single Size;90 x 200;
     ;SuperSingleSize;Super Single Size;100 x 200;
     ;FullSingleSize;Full Single Size;120 x 200;
@@ -55,7 +55,7 @@ INSERT_UPDATE IntheboxProduct    ; code[unique = true]        ; name            
     ;SofaBedSize;Sofa Bed Size;100 x 200;
 
 
-    INSERT_UPDATE IntheboxSizeVariantProduct; $baseProduct      ; code[unique = true]            ;name                       ;size(code)         ;$supercategories    ; description        ; unit(code)[default = pieces]; $approved; $catalogVersion;height
+INSERT_UPDATE IntheboxSizeVariantProduct; $baseProduct      ; code[unique = true]            ;name                       ;size(code)         ;$supercategories    ; description        ; unit(code)[default = pieces]; $approved; $catalogVersion;height
                                             ; INTHEBOX-FLIP-Z   ; INTHEBOX-FLIP-Z-90             ;INTHEBOX Flip Z 90 x 200   ;SingleSize         ;"BED"             ;                    ;                             ;          ;                ;12
                                             ; INTHEBOX-FLIP-Z   ; INTHEBOX-FLIP-Z-100            ;INTHEBOX Flip Z 100 x 200  ;SuperSingleSize    ;"BED"             ;                    ;                             ;          ;                ;12
                                             ; INTHEBOX-FLIP-Z   ; INTHEBOX-FLIP-Z-120            ;INTHEBOX Flip Z 120 x 200  ;FullSingleSize     ;"BED"             ;                    ;                             ;          ;                ;12

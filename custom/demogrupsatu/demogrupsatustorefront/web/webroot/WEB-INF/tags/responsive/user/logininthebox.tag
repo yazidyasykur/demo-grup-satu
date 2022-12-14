@@ -9,12 +9,13 @@
 <%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions"%>
 <spring:htmlEscape defaultHtmlEscape="true" />
 <c:url value="/register" var="registerUrl" />
+<c:url value="/" var="home" />
 
   <div class="background-login">
     <div class="login-wrapper">
       <div class="login-container">
         <div class="login-logo">
-          <a href="https://inthebox.net">
+          <a href="${fn:escapeXml(home)}">
             <img
               src="https://inthebox.net/images/logo-inthebox-440x80.png"
               style="max-width: 300px"

@@ -96,6 +96,7 @@ INSERT_UPDATE Media; mediaFormat(qualifier); code[unique = true]                
                    
                    ; 1200Wx1200H           ; KASUR-INTHEBOX-90-PICTURE                ; $siteResource/images/KASUR-INTHEBOX-90.jpg      ;                             ;                ; images
                    ; 1200Wx1200H           ; KASUR-INTHEBOX-100-PICTURE               ; $siteResource/images/KASUR-INTHEBOX-100.jpg     ;                             ;                ; images
+                   ; 1200Wx1200H           ; KASUR-INTHEBOX-110-PICTURE               ; $siteResource/images/KASUR-INTHEBOX-110.jpg     ;                             ;                ; images
                    ; 1200Wx1200H           ; KASUR-INTHEBOX-120-PICTURE               ; $siteResource/images/KASUR-INTHEBOX-120.jpg     ;                             ;                ; images
                    ; 1200Wx1200H           ; KASUR-INTHEBOX-140-PICTURE               ; $siteResource/images/KASUR-INTHEBOX-140.jpg     ;                             ;                ; images
                    ; 1200Wx1200H           ; KASUR-INTHEBOX-160-PICTURE               ; $siteResource/images/KASUR-INTHEBOX-160.jpg     ;                             ;                ; images
@@ -201,6 +202,7 @@ INSERT_UPDATE Media; mediaFormat(qualifier); code[unique = true]                
                    
                    ; 515Wx515H           ; KASUR-INTHEBOX-90-THUMBNAIL                ; $siteResource/images/KASUR-INTHEBOX-90.jpg      ;                             ;                ; images
                    ; 515Wx515H           ; KASUR-INTHEBOX-100-THUMBNAIL               ; $siteResource/images/KASUR-INTHEBOX-100.jpg     ;                             ;                ; images
+                   ; 515Wx515H           ; KASUR-INTHEBOX-110-THUMBNAIL               ; $siteResource/images/KASUR-INTHEBOX-110.jpg     ;                             ;                ; images
                    ; 515Wx515H           ; KASUR-INTHEBOX-120-THUMBNAIL               ; $siteResource/images/KASUR-INTHEBOX-120.jpg     ;                             ;                ; images
                    ; 515Wx515H           ; KASUR-INTHEBOX-140-THUMBNAIL               ; $siteResource/images/KASUR-INTHEBOX-140.jpg     ;                             ;                ; images
                    ; 515Wx515H           ; KASUR-INTHEBOX-160-THUMBNAIL               ; $siteResource/images/KASUR-INTHEBOX-160.jpg     ;                             ;                ; images
@@ -306,6 +308,7 @@ INSERT_UPDATE Media; mediaFormat(qualifier); code[unique = true]                
                    
                    ; 300Wx300H           ; KASUR-INTHEBOX-90-DETAIL                ; $siteResource/images/KASUR-INTHEBOX-90.jpg      ;                             ;                ; images
                    ; 300Wx300H           ; KASUR-INTHEBOX-100-DETAIL               ; $siteResource/images/KASUR-INTHEBOX-100.jpg     ;                             ;                ; images
+                   ; 300Wx300H           ; KASUR-INTHEBOX-110-DETAIL               ; $siteResource/images/KASUR-INTHEBOX-110.jpg     ;                             ;                ; images
                    ; 300Wx300H           ; KASUR-INTHEBOX-120-DETAIL               ; $siteResource/images/KASUR-INTHEBOX-120.jpg     ;                             ;                ; images
                    ; 300Wx300H           ; KASUR-INTHEBOX-140-DETAIL               ; $siteResource/images/KASUR-INTHEBOX-140.jpg     ;                             ;                ; images
                    ; 300Wx300H           ; KASUR-INTHEBOX-160-DETAIL               ; $siteResource/images/KASUR-INTHEBOX-160.jpg     ;                             ;                ; images
@@ -411,6 +414,7 @@ INSERT_UPDATE Media; mediaFormat(qualifier); code[unique = true]                
                    
                    ; 96Wx96H           ; KASUR-INTHEBOX-90-OTHER                ; $siteResource/images/KASUR-INTHEBOX-90.jpg      ;                             ;                ; images
                    ; 96Wx96H           ; KASUR-INTHEBOX-100-OTHER               ; $siteResource/images/KASUR-INTHEBOX-100.jpg     ;                             ;                ; images
+                   ; 96Wx96H           ; KASUR-INTHEBOX-110-OTHER               ; $siteResource/images/KASUR-INTHEBOX-110.jpg     ;                             ;                ; images
                    ; 96Wx96H           ; KASUR-INTHEBOX-120-OTHER               ; $siteResource/images/KASUR-INTHEBOX-120.jpg     ;                             ;                ; images
                    ; 96Wx96H           ; KASUR-INTHEBOX-140-OTHER               ; $siteResource/images/KASUR-INTHEBOX-140.jpg     ;                             ;                ; images
                    ; 96Wx96H           ; KASUR-INTHEBOX-160-OTHER               ; $siteResource/images/KASUR-INTHEBOX-160.jpg     ;                             ;                ; images
@@ -514,6 +518,7 @@ INSERT_UPDATE Media; mediaFormat(qualifier); code[unique = true]                
                    
                    ; 65Wx65H           ; KASUR-INTHEBOX-90-NORMAL                ; $siteResource/images/KASUR-INTHEBOX-90.jpg      ;                             ;                ; images
                    ; 65Wx65H           ; KASUR-INTHEBOX-100-NORMAL               ; $siteResource/images/KASUR-INTHEBOX-100.jpg     ;                             ;                ; images
+                   ; 65Wx65H           ; KASUR-INTHEBOX-110-NORMAL               ; $siteResource/images/KASUR-INTHEBOX-110.jpg     ;                             ;                ; images
                    ; 65Wx65H           ; KASUR-INTHEBOX-120-NORMAL               ; $siteResource/images/KASUR-INTHEBOX-120.jpg     ;                             ;                ; images
                    ; 65Wx65H           ; KASUR-INTHEBOX-140-NORMAL               ; $siteResource/images/KASUR-INTHEBOX-140.jpg     ;                             ;                ; images
                    ; 65Wx65H           ; KASUR-INTHEBOX-160-NORMAL               ; $siteResource/images/KASUR-INTHEBOX-160.jpg     ;                             ;                ; images
@@ -617,6 +622,7 @@ INSERT_UPDATE Media; mediaFormat(qualifier); code[unique = true]                
                    
                    ; 30Wx30H           ; KASUR-INTHEBOX-90-THUMBNAILS                ; $siteResource/images/KASUR-INTHEBOX-90.jpg      ;                             ;                ; images
                    ; 30Wx30H           ; KASUR-INTHEBOX-100-THUMBNAILS               ; $siteResource/images/KASUR-INTHEBOX-100.jpg     ;                             ;                ; images
+                   ; 30Wx30H           ; KASUR-INTHEBOX-110-THUMBNAILS               ; $siteResource/images/KASUR-INTHEBOX-110.jpg     ;                             ;                ; images
                    ; 30Wx30H           ; KASUR-INTHEBOX-120-THUMBNAILS               ; $siteResource/images/KASUR-INTHEBOX-120.jpg     ;                             ;                ; images
                    ; 30Wx30H           ; KASUR-INTHEBOX-140-THUMBNAILS               ; $siteResource/images/KASUR-INTHEBOX-140.jpg     ;                             ;                ; images
                    ; 30Wx30H           ; KASUR-INTHEBOX-160-THUMBNAILS               ; $siteResource/images/KASUR-INTHEBOX-160.jpg     ;                             ;                ; images
@@ -723,6 +729,7 @@ INSERT_UPDATE MediaContainer; qualifier[unique = true]                  ; $media
                             
                             ; KASUR-INTHEBOX-90-MEDIA                  ; KASUR-INTHEBOX-90-PICTURE,KASUR-INTHEBOX-90-THUMBNAIL,KASUR-INTHEBOX-90-DETAIL,KASUR-INTHEBOX-90-OTHER,KASUR-INTHEBOX-90-NORMAL,KASUR-INTHEBOX-90-THUMBNAILS                                           ;    ;
                             ; KASUR-INTHEBOX-100-MEDIA                 ; KASUR-INTHEBOX-100-PICTURE,KASUR-INTHEBOX-100-THUMBNAIL,KASUR-INTHEBOX-100-DETAIL,KASUR-INTHEBOX-100-OTHER,KASUR-INTHEBOX-100-NORMAL,KASUR-INTHEBOX-100-THUMBNAILS                                           ;    ;
+                            ; KASUR-INTHEBOX-110-MEDIA                 ; KASUR-INTHEBOX-110-PICTURE,KASUR-INTHEBOX-110-THUMBNAIL,KASUR-INTHEBOX-110-DETAIL,KASUR-INTHEBOX-110-OTHER,KASUR-INTHEBOX-110-NORMAL,KASUR-INTHEBOX-110-THUMBNAILS                                           ;    ;
                             ; KASUR-INTHEBOX-120-MEDIA                  ; KASUR-INTHEBOX-120-PICTURE,KASUR-INTHEBOX-120-THUMBNAIL,KASUR-INTHEBOX-120-DETAIL,KASUR-INTHEBOX-120-OTHER,KASUR-INTHEBOX-120-NORMAL,KASUR-INTHEBOX-120-THUMBNAILS                                           ;    ;
                             ; KASUR-INTHEBOX-140-MEDIA                  ; KASUR-INTHEBOX-140-PICTURE,KASUR-INTHEBOX-140-THUMBNAIL,KASUR-INTHEBOX-140-DETAIL,KASUR-INTHEBOX-140-OTHER,KASUR-INTHEBOX-140-NORMAL,KASUR-INTHEBOX-140-THUMBNAILS                                           ;    ;
                             ; KASUR-INTHEBOX-160-MEDIA                  ; KASUR-INTHEBOX-160-PICTURE,KASUR-INTHEBOX-160-THUMBNAIL,KASUR-INTHEBOX-160-DETAIL,KASUR-INTHEBOX-160-OTHER,KASUR-INTHEBOX-160-NORMAL,KASUR-INTHEBOX-160-THUMBNAILS                                           ;    ;
@@ -738,12 +745,12 @@ INSERT_UPDATE MediaContainer; qualifier[unique = true]                  ; $media
                             ; INTHEBOX-PLUS-200-MEDIA                  ; INTHEBOX-PLUS-200-PICTURE,INTHEBOX-PLUS-200-THUMBNAIL,INTHEBOX-PLUS-200-DETAIL,INTHEBOX-PLUS-200-OTHER,INTHEBOX-PLUS-200-NORMAL,INTHEBOX-PLUS-200-THUMBNAILS                                          ;    ;
                             
                             ; ORGANIX-90-MEDIA                  ; ORGANIX-90-PICTURE,ORGANIX-90-THUMBNAIL,ORGANIX-90-DETAIL,ORGANIX-90-OTHER,ORGANIX-90-NORMAL,ORGANIX-90-THUMBNAILS                                           ;    ;
-                            ; ORGANIX-100-MEDIA                 ; ORGANIX-100-PICTURE,ORGANIX-90-THUMBNAIL,ORGANIX-90-DETAIL,ORGANIX-90-OTHER,ORGANIX-90-NORMAL,ORGANIX-90-THUMBNAILS                                           ;    ;
-                            ; ORGANIX-120-MEDIA                  ; ORGANIX-120-PICTURE,ORGANIX-90-THUMBNAIL,ORGANIX-90-DETAIL,ORGANIX-90-OTHER,ORGANIX-90-NORMAL,ORGANIX-90-THUMBNAILS                                           ;    ;
-                            ; ORGANIX-140-MEDIA                  ; ORGANIX-140-PICTURE,ORGANIX-90-THUMBNAIL,ORGANIX-90-DETAIL,ORGANIX-90-OTHER,ORGANIX-90-NORMAL,ORGANIX-90-THUMBNAILS                                           ;    ;
-                            ; ORGANIX-160-MEDIA                  ; ORGANIX-160-PICTURE,ORGANIX-90-THUMBNAIL,ORGANIX-90-DETAIL,ORGANIX-90-OTHER,ORGANIX-90-NORMAL,ORGANIX-90-THUMBNAILS                                           ;    ;
-                            ; ORGANIX-180-MEDIA                  ; ORGANIX-180-PICTURE,ORGANIX-90-THUMBNAIL,ORGANIX-90-DETAIL,ORGANIX-90-OTHER,ORGANIX-90-NORMAL,ORGANIX-90-THUMBNAILS                                           ;    ;
-                            ; ORGANIX-200-MEDIA                  ; ORGANIX-200-PICTURE,ORGANIX-90-THUMBNAIL,ORGANIX-90-DETAIL,ORGANIX-90-OTHER,ORGANIX-90-NORMAL,ORGANIX-90-THUMBNAILS                                           ;    ;
+                            ; ORGANIX-100-MEDIA                 ; ORGANIX-100-PICTURE,ORGANIX-100-THUMBNAIL,ORGANIX-100-DETAIL,ORGANIX-100-OTHER,ORGANIX-100-NORMAL,ORGANIX-100-THUMBNAILS                                           ;    ;
+                            ; ORGANIX-120-MEDIA                  ; ORGANIX-120-PICTURE,ORGANIX-120-THUMBNAIL,ORGANIX-120-DETAIL,ORGANIX-120-OTHER,ORGANIX-120-NORMAL,ORGANIX-120-THUMBNAILS                                           ;    ;
+                            ; ORGANIX-140-MEDIA                  ; ORGANIX-140-PICTURE,ORGANIX-140-THUMBNAIL,ORGANIX-140-DETAIL,ORGANIX-140-OTHER,ORGANIX-140-NORMAL,ORGANIX-140-THUMBNAILS                                           ;    ;
+                            ; ORGANIX-160-MEDIA                  ; ORGANIX-160-PICTURE,ORGANIX-160-THUMBNAIL,ORGANIX-160-DETAIL,ORGANIX-160-OTHER,ORGANIX-160-NORMAL,ORGANIX-160-THUMBNAILS                                           ;    ;
+                            ; ORGANIX-180-MEDIA                  ; ORGANIX-180-PICTURE,ORGANIX-180-THUMBNAIL,ORGANIX-180-DETAIL,ORGANIX-180-OTHER,ORGANIX-180-NORMAL,ORGANIX-180-THUMBNAILS                                           ;    ;
+                            ; ORGANIX-200-MEDIA                  ; ORGANIX-200-PICTURE,ORGANIX-200-THUMBNAIL,ORGANIX-200-DETAIL,ORGANIX-200-OTHER,ORGANIX-200-NORMAL,ORGANIX-200-THUMBNAILS                                           ;    ;
                             
                             ; KASUR-LIPAT-MEDIA                  ; KASUR-LIPAT-PICTURE,KASUR-LIPAT-THUMBNAIL,KASUR-LIPAT-DETAIL,KASUR-LIPAT-OTHER,KASUR-LIPAT-NORMAL,KASUR-LIPAT-THUMBNAILS                                          ;    ;
                             ; SOFA-3-SEATER-MEDIA                ; SOFA-3-SEATER-PICTURE,SOFA-3-SEATER-THUMBNAIL,SOFA-3-SEATER-DETAIL,SOFA-3-SEATER-OTHER,SOFA-3-SEATER-NORMAL,SOFA-3-SEATER-THUMBNAILS                                          ;    ;
@@ -837,6 +844,7 @@ UPDATE Product; code[unique = true]     ; $picture                          ; $t
               
               ; KASUR-INTHEBOX-90       ; KASUR-INTHEBOX-90-PICTURE         ; KASUR-INTHEBOX-90-THUMBNAIL            ; KASUR-INTHEBOX-90-DETAIL            ; KASUR-INTHEBOX-90-OTHER            ; KASUR-INTHEBOX-90-NORMAL            ; KASUR-INTHEBOX-90-THUMBNAILS                 ; KASUR-INTHEBOX-90-MEDIA;
               ; KASUR-INTHEBOX-100      ; KASUR-INTHEBOX-100-PICTURE        ; KASUR-INTHEBOX-100-THUMBNAIL            ; KASUR-INTHEBOX-100-DETAIL            ; KASUR-INTHEBOX-100-OTHER            ; KASUR-INTHEBOX-100-NORMAL            ; KASUR-INTHEBOX-100-THUMBNAILS        ; KASUR-INTHEBOX-100-MEDIA;
+              ; KASUR-INTHEBOX-110      ; KASUR-INTHEBOX-110-PICTURE        ; KASUR-INTHEBOX-110-THUMBNAIL            ; KASUR-INTHEBOX-110-DETAIL            ; KASUR-INTHEBOX-110-OTHER            ; KASUR-INTHEBOX-110-NORMAL            ; KASUR-INTHEBOX-110-THUMBNAILS        ; KASUR-INTHEBOX-110-MEDIA;
               ; KASUR-INTHEBOX-120      ; KASUR-INTHEBOX-120-PICTURE        ; KASUR-INTHEBOX-120-THUMBNAIL            ; KASUR-INTHEBOX-120-DETAIL            ; KASUR-INTHEBOX-120-OTHER            ; KASUR-INTHEBOX-120-NORMAL            ; KASUR-INTHEBOX-120-THUMBNAILS        ; KASUR-INTHEBOX-120-MEDIA;
               ; KASUR-INTHEBOX-140      ; KASUR-INTHEBOX-140-PICTURE        ; KASUR-INTHEBOX-140-THUMBNAIL            ; KASUR-INTHEBOX-140-DETAIL            ; KASUR-INTHEBOX-140-OTHER            ; KASUR-INTHEBOX-140-NORMAL            ; KASUR-INTHEBOX-140-THUMBNAILS        ; KASUR-INTHEBOX-140-MEDIA;
               ; KASUR-INTHEBOX-160      ; KASUR-INTHEBOX-160-PICTURE        ; KASUR-INTHEBOX-160-THUMBNAIL            ; KASUR-INTHEBOX-160-DETAIL            ; KASUR-INTHEBOX-160-OTHER            ; KASUR-INTHEBOX-160-NORMAL            ; KASUR-INTHEBOX-160-THUMBNAILS        ; KASUR-INTHEBOX-160-MEDIA;
