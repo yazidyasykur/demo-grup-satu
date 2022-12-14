@@ -258,11 +258,13 @@
 		</property>
 	</bean>
 
-
 	<alias name="faqFacade" alias="faqFacade" />
 	<bean name="faqFacade" class="org.demogrupsatu.facades.faq.impl.DefaultFaqFacade" />
 
 	<alias name="intheboxVariantFacade" alias="intheboxVariantFacade" />
 	<bean name="intheboxVariantFacade" class="org.demogrupsatu.facades.intheboxvariant.impl.DefaultIntheboxVariantFacade" />
+
+	<alias name="defaultProductFacade2" alias="productCarouselFacade2" />
+	<bean name="defaultProductFacade2" class="org.demogrupsatu.facades.product.DefaultProductFacade" parent="productCarouselFacade"/>
 
 </beans>

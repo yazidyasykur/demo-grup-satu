@@ -4,6 +4,7 @@ import de.hybris.platform.acceleratorstorefrontcommons.controllers.pages.Abstrac
 import de.hybris.platform.cms2.exceptions.CMSItemNotFoundException;
 import de.hybris.platform.cms2.model.pages.AbstractPageModel;
 import de.hybris.platform.cms2.model.pages.ContentPageModel;
+import de.hybris.platform.commercefacades.product.ProductOption;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -14,6 +15,7 @@ import org.demogrupsatu.facades.testimoni.TestimoniFacade;
 
 import javax.annotation.Resource;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 @Controller
@@ -39,7 +41,6 @@ public class TestimoniController extends AbstractPageController {
         int maxShowPerPage = 9;
         int j = maxShowPerPage * currentPage;
 
-
         for(int i = maxShowPerPage * (currentPage - 1); i < listSize; i++) {
             if(j==i) {
                 break;
@@ -50,7 +51,6 @@ public class TestimoniController extends AbstractPageController {
         model.addAttribute("testimoniList", newList);
         model.addAttribute("max", (listSize/6 + 1));
         model.addAttribute("number", currentPage);
-
 
         return getViewForPage(model);
     }

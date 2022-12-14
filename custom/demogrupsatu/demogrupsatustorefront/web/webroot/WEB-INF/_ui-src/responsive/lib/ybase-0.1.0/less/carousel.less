@@ -187,13 +187,45 @@
           }
 		}
 
+		.item__desc,
+        .carousel__item--desc{
+            margin-top: (@grid-gutter-width/1.5);
+            margin-bottom: 11px;
+            text-align: center;
+            overflow: hidden;
+            position: relative;
+            font-weight: 300;
+            color: #666;
+            overflow-y: auto;
+            height: 100px;
+            margin: auto;
+
+          &:before {
+            background: #FFF none repeat scroll 0 0;
+            bottom: 0;
+            position: absolute;
+            right: 0;
+            content: '\2026';
+          }
+
+          &:after {
+            content: "";
+            background: #FFF none repeat scroll 0% 0%;
+            position: absolute;
+            height: 50px;
+            width: 100%;
+            z-index: 1;
+          }
+        }
+
 		.item__price,
 		.carousel__item--price {
 		  margin: (@grid-gutter-width/2);
 		  color: #7FC5F9;
 		  text-align: center;
 		  font-family: 'Palmer Lake';
-		  margin: 0;
+		  line-height: .5;
+		  margin-bottom: 25px;
 		}
 
 	}

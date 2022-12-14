@@ -170,15 +170,7 @@ INSERT_UPDATE ContentSlot;$contentCV[unique=true];uid[unique=true];name;active;c
                          ;;CenterContentSlot-checkout-login;Center Content Slot for Checkout Login;true;NewCustomerCheckoutLoginComponent;;;
                          ;;RightContentSlot-checkout-login;Right Content Slot for Checkout Login;true;GuestCheckoutLoginComponent;;;
 
-<<<<<<< HEAD
-# INSERT_UPDATE ContentSlotForPage;$contentCV[unique=true];uid[unique=true];position[unique=true];page(uid,$contentCV)[unique=true][default='login'];contentSlot(uid,$contentCV)[unique=true];;;
-# ;;LeftContentSlot-checkoutlogin;LeftContentSlot;;LeftContentSlot-checkoutlogin;;;
-#;;RightContentSlot-login;RightContentSlot;;RightContentSlot-login;;;
-
-# INSERT_UPDATE JspIncludeComponent;$contentCV[unique=true];uid[unique=true];name;page;actions(uid,$contentCV);&componentRef
-# ;;ReturningCustomerCheckoutLoginComponent;Returning Customer Login Component;accountReturningCustomerLogin.jsp;;ReturningCustomerCheckoutLoginComponent
-#;;NewCustomerLoginComponent;New Customer Login Component;accountNewCustomerLogin.jsp;;NewCustomerLoginComponent
-=======
+<<<<<<<<< Temporary merge branch 1
 INSERT_UPDATE ContentSlotForPage;$contentCV[unique=true];uid[unique=true];position[unique=true];page(uid,$contentCV)[unique=true][default='checkout-login'];contentSlot(uid,$contentCV)[unique=true];;;
                                 ;;LeftContentSlot-checkout-login;LeftContentSlot;;LeftContentSlot-checkout-login;;;
                                 ;;CenterContentSlot-checkout-login;CenterContentSlot;;CenterContentSlot-checkout-login;;;
@@ -188,4 +180,12 @@ INSERT_UPDATE JspIncludeComponent;$contentCV[unique=true];uid[unique=true];name;
 ;;NewCustomerCheckoutLoginComponent;New Customer Checkout Login Component;checkoutNewCustomerLogin.jsp;;NewCustomerCheckoutLoginComponent
 ;;ReturningCustomerCheckoutLoginComponent;Returning Customer Checkout Login Component;checkouReturningCustomerLogin.jsp;;ReturningCustomerCheckoutLoginComponent
 ;;GuestCheckoutLoginComponent;Guest Checkout Login Component;checkoutGuestLogin.jsp;;GuestCheckoutLoginComponent
->>>>>>> 9da5bc3a3e9298213a1d2f5bf60e67508cd77351
+=========
+# INSERT_UPDATE ContentSlotForPage;$contentCV[unique=true];uid[unique=true];position[unique=true];page(uid,$contentCV)[unique=true][default='login'];contentSlot(uid,$contentCV)[unique=true];;;
+# ;;LeftContentSlot-checkoutlogin;LeftContentSlot;;LeftContentSlot-checkoutlogin;;;
+#;;RightContentSlot-login;RightContentSlot;;RightContentSlot-login;;;
+
+# INSERT_UPDATE JspIncludeComponent;$contentCV[unique=true];uid[unique=true];name;page;actions(uid,$contentCV);&componentRef
+# ;;ReturningCustomerCheckoutLoginComponent;Returning Customer Login Component;accountReturningCustomerLogin.jsp;;ReturningCustomerCheckoutLoginComponent
+#;;NewCustomerLoginComponent;New Customer Login Component;accountNewCustomerLogin.jsp;;NewCustomerLoginComponent
+>>>>>>>>> Temporary merge branch 2
