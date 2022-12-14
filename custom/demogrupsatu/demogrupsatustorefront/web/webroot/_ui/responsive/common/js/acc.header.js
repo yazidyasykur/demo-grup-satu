@@ -5,15 +5,12 @@ ACC.header = {
     ,
     navBarList: function () {
 
-        let navs = $(".nav-container > div");
-
-        console.log(navs);
+        let navs = $(".nav-container");
 
         let child = $(navs[0]).children()
-        console.log(child);
         let nav = child[0];
-        let navList = child[1];
-        $(navs[0]).on('click', function (event) {
+        let navList = $(".on-nav-link");
+        $(nav).on('click', function (event) {
             let cond = $(navList).css("display")
 
             if (cond != "block") {

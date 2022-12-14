@@ -58,55 +58,7 @@
                         </cms:pageSlot>
                     </div>
                     <div class="link-header-small-web nav-container">
-                        <div>
-                            <img src="${fn:escapeXml(commonResourcePath)}/images/navbar.png" class="navbar-pic" />
-                            <div class="on-nav-link">
-                                <div class="flex-display flex-to-column">
-                                    <a href="${fn:escapeXml(product)}" class="link-hover">
-                                        Produk
-                                    </a>
-                                    <a href="${fn:escapeXml(about_us)}" class="link-hover">
-                                        Tentang Kami
-                                    </a>
-                                    <a href="${fn:escapeXml(blog)}" class="link-hover">
-                                        Blog
-                                    </a>
-                                    <a href="${fn:escapeXml(testimony)}" class="link-hover">
-                                        Testimoni
-                                    </a>
-                                    <a href="${fn:escapeXml(warranty)}" class="link-hover">
-                                        Garansi
-                                    </a>
-                                    <a href="${fn:escapeXml(payment)}" class="link-hover">
-                                        Konfirmasi
-                                    </a>
-                                    <a href="${fn:escapeXml(waybill)}" class="link-hover">
-                                        Cek Resi
-                                    </a>
-                                    <sec:authorize access="hasAnyRole('ROLE_ANONYMOUS')" >
-                                        <span>
-                                            <ycommerce:testId code="header_Login_link">
-                                                <c:url value="/login" var="loginUrl" />
-                                                <a href="${fn:escapeXml(loginUrl)}" class="link-hover">
-                                                    <spring:theme code="header.link.login"/>
-                                                </a>
-                                            </ycommerce:testId>
-                                        </span>
-                                    </sec:authorize>
-
-                                    <sec:authorize access="!hasAnyRole('ROLE_ANONYMOUS')" >
-                                        <span>
-                                            <ycommerce:testId code="header_signOut">
-                                                <c:url value="/logout" var="logoutUrl"/>
-                                                <a href="${fn:escapeXml(logoutUrl)}" class="link-hover">
-                                                    <spring:theme code="header.link.logout"/>
-                                                </a>
-                                            </ycommerce:testId>
-                                        </span>
-                                    </sec:authorize>
-                                </div>
-                            </div>
-                        </div>
+                        <img src="${fn:escapeXml(commonResourcePath)}/images/navbar.png" class="navbar-pic" />
                     </div>
                 </div>
                 <div class="flex-display flex-row-display text-weight-bold nav-link-header">
@@ -159,6 +111,50 @@
                     <a href="${fn:escapeXml(cart)}">
                         <img src="https://inthebox.net/images/layout-v2/cart-icon.png" style="max-height: 35px" class="d-none d-md-block small-part-margin" />
                     </a>
+                </div>
+            </div>
+            <div class="link-header-small-web">
+                <div class="on-nav-link">
+                    <div class="flex-display flex-to-column">
+                        <a href="${fn:escapeXml(product)}" class="link-hover text-on-nav-link text-weight-bold">
+                            Produk
+                        </a>
+                        <a href="${fn:escapeXml(about_us)}" class="link-hover text-on-nav-link text-weight-bold">
+                            Tentang Kami
+                        </a>
+                        <a href="${fn:escapeXml(blog)}" class="link-hover text-on-nav-link text-weight-bold">
+                            Blog
+                        </a>
+                        <a href="${fn:escapeXml(testimony)}" class="link-hover text-on-nav-link text-weight-bold">
+                            Testimoni
+                        </a>
+                        <a href="${fn:escapeXml(warranty)}" class="link-hover text-on-nav-link text-weight-bold">
+                            Garansi
+                        </a>
+                        <a href="${fn:escapeXml(payment)}" class="link-hover text-on-nav-link text-weight-bold">
+                            Konfirmasi
+                        </a>
+                        <a href="${fn:escapeXml(waybill)}" class="link-hover text-on-nav-link text-weight-bold">
+                            Cek Resi
+                        </a>
+                        <sec:authorize access="hasAnyRole('ROLE_ANONYMOUS')" >
+                            <ycommerce:testId code="header_Login_link">
+                                <c:url value="/login" var="loginUrl" />
+                                <a href="${fn:escapeXml(loginUrl)}" class="link-hover text-on-nav-link text-weight-bold">
+                                    <spring:theme code="header.link.login"/>
+                                </a>
+                            </ycommerce:testId>
+                        </sec:authorize>
+
+                        <sec:authorize access="!hasAnyRole('ROLE_ANONYMOUS')" >
+                            <ycommerce:testId code="header_signOut">
+                                <c:url value="/logout" var="logoutUrl"/>
+                                <a href="${fn:escapeXml(logoutUrl)}" class="link-hover">
+                                    <spring:theme code="header.link.logout"/>
+                                </a>
+                            </ycommerce:testId>
+                        </sec:authorize>
+                    </div>
                 </div>
             </div>
         </div>
