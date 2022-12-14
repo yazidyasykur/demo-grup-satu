@@ -97,6 +97,7 @@ INSERT_UPDATE StockLevel; available; warehouse(code)[unique = true]; inStockStat
 
                         ; 1000000  ; warehouse_demo     ; forceInStock   ; 0            ; 0             ; 0          ; 0       ; KASUR-INTHEBOX-90                ; 0
                         ; 1000000  ; warehouse_demo     ; forceInStock   ; 0            ; 0             ; 0          ; 0       ; KASUR-INTHEBOX-100                 ; 0
+                        ; 1000000  ; warehouse_demo     ; forceInStock   ; 0            ; 0             ; 0          ; 0       ; KASUR-INTHEBOX-110                 ; 0
                         ; 1000000  ; warehouse_demo     ; forceInStock   ; 0            ; 0             ; 0          ; 0       ; KASUR-INTHEBOX-120                 ; 0
                         ; 1000000  ; warehouse_demo     ; forceInStock   ; 0            ; 0             ; 0          ; 0       ; KASUR-INTHEBOX-140               ; 0
                         ; 1000000  ; warehouse_demo     ; forceInStock   ; 0            ; 0             ; 0          ; 0       ; KASUR-INTHEBOX-160                ; 0
@@ -228,6 +229,7 @@ UPDATE Product  ; code[unique = true]     ; $catalogVersion; stockLevels(product
 
                 ; KASUR-INTHEBOX-90      ;                ; KASUR-INTHEBOX-90:warehouse_demo            ; $vendor
                 ; KASUR-INTHEBOX-100     ;                ; KASUR-INTHEBOX-100:warehouse_demo           ; $vendor
+                ; KASUR-INTHEBOX-110     ;                ; KASUR-INTHEBOX-110:warehouse_demo           ; $vendor
                 ; KASUR-INTHEBOX-120     ;                ; KASUR-INTHEBOX-120:warehouse_demo           ; $vendor
                 ; KASUR-INTHEBOX-140     ;                ; KASUR-INTHEBOX-140:warehouse_demo           ; $vendor
                 ; KASUR-INTHEBOX-160     ;                ; KASUR-INTHEBOX-160:warehouse_demo           ; $vendor
