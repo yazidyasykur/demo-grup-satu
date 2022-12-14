@@ -4,13 +4,16 @@
 package org.demogrupsatu.storefront.controllers.cms;
 
 import de.hybris.platform.acceleratorfacades.productcarousel.ProductCarouselFacade;
+import de.hybris.platform.category.model.CategoryModel;
 import de.hybris.platform.cms2lib.model.components.ProductCarouselComponentModel;
+import de.hybris.platform.commercefacades.product.ProductFacade;
 import de.hybris.platform.commercefacades.product.ProductOption;
 import de.hybris.platform.commercefacades.product.data.ProductData;
 import de.hybris.platform.commercefacades.search.ProductSearchFacade;
 import de.hybris.platform.commercefacades.search.data.SearchQueryData;
 import de.hybris.platform.commercefacades.search.data.SearchStateData;
 import de.hybris.platform.commerceservices.search.pagedata.PageableData;
+import de.hybris.platform.core.model.product.ProductModel;
 import org.demogrupsatu.storefront.controllers.ControllerConstants;
 
 import java.util.ArrayList;
@@ -33,13 +36,13 @@ import org.springframework.web.bind.annotation.RequestMapping;
 @RequestMapping(value = ControllerConstants.Actions.Cms.ProductCarouselComponent)
 public class ProductCarouselComponentController extends AbstractAcceleratorCMSComponentController<ProductCarouselComponentModel>
 {
-	protected static final List<ProductOption> PRODUCT_OPTIONS = Arrays.asList(ProductOption.BASIC, ProductOption.PRICE);
-
 	@Resource(name = "productSearchFacade")
 	private ProductSearchFacade<ProductData> productSearchFacade;
 
-	@Resource(name = "productCarouselFacade")
-	private ProductCarouselFacade productCarouselFacade;
+	@Resource(name = "accProductFacade")
+	private ProductFacade productFacade;
+
+	protected static final List<ProductOption> PRODUCT_OPTIONS = Arrays.asList(ProductOption.BASIC, ProductOption.PRICE, ProductOption.DESCRIPTION);
 
 	@Override
 	protected void fillModel(final HttpServletRequest request, final Model model, final ProductCarouselComponentModel component)
@@ -55,7 +58,19 @@ public class ProductCarouselComponentController extends AbstractAcceleratorCMSCo
 
 	protected List<ProductData> collectLinkedProducts(final ProductCarouselComponentModel component)
 	{
-		return productCarouselFacade.collectProducts(component);
+		// return productCarouselFacade.collectProducts(component);
+		final List<ProductData> productData = new ArrayList<>();
+
+		for (final ProductModel productModel: component.getProducts()){
+			productData.add(productFacade.getProductForOptions(productModel, PRODUCT_OPTIONS));
+		}
+
+		for(final CategoryModel categoryModel: component.getCategories()){
+			for (final ProductModel productModel: categoryModel.getProducts()){
+				productData.add(productFacade.getProductForOptions(productModel, PRODUCT_OPTIONS));
+			}
+		}
+		return productData;
 	}
 
 	protected List<ProductData> collectSearchProducts(final ProductCarouselComponentModel component)

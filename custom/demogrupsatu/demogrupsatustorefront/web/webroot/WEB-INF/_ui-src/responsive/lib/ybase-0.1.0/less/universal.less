@@ -18,6 +18,7 @@
     justify-content: space-between;
 }
 
+// Normal
 @media only screen {
     // Header
     .container-part-header {
@@ -41,6 +42,7 @@
     .copyright-part {
         background-color: #6086C2;
         color: #FFF;
+        font-size: 14px;
     }
 
     .container-part-footer {
@@ -63,6 +65,15 @@
     }
 
     // Container
+    .input-email {
+        width: 250px;
+        height: 35px;
+        border: 0px solid black;
+        border-radius: 5px;
+        padding: 5px 10px;
+        margin-top: 35px;
+    }
+
     .box-display {
         background-color: white;
         width: 300px;
@@ -90,7 +101,7 @@
     }
 
     .box-top-testimoni {
-        width: 93%;
+        width: 915px;
         margin: 0 auto;
     }
 
@@ -102,6 +113,19 @@
     .total-review-responsive {
         display: flex;
         justify-content: flex-end;
+        align-items: flex-end;
+    }
+
+    .unboxing-responsive {
+        width: 1000px;
+        margin: 0 auto;
+     }
+
+    .on-nav-link {
+        width: 100%;
+        height: auto;
+        margin: 30px auto;
+        text-align: center;
     }
 
     // Text
@@ -115,6 +139,32 @@
 
     .carousel__item--name {
         font-size: 16px;
+    }
+
+    .unboxing-title-responsive {
+        font-size: 24px;
+     }
+
+     .unboxing-text-responsive {
+        font-size: 14px;
+     }
+
+    .carousel__item--desc {
+       font-size: 18px;
+       width: 260px;
+    }
+
+    .testimoni-title-responsive {
+        font-size: 48px;
+    }
+
+    .text-on-nav-link {
+        margin: 10px auto;
+        font-size: 18px;
+    }
+
+    .palmer-font {
+        font-size: 12rem;
     }
 
     // Margin
@@ -135,7 +185,7 @@
 
     // Show/Hide Link
     .link-header {
-        display: inline-block;
+        display: block;
     }
 
     .link-header-small-web, .on-nav-link {
@@ -144,11 +194,39 @@
 
     // Img
     .carousel__item--thumb {
+        height: 140px;
+
         img {
           max-width: 140px;
           max-height: 140px;
         }
     }
+
+    .image-resize {
+        width: 200px;
+    }
+
+    .image-resize-header {
+        width: 150px;
+    }
+}
+
+@media only screen and (max-width: 1050px) {
+     .unboxing-responsive {
+        width: 800px;
+     }
+
+     .unboxing-title-responsive {
+        font-size: 20px;
+     }
+
+     .unboxing-text-responsive {
+        font-size: 11px;
+     }
+
+     .carousel__item--desc {
+        font-size: 14px;
+     }
 }
 
 @media only screen and (max-width: 975px) {
@@ -170,6 +248,11 @@
         display: flex;
         justify-content: center;
     }
+
+    .box-top-testimoni {
+        width: 85%;
+        margin: 0 auto;
+    }
 }
 
 @media only screen and (max-width: 900px) {
@@ -178,8 +261,12 @@
         width: 700px;
     }
 
-    .top-part-header, .nav-link-header {
+    .top-part-header {
         font-size: 12px;
+    }
+
+    .nav-link-header {
+        font-size: 13px;
     }
 
     // Footer
@@ -195,6 +282,10 @@
         margin: 0 15px;
     }
 
+    .copyright-part {
+        font-size: 12px;
+    }
+
     // Text
     .section-header1{
         font-size: 3rem;
@@ -206,6 +297,14 @@
 
     .subtitle{
         font-size: 1.4rem;
+    }
+
+    .carousel__item--desc {
+       width: 200px;
+    }
+
+    .testimoni-title-responsive {
+        font-size: 40px;
     }
 
     // Margin
@@ -236,10 +335,25 @@
     }
 }
 
+// Tablet
+@media only screen and (max-width: 825px) {
+    .unboxing-responsive {
+       width: 600px;
+    }
+
+    .unboxing-title-responsive {
+       font-size: 16px;
+    }
+
+    .unboxing-text-responsive {
+       font-size: 9px;
+    }
+}
+
 @media only screen and (max-width: 760px) {
     // Header
     .container-part-header {
-        width: 550px;
+        width: 500px;
     }
 
     .warranty-pic, .shipping-pic {
@@ -268,6 +382,14 @@
         margin-top: 30px;
     }
 
+    .copyright-part {
+        font-size: 14px;
+    }
+
+    .container-part-footer {
+        width: 575px;
+    }
+
     // Container
     .box-display {
         width: 250px;
@@ -278,6 +400,10 @@
 
     .testimoni-home-box-responsive {
         width: 600px;
+    }
+
+    .box-on-homepage {
+        width: 575px;
     }
 
     // Text
@@ -302,7 +428,20 @@
     }
 
     .carousel__item--name {
-        font-size: 10px;
+        font-size: 12px;
+    }
+
+    .carousel__item--desc {
+       font-size: 10px;
+       width: 160px;
+    }
+
+    .testimoni-title-responsive {
+        font-size: 34px;
+    }
+
+    .palmer-font {
+        font-size: 8rem;
     }
 
     // Margin
@@ -316,15 +455,179 @@
     }
 
     .link-header-small-web {
-        display: inline-block;
+        display: block;
     }
 
     // Img
     .carousel__item--thumb {
+        height: 110px;
+
         img {
           max-width: 110px;
           max-height: 110px;
         }
+    }
+}
+
+// Mobile
+@media only screen and (max-width: 650px) {
+    // Text
+    .carousel__item--price {
+        font-size: 40px;
+    }
+
+    .carousel__item--name {
+        font-size: 9px;
+    }
+
+    .carousel__item--desc {
+       font-size: 7px;
+       width: 110px;
+    }
+
+    .footer-container-responsive {
+        font-size: 10px;
+    }
+
+    // Container
+    .input-email {
+        width: 200px;
+        padding: 5px 5px;
+    }
+
+    .unboxing-responsive {
+       width: 400px;
+    }
+
+    .container-part-footer {
+        width: 325px;
+    }
+
+    .unboxing-title-responsive {
+       font-size: 11px;
+    }
+
+    .unboxing-text-responsive {
+       font-size: 5px;
+    }
+
+    .testimoni-home-box-responsive {
+        width: 345px;
+    }
+
+    .box-on-homepage {
+        width: 470px;
+    }
+
+    // Button
+    a.button-2 {
+        padding: 4px 13px;
+        font-size: 9px;
+    }
+
+    a.button-3 {
+        padding: 6px 14px;
+        font-size: 14px;
+    }
+
+    .carousel__item--thumb {
+        height: 100px;
+
+        img {
+          max-width: 90px;
+          max-height: 90px;
+        }
+    }
+}
+
+@media only screen and (max-width: 480px) {
+    // Header
+    .container-part-header {
+        width: 320px;
+    }
+
+    .warranty-pic, .shipping-pic {
+        width: 15px;
+    }
+
+    .top-part-header, .nav-link-header {
+        font-size: 8px;
+    }
+
+    // Container
+    .box-on-homepage {
+        width: 340px;
+    }
+
+    .box-display {
+        width: 175px;
+        padding: 7px 7px;
+        margin: 3px auto;
+        font-size: 7px;
+    }
+
+    .left-most-part {
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+    }
+
+    .input-and-button {
+        display: flex;
+        justify-content: center;
+        align-items: flex-end;
+    }
+
+    .unboxing-responsive {
+       width: 340px;
+    }
+
+    // Text
+    .text-responsive {
+        font-size: 11px;
+    }
+
+    .testimoni-title-responsive {
+        font-size: 30px;
+    }
+
+    .text-on-nav-link {
+        margin: 7px auto;
+        font-size: 13px;
+    }
+
+    .section-header1 {
+        font-size: 2rem;
+    }
+
+    .section-header {
+        font-size: 2rem;
+    }
+
+    .subtitle {
+        font-size: 0.9rem;
+    }
+
+    .carousel__item--price {
+        font-size: 29px;
+    }
+
+    .carousel__item--name {
+        font-size: 8px;
+    }
+
+    .carousel__item--desc {
+       font-size: 5px;
+       width: 85px;
+    }
+
+    .palmer-font {
+        font-size: 6rem;
+    }
+
+    // Img
+    .image-resize-header {
+        width: 100px;
     }
 }
 
@@ -376,10 +679,13 @@
 }
 
 /* Text editing */
+.text-weight-regular {
+    font-weight: normal;
+}
+
 .palmer-font {
     font-family: "Palmer Lake";
     color: #7FC5F9;
-    font-size: 12rem;
 }
 
 .align-center {
@@ -424,7 +730,8 @@
 
 .review-text {
     color: #6086C2;
-    margin: auto 5px;
+    margin: 0 15px;
+    font-size: 14px;
 }
 
 .description {
@@ -448,7 +755,7 @@
 }
 
 .star {
-    max-width: 20px;
+    max-width: 18px;
 }
 
 .button {
@@ -506,15 +813,6 @@
     color: #6086C2;
 }
 
-.input-email {
-    width: 250px;
-    height: 35px;
-    border: 0px solid black;
-    border-radius: 5px;
-    padding: 5px 10px;
-    margin-top: 35px;
-}
-
 .large-icon {
     width: 30px;
     height: 30px;
@@ -542,18 +840,14 @@
     margin-top: 20px;
 }
 
-.image-resize {
-    width: 200px;
-}
-
-.image-resize-header {
-    width: 150px;
-}
-
 .left-most-part {
-    margin-right: 80px
+    margin-right: 20px
 }
 
 .navbar-pic {
     width: 35px;
+}
+
+.input-and-button {
+    width: 350px;
 }

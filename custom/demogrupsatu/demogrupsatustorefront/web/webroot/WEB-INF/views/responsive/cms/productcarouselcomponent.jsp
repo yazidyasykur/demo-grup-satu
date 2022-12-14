@@ -5,6 +5,7 @@
 <%@ taglib prefix="product" tagdir="/WEB-INF/tags/responsive/product" %>
 <%@ taglib prefix="component" tagdir="/WEB-INF/tags/shared/component" %>
 <%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
+<%@ taglib prefix="ycommerce" uri="http://hybris.com/tld/ycommercetags"%>
 
 <spring:htmlEscape defaultHtmlEscape="true" />
 
@@ -52,7 +53,7 @@
 										<product:productPrimaryImage product="${product}" format="product"/>
 									</div>
 									<div class="carousel__item--name">${fn:escapeXml(product.name)}</div>
-									<div class="carousel__item--name">${fn:escapeXml(product.description)}</div>
+									<div class="carousel__item--desc">${fn:escapeXml(product.description)}</div>
 									<div class="carousel__item--price"><format:fromPrice priceData="${product.price}"/></div>
 									<div class="text-center small-margin-bottom">
                                         <a class="button-2" href="${productUrl}">Beli Sekarang</a>
