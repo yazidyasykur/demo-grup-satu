@@ -21,12 +21,12 @@
 		<c:if test="${empty showAddToCart ? true : showAddToCart}">
 		<div class="qty-selector input-group js-qty-selector">
 			<span class="input-group-btn">
-				<button class="btn btn-default js-qty-selector-minus" type="button" <c:if test="${qtyMinus <= 1}"><c:out value="disabled='disabled'"/></c:if> ><span class="glyphicon glyphicon-minus" aria-hidden="true" ></span></button>
+				<button class="btn btn-block round-button-pdp js-qty-selector-minus" type="button" <c:if test="${qtyMinus <= 1}"><c:out value="disabled='disabled'"/></c:if> ><span class="glyphicon glyphicon-minus" aria-hidden="true" ></span></button>
 			</span>
-				<input type="text" maxlength="3" class="form-control js-qty-selector-input" size="1" value="${fn:escapeXml(qtyMinus)}"
+				<input type="text" maxlength="3" class="form-control-custom palmer-font js-qty-selector-input" size="1" value="${fn:escapeXml(qtyMinus)}"
 					   data-max="${fn:escapeXml(maxQty)}" data-min="1" name="pdpAddtoCartInput"  id="pdpAddtoCartInput" />
 			<span class="input-group-btn">
-				<button class="btn btn-default js-qty-selector-plus" type="button"><span class="glyphicon glyphicon-plus" aria-hidden="true"></span></button>
+				<button class="btn btn-block round-button-pdp js-qty-selector-plus" type="button"><span class="glyphicon glyphicon-plus" aria-hidden="true"></span></button>
 			</span>
 		</div>
 		</c:if>
