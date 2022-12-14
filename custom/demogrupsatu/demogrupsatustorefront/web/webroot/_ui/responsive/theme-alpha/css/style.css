@@ -8694,7 +8694,6 @@ footer {
 @media (max-width: 640px) {
   .footer__top .footer__nav--container {
     margin-bottom: 10px;
-    text-align: center;
   }
 }
 .footer__top .footer__nav--container .footer__nav--links {
@@ -11559,7 +11558,6 @@ fieldset[disabled] .btn-primary.active {
 .carousel .carousel__item .carousel__item--thumb,
 .carousel__component--carousel .carousel__item .carousel__item--thumb {
   margin-bottom: 20px;
-  height: 140px;
 }
 .carousel .item .thumb img,
 .carousel__component--carousel .item .thumb img,
@@ -19710,6 +19708,7 @@ select[multiple].input-sm {
   .copyright-part {
     background-color: #6086C2;
     color: #FFF;
+    font-size: 14px;
   }
   .container-part-footer {
     width: 900px;
@@ -19725,6 +19724,14 @@ select[multiple].input-sm {
   }
   .footer-link-list-margin {
     margin: 0 25px;
+  }
+  .input-email {
+    width: 250px;
+    height: 35px;
+    border: 0px solid black;
+    border-radius: 5px;
+    padding: 5px 10px;
+    margin-top: 35px;
   }
   .box-display {
     background-color: white;
@@ -19749,7 +19756,7 @@ select[multiple].input-sm {
     margin-top: 25px;
   }
   .box-top-testimoni {
-    width: 93%;
+    width: 915px;
     margin: 0 auto;
   }
   .testimoni-home-box-responsive {
@@ -19759,6 +19766,17 @@ select[multiple].input-sm {
   .total-review-responsive {
     display: flex;
     justify-content: flex-end;
+    align-items: flex-end;
+  }
+  .unboxing-responsive {
+    width: 1000px;
+    margin: 0 auto;
+  }
+  .on-nav-link {
+    width: 100%;
+    height: auto;
+    margin: 30px auto;
+    text-align: center;
   }
   .unboxing-responsive {
     width: 1000px;
@@ -19789,6 +19807,18 @@ select[multiple].input-sm {
     font-size: 18px;
     width: 260px;
   }
+
+  .testimoni-title-responsive {
+    font-size: 48px;
+  }
+  .text-on-nav-link {
+    margin: 10px auto;
+    font-size: 18px;
+  }
+  .palmer-font {
+    font-size: 12rem;
+  }
+
   .small-part-margin,
   .small-part-margin-logo {
     margin: 0 10px;
@@ -19806,9 +19836,32 @@ select[multiple].input-sm {
   .on-nav-link {
     display: none;
   }
+  .carousel__item--thumb {
+    height: 140px;
+  }
   .carousel__item--thumb img {
     max-width: 140px;
     max-height: 140px;
+  }
+  .image-resize {
+    width: 200px;
+  }
+  .image-resize-header {
+    width: 150px;
+  }
+}
+@media only screen and (max-width: 1050px) {
+  .unboxing-responsive {
+    width: 800px;
+  }
+  .unboxing-title-responsive {
+    font-size: 20px;
+  }
+  .unboxing-text-responsive {
+    font-size: 11px;
+  }
+  .carousel__item--desc {
+    font-size: 14px;
   }
 }
 @media only screen and (max-width: 1050px) {
@@ -19839,6 +19892,10 @@ select[multiple].input-sm {
     display: flex;
     justify-content: center;
   }
+  .box-top-testimoni {
+    width: 85%;
+    margin: 0 auto;
+  }
 }
 @media only screen and (max-width: 900px) {
   .container-part-header {
@@ -19859,6 +19916,9 @@ select[multiple].input-sm {
   .footer-link-list-margin {
     margin: 0 15px;
   }
+  .copyright-part {
+    font-size: 12px;
+  }
   .section-header1 {
     font-size: 3rem;
   }
@@ -19871,6 +19931,11 @@ select[multiple].input-sm {
   .carousel__item--desc {
     width: 200px;
   }
+
+  .testimoni-title-responsive {
+    font-size: 40px;
+  }
+
   .small-part-margin,
   .small-part-margin-logo {
     margin: 0 5px;
@@ -19903,7 +19968,7 @@ select[multiple].input-sm {
 }
 @media only screen and (max-width: 760px) {
   .container-part-header {
-    width: 550px;
+    width: 500px;
   }
   .warranty-pic,
   .shipping-pic {
@@ -19926,6 +19991,12 @@ select[multiple].input-sm {
   .footer__nav--container {
     margin-top: 30px;
   }
+  .copyright-part {
+    font-size: 14px;
+  }
+  .container-part-footer {
+    width: 575px;
+  }
   .box-display {
     width: 250px;
     padding: 10px 10px;
@@ -19934,6 +20005,9 @@ select[multiple].input-sm {
   }
   .testimoni-home-box-responsive {
     width: 600px;
+  }
+  .box-on-homepage {
+    width: 575px;
   }
   .text-responsive {
     font-size: 14px;
@@ -19956,6 +20030,13 @@ select[multiple].input-sm {
   .carousel__item--desc {
     font-size: 10px;
     width: 160px;
+
+  }
+  .testimoni-title-responsive {
+    font-size: 34px;
+  }
+  .palmer-font {
+    font-size: 8rem;
   }
   .small-part-margin-logo {
     margin: 0;
@@ -19966,9 +20047,134 @@ select[multiple].input-sm {
   .link-header-small-web {
     display: block;
   }
+  .carousel__item--thumb {
+    height: 110px;
+  }
   .carousel__item--thumb img {
     max-width: 110px;
     max-height: 110px;
+  }
+}
+@media only screen and (max-width: 650px) {
+  .carousel__item--price {
+    font-size: 40px;
+  }
+  .carousel__item--name {
+    font-size: 9px;
+  }
+  .carousel__item--desc {
+    font-size: 7px;
+    width: 110px;
+  }
+  .footer-container-responsive {
+    font-size: 10px;
+  }
+  .input-email {
+    width: 200px;
+    padding: 5px 5px;
+  }
+  .unboxing-responsive {
+    width: 400px;
+  }
+  .container-part-footer {
+    width: 325px;
+  }
+  .unboxing-title-responsive {
+    font-size: 11px;
+  }
+  .unboxing-text-responsive {
+    font-size: 5px;
+  }
+  .testimoni-home-box-responsive {
+    width: 345px;
+  }
+  .box-on-homepage {
+    width: 470px;
+  }
+  a.button-2 {
+    padding: 4px 13px;
+    font-size: 9px;
+  }
+  a.button-3 {
+    padding: 6px 14px;
+    font-size: 14px;
+  }
+  .carousel__item--thumb {
+    height: 100px;
+  }
+  .carousel__item--thumb img {
+    max-width: 90px;
+    max-height: 90px;
+  }
+}
+@media only screen and (max-width: 480px) {
+  .container-part-header {
+    width: 320px;
+  }
+  .warranty-pic,
+  .shipping-pic {
+    width: 15px;
+  }
+  .top-part-header,
+  .nav-link-header {
+    font-size: 8px;
+  }
+  .box-on-homepage {
+    width: 340px;
+  }
+  .box-display {
+    width: 175px;
+    padding: 7px 7px;
+    margin: 3px auto;
+    font-size: 7px;
+  }
+  .left-most-part {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+  }
+  .input-and-button {
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+  }
+  .unboxing-responsive {
+    width: 340px;
+  }
+  .text-responsive {
+    font-size: 11px;
+  }
+  .testimoni-title-responsive {
+    font-size: 30px;
+  }
+  .text-on-nav-link {
+    margin: 7px auto;
+    font-size: 13px;
+  }
+  .section-header1 {
+    font-size: 2rem;
+  }
+  .section-header {
+    font-size: 2rem;
+  }
+  .subtitle {
+    font-size: 0.9rem;
+  }
+  .carousel__item--price {
+    font-size: 29px;
+  }
+  .carousel__item--name {
+    font-size: 8px;
+  }
+  .carousel__item--desc {
+    font-size: 5px;
+    width: 85px;
+  }
+  .palmer-font {
+    font-size: 6rem;
+  }
+  .image-resize-header {
+    width: 100px;
   }
 }
 /* Scrollbar */
@@ -20014,7 +20220,6 @@ select[multiple].input-sm {
 .palmer-font {
   font-family: "Palmer Lake";
   color: #7FC5F9;
-  font-size: 12rem;
 }
 .align-center {
   align-items: center;
@@ -20051,7 +20256,8 @@ select[multiple].input-sm {
 }
 .review-text {
   color: #6086C2;
-  margin: auto 5px;
+  margin: 0 15px;
+  font-size: 14px;
 }
 .description {
   margin-top: 10px;
@@ -20074,7 +20280,7 @@ select[multiple].input-sm {
   width: 20%;
 }
 .star {
-  max-width: 20px;
+  max-width: 18px;
 }
 .button {
   width: auto;
@@ -20127,14 +20333,6 @@ select[multiple].input-sm {
   background-color: #F1F1F1;
   color: #6086C2;
 }
-.input-email {
-  width: 250px;
-  height: 35px;
-  border: 0px solid black;
-  border-radius: 5px;
-  padding: 5px 10px;
-  margin-top: 35px;
-}
 .large-icon {
   width: 30px;
   height: 30px;
@@ -20157,17 +20355,14 @@ select[multiple].input-sm {
 .left-side {
   margin-top: 20px;
 }
-.image-resize {
-  width: 200px;
-}
-.image-resize-header {
-  width: 150px;
-}
 .left-most-part {
-  margin-right: 80px;
+  margin-right: 20px;
 }
 .navbar-pic {
   width: 35px;
+}
+.input-and-button {
+  width: 350px;
 }
 .skip,
 .skiptocontent,

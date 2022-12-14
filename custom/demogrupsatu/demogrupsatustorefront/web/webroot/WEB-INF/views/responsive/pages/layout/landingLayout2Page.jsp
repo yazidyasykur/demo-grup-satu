@@ -58,7 +58,7 @@
         </div>
         <div class="container tengah">
             <div class="unboxing-product unboxing-responsive">
-                <div class="row text-justify">
+                <div class="flex-display flex-row-display text-justify">
                     <div class="col-sm-3">
                         <img src="${fn:escapeXml(commonResourcePath)}/images/experience_1.png" class=""/>
                         <h3 class="text-center unboxing-title-responsive text-weight-bold">Keluarkan</h3>
@@ -97,7 +97,7 @@
                 yang terdiri dari bantal, guling, dan sofa bed.
                 </div>
             </div>
-            <div class="total-review-responsive align-center">
+            <div class="total-review-responsive">
                 <c:forEach begin="1" end="${starCount}" var="i">
                     <div class="star">
                         <img src="${fn:escapeXml(commonResourcePath)}/images/bintang-full.png" alt="star">

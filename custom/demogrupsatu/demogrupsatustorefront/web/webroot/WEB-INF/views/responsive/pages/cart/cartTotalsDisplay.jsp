@@ -12,8 +12,5 @@
             <cart:ajaxCartTotals/>
         </div>
     </div>
-
-
-
 </div>
 

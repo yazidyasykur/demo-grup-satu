@@ -3,9 +3,11 @@
 <%@ taglib prefix="nav" tagdir="/WEB-INF/tags/responsive/nav" %>
 <%@ taglib prefix="storepickup" tagdir="/WEB-INF/tags/responsive/storepickup" %>
 <%@ taglib prefix="spring" uri="http://www.springframework.org/tags" %>
+<%@ taglib prefix="cms" uri="http://hybris.com/tld/cmstags"%>
 
-<img style="width: 100%;" src="https://inthebox.net/images/layout-v2/catalog-header.png"/>
-
+<cms:pageSlot position="Banner" var="feature">
+    <cms:component component="${feature}" element="div" class="yComponentWrapper content__empty"/>
+</cms:pageSlot>
 
 <spring:htmlEscape defaultHtmlEscape="true" />
 

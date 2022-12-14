@@ -19,7 +19,7 @@
        <div class="main-section col-lg-12">
             <div class="container-display">
                 <div class="box-top-testimoni">
-                    <h1 class="text-center text-weight-bold">TESTIMONI PEMBELI INTHEBOX</h1>
+                    <p class="text-center text-weight-bold testimoni-title-responsive">TESTIMONI PEMBELI INTHEBOX</p>
                     <p class="text-center">Banyak pembeli yang merasa puas dengan kualitas kasur INTHEBOX</p>
                     <p class="text-justify">Kami menerima beragam komentar positif dari pembeli di seluruh Indonesia, bahkan dari kalangan artis. Bukan hanya pengalaman membeli kasur sping bed atau kasur busa, banyak juga yang merasa puas dengan produk INTHEBOX lainnya yang terdiri dari bantal, guling, dan sofa bed.</p>
                     <p class="text-justify">
@@ -33,13 +33,18 @@
                             <p class="name-color text-weight-bold text-responsive">${testi.name}</p>
                             <img src="${fn:escapeXml(commonResourcePath)}/images/orang.png" class="pic" />
                         </div>
+                        <c:set value="0" var="halfStarPlace" />
                         <div class="text">
                             <c:forEach begin="1" end="${testi.rating}" var="i">
                                 <img src="${fn:escapeXml(commonResourcePath)}/images/bintang-full.png" data-src="${fn:escapeXml(commonResourcePath)}/images/bintang-full.png" class="star" alt="Star" />
                             </c:forEach>
                             <c:if test="${testi.halfStar}">
                                 <img src="${fn:escapeXml(commonResourcePath)}/images/bintang-setengah.png" data-src="${fn:escapeXml(commonResourcePath)}/images/bintang-setengah.png" class="star" alt="Star" />
+                                <c:set value="1" var="halfStarPlace" />
                             </c:if>
+                            <c:forEach begin="1" end="${5 - testi.rating - halfStarPlace}" var="i">
+                                <img src="${fn:escapeXml(commonResourcePath)}/images/bintang-kosong.png" class="star" alt="Star" />
+                            </c:forEach>
                             <p class="text-weight-bold title-testi text-responsive">${testi.title}</p>
                             <p class="description">${testi.description}</p>
                             <p class="date-color">${testi.date}</p>
