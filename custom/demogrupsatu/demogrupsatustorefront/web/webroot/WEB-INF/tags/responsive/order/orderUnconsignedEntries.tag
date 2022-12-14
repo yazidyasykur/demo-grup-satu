@@ -8,7 +8,7 @@
 
 <c:forEach items="${order.unconsignedEntries}" var="entry" varStatus="loop">
     <div class="well well-quinary well-xs">
-        <div class="well-headline orderPending">
+        <div class="well-headline orderPending well-headline-custom">
             <spring:theme code="text.account.order.unconsignedEntry.status.pending" />
         </div>
 

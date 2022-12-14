@@ -1,0 +1,242 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+ Copyright (c) 2019 SAP SE or an SAP affiliate company. All rights reserved.
+-->
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:int="http://www.springframework.org/schema/integration"
+	xmlns:file="http://www.springframework.org/schema/integration/file"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:p="http://www.springframework.org/schema/p"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+		http://www.springframework.org/schema/beans/spring-beans.xsd
+		http://www.springframework.org/schema/integration
+		http://www.springframework.org/schema/integration/spring-integration.xsd
+		http://www.springframework.org/schema/integration/file
+		http://www.springframework.org/schema/integration/file/spring-integration-file.xsd
+		http://www.springframework.org/schema/context
+        http://www.springframework.org/schema/context/spring-context.xsd">
+		
+    <context:annotation-config/> 
+
+	<bean id="baseDirectoryDemo" class="java.lang.String">
+		<constructor-arg value="#{baseDirectory}/${tenantId}/demo" />
+	</bean>
+	<!-- 1) Scan for files -->
+	<file:inbound-channel-adapter id="batchFilesDemo" directory="#{baseDirectoryDemo}"
+		filename-regex="^(.*)-(\d+)\.csv" comparator="fileOrderComparator">
+		<int:poller fixed-rate="1000" />
+	</file:inbound-channel-adapter>
+
+	<!-- 2) move the file to processing and setup header -->
+	<file:outbound-gateway request-channel="batchFilesDemo" reply-channel="batchFilesDemo"
+		directory="#{baseDirectoryDemo}/processing" delete-source-files="true" />
+	<int:service-activator input-channel="batchFilesDemoProc" output-channel="batchFilesHeaderInit"
+		ref="demoHeaderSetupTask" method="execute" />
+
+	<bean id="demoHeaderSetupTask" class="de.hybris.platform.acceleratorservices.dataimport.batch.task.HeaderSetupTask">
+		<property name="catalog" value="demoProductCatalog" />
+		<property name="net" value="false" />
+		<property name="storeBaseDirectory" ref="baseDirectoryDemo" />
+	</bean>
+
+	<!-- Transformer converters mappings -->
+		<!-- IntheboxProduct -->
+	<bean id="batchDemoBaseProductConverterMapping"
+		  class="de.hybris.platform.acceleratorservices.dataimport.batch.converter.mapping.impl.DefaultConverterMapping"
+		  p:mapping="base_product"
+		  p:converter-ref="batchDemoBaseProductConverter"/>
+
+		<!-- Size -->
+	<bean id="batchDemoSizeProductConverterMapping"
+		  class="de.hybris.platform.acceleratorservices.dataimport.batch.converter.mapping.impl.DefaultConverterMapping"
+		  p:mapping="size"
+		  p:converter-ref="batchDemoSizeProductConverter"/>
+
+	<!-- Variant -->
+	<bean id="batchDemoVariantProductConverterMapping"
+		  class="de.hybris.platform.acceleratorservices.dataimport.batch.converter.mapping.impl.DefaultConverterMapping"
+		  p:mapping="variant"
+		  p:converter-ref="batchDemoVariantProductConverter"/>
+
+	<!-- Price -->
+	<bean id="batchDemoPriceProductConverterMapping"
+		  class="de.hybris.platform.acceleratorservices.dataimport.batch.converter.mapping.impl.DefaultConverterMapping"
+		  p:mapping="price"
+		  p:converter-ref="batchDemoPriceProductConverter"/>
+
+	<!-- Product Media -->
+	<bean id="batchDemoMediaProductConverterMapping"
+		  class="de.hybris.platform.acceleratorservices.dataimport.batch.converter.mapping.impl.DefaultConverterMapping"
+		  p:mapping="media"
+		  p:converter-ref="batchDemoMediaProductConverter"/>
+
+	<!-- Product Media Container -->
+	<bean id="batchDemoMediaContainerProductConverterMapping"
+		  class="de.hybris.platform.acceleratorservices.dataimport.batch.converter.mapping.impl.DefaultConverterMapping"
+		  p:mapping="media_container"
+		  p:converter-ref="batchDemoMediaContainerProductConverter"/>
+
+	<!-- Update Product Media -->
+	<bean id="batchDemoMediaProductUpdateConverterMapping"
+		  class="de.hybris.platform.acceleratorservices.dataimport.batch.converter.mapping.impl.DefaultConverterMapping"
+		  p:mapping="media_product"
+		  p:converter-ref="batchDemoMediaProductUpdateConverter"/>
+
+	<!-- Product Stocklevel -->
+	<bean id="batchDemoStockProductConverterMapping"
+		  class="de.hybris.platform.acceleratorservices.dataimport.batch.converter.mapping.impl.DefaultConverterMapping"
+		  p:mapping="stockleve"
+		  p:converter-ref="batchDemoStockProductConverter"/>
+
+	<!-- Update Product Stocklevel -->
+	<bean id="batchDemoUpdateStockProductConverterMapping"
+		  class="de.hybris.platform.acceleratorservices.dataimport.batch.converter.mapping.impl.DefaultConverterMapping"
+		  p:mapping="product_stock"
+		  p:converter-ref="batchDemoUpdateStockProductConverter"/>
+
+	<bean id="demoProductImpexHeader" class="java.lang.String">
+		<constructor-arg>
+			<value>
+				$productCatalog = demoProductCatalog
+				$productCatalogName = Demo Product Catalog
+				$catalogVersion = catalogversion(catalog(id[default=$productCatalog]), version[default='Staged'])[unique=true, default=$productCatalog:Staged]
+				$supercategories = supercategories(code, $catalogVersion)
+				$baseProduct = baseProduct(code, $catalogVersion)
+				$approved = approvalstatus(code)[default='approved']
+				$media = @media[translator=de.hybris.platform.impex.jalo.media.MediaDataTranslator]
+				$thumbnail = thumbnail(code, $catalogVersion)
+				$picture = picture(code, $catalogVersion)
+				$thumbnails = thumbnails(code, $catalogVersion)
+				$detail = detail(code, $catalogVersion)
+				$normal = normal(code, $catalogVersion)
+				$others = others(code, $catalogVersion)
+				$data_sheet = data_sheet(code, $catalogVersion)
+				$medias = medias(code, $catalogVersion)
+				$galleryImages = galleryImages(qualifier, $catalogVersion)
+				$siteResource = jar:org.demogrupsatu.initialdata.setup.InitialDataSystemSetup&amp;/demogrupsatuinitialdata/import/sampledata/productCatalogs
+			</value>
+		</constructor-arg>
+	</bean>
+
+	<!-- Apparel specific converters -->
+		<!-- IntheboxProduct -->
+	<bean id="batchDemoBaseProductConverter" parent="abstractDefaultImpexConverter">
+		<property name="header">
+			<value>#{defaultImpexProductHeader}
+				# Insert Apparel Products
+				INSERT_UPDATE IntheboxProduct;code[unique = true];name;$supercategories;varianttype(code)[default = 'IntheboxSizeVariantProduct'];$approved; unit(code)[default = pieces]; $catalogVersion ; description;
+			</value>
+		</property>
+		<property name="impexRow">
+			<value>;{+0};{1};{2};{3};{4};{5};{6};{7}</value>
+		</property>
+		<property name="type" value="IntheboxProduct"/>
+	</bean>
+
+	<!-- Size -->
+	<bean id="batchDemoSizeProductConverter" parent="abstractDefaultImpexConverter">
+		<property name="header">
+			<value>#{defaultImpexProductHeader}
+				INSERT_UPDATE Size;code[unique = true];sizeName;dimension;
+			</value>
+		</property>
+		<property name="impexRow">
+			<value>;{+0};{1};{2}</value>
+		</property>
+		<property name="type" value="Size"/>
+	</bean>
+
+	<bean id="batchDemoVariantProductConverter" parent="abstractDefaultImpexConverter">
+		<property name="header">
+			<value>#{defaultImpexProductHeader}
+				INSERT_UPDATE IntheboxSizeVariantProduct;$baseProduct;code[unique = true];name;size(code);$supercategories;description;unit(code)[default = pieces];$approved;$catalogVersion;height
+			</value>
+		</property>
+		<property name="impexRow">
+			<value>;{0};{+1};{2};{3};{4};{5};{6};{7};{8};{9}</value>
+		</property>
+		<property name="type" value="IntheboxSizeVariantProduct"/>
+	</bean>
+
+	<!-- Price -->
+	<bean id="batchDemoPriceProductConverter" parent="abstractDefaultImpexConverter">
+		<property name="header">
+			<value>#{defaultImpexProductHeader}
+				INSERT_UPDATE PriceRow; product(code, $catalogVersion)[unique = true]; price[translator = de.hybris.platform.acceleratorservices.dataimport.batch.converter.PriceTranslator]; currency(isocode)[unique = true][default = IDR]; $catalogVersion; unit(code[unique = true, default = pieces])
+			</value>
+		</property>
+		<property name="impexRow">
+			<value>;{+0};{1};{2};{3}</value>
+		</property>
+		<property name="type" value="PriceRow"/>
+	</bean>
+
+	<!-- Media -->
+	<bean id="batchDemoMediaProductConverter" parent="abstractDefaultImpexConverter">
+		<property name="header">
+			<value>#{defaultImpexProductHeader}
+				INSERT_UPDATE Media;mediaFormat(qualifier);code[unique = true];$media;mime[default = 'image/jpeg'];$catalogVersion; folder(qualifier)
+			</value>
+		</property>
+		<property name="impexRow">
+			<value>;{0};{+1};{2};{3};{4};{5};{6}</value>
+		</property>
+		<property name="type" value="Media"/>
+	</bean>
+
+	<!-- Media Container -->
+	<bean id="batchDemoMediaContainerProductConverter" parent="abstractDefaultImpexConverter">
+		<property name="header">
+			<value>#{defaultImpexProductHeader}
+				INSERT_UPDATE MediaContainer; qualifier[unique = true];$medias;$catalogVersion
+			</value>
+		</property>
+		<property name="impexRow">
+			<value>;{+0};{1};{2};{3}</value>
+		</property>
+		<property name="type" value="MediaContainer"/>
+	</bean>
+
+	<!-- Media Product Update -->
+	<bean id="batchDemoMediaProductUpdateConverter" parent="abstractDefaultImpexConverter">
+		<property name="header">
+			<value>#{defaultImpexProductHeader}
+				UPDATE Product; code[unique = true];$picture;$thumbnail;$detail;$others;$normal;$thumbnails;$galleryImages;$catalogVersion
+			</value>
+		</property>
+		<property name="impexRow">
+			<value>;{+0};{1};{2};{3};{4};{5};{6};{7};{8}</value>
+		</property>
+		<property name="type" value="Product"/>
+	</bean>
+
+	<!-- Product StockLevel -->
+	<bean id="batchDemoStockProductConverter" parent="abstractDefaultImpexConverter">
+		<property name="header">
+			<value>#{defaultImpexProductHeader}
+				INSERT_UPDATE StockLevel;available;warehouse(code)[unique = true];inStockStatus(code);maxPreOrder;maxStockLevelHistoryCount;overSelling;preOrder;productCode[unique = true];reserved
+			</value>
+		</property>
+		<property name="impexRow">
+			<value>;{0};{1};{2};{3};{4};{5};{6};{+7};{8}</value>
+		</property>
+		<property name="type" value="StockLevel"/>
+	</bean>
+
+	<!-- Update Product StockLevel -->
+	<bean id="batchDemoUpdateStockProductConverter" parent="abstractDefaultImpexConverter">
+		<property name="header">
+			<value>#{defaultImpexProductHeader}
+				UPDATE Product  ; code[unique = true]     ; $catalogVersion; stockLevels(productCode, warehouse(code))    ; vendors(code)
+			</value>
+		</property>
+		<property name="impexRow">
+			<value>;{+0};{1};{2};{3}</value>
+		</property>
+		<property name="type" value="Product"/>
+	</bean>
+
+
+
+</beans>

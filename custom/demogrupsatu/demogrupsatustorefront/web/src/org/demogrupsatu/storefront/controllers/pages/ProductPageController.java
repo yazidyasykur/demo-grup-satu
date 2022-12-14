@@ -32,6 +32,7 @@ import de.hybris.platform.core.model.product.ProductModel;
 import de.hybris.platform.product.ProductService;
 import de.hybris.platform.servicelayer.exceptions.UnknownIdentifierException;
 import de.hybris.platform.util.Config;
+import org.demogrupsatu.core.model.IntheboxProductModel;
 import org.demogrupsatu.core.model.IntheboxSizeVariantProductModel;
 import org.demogrupsatu.facades.intheboxproduct.IntheboxProductFacade;
 import org.demogrupsatu.facades.intheboxvariant.IntheboxVariantFacade;
@@ -146,7 +147,7 @@ public class ProductPageController extends AbstractPageController
 		model.addAttribute(new ReviewForm());
 		model.addAttribute("pageType", PageType.PRODUCT.name());
 		model.addAttribute("futureStockEnabled", Boolean.valueOf(Config.getBoolean(FUTURE_STOCK_ENABLED, false)));
-//		((IntheboxSizeVariantProductModel) productModel).getSize().getSizeName()
+
 		model.addAttribute("size",((IntheboxSizeVariantProductModel) productModel).getSize().getSizeName());
 		model.addAttribute("dimensi",((IntheboxSizeVariantProductModel) productModel).getSize().getDimension());
 		model.addAttribute("tinggi",((IntheboxSizeVariantProductModel) productModel).getHeight());
