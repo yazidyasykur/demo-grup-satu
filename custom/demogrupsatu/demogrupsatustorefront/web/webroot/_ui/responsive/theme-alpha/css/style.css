@@ -19778,6 +19778,16 @@ select[multiple].input-sm {
     margin: 30px auto;
     text-align: center;
   }
+  .unboxing-responsive {
+    width: 1000px;
+    margin: 0 auto;
+  }
+  .on-nav-link {
+    width: 100%;
+    height: auto;
+    margin: 30px auto;
+    text-align: center;
+  }
   .text-responsive {
     font-size: 18px;
   }
@@ -19797,6 +19807,7 @@ select[multiple].input-sm {
     font-size: 18px;
     width: 260px;
   }
+
   .testimoni-title-responsive {
     font-size: 48px;
   }
@@ -19807,6 +19818,7 @@ select[multiple].input-sm {
   .palmer-font {
     font-size: 12rem;
   }
+
   .small-part-margin,
   .small-part-margin-logo {
     margin: 0 10px;
@@ -19836,6 +19848,20 @@ select[multiple].input-sm {
   }
   .image-resize-header {
     width: 150px;
+  }
+}
+@media only screen and (max-width: 1050px) {
+  .unboxing-responsive {
+    width: 800px;
+  }
+  .unboxing-title-responsive {
+    font-size: 20px;
+  }
+  .unboxing-text-responsive {
+    font-size: 11px;
+  }
+  .carousel__item--desc {
+    font-size: 14px;
   }
 }
 @media only screen and (max-width: 1050px) {
@@ -19905,9 +19931,11 @@ select[multiple].input-sm {
   .carousel__item--desc {
     width: 200px;
   }
+
   .testimoni-title-responsive {
     font-size: 40px;
   }
+
   .small-part-margin,
   .small-part-margin-logo {
     margin: 0 5px;
@@ -20002,6 +20030,7 @@ select[multiple].input-sm {
   .carousel__item--desc {
     font-size: 10px;
     width: 160px;
+
   }
   .testimoni-title-responsive {
     font-size: 34px;
@@ -20241,6 +20270,10 @@ select[multiple].input-sm {
 .text-justify {
   text-align: justify;
   text-justify: inter-word;
+}
+.text-on-nav-link {
+  margin: 10px auto;
+  font-size: 20px;
 }
 /* Other */
 .pic {

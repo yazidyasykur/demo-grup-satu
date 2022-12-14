@@ -39,3 +39,7 @@ INSERT_UPDATE BaseStore2DeliveryModeRel;source(uid)[unique=true];target(code)[un
 ;demo;free-standard-shipping
 ;demo;gojek-net
 ;demo;gojek-gross
+;demo;jne-net
+;demo;jne-gross
+;demo;jnt-net
+;demo;jnt-gross

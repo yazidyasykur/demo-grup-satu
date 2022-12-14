@@ -19772,6 +19772,16 @@ select[multiple].input-sm {
     margin: 30px auto;
     text-align: center;
   }
+  .unboxing-responsive {
+    width: 1000px;
+    margin: 0 auto;
+  }
+  .on-nav-link {
+    width: 100%;
+    height: auto;
+    margin: 30px auto;
+    text-align: center;
+  }
   .text-responsive {
     font-size: 18px;
   }
@@ -19791,6 +19801,7 @@ select[multiple].input-sm {
     font-size: 18px;
     width: 260px;
   }
+
   .testimoni-title-responsive {
     font-size: 48px;
   }
@@ -19801,6 +19812,7 @@ select[multiple].input-sm {
   .palmer-font {
     font-size: 12rem;
   }
+
   .small-part-margin,
   .small-part-margin-logo {
     margin: 0 10px;
@@ -19830,6 +19842,20 @@ select[multiple].input-sm {
   }
   .image-resize-header {
     width: 150px;
+  }
+}
+@media only screen and (max-width: 1050px) {
+  .unboxing-responsive {
+    width: 800px;
+  }
+  .unboxing-title-responsive {
+    font-size: 20px;
+  }
+  .unboxing-text-responsive {
+    font-size: 11px;
+  }
+  .carousel__item--desc {
+    font-size: 14px;
   }
 }
 @media only screen and (max-width: 1050px) {
@@ -19899,9 +19925,11 @@ select[multiple].input-sm {
   .carousel__item--desc {
     width: 200px;
   }
+
   .testimoni-title-responsive {
     font-size: 40px;
   }
+
   .small-part-margin,
   .small-part-margin-logo {
     margin: 0 5px;
@@ -19996,12 +20024,14 @@ select[multiple].input-sm {
   .carousel__item--desc {
     font-size: 10px;
     width: 160px;
+
   }
   .testimoni-title-responsive {
     font-size: 34px;
   }
   .palmer-font {
     font-size: 8rem;
+
   }
   .small-part-margin-logo {
     margin: 0;
@@ -20011,6 +20041,7 @@ select[multiple].input-sm {
   }
   .link-header-small-web {
     display: block;
+
   }
   .carousel__item--thumb {
     height: 110px;
@@ -20235,6 +20266,10 @@ select[multiple].input-sm {
 .text-justify {
   text-align: justify;
   text-justify: inter-word;
+}
+.text-on-nav-link {
+  margin: 10px auto;
+  font-size: 20px;
 }
 /* Other */
 .pic {
@@ -23853,7 +23888,6 @@ hidden-sm .cpq-overview-messages {
 }
 img {
   max-width: 100%;
-  max-height: 100%;
 }
 h2 {
   margin-top: 0px;
@@ -23867,20 +23901,25 @@ h2 {
   background-color: white;
   margin: 0 auto;
 }
+.inthebox-text {
+  font-family: Gradual;
+}
 .section2 {
   background-color: #6086c2;
   padding-bottom: 50px;
   padding-top: 40px;
   text-align: center;
   color: white;
+  padding: 50px 10px 40px 10px;
 }
 .s2-container {
   margin: 0 auto;
   max-width: 1140px;
 }
 .s2-header-white {
-  font-size: 2em;
-  margin: 0px;
+  font-size: 2.5em;
+  font-weight: bold;
+  margin-bottom: 10px;
 }
 .s2-paragraph {
   font-size: 1.3em;
@@ -23901,16 +23940,23 @@ h2 {
 }
 .what-img {
   margin-bottom: 15px;
-  width: 100%;
+  text-align: center;
+  max-width: 100%;
 }
 .why-img {
   margin-bottom: 15px;
+  text-align: center;
+}
+.inthebox-h2 {
+  font-family: Gradual !important;
+  font-weight: bold !important;
 }
 .how-img {
   margin-bottom: 15px;
+  text-align: center;
 }
 .what-text {
-  flex-basis: 40%;
+  flex-basis: 50%;
   padding-right: 50px;
   line-height: 30px;
   font-size: 1.2em;
@@ -23922,6 +23968,25 @@ h2 {
   background-color: #6086c2;
   font-weight: 600;
   border: none;
+  transition: all 0.3s;
+}
+.more-btn:hover {
+  background-color: #7FC5F9;
+  color: #6086c2;
+  transition: all 0.3s;
+}
+.more-btn2 {
+  color: white;
+  padding: 10px 20px;
+  background-color: #6086c2;
+  font-weight: 600;
+  border: none;
+  transition: all 0.3s;
+}
+.more-btn2:hover {
+  background-color: white;
+  color: #6086c2;
+  transition: all 0.3s;
 }
 .why {
   display: flex;
@@ -24040,19 +24105,28 @@ h2 {
   align-items: center;
   justify-content: space-between;
 }
-.control-custom {
-  max-width: 50%;
+.control-label-custom {
+  white-space: nowrap;
+}
+.form-control {
+  margin: 0px 0px;
 }
 .form-width-custom {
   max-width: 50%;
   border-radius: 5px;
 }
 .select-width-custom {
-  max-width: 100%;
+  min-width: 100%;
   border-radius: 5px;
 }
 .checkout-shipping {
   border-radius: 20px;
+}
+.form-control-custom {
+  margin: 0 auto;
+  border-radius: 20px;
+  min-width: 300px;
+  padding: 10px;
 }
 .next-btn {
   border-radius: 20px;
@@ -24173,6 +24247,7 @@ div.definition > ul {
 }
 .definition {
   margin: 20px 0px;
+  font-family: Brown;
 }
 .def-detail-container {
   display: flex;
@@ -24193,10 +24268,13 @@ div.def-detail-container > img {
   font-weight: bold;
   min-height: 50px;
   text-align: center;
+  font-family: Gradual;
 }
 div.definition-container > div.content {
   text-align: center;
-  font-size: 2em;
+  font-size: 3em;
+  margin: 10px 0px;
+  font-family: Gradual;
 }
 @media screen and (max-width: 900px) {
   .definition-container {
