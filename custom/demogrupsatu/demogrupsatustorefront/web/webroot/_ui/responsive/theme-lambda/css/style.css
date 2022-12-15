@@ -13398,6 +13398,13 @@ a.product__listing .product__listing--promo:focus {
   .flowrow:empty {
     display: none;
   }
+  .item__total {
+    float: left !important;
+  }
+  .mt-5 {
+    margin-top: 20px !important;
+    font-size: 26px !important;
+  }
   .flowrowblock {
     min-width: 120px;
     width: 20vw;
@@ -13635,7 +13642,7 @@ a.product__listing .product__listing--promo:focus {
   margin: auto;
 }
 .form-control {
-  margin: auto;
+  margin: auto !important;
   display: block;
   width: 50%;
   height: calc(1.5em + 1.3rem + 2px);
@@ -13656,6 +13663,25 @@ a.product__listing .product__listing--promo:focus {
 textarea {
   overflow: auto;
   resize: vertical;
+}
+.form-control1 {
+  color: #6086c2 !important;
+  text-align: center;
+  display: block;
+  width: 30%;
+  height: calc(1.5em + 1.3rem + 2px);
+  padding: 0.65rem 1rem;
+  font-size: 2rem;
+  font-weight: 400;
+  line-height: 1.5;
+  background-color: #fff;
+  background-clip: padding-box;
+  border: 1px solid #ebedf2;
+  border-radius: 4px;
+  -webkit-transition: border-color 0.15s ease-in-out, -webkit-box-shadow 0.15s ease-in-out;
+  transition: border-color 0.15s ease-in-out, -webkit-box-shadow 0.15s ease-in-out;
+  transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+  transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out, -webkit-box-shadow 0.15s ease-in-out;
 }
 @media (max-width: 1023px) {
   .batas {
@@ -13681,6 +13707,7 @@ textarea {
   margin-left: 8px;
 }
 .untukharga {
+  text-align: left;
   line-height: 30px;
   font-family: fontHarga !important;
   font-weight: normal !important;
@@ -19772,16 +19799,6 @@ select[multiple].input-sm {
     margin: 30px auto;
     text-align: center;
   }
-  .unboxing-responsive {
-    width: 1000px;
-    margin: 0 auto;
-  }
-  .on-nav-link {
-    width: 100%;
-    height: auto;
-    margin: 30px auto;
-    text-align: center;
-  }
   .text-responsive {
     font-size: 18px;
   }
@@ -19801,7 +19818,6 @@ select[multiple].input-sm {
     font-size: 18px;
     width: 260px;
   }
-
   .testimoni-title-responsive {
     font-size: 48px;
   }
@@ -19812,7 +19828,6 @@ select[multiple].input-sm {
   .palmer-font {
     font-size: 12rem;
   }
-
   .small-part-margin,
   .small-part-margin-logo {
     margin: 0 10px;
@@ -19842,20 +19857,6 @@ select[multiple].input-sm {
   }
   .image-resize-header {
     width: 150px;
-  }
-}
-@media only screen and (max-width: 1050px) {
-  .unboxing-responsive {
-    width: 800px;
-  }
-  .unboxing-title-responsive {
-    font-size: 20px;
-  }
-  .unboxing-text-responsive {
-    font-size: 11px;
-  }
-  .carousel__item--desc {
-    font-size: 14px;
   }
 }
 @media only screen and (max-width: 1050px) {
@@ -19925,11 +19926,9 @@ select[multiple].input-sm {
   .carousel__item--desc {
     width: 200px;
   }
-
   .testimoni-title-responsive {
     font-size: 40px;
   }
-
   .small-part-margin,
   .small-part-margin-logo {
     margin: 0 5px;
@@ -20024,14 +20023,12 @@ select[multiple].input-sm {
   .carousel__item--desc {
     font-size: 10px;
     width: 160px;
-
   }
   .testimoni-title-responsive {
     font-size: 34px;
   }
   .palmer-font {
     font-size: 8rem;
-
   }
   .small-part-margin-logo {
     margin: 0;
@@ -20041,7 +20038,6 @@ select[multiple].input-sm {
   }
   .link-header-small-web {
     display: block;
-
   }
   .carousel__item--thumb {
     height: 110px;
@@ -20266,10 +20262,6 @@ select[multiple].input-sm {
 .text-justify {
   text-align: justify;
   text-justify: inter-word;
-}
-.text-on-nav-link {
-  margin: 10px auto;
-  font-size: 20px;
 }
 /* Other */
 .pic {

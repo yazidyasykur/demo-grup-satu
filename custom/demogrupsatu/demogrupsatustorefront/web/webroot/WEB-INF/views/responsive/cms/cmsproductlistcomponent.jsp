@@ -11,7 +11,9 @@
 
 <spring:htmlEscape defaultHtmlEscape="true" />
 
-<h1 class="tengah">PILIHAN PRODUK INTHEBOX</h1>
+<h1 class="tengah">
+    <spring:theme code="product.list.page.header"/>
+</h1>
 
 <div class="flowrow">
         <c:forEach items="${searchPageData.results}" var="product" varStatus="status">

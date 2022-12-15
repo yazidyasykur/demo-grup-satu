@@ -78,9 +78,9 @@
                     <a href="${fn:escapeXml(productUrl)}"><span class="item__name hitam">${fn:escapeXml(entry.product.name)}</span></a>
                 </ycommerce:testId>
 
-                <br>
-                <br>
-                <br>
+                <br class="hidden-sm hidden-xs">
+                <br class="hidden-sm hidden-xs">
+                <br class="hidden-sm hidden-xs">
 
                 <%-- price --%>
                 <div class="item__code untukhargasatuan">
@@ -103,7 +103,7 @@
                             <input type="hidden" name="initialQuantity" value="${quantityHtml}"/>
                             <ycommerce:testId code="cart_product_quantity">
                                 <form:label cssClass="visible-xs visible-sm" path="quantity" for="quantity${entry.entryNumber}"></form:label>
-                                <form:input cssClass="form-control js-update-entry-quantity-input" disabled="${not entry.updateable}" type="text" size="1" maxlength="10" id="quantity_${entry.entryNumber}" path="quantity" />
+                                <form:input cssClass="form-control1 js-update-entry-quantity-input" disabled="${not entry.updateable}" type="text" size="1" maxlength="10" id="quantity_${entry.entryNumber}" path="quantity" />
                             </ycommerce:testId>
                         </form:form>
                     </c:when>
@@ -113,7 +113,6 @@
                             <input type="hidden" name="entryNumber" value="${entryNumberHtml}"/>
                             <input type="hidden" name="productCode" value="${productCodeHtml}"/>
                             <input type="hidden" name="initialQuantity" value="${quantityHtml}"/>
-                            <label class="visible-xs visible-sm"><spring:theme code="basket.page.qty"/>:</label>
                             <span class="qtyValue">${quantityHtml}</span>
                             <input type="hidden" name="quantity" value="0"/>
                             <ycommerce:testId code="cart_product_updateQuantity">
@@ -154,8 +153,7 @@
                                     <input type="hidden" name="productCode" value="${productCodeHtml}"/>
                                     <input type="hidden" name="initialQuantity" value="${quantityHtml}"/>
                                     <ycommerce:testId code="cart_product_quantity">
-                                        <form:label cssClass="" path="quantity" for="quantity${entry.entryNumber}"><spring:theme code="basket.page.qty"/>:</form:label>
-                                        <form:input cssClass="form-control js-update-entry-quantity-input" disabled="${not entry.updateable}" type="text" size="1" id="quantity_${entry.entryNumber}" path="quantity" />
+                                        <form:input cssClass="form-control1 js-update-entry-quantity-input" disabled="${not entry.updateable}" type="text" size="1" id="quantity_${entry.entryNumber}" path="quantity" />
                                     </ycommerce:testId>
                                 </form:form>
                             </c:when>
@@ -165,7 +163,6 @@
                                     <input type="hidden" name="entryNumber" value="${entryNumberHtml}"/>
                                     <input type="hidden" name="productCode" value="${productCodeHtml}"/>
                                     <input type="hidden" name="initialQuantity" value="${quantityHtml}"/>
-                                    <label><spring:theme code="basket.page.qty"/>:</label>
                                     <span class="qtyValue">${quantityHtml}</span>
                                     <input type="hidden" name="quantity" value="0"/>
                                     <ycommerce:testId code="cart_product_updateQuantity">
@@ -247,7 +244,7 @@
                         <div class="row">
                             <div class="col-sm-7 col-sm-offset-5">
                                 <div id="entryCommentDiv_${fn:escapeXml(entryNumber)}" class="${not empty entryComments ?'collapse in':'collapse'}">
-                                    <textarea class="form-control js-quote-entry-comments" id="entryComment_${fn:escapeXml(entryNumber)}"
+                                    <textarea class="form-control1 js-quote-entry-comments" id="entryComment_${fn:escapeXml(entryNumber)}"
                                               placeholder="<spring:theme code="quote.enter.comment"/>"
                                               data-entry-number="${fn:escapeXml(entryNumber)}" rows="3" maxlength="255"></textarea>
                                 </div>

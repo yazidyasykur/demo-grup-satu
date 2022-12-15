@@ -15,7 +15,9 @@
 
 <div class="batas">
 
-    <h1 class="text-center mt-5 gradual tebal">Keranjang Belanja</h1>
+    <h1 class="text-center mt-5 gradual tebal">
+        <spring:theme code="cart.page.header"/>
+    </h1>
 
 	<div>
 		<div>
