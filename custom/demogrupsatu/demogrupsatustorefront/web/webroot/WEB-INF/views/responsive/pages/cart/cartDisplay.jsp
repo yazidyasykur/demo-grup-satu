@@ -20,7 +20,7 @@
     <div class="cartNote row">
         <p>Catatan Pembelian :</p>
         <div>
-            <textarea rows="5" id="catatan" name="catatan" placeholder="" class="form-control-custom"></textarea>
+            <textarea rows="5" id="catatan" name="catatan" placeholder="" class="form-control-custom-cart"></textarea>
         </div>
     </div>
 
