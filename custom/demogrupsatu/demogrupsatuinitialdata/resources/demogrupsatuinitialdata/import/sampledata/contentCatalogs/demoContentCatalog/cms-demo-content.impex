@@ -694,19 +694,19 @@ INSERT_UPDATE ContentSlot;$contentCV[unique=true];uid[unique=true];active;cmsCom
 
 #### Section 4
 
-###  Home page slot 4A  ####
-INSERT_UPDATE FlashComponent;$contentCV[unique=true];uid[unique=true];urlLink;&componentRef
-                            ;;AstraVideoLink;https://www.youtube.com/embed/cJAkzjf5yBY;AstraVideoLink
-
-INSERT_UPDATE ContentSlot;$contentCV[unique=true];uid[unique=true];cmsComponents(&componentRef)
-                         ;;Section4Slot-Homepage;AstraVideoLink
-
-#### Home section 5 #######
-INSERT_UPDATE CMSParagraphComponent;$contentCV[unique=true];uid[unique=true];name;&componentRef
-                                   ;;MaterialParagraghComponent;Material Paragraph Component;MaterialParagraghComponent
-
-INSERT_UPDATE ContentSlot;$contentCV[unique=true];uid[unique=true];active;cmsComponents(&componentRef)
-                         ;;Section5Slot-Homepage;true;MaterialParagraghComponent
+####  Home page slot 4A  ####
+#INSERT_UPDATE FlashComponent;$contentCV[unique=true];uid[unique=true];urlLink;&componentRef
+#                            ;;AstraVideoLink;https://www.youtube.com/embed/cJAkzjf5yBY;AstraVideoLink
+#
+#INSERT_UPDATE ContentSlot;$contentCV[unique=true];uid[unique=true];cmsComponents(&componentRef)
+#                         ;;Section4Slot-Homepage;AstraVideoLink
+#
+##### Home section 5 #######
+#INSERT_UPDATE CMSParagraphComponent;$contentCV[unique=true];uid[unique=true];name;&componentRef
+#                                   ;;MaterialParagraghComponent;Material Paragraph Component;MaterialParagraghComponent
+#
+#INSERT_UPDATE ContentSlot;$contentCV[unique=true];uid[unique=true];active;cmsComponents(&componentRef)
+#                         ;;Section5Slot-Homepage;true;MaterialParagraghComponent
 
 ### Section 6
 INSERT_UPDATE SimpleResponsiveBannerComponent;$contentCV[unique=true];uid[unique=true];name;urlLink;&componentRef
@@ -807,17 +807,17 @@ INSERT_UPDATE SimpleResponsiveBannerComponent;$contentCV[unique=true];uid[unique
 INSERT_UPDATE ContentSlot;$contentCV[unique=true];uid[unique=true];active;cmsComponents(&componentRef)
                          ;;Section1Slot-SLRCameras;true;ElectronicsSLRSplashBannerComponent
 
-##### Section 2 ######
-INSERT_UPDATE SimpleResponsiveBannerComponent;$contentCV[unique=true];uid[unique=true];name;urlLink;&componentRef
-                                             ;;ElectronicsCanon500DBannerComponent;Electronics Canon 500D Banner Component;Open-Catalogue/Cameras/DigitalCameras/Digital-SLR/EOS-500D-%2B-18-200mm-IS/p/2054947;ElectronicsCanon500DBannerComponent
-                                             ;;ElectronicsCanon450DBannerComponent;Electronics Canon 450D Banner Component;Open-Catalogue/Cameras/DigitalCameras/Digital-SLR/EOS450D-%2B-18-55-IS-Kit/p/1382080;ElectronicsCanon450DBannerComponent
-                                             ;;ElectronicsSonyA100HBannerComponent;Electronics Sony A100H Banner Component;Open-Catalogue/Cameras/DigitalCameras/Digital-SLR/DSLR-A100H/p/816780;ElectronicsSonyA100HBannerComponent
-                                             ;;ElectronicsSonyA330BannerComponent;Electronics Sony A330 Banner Component;Open-Catalogue/Cameras/DigitalCameras/Digital-SLR/DSLR-A330-%2BDT-18---55-mm/p/2934302;ElectronicsSonyA330BannerComponent
-                                             ;;ElectronicsSonyA200BannerComponent;Electronics Sony A200 Banner Component;Open-Catalogue/Cameras/DigitalCameras/Digital-SLR/Alpha-200/p/1391319;ElectronicsSonyA200BannerComponent
-                                             ;;ElectronicsSonyAlpha350BannerComponent;Electronics Sony Alpha 350 Banner Component;Open-Catalogue/Cameras/DigitalCameras/Digital-SLR/Alpha-350/p/1446509;ElectronicsSonyAlpha350BannerComponent
-
-INSERT_UPDATE ContentSlot;$contentCV[unique=true];uid[unique=true];active;cmsComponents(&componentRef)
-                         ;;Section2Slot-SLRCameras;true;ElectronicsSonyA100HBannerComponent,ElectronicsCanon500DBannerComponent,ElectronicsCanon450DBannerComponent,ElectronicsSonyA330BannerComponent,ElectronicsSonyA200BannerComponent,ElectronicsSonyAlpha350BannerComponent
+###### Section 2 ######
+#INSERT_UPDATE SimpleResponsiveBannerComponent;$contentCV[unique=true];uid[unique=true];name;urlLink;&componentRef
+#                                             ;;ElectronicsCanon500DBannerComponent;Electronics Canon 500D Banner Component;Open-Catalogue/Cameras/DigitalCameras/Digital-SLR/EOS-500D-%2B-18-200mm-IS/p/2054947;ElectronicsCanon500DBannerComponent
+#                                             ;;ElectronicsCanon450DBannerComponent;Electronics Canon 450D Banner Component;Open-Catalogue/Cameras/DigitalCameras/Digital-SLR/EOS450D-%2B-18-55-IS-Kit/p/1382080;ElectronicsCanon450DBannerComponent
+#                                             ;;ElectronicsSonyA100HBannerComponent;Electronics Sony A100H Banner Component;Open-Catalogue/Cameras/DigitalCameras/Digital-SLR/DSLR-A100H/p/816780;ElectronicsSonyA100HBannerComponent
+#                                             ;;ElectronicsSonyA330BannerComponent;Electronics Sony A330 Banner Component;Open-Catalogue/Cameras/DigitalCameras/Digital-SLR/DSLR-A330-%2BDT-18---55-mm/p/2934302;ElectronicsSonyA330BannerComponent
+#                                             ;;ElectronicsSonyA200BannerComponent;Electronics Sony A200 Banner Component;Open-Catalogue/Cameras/DigitalCameras/Digital-SLR/Alpha-200/p/1391319;ElectronicsSonyA200BannerComponent
+#                                             ;;ElectronicsSonyAlpha350BannerComponent;Electronics Sony Alpha 350 Banner Component;Open-Catalogue/Cameras/DigitalCameras/Digital-SLR/Alpha-350/p/1446509;ElectronicsSonyAlpha350BannerComponent
+#
+#INSERT_UPDATE ContentSlot;$contentCV[unique=true];uid[unique=true];active;cmsComponents(&componentRef)
+#                         ;;Section2Slot-SLRCameras;true;ElectronicsSonyA100HBannerComponent,ElectronicsCanon500DBannerComponent,ElectronicsCanon450DBannerComponent,ElectronicsSonyA330BannerComponent,ElectronicsSonyA200BannerComponent,ElectronicsSonyAlpha350BannerComponent
 
 ##### Section 3 #####
 #INSERT_UPDATE SimpleResponsiveBannerComponent;$contentCV[unique=true];uid[unique=true];name;urlLink;&componentRef
@@ -1206,6 +1206,8 @@ INSERT_UPDATE ContentSlot;$contentCV[unique=true];uid[unique=true];name;active;c
 # Create Content Slots for Page
 INSERT_UPDATE ContentSlotForPage;$contentCV[unique=true];uid[unique=true];position[unique=true];page(uid,$contentCV)[unique=true][default='testing-page'];contentSlot(uid,$contentCV)[unique=true]
                                 ;;MiddleContent-TestingPage;MiddleContent;;MiddleContent-TestingPage
+
+
 
 
 ###  Home page splash Slot 1  #######
